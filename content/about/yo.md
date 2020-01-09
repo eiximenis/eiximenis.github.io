@@ -12,8 +12,6 @@ Es también un famoso (al menos en su círculo de amistades) fabricante de cerve
 
 Además de este humilde blog mantiene [Lo Crestià][2], otro blog técnico para hablar de temas más generales, fuera del desarrollo web y/o .NET.
   
-Colabora también en el blog de [Plain Concepts sobre ASP.NET][3]
-  
 También (en una decisión que probablemente estén lamentando) le dejan escribir en el blog de [recursos de Campus MVP][4]
   
 Y como es colega de los admins, en una noche de borrachera descontrolada les pilló las claves del blog [ForCode][5] y a veces también escribe alguna cosa por allí…
@@ -32,7 +30,6 @@ Ganó unos juegos florales de su escuela, con un evocador poema sobre el amor y 
 
  [1]: http://www.plainconcepts.com/
  [2]: http://eiximenis.github.io
- [3]: http://blogs.plainconcepts.com/aspnetspain/
  [4]: http://campusmvp.com/recursos
  [5]: http://www.forcode.es/
  [6]: http://www.campusmvp.es/catalogo/Product-Desarrollador-profesional-de-aplicaciones-m%C3%B3viles-iOS-para-iPhone-iPad-con-Swift-y-Objective-C_221.aspx
