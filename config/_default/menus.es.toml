@@ -1,0 +1,46 @@
+
+[[main]]
+  identifier = "posts"
+  name = "posts"
+  url = "posts"
+  weight = 1
+
+[[main]]
+  identifier = "talks"
+  name = "charlas"
+  url = "talks"
+  weight = 2
+
+[[main]]
+  identifier = "fotos"
+  name = "fotos"
+  url = "gallery"
+  weight = 3
+
+[[main]]
+  parent = "fotos"
+  name = "charlas"
+  url = "gallery/events"
+
+[[main]]
+  identifier = "oss"
+  name = "oss"
+  url = "oss"
+  weight = 4
+
+
+[[main]]
+  identifier = "about"
+  name = "sobre"
+  url = "about"
+  weight = 5
+
+[[main]]
+  parent = "about"
+  name = "Mí"
+  url = "about/yo"
+
+[[main]]
+  parent = "about"
+  name = "Mis Cursos"
+  url = "about/cursos"
