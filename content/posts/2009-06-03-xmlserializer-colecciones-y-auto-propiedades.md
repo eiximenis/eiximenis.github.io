@@ -1,5 +1,6 @@
 ---
 title: XmlSerializer, colecciones y auto-propiedades…
+description: XmlSerializer, colecciones y auto-propiedades…
 author: eiximenis
 
 date: 2009-06-03T09:06:30+00:00

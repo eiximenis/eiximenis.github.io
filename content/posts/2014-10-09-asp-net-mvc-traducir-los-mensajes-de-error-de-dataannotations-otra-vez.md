@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC–Traducir los mensajes de error de DataAnnotations… otra vez.
+description: ASP.NET MVC–Traducir los mensajes de error de DataAnnotations… otra vez.
 author: eiximenis
 
 date: 2014-10-09T17:12:50+00:00

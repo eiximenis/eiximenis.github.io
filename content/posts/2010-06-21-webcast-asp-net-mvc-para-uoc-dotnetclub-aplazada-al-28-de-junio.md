@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC para UOC DotNetClub aplazada al 28 de Junio'
+description: '[WebCast] ASP.NET MVC para UOC DotNetClub aplazada al 28 de Junio'
 author: eiximenis
 
 date: 2010-06-21T12:31:44+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Encriptar RouteValues'
+description: 'ASP.NET MVC: Encriptar RouteValues'
 author: eiximenis
 
 date: 2012-07-08T18:36:37+00:00

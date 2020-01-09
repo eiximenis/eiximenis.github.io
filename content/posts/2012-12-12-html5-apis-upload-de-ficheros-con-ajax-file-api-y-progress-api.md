@@ -1,5 +1,6 @@
 ---
 title: HTML5 Apis – Upload de ficheros con Ajax, File Api y Progress Api
+description: HTML5 Apis – Upload de ficheros con Ajax, File Api y Progress Api
 author: eiximenis
 
 date: 2012-12-12T17:13:39+00:00

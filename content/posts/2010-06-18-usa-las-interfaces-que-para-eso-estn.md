@@ -1,5 +1,6 @@
 ---
 title: Usa las interfaces… que para eso están!
+description: Usa las interfaces… que para eso están!
 author: eiximenis
 
 date: 2010-06-18T10:50:42+00:00

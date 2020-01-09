@@ -1,5 +1,6 @@
 ---
 title: Var, object y dynamic
+description: Var, object y dynamic
 author: eiximenis
 
 date: 2010-04-29T08:59:15+00:00

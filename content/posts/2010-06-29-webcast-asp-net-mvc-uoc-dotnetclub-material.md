@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC UoC DotNetClub – Material'
+description: '[WebCast] ASP.NET MVC UoC DotNetClub – Material'
 author: eiximenis
 
 date: 2010-06-29T18:17:05+00:00

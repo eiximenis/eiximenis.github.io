@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET 5: Configuración'
+description: 'ASP.NET 5: Configuración'
 author: eiximenis
 
 date: 2015-09-03T18:26:40+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'APIs REST: Sobre códigos de retorno'
+description: 'APIs REST: Sobre códigos de retorno'
 author: eiximenis
 
 date: 2017-05-23T08:10:31+00:00

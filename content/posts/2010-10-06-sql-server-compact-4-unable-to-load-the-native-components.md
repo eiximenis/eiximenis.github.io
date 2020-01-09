@@ -1,5 +1,6 @@
 ---
 title: 'SQL Server Compact 4: Unable to load the native components'
+description: 'SQL Server Compact 4: Unable to load the native components'
 author: eiximenis
 
 date: 2010-10-06T12:03:57+00:00

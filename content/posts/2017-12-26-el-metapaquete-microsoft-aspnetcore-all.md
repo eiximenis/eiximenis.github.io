@@ -1,5 +1,6 @@
 ---
 title: El metapaquete Microsoft.AspNetCore.All
+description: El metapaquete Microsoft.AspNetCore.All
 author: eiximenis
 
 date: 2017-12-26T19:47:54+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'RA000 (o MSB3217): Cannot Register assembly Foo.dll (Method does not have an implementation).'
+description: 'RA000 (o MSB3217): Cannot Register assembly Foo.dll (Method does not have an implementation).'
 author: eiximenis
 
 date: 2010-01-20T12:25:47+00:00

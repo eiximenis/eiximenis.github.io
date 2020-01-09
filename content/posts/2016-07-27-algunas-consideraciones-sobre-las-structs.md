@@ -1,5 +1,6 @@
 ---
 title: Algunas consideraciones sobre las structs
+description: Algunas consideraciones sobre las structs
 author: eiximenis
 
 date: 2016-07-27T19:48:11+00:00

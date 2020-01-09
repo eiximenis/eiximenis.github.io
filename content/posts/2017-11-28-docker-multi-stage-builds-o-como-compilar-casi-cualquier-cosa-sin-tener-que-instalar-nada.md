@@ -1,5 +1,6 @@
 ---
 title: Docker multi-stage builds… o como compilar (casi) cualquier cosa sin tener que instalar nada.
+description: Docker multi-stage builds… o como compilar (casi) cualquier cosa sin tener que instalar nada.
 author: eiximenis
 
 date: 2017-11-28T12:58:09+00:00

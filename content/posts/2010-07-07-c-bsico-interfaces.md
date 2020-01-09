@@ -1,5 +1,6 @@
 ---
 title: '[C# Básico] Interfaces'
+description: '[C# Básico] Interfaces'
 author: eiximenis
 
 date: 2010-07-07T12:45:26+00:00

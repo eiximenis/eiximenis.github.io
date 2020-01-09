@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: ValueProviders'
+description: 'ASP.NET MVC: ValueProviders'
 author: eiximenis
 
 date: 2010-05-07T11:12:58+00:00

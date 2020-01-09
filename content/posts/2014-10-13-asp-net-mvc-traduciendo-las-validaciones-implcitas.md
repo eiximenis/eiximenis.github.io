@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC–Traduciendo las validaciones implícitas
+description: ASP.NET MVC–Traduciendo las validaciones implícitas
 author: eiximenis
 
 date: 2014-10-13T14:49:28+00:00

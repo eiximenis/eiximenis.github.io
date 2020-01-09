@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET: Obtener el ID del usuario actual'
+description: 'ASP.NET: Obtener el ID del usuario actual'
 author: eiximenis
 
 date: 2010-12-16T13:24:20+00:00

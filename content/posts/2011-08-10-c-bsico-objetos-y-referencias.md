@@ -1,5 +1,6 @@
 ---
 title: 'C# Básico: Objetos y referencias'
+description: 'C# Básico: Objetos y referencias'
 author: eiximenis
 
 date: 2011-08-10T18:22:57+00:00

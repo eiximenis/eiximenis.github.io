@@ -1,5 +1,6 @@
 ---
 title: Objetos anónimos como diccionarios
+description: Objetos anónimos como diccionarios
 author: eiximenis
 
 date: 2009-05-26T17:27:48+00:00

@@ -1,5 +1,6 @@
 ---
 title: jQuery 1.9 y el “unobtrusive ajax” de ASP.NET MVC
+description: jQuery 1.9 y el “unobtrusive ajax” de ASP.NET MVC
 author: eiximenis
 
 date: 2013-01-18T12:08:02+00:00

@@ -1,5 +1,6 @@
 ---
 title: Git para dummies (pero dummies, dummies eh?)
+description: Git para dummies (pero dummies, dummies eh?)
 author: eiximenis
 
 date: 2011-01-18T11:19:55+00:00

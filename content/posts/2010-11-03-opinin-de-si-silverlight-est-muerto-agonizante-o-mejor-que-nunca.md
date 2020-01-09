@@ -1,5 +1,6 @@
 ---
 title: 'Opinión: De si Silverlight está muerto, agonizante o mejor que nunca'
+description: 'Opinión: De si Silverlight está muerto, agonizante o mejor que nunca'
 author: eiximenis
 
 date: 2010-11-03T10:50:00+00:00

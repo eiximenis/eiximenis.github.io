@@ -1,5 +1,6 @@
 ---
 title: 'C# y sobrecarga de métodos genéricos… un detallito'
+description: 'C# y sobrecarga de métodos genéricos… un detallito'
 author: eiximenis
 
 date: 2009-06-12T09:14:40+00:00

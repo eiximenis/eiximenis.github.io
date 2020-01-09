@@ -1,5 +1,6 @@
 ---
 title: Meltdown y Spectre… algunos comentarios
+description: Meltdown y Spectre… algunos comentarios
 author: eiximenis
 
 date: 2018-01-05T12:27:46+00:00

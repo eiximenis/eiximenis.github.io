@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC – Helper Html.LabelFor<T> parametrizable'
+description: 'ASP.NET MVC – Helper Html.LabelFor<T> parametrizable'
 author: eiximenis
 
 date: 2011-06-29T23:27:00+00:00

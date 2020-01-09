@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Custom Model Binders vs ValueProviders y un ejemplo con JSON…'
+description: 'ASP.NET MVC: Custom Model Binders vs ValueProviders y un ejemplo con JSON…'
 author: eiximenis
 
 date: 2010-06-01T12:49:00+00:00

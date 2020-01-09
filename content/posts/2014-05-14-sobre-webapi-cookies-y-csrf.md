@@ -1,5 +1,6 @@
 ---
 title: Sobre WebApi, cookies y CSRF
+description: Sobre WebApi, cookies y CSRF
 author: eiximenis
 
 date: 2014-05-14T00:04:00+00:00

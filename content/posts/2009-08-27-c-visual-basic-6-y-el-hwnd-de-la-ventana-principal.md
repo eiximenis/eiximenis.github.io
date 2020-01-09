@@ -1,5 +1,6 @@
 ---
 title: 'C#, Visual Basic 6 y el HWND de la ventana principal…'
+description: 'C#, Visual Basic 6 y el HWND de la ventana principal…'
 author: eiximenis
 
 date: 2009-08-27T13:25:00+00:00

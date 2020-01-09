@@ -1,5 +1,6 @@
 ---
 title: Curiosidad (o no) en WinForms y focus…
+description: Curiosidad (o no) en WinForms y focus…
 author: eiximenis
 
 date: 2009-04-21T15:01:06+00:00

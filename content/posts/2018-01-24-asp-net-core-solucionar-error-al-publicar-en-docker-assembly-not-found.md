@@ -1,5 +1,6 @@
 ---
 title: Asp.Net Core – solucionar error al publicar en docker (assembly not found)
+description: Asp.Net Core – solucionar error al publicar en docker (assembly not found)
 author: eiximenis
 
 date: 2018-01-24T08:34:23+00:00

@@ -1,5 +1,6 @@
 ---
 title: '[C# Básico] Paso por referencia'
+description: '[C# Básico] Paso por referencia'
 author: eiximenis
 
 date: 2012-04-23T10:50:45+00:00

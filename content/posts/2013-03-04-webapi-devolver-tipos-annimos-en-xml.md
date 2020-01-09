@@ -1,5 +1,6 @@
 ---
 title: WebApi–Devolver tipos anónimos en XML
+description: WebApi–Devolver tipos anónimos en XML
 author: eiximenis
 
 date: 2013-03-04T10:49:29+00:00

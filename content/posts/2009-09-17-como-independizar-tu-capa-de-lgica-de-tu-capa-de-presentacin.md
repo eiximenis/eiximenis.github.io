@@ -1,5 +1,6 @@
 ---
 title: Como independizar tu capa de lógica de tu capa de presentación…
+description: Como independizar tu capa de lógica de tu capa de presentación…
 author: eiximenis
 
 date: 2009-09-17T18:36:00+00:00

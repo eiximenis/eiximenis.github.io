@@ -1,5 +1,6 @@
 ---
 title: 'C# Básico: Eventos'
+description: 'C# Básico: Eventos'
 author: eiximenis
 
 date: 2012-01-05T12:52:46+00:00

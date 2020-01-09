@@ -1,5 +1,6 @@
 ---
 title: Y el combate se decidió por KO (ii)
+description: Y el combate se decidió por KO (ii)
 author: eiximenis
 
 date: 2012-08-01T13:36:00+00:00

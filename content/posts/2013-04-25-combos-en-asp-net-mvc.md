@@ -1,5 +1,6 @@
 ---
 title: Combos en ASP.NET MVC
+description: Combos en ASP.NET MVC
 author: eiximenis
 
 date: 2013-04-25T17:21:48+00:00

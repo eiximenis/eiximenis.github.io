@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC6 (vNext)–ViewComponents
+description: ASP.NET MVC6 (vNext)–ViewComponents
 author: eiximenis
 
 date: 2014-09-09T18:13:52+00:00

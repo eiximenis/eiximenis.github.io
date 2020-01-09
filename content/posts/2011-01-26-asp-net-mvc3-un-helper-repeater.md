@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Un helper Repeater'
+description: 'ASP.NET MVC3: Un helper Repeater'
 author: eiximenis
 
 date: 2011-01-26T09:35:23+00:00

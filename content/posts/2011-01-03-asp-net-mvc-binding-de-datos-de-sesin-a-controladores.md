@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Binding de datos de sesión a controladores'
+description: 'ASP.NET MVC: Binding de datos de sesión a controladores'
 author: eiximenis
 
 date: 2011-01-03T11:08:00+00:00

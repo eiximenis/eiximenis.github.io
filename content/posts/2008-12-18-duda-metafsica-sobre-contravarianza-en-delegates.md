@@ -1,5 +1,6 @@
 ---
 title: Duda metafísica sobre “contravarianza” en delegates
+description: Duda metafísica sobre “contravarianza” en delegates
 author: eiximenis
 
 date: 2008-12-18T13:14:02+00:00

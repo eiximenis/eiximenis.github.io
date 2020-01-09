@@ -1,5 +1,6 @@
 ---
 title: Aplicaciones "de una sola página” con HTML5 y ASP.NET MVC
+description: Aplicaciones "de una sola página” con HTML5 y ASP.NET MVC
 author: eiximenis
 
 date: 2011-10-08T11:29:00+00:00

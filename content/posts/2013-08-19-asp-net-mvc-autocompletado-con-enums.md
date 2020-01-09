@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Autocompletado con enums'
+description: 'ASP.NET MVC: Autocompletado con enums'
 author: eiximenis
 
 date: 2013-08-19T17:45:34+00:00

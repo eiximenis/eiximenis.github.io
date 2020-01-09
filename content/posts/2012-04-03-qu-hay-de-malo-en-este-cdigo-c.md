@@ -1,5 +1,6 @@
 ---
 title: '¿Qué hay de malo en este código? (C#)'
+description: '¿Qué hay de malo en este código? (C#)'
 author: eiximenis
 
 date: 2012-04-03T10:11:20+00:00

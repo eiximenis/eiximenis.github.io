@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] ¿Te quedaste con más ganas? ASP.NET MVC II'
+description: '[WebCast] ¿Te quedaste con más ganas? ASP.NET MVC II'
 author: eiximenis
 
 date: 2011-02-02T10:19:12+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'Ejecutar bases de datos en Kubernetes: ¿Sí, no?'
+description: 'Ejecutar bases de datos en Kubernetes: ¿Sí, no?'
 author: eiximenis
 
 date: 2018-09-21T07:21:35+00:00

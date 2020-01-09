@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC – Custom model binders por propiedad
+description: ASP.NET MVC – Custom model binders por propiedad
 author: eiximenis
 
 date: 2013-10-16T11:51:55+00:00

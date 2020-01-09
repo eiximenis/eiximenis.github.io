@@ -1,5 +1,6 @@
 ---
 title: "Sobre mí..."
+description: "Sobre mí..."
 author: eiximenis
 ---
 

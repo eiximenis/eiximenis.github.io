@@ -1,5 +1,6 @@
 ---
 title: Listas "seguras" en JavaScript
+description: Listas "seguras" en JavaScript
 author: eiximenis
 
 date: 2016-06-08T10:00:59+00:00

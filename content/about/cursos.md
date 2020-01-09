@@ -1,5 +1,6 @@
 ---
 title: "Mis Cursos"
+description: "Mis Cursos"
 author: eiximenis
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: Nombres de algunos controladores distintos en ASP.NET MVC
+description: Nombres de algunos controladores distintos en ASP.NET MVC
 author: eiximenis
 
 date: 2010-02-19T11:07:01+00:00

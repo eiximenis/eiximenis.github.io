@@ -1,5 +1,6 @@
 ---
 title: Integra oAuth en tu aplicación ASP.NET MVC
+description: Integra oAuth en tu aplicación ASP.NET MVC
 author: eiximenis
 
 date: 2012-11-13T16:39:44+00:00

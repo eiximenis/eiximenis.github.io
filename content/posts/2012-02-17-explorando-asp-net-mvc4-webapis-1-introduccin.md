@@ -1,5 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebApis – 1: Introducción'
+description: 'Explorando ASP.NET MVC4 WebApis – 1: Introducción'
 author: eiximenis
 
 date: 2012-02-17T18:28:00+00:00

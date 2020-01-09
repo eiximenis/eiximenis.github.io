@@ -1,5 +1,6 @@
 ---
 title: 'Y el combate se decidió por KO (iv): Choque de viewmodels'
+description: 'Y el combate se decidió por KO (iv): Choque de viewmodels'
 author: eiximenis
 
 date: 2012-08-29T18:22:00+00:00

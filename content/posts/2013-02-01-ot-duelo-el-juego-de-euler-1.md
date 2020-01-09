@@ -1,5 +1,6 @@
 ---
 title: '[OT] Duelo: El juego de Euler (1)'
+description: '[OT] Duelo: El juego de Euler (1)'
 author: eiximenis
 
 date: 2013-02-01T13:35:00+00:00

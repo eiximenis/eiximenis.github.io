@@ -1,5 +1,6 @@
 ---
 title: Evento de ASP.NET MVC
+description: Evento de ASP.NET MVC
 author: eiximenis
 
 date: 2010-05-05T08:28:10+00:00

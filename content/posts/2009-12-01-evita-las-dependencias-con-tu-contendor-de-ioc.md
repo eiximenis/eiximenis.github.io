@@ -1,5 +1,6 @@
 ---
 title: Evita las dependencias con tu contendor de IoC
+description: Evita las dependencias con tu contendor de IoC
 author: eiximenis
 
 date: 2009-12-01T16:16:21+00:00

@@ -1,5 +1,6 @@
 ---
 title: Desacopla tus datos XML del formato…
+description: Desacopla tus datos XML del formato…
 author: eiximenis
 
 date: 2010-05-26T12:56:55+00:00

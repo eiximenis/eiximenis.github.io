@@ -1,5 +1,6 @@
 ---
 title: Mostrar un formulario modal con ASP.NET MVC y Ajax
+description: Mostrar un formulario modal con ASP.NET MVC y Ajax
 author: eiximenis
 
 date: 2009-04-14T14:11:28+00:00

@@ -1,5 +1,6 @@
 ---
 title: Aurelia… lo nuevo después de Durandal
+description: Aurelia… lo nuevo después de Durandal
 author: eiximenis
 
 date: 2015-01-27T11:57:41+00:00

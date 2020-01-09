@@ -1,5 +1,6 @@
 ---
 title: Traducir entre gRPC y HTTP/JSON
+description: Traducir entre gRPC y HTTP/JSON
 author: eiximenis
 
 date: 2019-06-28T16:22:05+00:00

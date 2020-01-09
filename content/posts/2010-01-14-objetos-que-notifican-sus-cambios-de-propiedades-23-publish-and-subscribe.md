@@ -1,5 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (2/3): Publish and subscribe'
+description: 'Objetos que notifican sus cambios de propiedades (2/3): Publish and subscribe'
 author: eiximenis
 
 date: 2010-01-14T10:04:00+00:00

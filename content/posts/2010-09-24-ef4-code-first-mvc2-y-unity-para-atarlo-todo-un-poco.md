@@ -1,5 +1,6 @@
 ---
 title: EF4 Code First, MVC2 y Unity para atarlo todo un poco…
+description: EF4 Code First, MVC2 y Unity para atarlo todo un poco…
 author: eiximenis
 
 date: 2010-09-24T12:57:00+00:00

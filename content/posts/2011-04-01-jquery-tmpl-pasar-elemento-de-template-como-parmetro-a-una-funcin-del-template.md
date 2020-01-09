@@ -1,5 +1,6 @@
 ---
 title: '[jQuery tmpl] Pasar elemento de template como parámetro a una función del template'
+description: '[jQuery tmpl] Pasar elemento de template como parámetro a una función del template'
 author: eiximenis
 
 date: 2011-04-01T09:42:00+00:00

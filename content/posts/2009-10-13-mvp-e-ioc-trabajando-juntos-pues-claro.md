@@ -1,5 +1,6 @@
 ---
 title: ¿MVP e IoC trabajando juntos? ¡Pues claro!
+description: ¿MVP e IoC trabajando juntos? ¡Pues claro!
 author: eiximenis
 
 date: 2009-10-13T12:09:01+00:00

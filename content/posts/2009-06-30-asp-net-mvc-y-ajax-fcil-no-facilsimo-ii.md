@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC y Ajax: fácil no, facilísimo (ii)'
+description: 'ASP.NET MVC y Ajax: fácil no, facilísimo (ii)'
 author: eiximenis
 
 date: 2009-06-30T15:50:00+00:00

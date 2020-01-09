@@ -1,5 +1,6 @@
 ---
 title: Saca tus scripts de tu código HTML
+description: Saca tus scripts de tu código HTML
 author: eiximenis
 
 date: 2010-11-12T12:42:00+00:00

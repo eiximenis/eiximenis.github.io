@@ -1,5 +1,6 @@
 ---
 title: Caliburn… ¿sientes el poder de MVVM en tus manos?
+description: Caliburn… ¿sientes el poder de MVVM en tus manos?
 author: eiximenis
 
 date: 2010-02-12T17:22:00+00:00

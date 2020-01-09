@@ -1,5 +1,6 @@
 ---
 title: El valor de una certificación.
+description: El valor de una certificación.
 author: eiximenis
 
 date: 2008-12-16T08:54:06+00:00

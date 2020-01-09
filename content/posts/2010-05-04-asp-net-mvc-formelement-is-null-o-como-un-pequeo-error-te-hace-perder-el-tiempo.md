@@ -1,5 +1,6 @@
 ---
 title: '[ASP.NET MVC] ‘formElement is null’ o como un pequeño error te hace perder el tiempo…'
+description: '[ASP.NET MVC] ‘formElement is null’ o como un pequeño error te hace perder el tiempo…'
 author: eiximenis
 
 date: 2010-05-04T12:17:37+00:00

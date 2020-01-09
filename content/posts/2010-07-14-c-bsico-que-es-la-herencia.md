@@ -1,5 +1,6 @@
 ---
 title: '[C# Básico] ¿Que es la herencia?'
+description: '[C# Básico] ¿Que es la herencia?'
 author: eiximenis
 
 date: 2010-07-14T08:58:31+00:00

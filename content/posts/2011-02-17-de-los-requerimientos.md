@@ -1,5 +1,6 @@
 ---
 title: De los requerimientos…
+description: De los requerimientos…
 author: eiximenis
 
 date: 2011-02-17T20:35:56+00:00

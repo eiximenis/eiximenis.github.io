@@ -1,5 +1,6 @@
 ---
 title: El problema de la WebGrid con VS2012RC y ASP.NET MVC4
+description: El problema de la WebGrid con VS2012RC y ASP.NET MVC4
 author: eiximenis
 
 date: 2012-08-02T13:23:45+00:00

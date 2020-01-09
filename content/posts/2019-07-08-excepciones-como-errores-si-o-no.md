@@ -1,5 +1,6 @@
 ---
 title: 'Excepciones como errores: ¿Sí o no?'
+description: 'Excepciones como errores: ¿Sí o no?'
 author: eiximenis
 
 date: 2019-07-08T17:43:59+00:00

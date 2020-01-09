@@ -1,5 +1,6 @@
 ---
 title: '[ASP.NET MVC] Pasar parámetros a través del PathInfo'
+description: '[ASP.NET MVC] Pasar parámetros a través del PathInfo'
 author: eiximenis
 
 date: 2011-04-03T21:06:48+00:00

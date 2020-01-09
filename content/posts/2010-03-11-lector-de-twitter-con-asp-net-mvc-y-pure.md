@@ -1,5 +1,6 @@
 ---
 title: Lector de Twitter con ASP.NET MVC y Pure
+description: Lector de Twitter con ASP.NET MVC y Pure
 author: eiximenis
 
 date: 2010-03-11T18:36:00+00:00

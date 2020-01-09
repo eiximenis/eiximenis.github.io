@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: Cómo usar la sesión?'
+description: 'ASP.NET MVC Q&A: Cómo usar la sesión?'
 author: eiximenis
 
 date: 2010-06-30T18:54:52+00:00

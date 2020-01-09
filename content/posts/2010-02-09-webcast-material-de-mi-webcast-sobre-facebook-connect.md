@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] Material de mi webcast sobre Facebook Connect'
+description: '[WebCast] Material de mi webcast sobre Facebook Connect'
 author: eiximenis
 
 date: 2010-02-09T09:27:20+00:00

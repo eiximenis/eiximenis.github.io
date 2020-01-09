@@ -1,5 +1,6 @@
 ---
 title: 'ObservableCollection<T>, INotifyPropertyChanged y WinRT'
+description: 'ObservableCollection<T>, INotifyPropertyChanged y WinRT'
 author: eiximenis
 
 date: 2011-10-16T12:35:00+00:00

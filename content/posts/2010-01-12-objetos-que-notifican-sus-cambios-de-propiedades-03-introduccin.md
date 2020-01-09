@@ -1,5 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (0/3): Introducción'
+description: 'Objetos que notifican sus cambios de propiedades (0/3): Introducción'
 author: eiximenis
 
 date: 2010-01-12T13:01:08+00:00

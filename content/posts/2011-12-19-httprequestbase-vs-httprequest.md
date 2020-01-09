@@ -1,5 +1,6 @@
 ---
 title: HttpRequestBase vs HttpRequest
+description: HttpRequestBase vs HttpRequest
 author: eiximenis
 
 date: 2011-12-19T15:03:50+00:00

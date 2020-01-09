@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: ¿Como reciben parámetros los controladores?'
+description: 'ASP.NET MVC Q&A: ¿Como reciben parámetros los controladores?'
 author: eiximenis
 
 date: 2010-07-02T12:04:06+00:00

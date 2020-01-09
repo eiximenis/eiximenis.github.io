@@ -1,5 +1,6 @@
 ---
 title: 'Marker Interface: ¿Patrón o Anti-patrón?'
+description: 'Marker Interface: ¿Patrón o Anti-patrón?'
 author: eiximenis
 
 date: 2018-01-19T13:14:31+00:00

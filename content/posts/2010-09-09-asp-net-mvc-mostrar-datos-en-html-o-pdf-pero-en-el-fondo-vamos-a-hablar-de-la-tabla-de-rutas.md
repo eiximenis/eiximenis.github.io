@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Mostrar datos en HTML o PDF (pero en el fondo vamos a hablar de la tabla de rutas).'
+description: 'ASP.NET MVC: Mostrar datos en HTML o PDF (pero en el fondo vamos a hablar de la tabla de rutas).'
 author: eiximenis
 
 date: 2010-09-09T13:13:19+00:00

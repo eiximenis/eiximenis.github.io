@@ -1,5 +1,6 @@
 ---
 title: Kubernetes (3) – Controladores Ingress
+description: Kubernetes (3) – Controladores Ingress
 author: eiximenis
 
 date: 2018-01-03T16:48:58+00:00

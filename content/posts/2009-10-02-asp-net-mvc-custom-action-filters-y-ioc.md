@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC Custom Action Filters y IoC
+description: ASP.NET MVC Custom Action Filters y IoC
 author: eiximenis
 
 date: 2009-10-02T14:48:12+00:00

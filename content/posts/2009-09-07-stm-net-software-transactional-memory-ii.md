@@ -1,5 +1,6 @@
 ---
 title: 'STM.NET: Software Transactional Memory (ii)'
+description: 'STM.NET: Software Transactional Memory (ii)'
 author: eiximenis
 
 date: 2009-09-07T11:26:00+00:00

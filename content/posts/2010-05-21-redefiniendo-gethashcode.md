@@ -1,5 +1,6 @@
 ---
 title: Redefiniendo GetHashCode
+description: Redefiniendo GetHashCode
 author: eiximenis
 
 date: 2010-05-21T11:45:55+00:00

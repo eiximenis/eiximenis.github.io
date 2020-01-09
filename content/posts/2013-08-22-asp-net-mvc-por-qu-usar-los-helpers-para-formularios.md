@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC – ¿Por qué usar los helpers para formularios?
+description: ASP.NET MVC – ¿Por qué usar los helpers para formularios?
 author: eiximenis
 
 date: 2013-08-22T14:10:00+00:00

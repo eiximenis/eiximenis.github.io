@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Validación remota'
+description: 'ASP.NET MVC3: Validación remota'
 author: eiximenis
 
 date: 2011-01-14T10:22:00+00:00

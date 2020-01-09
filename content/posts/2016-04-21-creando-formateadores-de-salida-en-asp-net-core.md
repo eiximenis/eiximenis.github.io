@@ -1,5 +1,6 @@
 ---
 title: Creando formateadores de salida en asp.net core
+description: Creando formateadores de salida en asp.net core
 author: eiximenis
 
 date: 2016-04-21T07:51:29+00:00

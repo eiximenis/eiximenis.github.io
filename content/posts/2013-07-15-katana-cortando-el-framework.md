@@ -1,5 +1,6 @@
 ---
 title: 'Katana: Cortando el framework'
+description: 'Katana: Cortando el framework'
 author: eiximenis
 
 date: 2013-07-15T13:40:00+00:00

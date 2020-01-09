@@ -1,5 +1,6 @@
 ---
 title: Integrando oAuth con NancyFx–(i)
+description: Integrando oAuth con NancyFx–(i)
 author: eiximenis
 
 date: 2013-11-29T16:01:18+00:00

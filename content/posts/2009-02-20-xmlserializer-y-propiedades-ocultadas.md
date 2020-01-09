@@ -1,5 +1,6 @@
 ---
 title: XmlSerializer y propiedades ocultadas
+description: XmlSerializer y propiedades ocultadas
 author: eiximenis
 
 date: 2009-02-20T09:28:00+00:00

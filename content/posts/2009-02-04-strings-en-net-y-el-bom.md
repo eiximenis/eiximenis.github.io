@@ -1,5 +1,6 @@
 ---
 title: Strings en .NET y el BOM
+description: Strings en .NET y el BOM
 author: eiximenis
 
 date: 2009-02-04T20:12:00+00:00

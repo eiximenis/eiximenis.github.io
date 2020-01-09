@@ -1,5 +1,6 @@
 ---
 title: El fallo de ASP.NET MVC y el helper Html.DropDownFor
+description: El fallo de ASP.NET MVC y el helper Html.DropDownFor
 author: eiximenis
 
 date: 2013-11-12T14:54:22+00:00

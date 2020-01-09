@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC vNext – Controladores “POCO”
+description: ASP.NET MVC vNext – Controladores “POCO”
 author: eiximenis
 
 date: 2014-06-26T10:12:29+00:00

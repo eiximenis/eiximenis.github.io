@@ -1,5 +1,6 @@
 ---
 title: '[Code Contracts] ccrewrite – “Unresolved assembly reference not allowed”'
+description: '[Code Contracts] ccrewrite – “Unresolved assembly reference not allowed”'
 author: eiximenis
 
 date: 2009-06-11T17:22:43+00:00

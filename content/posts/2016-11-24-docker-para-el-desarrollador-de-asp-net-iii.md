@@ -1,5 +1,6 @@
 ---
 title: Docker para el desarrollador de asp.net (iii)
+description: Docker para el desarrollador de asp.net (iii)
 author: eiximenis
 
 date: 2016-11-24T09:27:48+00:00

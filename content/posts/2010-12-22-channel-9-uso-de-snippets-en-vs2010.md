@@ -1,5 +1,6 @@
 ---
 title: '[Channel 9] Uso de snippets en VS2010'
+description: '[Channel 9] Uso de snippets en VS2010'
 author: eiximenis
 
 date: 2010-12-22T08:48:00+00:00

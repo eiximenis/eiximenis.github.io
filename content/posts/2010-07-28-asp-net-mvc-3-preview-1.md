@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC 3 – Preview 1
+description: ASP.NET MVC 3 – Preview 1
 author: eiximenis
 
 date: 2010-07-28T19:03:00+00:00

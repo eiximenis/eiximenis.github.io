@@ -1,5 +1,6 @@
 ---
 title: '[Debate] ¿Debería tener C# referencias const?'
+description: '[Debate] ¿Debería tener C# referencias const?'
 author: eiximenis
 
 date: 2011-11-03T12:46:29+00:00

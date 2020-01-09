@@ -1,5 +1,6 @@
 ---
 title: VS bloquea assemblies cargados desde la web
+description: VS bloquea assemblies cargados desde la web
 author: eiximenis
 
 date: 2010-05-28T15:03:00+00:00

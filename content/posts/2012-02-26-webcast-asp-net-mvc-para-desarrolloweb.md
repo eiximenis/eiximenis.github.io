@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC para desarrolloweb'
+description: '[WebCast] ASP.NET MVC para desarrolloweb'
 author: eiximenis
 
 date: 2012-02-26T20:24:57+00:00

@@ -1,5 +1,6 @@
 ---
 title: '[Webcast–AUGES] Introducción a ASP.NET MVC'
+description: '[Webcast–AUGES] Introducción a ASP.NET MVC'
 author: eiximenis
 
 date: 2011-05-11T22:26:04+00:00

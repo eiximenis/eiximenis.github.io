@@ -1,5 +1,6 @@
 ---
 title: 'Objective-C para desarrolladores de C# (i)–Introducción'
+description: 'Objective-C para desarrolladores de C# (i)–Introducción'
 author: eiximenis
 
 date: 2013-02-13T18:34:02+00:00

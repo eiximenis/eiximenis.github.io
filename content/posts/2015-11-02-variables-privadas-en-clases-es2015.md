@@ -1,5 +1,6 @@
 ---
 title: Variables privadas en clases ES2015
+description: Variables privadas en clases ES2015
 author: eiximenis
 
 date: 2015-11-02T18:11:02+00:00

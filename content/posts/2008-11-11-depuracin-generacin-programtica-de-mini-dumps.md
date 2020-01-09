@@ -1,5 +1,6 @@
 ---
 title: '[Depuración] Generación programática de mini dumps'
+description: '[Depuración] Generación programática de mini dumps'
 author: eiximenis
 
 date: 2008-11-11T11:37:58+00:00

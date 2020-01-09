@@ -1,5 +1,6 @@
 ---
 title: Acropolis, VS2008 SP1 y el diseñador de WPF parece que no se entienden
+description: Acropolis, VS2008 SP1 y el diseñador de WPF parece que no se entienden
 author: eiximenis
 
 date: 2008-09-10T12:26:00+00:00

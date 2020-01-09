@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC – Formato de salida según Content-Type
+description: ASP.NET MVC – Formato de salida según Content-Type
 author: eiximenis
 
 date: 2010-09-10T13:03:36+00:00

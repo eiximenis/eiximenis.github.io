@@ -1,5 +1,6 @@
 ---
 title: Diseñar clases para ser heredadas…
+description: Diseñar clases para ser heredadas…
 author: eiximenis
 
 date: 2010-04-12T08:55:43+00:00

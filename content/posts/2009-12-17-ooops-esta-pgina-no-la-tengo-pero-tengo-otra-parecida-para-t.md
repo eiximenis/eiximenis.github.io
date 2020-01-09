@@ -1,5 +1,6 @@
 ---
 title: Ooops.. esta página no la tengo, pero tengo otra parecida para tí…
+description: Ooops.. esta página no la tengo, pero tengo otra parecida para tí…
 author: eiximenis
 
 date: 2009-12-17T11:53:22+00:00

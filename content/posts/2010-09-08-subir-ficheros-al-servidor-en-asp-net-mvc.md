@@ -1,5 +1,6 @@
 ---
 title: Subir ficheros al servidor en ASP.NET MVC
+description: Subir ficheros al servidor en ASP.NET MVC
 author: eiximenis
 
 date: 2010-09-08T13:23:05+00:00

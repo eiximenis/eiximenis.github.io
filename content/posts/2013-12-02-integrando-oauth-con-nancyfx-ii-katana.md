@@ -1,5 +1,6 @@
 ---
 title: Integrando oAuth con NancyFx (ii) – Katana
+description: Integrando oAuth con NancyFx (ii) – Katana
 author: eiximenis
 
 date: 2013-12-02T17:57:10+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'Facebook Connect (iv): Que todo el mundo sepa lo que has hecho!'
+description: 'Facebook Connect (iv): Que todo el mundo sepa lo que has hecho!'
 author: eiximenis
 
 date: 2010-02-02T12:27:00+00:00

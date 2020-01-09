@@ -1,5 +1,6 @@
 ---
 title: CommandPattern extendiendo Unity
+description: CommandPattern extendiendo Unity
 author: eiximenis
 
 date: 2009-02-13T13:59:00+00:00

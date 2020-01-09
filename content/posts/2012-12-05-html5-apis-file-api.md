@@ -1,5 +1,6 @@
 ---
 title: 'HTML5 Apis: File API'
+description: 'HTML5 Apis: File API'
 author: eiximenis
 
 date: 2012-12-05T16:53:00+00:00

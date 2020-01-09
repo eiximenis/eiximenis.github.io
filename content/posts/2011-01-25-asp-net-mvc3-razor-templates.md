@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Razor Templates'
+description: 'ASP.NET MVC3: Razor Templates'
 author: eiximenis
 
 date: 2011-01-25T16:38:19+00:00

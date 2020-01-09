@@ -1,5 +1,6 @@
 ---
 title: La sencillez de una interfaz compleja
+description: La sencillez de una interfaz compleja
 author: eiximenis
 
 date: 2009-03-12T11:11:00+00:00

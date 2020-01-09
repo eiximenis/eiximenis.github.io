@@ -1,5 +1,6 @@
 ---
 title: '[WPF] ItemsControl y Canvas'
+description: '[WPF] ItemsControl y Canvas'
 author: eiximenis
 
 date: 2008-09-23T17:30:00+00:00

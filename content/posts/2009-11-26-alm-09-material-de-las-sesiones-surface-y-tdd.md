@@ -1,5 +1,6 @@
 ---
 title: '[ALM 09] Material de las sesiones: Surface y TDD'
+description: '[ALM 09] Material de las sesiones: Surface y TDD'
 author: eiximenis
 
 date: 2009-11-26T14:56:06+00:00

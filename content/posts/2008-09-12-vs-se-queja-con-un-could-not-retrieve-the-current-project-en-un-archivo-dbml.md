@@ -1,5 +1,6 @@
 ---
 title: VS se queja con un "Could not retrieve the current project" en un archivo .dbml
+description: VS se queja con un "Could not retrieve the current project" en un archivo .dbml
 author: eiximenis
 
 date: 2008-09-12T08:19:00+00:00

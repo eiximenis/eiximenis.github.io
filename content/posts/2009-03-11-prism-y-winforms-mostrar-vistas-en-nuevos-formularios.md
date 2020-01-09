@@ -1,5 +1,6 @@
 ---
 title: 'PRISM y Winforms: Mostrar vistas en nuevos formularios'
+description: 'PRISM y Winforms: Mostrar vistas en nuevos formularios'
 author: eiximenis
 
 date: 2009-03-11T08:58:00+00:00

@@ -1,5 +1,6 @@
 ---
 title: La dualidad objeto-función en JavaScript
+description: La dualidad objeto-función en JavaScript
 author: eiximenis
 
 date: 2015-10-08T21:28:00+00:00

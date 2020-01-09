@@ -1,5 +1,6 @@
 ---
 title: IoC o el poder de ceder el control
+description: IoC o el poder de ceder el control
 author: eiximenis
 
 date: 2008-10-28T11:09:00+00:00

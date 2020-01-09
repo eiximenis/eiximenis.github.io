@@ -1,5 +1,6 @@
 ---
 title: '[WPF] Library project file cannot specify ApplicationDefinition element'
+description: '[WPF] Library project file cannot specify ApplicationDefinition element'
 author: eiximenis
 
 date: 2008-10-14T17:07:00+00:00

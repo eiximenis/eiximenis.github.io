@@ -1,5 +1,6 @@
 ---
 title: Securizar tu WebApi con Azure Mobile Services
+description: Securizar tu WebApi con Azure Mobile Services
 author: eiximenis
 
 date: 2014-12-18T15:08:57+00:00

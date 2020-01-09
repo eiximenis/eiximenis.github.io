@@ -1,5 +1,6 @@
 ---
 title: 'IoC o el poder de ceder el control (ii): Dependency Injection'
+description: 'IoC o el poder de ceder el control (ii): Dependency Injection'
 author: eiximenis
 
 date: 2009-10-08T12:11:04+00:00

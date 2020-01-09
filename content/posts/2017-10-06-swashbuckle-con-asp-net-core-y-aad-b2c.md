@@ -1,5 +1,6 @@
 ---
 title: Swashbuckle con ASP.NET Core y AAD B2C
+description: Swashbuckle con ASP.NET Core y AAD B2C
 author: eiximenis
 
 date: 2017-10-06T09:11:43+00:00

@@ -1,5 +1,6 @@
 ---
 title: Más sobre Code Contracts…
+description: Más sobre Code Contracts…
 author: eiximenis
 
 date: 2009-06-09T14:06:00+00:00

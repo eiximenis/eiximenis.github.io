@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] Aprovecha el poder de facebook en tu web.'
+description: '[WebCast] Aprovecha el poder de facebook en tu web.'
 author: eiximenis
 
 date: 2010-01-21T08:27:18+00:00

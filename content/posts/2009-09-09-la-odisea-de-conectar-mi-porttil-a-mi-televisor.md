@@ -1,5 +1,6 @@
 ---
 title: La odisea de conectar mi portátil a mi televisor…
+description: La odisea de conectar mi portátil a mi televisor…
 author: eiximenis
 
 date: 2009-09-09T09:17:01+00:00

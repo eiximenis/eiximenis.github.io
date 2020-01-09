@@ -1,5 +1,6 @@
 ---
 title: 'TIP: DebuggerDisplay'
+description: 'TIP: DebuggerDisplay'
 author: eiximenis
 
 date: 2014-06-13T09:50:16+00:00

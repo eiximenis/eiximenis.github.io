@@ -1,5 +1,6 @@
 ---
 title: Unity, Proxies, AOP y un poco de todo eso…
+description: Unity, Proxies, AOP y un poco de todo eso…
 author: eiximenis
 
 date: 2009-09-24T11:34:00+00:00

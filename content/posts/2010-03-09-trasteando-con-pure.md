@@ -1,5 +1,6 @@
 ---
 title: Trasteando con PURE…
+description: Trasteando con PURE…
 author: eiximenis
 
 date: 2010-03-09T17:35:00+00:00

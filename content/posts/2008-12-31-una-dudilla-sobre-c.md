@@ -1,5 +1,6 @@
 ---
 title: 'Una dudilla sobre C#'
+description: 'Una dudilla sobre C#'
 author: eiximenis
 
 date: 2008-12-31T11:40:28+00:00

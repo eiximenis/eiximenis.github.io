@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC3 Beta: Mis impresiones'
+description: 'ASP.NET MVC3 Beta: Mis impresiones'
 author: eiximenis
 
 date: 2010-10-07T14:19:00+00:00

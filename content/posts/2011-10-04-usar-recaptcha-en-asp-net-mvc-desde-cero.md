@@ -1,5 +1,6 @@
 ---
 title: Usar Recaptcha en ASP.NET MVC (desde cero)
+description: Usar Recaptcha en ASP.NET MVC (desde cero)
 author: eiximenis
 
 date: 2011-10-04T20:19:54+00:00

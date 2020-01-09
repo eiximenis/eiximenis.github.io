@@ -1,5 +1,6 @@
 ---
 title: Unobtrusive Ajax en MVC3
+description: Unobtrusive Ajax en MVC3
 author: eiximenis
 
 date: 2010-11-09T11:54:22+00:00

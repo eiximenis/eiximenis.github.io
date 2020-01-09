@@ -1,5 +1,6 @@
 ---
 title: Explorando ASP.NET MVC 2.0… Templated UI
+description: Explorando ASP.NET MVC 2.0… Templated UI
 author: eiximenis
 
 date: 2009-09-25T09:59:09+00:00

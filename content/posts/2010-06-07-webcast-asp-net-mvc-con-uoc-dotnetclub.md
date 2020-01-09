@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC con UOC DotNetClub'
+description: '[WebCast] ASP.NET MVC con UOC DotNetClub'
 author: eiximenis
 
 date: 2010-06-07T14:45:00+00:00

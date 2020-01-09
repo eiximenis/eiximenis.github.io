@@ -1,5 +1,6 @@
 ---
 title: '[Evento] Hasta donde se puede llegar con ASP.NET MVC?'
+description: '[Evento] Hasta donde se puede llegar con ASP.NET MVC?'
 author: eiximenis
 
 date: 2010-11-19T12:19:49+00:00

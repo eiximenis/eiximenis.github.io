@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición… Una alternativa ¿igual?'
+description: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición… Una alternativa ¿igual?'
 author: eiximenis
 
 date: 2011-01-19T11:04:53+00:00

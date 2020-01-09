@@ -1,5 +1,6 @@
 ---
 title: 'Divertimento: Cadenas de longitud máxima fija en C#'
+description: 'Divertimento: Cadenas de longitud máxima fija en C#'
 author: eiximenis
 
 date: 2013-10-16T22:49:25+00:00

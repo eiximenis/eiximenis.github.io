@@ -1,5 +1,6 @@
 ---
 title: El Guille en Igualada
+description: El Guille en Igualada
 author: eiximenis
 
 date: 2008-10-10T17:11:00+00:00

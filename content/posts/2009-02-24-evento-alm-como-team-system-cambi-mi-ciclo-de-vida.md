@@ -1,5 +1,6 @@
 ---
 title: 'Evento ALM: Como Team System cambió mi (ciclo de) vida'
+description: 'Evento ALM: Como Team System cambió mi (ciclo de) vida'
 author: eiximenis
 
 date: 2009-02-24T15:12:00+00:00

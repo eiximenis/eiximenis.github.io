@@ -1,5 +1,6 @@
 ---
 title: Integra oAuth en tus “viejas” aplicaciones ASP.NET MVC
+description: Integra oAuth en tus “viejas” aplicaciones ASP.NET MVC
 author: eiximenis
 
 date: 2012-11-14T09:20:05+00:00

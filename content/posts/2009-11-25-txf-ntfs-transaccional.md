@@ -1,5 +1,6 @@
 ---
 title: TxF – NTFS Transaccional
+description: TxF – NTFS Transaccional
 author: eiximenis
 
 date: 2009-11-25T17:14:25+00:00

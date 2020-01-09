@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC3 – Filtros que no son atributos
+description: ASP.NET MVC3 – Filtros que no son atributos
 author: eiximenis
 
 date: 2010-07-29T12:03:39+00:00

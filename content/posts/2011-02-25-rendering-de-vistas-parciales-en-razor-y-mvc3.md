@@ -1,5 +1,6 @@
 ---
 title: Rendering de vistas parciales en Razor y MVC3
+description: Rendering de vistas parciales en Razor y MVC3
 author: eiximenis
 
 date: 2011-02-25T08:53:57+00:00

@@ -1,5 +1,6 @@
 ---
 title: gRPC y "no gRPC" todo junto en el mismo proyecto
+description: gRPC y "no gRPC" todo junto en el mismo proyecto
 author: eiximenis
 
 date: 2019-06-27T09:22:03+00:00

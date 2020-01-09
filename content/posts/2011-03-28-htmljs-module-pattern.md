@@ -1,5 +1,6 @@
 ---
 title: '[HTML/JS] Module pattern'
+description: '[HTML/JS] Module pattern'
 author: eiximenis
 
 date: 2011-03-28T17:31:53+00:00

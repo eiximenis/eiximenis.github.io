@@ -1,5 +1,6 @@
 ---
 title: Usar vscode para depurar tus contenedores netcore
+description: Usar vscode para depurar tus contenedores netcore
 author: eiximenis
 
 date: 2018-06-15T11:14:24+00:00

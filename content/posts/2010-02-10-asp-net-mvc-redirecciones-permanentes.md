@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Redirecciones permanentes'
+description: 'ASP.NET MVC: Redirecciones permanentes'
 author: eiximenis
 
 date: 2010-02-10T09:54:00+00:00

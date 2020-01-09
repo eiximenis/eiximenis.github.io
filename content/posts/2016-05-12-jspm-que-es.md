@@ -1,5 +1,6 @@
 ---
 title: ¿Qué es jspm?
+description: ¿Qué es jspm?
 author: eiximenis
 
 date: 2016-05-12T10:00:59+00:00

@@ -1,5 +1,6 @@
 ---
 title: PRISM y AvalonDock
+description: PRISM y AvalonDock
 author: eiximenis
 
 date: 2009-01-20T12:56:00+00:00

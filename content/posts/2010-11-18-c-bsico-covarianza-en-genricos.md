@@ -1,5 +1,6 @@
 ---
 title: 'C# Básico: Covarianza en genéricos'
+description: 'C# Básico: Covarianza en genéricos'
 author: eiximenis
 
 date: 2010-11-18T14:49:00+00:00

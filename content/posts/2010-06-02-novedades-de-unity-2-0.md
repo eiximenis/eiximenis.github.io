@@ -1,5 +1,6 @@
 ---
 title: Novedades de Unity 2.0
+description: Novedades de Unity 2.0
 author: eiximenis
 
 date: 2010-06-02T15:02:56+00:00

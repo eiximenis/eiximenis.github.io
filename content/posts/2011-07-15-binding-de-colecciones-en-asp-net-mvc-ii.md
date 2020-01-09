@@ -1,5 +1,6 @@
 ---
 title: Binding de colecciones en ASP.NET MVC (ii)
+description: Binding de colecciones en ASP.NET MVC (ii)
 author: eiximenis
 
 date: 2011-07-15T17:00:00+00:00

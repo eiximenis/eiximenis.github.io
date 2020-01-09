@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Enlazar una propiedad a jQuery UI Slider'
+description: 'ASP.NET MVC: Enlazar una propiedad a jQuery UI Slider'
 author: eiximenis
 
 date: 2011-10-22T10:32:13+00:00

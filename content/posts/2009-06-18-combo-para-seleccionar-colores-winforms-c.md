@@ -1,5 +1,6 @@
 ---
 title: 'Combo para seleccionar colores (Winforms + C#)'
+description: 'Combo para seleccionar colores (Winforms + C#)'
 author: eiximenis
 
 date: 2009-06-18T18:24:00+00:00

@@ -1,5 +1,6 @@
 ---
 title: Linq To SQL y Repository Pattern… sí, pero ojo!
+description: Linq To SQL y Repository Pattern… sí, pero ojo!
 author: eiximenis
 
 date: 2010-03-04T10:13:00+00:00

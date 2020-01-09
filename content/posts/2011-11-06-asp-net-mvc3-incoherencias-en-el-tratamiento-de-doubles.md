@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Incoherencias en el tratamiento de doubles'
+description: 'ASP.NET MVC3: Incoherencias en el tratamiento de doubles'
 author: eiximenis
 
 date: 2011-11-06T11:29:44+00:00

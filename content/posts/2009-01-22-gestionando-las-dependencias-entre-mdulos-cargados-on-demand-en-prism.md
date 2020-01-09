@@ -1,5 +1,6 @@
 ---
 title: Gestionando las dependencias entre módulos cargados on-demand en PRISM
+description: Gestionando las dependencias entre módulos cargados on-demand en PRISM
 author: eiximenis
 
 date: 2009-01-22T14:33:00+00:00

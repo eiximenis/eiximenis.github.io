@@ -1,5 +1,6 @@
 ---
 title: Soy un Geek!
+description: Soy un Geek!
 author: eiximenis
 date: 2008-08-07T16:51:00+00:00
 geeks_url: /?p=1418

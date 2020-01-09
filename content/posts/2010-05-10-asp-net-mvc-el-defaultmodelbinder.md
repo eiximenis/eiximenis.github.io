@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: El DefaultModelBinder'
+description: 'ASP.NET MVC: El DefaultModelBinder'
 author: eiximenis
 
 date: 2010-05-10T17:01:00+00:00

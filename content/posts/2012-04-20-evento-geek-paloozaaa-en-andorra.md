@@ -1,5 +1,6 @@
 ---
 title: '[Evento] ¡Geek-â-Paloozaaa en Andorra!'
+description: '[Evento] ¡Geek-â-Paloozaaa en Andorra!'
 author: eiximenis
 
 date: 2012-04-20T12:27:56+00:00

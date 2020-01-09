@@ -1,5 +1,6 @@
 ---
 title: 'Kubernetes (1): Componentes de Kubernetes'
+description: 'Kubernetes (1): Componentes de Kubernetes'
 author: eiximenis
 
 date: 2017-12-19T11:10:29+00:00

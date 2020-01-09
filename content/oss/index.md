@@ -1,5 +1,6 @@
 ---
 title: "Proyectos Open Source"
+description: "Proyectos Open Source"
 ---
 
 En mi perfil de [Github](https://github.com/eiximenis) puedes ver todos mis repositorios, pero aquí simplemente te cuento algunos de mis proyectos open source que desarrollé, estoy desarrollando o que tengo en mente...

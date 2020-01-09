@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC–Traduciendo las validaciones de CompareAttribute
+description: ASP.NET MVC–Traduciendo las validaciones de CompareAttribute
 author: eiximenis
 
 date: 2014-10-21T09:29:43+00:00

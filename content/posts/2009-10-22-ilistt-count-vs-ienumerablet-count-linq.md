@@ -1,5 +1,6 @@
 ---
 title: 'IList<T>.Count vs IEnumerable<T>.Count() (LINQ)'
+description: 'IList<T>.Count vs IEnumerable<T>.Count() (LINQ)'
 author: eiximenis
 
 date: 2009-10-22T17:22:52+00:00

@@ -1,5 +1,6 @@
 ---
 title: Explorando ASP.NET MVC 2.0… áreas
+description: Explorando ASP.NET MVC 2.0… áreas
 author: eiximenis
 
 date: 2009-09-22T18:49:00+00:00

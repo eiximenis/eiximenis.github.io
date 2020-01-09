@@ -1,5 +1,6 @@
 ---
 title: netstandard–El “estándar” que viene
+description: netstandard–El “estándar” que viene
 author: eiximenis
 
 date: 2016-04-25T10:00:59+00:00

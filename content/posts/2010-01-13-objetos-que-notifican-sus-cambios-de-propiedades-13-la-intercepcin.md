@@ -1,5 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (1/3): La intercepción'
+description: 'Objetos que notifican sus cambios de propiedades (1/3): La intercepción'
 author: eiximenis
 
 date: 2010-01-13T13:35:00+00:00

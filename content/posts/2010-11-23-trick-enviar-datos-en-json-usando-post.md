@@ -1,5 +1,6 @@
 ---
 title: 'Trick: Enviar datos en JSON usando POST'
+description: 'Trick: Enviar datos en JSON usando POST'
 author: eiximenis
 
 date: 2010-11-23T11:36:00+00:00

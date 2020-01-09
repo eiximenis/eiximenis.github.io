@@ -1,5 +1,6 @@
 ---
 title: 'Backbone: El misterioso caso del sync que no se lanzaba'
+description: 'Backbone: El misterioso caso del sync que no se lanzaba'
 author: eiximenis
 
 date: 2013-06-13T13:16:39+00:00

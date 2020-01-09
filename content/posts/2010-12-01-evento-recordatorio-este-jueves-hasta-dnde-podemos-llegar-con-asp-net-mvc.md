@@ -1,5 +1,6 @@
 ---
 title: '[Evento] Recordatorio: Este jueves… Hasta dónde podemos  llegar con ASP.NET MVC?'
+description: '[Evento] Recordatorio: Este jueves… Hasta dónde podemos  llegar con ASP.NET MVC?'
 author: eiximenis
 
 date: 2010-12-01T17:14:21+00:00

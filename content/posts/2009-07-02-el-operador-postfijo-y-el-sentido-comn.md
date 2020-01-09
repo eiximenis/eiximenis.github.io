@@ -1,5 +1,6 @@
 ---
 title: El operador ++ postfijo y el sentido común…
+description: El operador ++ postfijo y el sentido común…
 author: eiximenis
 
 date: 2009-07-02T18:08:00+00:00

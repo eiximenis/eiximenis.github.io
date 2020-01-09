@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC, Controles Chart y Ajax…
+description: ASP.NET MVC, Controles Chart y Ajax…
 author: eiximenis
 
 date: 2009-04-02T14:34:00+00:00

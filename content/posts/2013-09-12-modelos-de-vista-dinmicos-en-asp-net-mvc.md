@@ -1,5 +1,6 @@
 ---
 title: Modelos de vista dinámicos en asp.net mvc
+description: Modelos de vista dinámicos en asp.net mvc
 author: eiximenis
 
 date: 2013-09-12T18:20:18+00:00

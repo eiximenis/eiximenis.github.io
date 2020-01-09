@@ -1,5 +1,6 @@
 ---
 title: Visibilidades en JavaScript
+description: Visibilidades en JavaScript
 author: eiximenis
 
 date: 2014-02-27T10:19:00+00:00

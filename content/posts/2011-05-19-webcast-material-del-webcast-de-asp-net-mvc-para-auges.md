@@ -1,5 +1,6 @@
 ---
 title: '[WebCast] Material del webcast de ASP.NET MVC para AUGES'
+description: '[WebCast] Material del webcast de ASP.NET MVC para AUGES'
 author: eiximenis
 
 date: 2011-05-19T22:19:59+00:00

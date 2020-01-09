@@ -1,5 +1,6 @@
 ---
 title: 'How to: Obtener controles de un formulario con generics II (Linq al rescate).'
+description: 'How to: Obtener controles de un formulario con generics II (Linq al rescate).'
 author: eiximenis
 
 date: 2010-11-08T11:28:41+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'Opinión: De los atributos y su uso…'
+description: 'Opinión: De los atributos y su uso…'
 author: eiximenis
 
 date: 2010-08-14T20:22:16+00:00

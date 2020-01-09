@@ -1,5 +1,6 @@
 ---
 title: '[OT] El peor móvil de la história'
+description: '[OT] El peor móvil de la história'
 author: eiximenis
 
 date: 2012-07-12T15:17:54+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'Tip: Acceder a Minikube desde WSL'
+description: 'Tip: Acceder a Minikube desde WSL'
 author: eiximenis
 
 date: 2018-05-31T14:48:36+00:00

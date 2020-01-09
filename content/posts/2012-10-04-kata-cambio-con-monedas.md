@@ -1,5 +1,6 @@
 ---
 title: '[Kata]- Cambio con monedas'
+description: '[Kata]- Cambio con monedas'
 author: eiximenis
 
 date: 2012-10-04T17:56:10+00:00

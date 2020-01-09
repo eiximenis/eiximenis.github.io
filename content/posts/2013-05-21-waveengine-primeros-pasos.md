@@ -1,5 +1,6 @@
 ---
 title: '[WaveEngine] Primeros pasos…'
+description: '[WaveEngine] Primeros pasos…'
 author: eiximenis
 
 date: 2013-05-21T15:20:00+00:00

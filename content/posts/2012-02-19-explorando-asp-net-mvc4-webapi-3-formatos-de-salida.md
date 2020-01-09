@@ -1,5 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebAPI–3: Formatos de salida'
+description: 'Explorando ASP.NET MVC4 WebAPI–3: Formatos de salida'
 author: eiximenis
 
 date: 2012-02-19T23:19:19+00:00

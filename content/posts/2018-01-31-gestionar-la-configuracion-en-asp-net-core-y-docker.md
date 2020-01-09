@@ -1,5 +1,6 @@
 ---
 title: Gestionar la configuración en asp.net core y Docker
+description: Gestionar la configuración en asp.net core y Docker
 author: eiximenis
 
 date: 2018-01-31T12:40:32+00:00

@@ -1,5 +1,6 @@
 ---
 title: Catálogo en ASP.NET MVC3 sin usar BBDD
+description: Catálogo en ASP.NET MVC3 sin usar BBDD
 author: eiximenis
 
 date: 2012-04-14T00:38:57+00:00

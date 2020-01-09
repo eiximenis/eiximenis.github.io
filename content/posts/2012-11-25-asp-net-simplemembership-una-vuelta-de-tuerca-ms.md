@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET SimpleMembership: Una vuelta de tuerca más'
+description: 'ASP.NET SimpleMembership: Una vuelta de tuerca más'
 author: eiximenis
 
 date: 2012-11-25T23:36:05+00:00

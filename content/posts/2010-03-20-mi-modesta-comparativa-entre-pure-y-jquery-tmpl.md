@@ -1,5 +1,6 @@
 ---
 title: Mi modesta comparativa entre PURE y jQuery-tmpl
+description: Mi modesta comparativa entre PURE y jQuery-tmpl
 author: eiximenis
 
 date: 2010-03-20T10:58:00+00:00

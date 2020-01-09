@@ -1,5 +1,6 @@
 ---
 title: NoSQL… ¿puede ser lo que necesitas?
+description: NoSQL… ¿puede ser lo que necesitas?
 author: eiximenis
 
 date: 2010-02-08T12:36:00+00:00

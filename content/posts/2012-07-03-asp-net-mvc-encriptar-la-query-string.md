@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Encriptar la query string'
+description: 'ASP.NET MVC: Encriptar la query string'
 author: eiximenis
 
 date: 2012-07-03T21:09:16+00:00

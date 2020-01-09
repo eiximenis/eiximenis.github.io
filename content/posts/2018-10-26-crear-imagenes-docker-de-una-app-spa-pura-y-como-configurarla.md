@@ -1,5 +1,6 @@
 ---
 title: Crear imágenes Docker de una app SPA pura y… como configurarla
+description: Crear imágenes Docker de una app SPA pura y… como configurarla
 author: eiximenis
 
 date: 2018-10-26T16:44:13+00:00

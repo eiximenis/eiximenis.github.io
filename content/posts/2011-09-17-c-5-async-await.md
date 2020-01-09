@@ -1,5 +1,6 @@
 ---
 title: 'C# 5: Async / Await'
+description: 'C# 5: Async / Await'
 author: eiximenis
 
 date: 2011-09-17T16:05:53+00:00

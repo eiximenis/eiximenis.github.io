@@ -1,5 +1,6 @@
 ---
 title: ALM Sessions’09 – Test Driven Development
+description: ALM Sessions’09 – Test Driven Development
 author: eiximenis
 
 date: 2009-11-17T18:00:19+00:00

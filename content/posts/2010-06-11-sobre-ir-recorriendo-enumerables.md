@@ -1,5 +1,6 @@
 ---
 title: Sobre ir recorriendo enumerables…
+description: Sobre ir recorriendo enumerables…
 author: eiximenis
 
 date: 2010-06-11T15:28:01+00:00

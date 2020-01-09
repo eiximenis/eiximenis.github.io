@@ -1,5 +1,6 @@
 ---
 title: '[CatDotNet] Material de mi charla sobre ASP.NET MVC'
+description: '[CatDotNet] Material de mi charla sobre ASP.NET MVC'
 author: eiximenis
 
 date: 2010-02-02T09:13:45+00:00

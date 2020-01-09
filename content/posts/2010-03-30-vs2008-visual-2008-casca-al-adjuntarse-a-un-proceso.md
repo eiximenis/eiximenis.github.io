@@ -1,5 +1,6 @@
 ---
 title: '[VS2008] Visual 2008 casca al adjuntarse a un proceso'
+description: '[VS2008] Visual 2008 casca al adjuntarse a un proceso'
 author: eiximenis
 
 date: 2010-03-30T12:22:54+00:00

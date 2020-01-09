@@ -1,5 +1,6 @@
 ---
 title: JavaScript – ¿Qué es exactamente this?
+description: JavaScript – ¿Qué es exactamente this?
 author: eiximenis
 
 date: 2013-10-29T18:00:44+00:00

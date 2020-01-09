@@ -1,5 +1,6 @@
 ---
 title: ASP.NET Core 2–Razor Pages
+description: ASP.NET Core 2–Razor Pages
 author: eiximenis
 
 date: 2017-05-25T10:14:41+00:00

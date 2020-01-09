@@ -1,5 +1,6 @@
 ---
 title: 'Ya es oficial: Microsoft anuncia el abandono de Full Framework'
+description: 'Ya es oficial: Microsoft anuncia el abandono de Full Framework'
 author: eiximenis
 
 date: 2018-12-28T14:51:23+00:00

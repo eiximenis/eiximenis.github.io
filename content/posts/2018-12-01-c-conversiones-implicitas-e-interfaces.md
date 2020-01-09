@@ -1,5 +1,6 @@
 ---
 title: 'C#: Conversiones (explícitas o implícitas) e interfaces'
+description: 'C#: Conversiones (explícitas o implícitas) e interfaces'
 author: eiximenis
 
 date: 2018-12-01T15:12:14+00:00

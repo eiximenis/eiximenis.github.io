@@ -1,5 +1,6 @@
 ---
 title: PRISM y Winforms
+description: PRISM y Winforms
 author: eiximenis
 
 date: 2009-01-23T14:14:00+00:00

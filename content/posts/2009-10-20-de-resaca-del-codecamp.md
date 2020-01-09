@@ -1,5 +1,6 @@
 ---
 title: De resaca… del codecamp!
+description: De resaca… del codecamp!
 author: eiximenis
 
 date: 2009-10-20T10:25:52+00:00

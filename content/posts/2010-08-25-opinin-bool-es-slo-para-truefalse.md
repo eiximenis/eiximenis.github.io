@@ -1,5 +1,6 @@
 ---
 title: 'Opinión: bool es sólo para true/false'
+description: 'Opinión: bool es sólo para true/false'
 author: eiximenis
 
 date: 2010-08-25T13:37:29+00:00

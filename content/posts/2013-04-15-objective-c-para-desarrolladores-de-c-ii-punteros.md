@@ -1,5 +1,6 @@
 ---
 title: 'Objective-C para desarrolladores de C# (ii)–Punteros'
+description: 'Objective-C para desarrolladores de C# (ii)–Punteros'
 author: eiximenis
 
 date: 2013-04-15T17:54:21+00:00

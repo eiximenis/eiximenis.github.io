@@ -1,5 +1,6 @@
 ---
 title: Inyección de dependencias per-request en MVC4 y WebApi
+description: Inyección de dependencias per-request en MVC4 y WebApi
 author: eiximenis
 
 date: 2013-01-31T10:44:00+00:00

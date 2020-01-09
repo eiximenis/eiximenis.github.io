@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC – Tratando con enums.
+description: ASP.NET MVC – Tratando con enums.
 author: eiximenis
 
 date: 2013-06-12T09:04:59+00:00

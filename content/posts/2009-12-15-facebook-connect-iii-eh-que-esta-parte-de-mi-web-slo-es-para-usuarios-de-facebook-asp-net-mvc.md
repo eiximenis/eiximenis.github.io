@@ -1,5 +1,6 @@
 ---
 title: 'Facebook Connect (iii): Eh! Que esta parte de mi web sólo es para usuarios de facebook! (ASP.NET MVC)'
+description: 'Facebook Connect (iii): Eh! Que esta parte de mi web sólo es para usuarios de facebook! (ASP.NET MVC)'
 author: eiximenis
 
 date: 2009-12-15T17:34:38+00:00

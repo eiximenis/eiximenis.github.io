@@ -1,5 +1,6 @@
 ---
 title: Unicode y encodings
+description: Unicode y encodings
 author: eiximenis
 
 date: 2018-10-01T09:40:40+00:00

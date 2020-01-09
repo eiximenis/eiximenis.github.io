@@ -1,5 +1,6 @@
 ---
 title: ASP.NET MVC y Custom Http Handlers
+description: ASP.NET MVC y Custom Http Handlers
 author: eiximenis
 
 date: 2009-05-20T14:57:01+00:00

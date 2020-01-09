@@ -1,5 +1,6 @@
 ---
 title: 'SF Mesh: Primeras impresiones'
+description: 'SF Mesh: Primeras impresiones'
 author: eiximenis
 
 date: 2018-07-18T14:39:20+00:00

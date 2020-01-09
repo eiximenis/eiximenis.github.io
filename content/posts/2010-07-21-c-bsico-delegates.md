@@ -1,5 +1,6 @@
 ---
 title: '[C# Básico] Delegates'
+description: '[C# Básico] Delegates'
 author: eiximenis
 
 date: 2010-07-21T14:56:00+00:00

@@ -1,5 +1,6 @@
 ---
 title: Interfaces “Dockables” con AvalonDock
+description: Interfaces “Dockables” con AvalonDock
 author: eiximenis
 
 date: 2009-03-13T13:39:00+00:00

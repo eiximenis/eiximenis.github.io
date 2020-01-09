@@ -1,5 +1,6 @@
 ---
 title: Enviar un array (JS) a un controlador MVC5
+description: Enviar un array (JS) a un controlador MVC5
 author: eiximenis
 
 date: 2015-07-15T16:11:53+00:00

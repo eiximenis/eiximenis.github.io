@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: ¿Cómo se usan las cookies?'
+description: 'ASP.NET MVC Q&A: ¿Cómo se usan las cookies?'
 author: eiximenis
 
 date: 2010-07-09T13:49:56+00:00

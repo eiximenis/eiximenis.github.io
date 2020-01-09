@@ -1,5 +1,6 @@
 ---
 title: ¿Qué significa un problema P o NP?
+description: ¿Qué significa un problema P o NP?
 author: eiximenis
 
 date: 2019-02-02T12:07:51+00:00

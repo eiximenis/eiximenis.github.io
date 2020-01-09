@@ -1,5 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebAPI – 2: Enrutamiento y verbos HTTP propios'
+description: 'Explorando ASP.NET MVC4 WebAPI – 2: Enrutamiento y verbos HTTP propios'
 author: eiximenis
 
 date: 2012-02-19T10:46:31+00:00

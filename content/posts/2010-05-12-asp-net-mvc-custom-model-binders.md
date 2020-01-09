@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Custom Model Binders'
+description: 'ASP.NET MVC: Custom Model Binders'
 author: eiximenis
 
 date: 2010-05-12T15:13:00+00:00

@@ -1,5 +1,6 @@
 ---
 title: 'Opinión: Var o no var… esa es la cuestión.'
+description: 'Opinión: Var o no var… esa es la cuestión.'
 author: eiximenis
 
 date: 2010-12-21T14:57:00+00:00

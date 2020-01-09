@@ -1,5 +1,6 @@
 ---
 title: 'Opinión: De las palabras de un iluminado y de madurez de comunidad…'
+description: 'Opinión: De las palabras de un iluminado y de madurez de comunidad…'
 author: eiximenis
 
 date: 2011-03-29T09:54:00+00:00

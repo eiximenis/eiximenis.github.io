@@ -1,5 +1,6 @@
 ---
 title: 'Net Core (Linux) Error: System.IO .IOException: The configured user limit on the number of inotify instances has been reached'
+description: 'Net Core (Linux) Error: System.IO .IOException: The configured user limit on the number of inotify instances has been reached'
 author: eiximenis
 
 date: 2019-06-17T09:57:08+00:00

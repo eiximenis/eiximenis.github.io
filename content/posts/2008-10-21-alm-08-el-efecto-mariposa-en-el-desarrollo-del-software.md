@@ -1,5 +1,6 @@
 ---
 title: '[ALM 08] El efecto mariposa en el desarrollo del Software…'
+description: '[ALM 08] El efecto mariposa en el desarrollo del Software…'
 author: eiximenis
 
 date: 2008-10-21T12:03:00+00:00

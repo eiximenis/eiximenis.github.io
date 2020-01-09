@@ -1,5 +1,6 @@
 ---
 title: 'Facebook Connect: Si estás en facebook bienvenido a mi web…'
+description: 'Facebook Connect: Si estás en facebook bienvenido a mi web…'
 author: eiximenis
 
 date: 2009-12-10T09:52:00+00:00

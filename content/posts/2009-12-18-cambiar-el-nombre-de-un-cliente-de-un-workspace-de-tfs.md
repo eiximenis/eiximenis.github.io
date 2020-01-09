@@ -1,5 +1,6 @@
 ---
 title: Cambiar el nombre de un cliente de un Workspace de TFS
+description: Cambiar el nombre de un cliente de un Workspace de TFS
 author: eiximenis
 
 date: 2009-12-18T09:02:00+00:00

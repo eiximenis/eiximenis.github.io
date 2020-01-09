@@ -1,5 +1,6 @@
 ---
 title: Monitorizando nuestros servicios en Kubernetes con Beatpulse
+description: Monitorizando nuestros servicios en Kubernetes con Beatpulse
 author: eiximenis
 
 date: 2018-06-03T16:58:34+00:00

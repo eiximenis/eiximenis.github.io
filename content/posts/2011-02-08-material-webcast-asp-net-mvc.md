@@ -1,5 +1,6 @@
 ---
 title: '[Material] WebCast ASP.NET MVC'
+description: '[Material] WebCast ASP.NET MVC'
 author: eiximenis
 
 date: 2011-02-08T08:51:37+00:00

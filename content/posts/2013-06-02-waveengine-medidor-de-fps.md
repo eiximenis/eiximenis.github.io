@@ -1,5 +1,6 @@
 ---
 title: '[WaveEngine] Medidor de fps'
+description: '[WaveEngine] Medidor de fps'
 author: eiximenis
 
 date: 2013-06-02T09:42:14+00:00

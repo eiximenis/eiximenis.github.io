@@ -1,5 +1,6 @@
 ---
 title: '[Reseña] Curso de CampusMVP para la certificación 70-515'
+description: '[Reseña] Curso de CampusMVP para la certificación 70-515'
 author: eiximenis
 
 date: 2011-04-17T21:35:22+00:00

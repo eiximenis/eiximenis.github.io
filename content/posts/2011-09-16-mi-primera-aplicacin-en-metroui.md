@@ -1,5 +1,6 @@
 ---
 title: Mi primera aplicación en MetroUI
+description: Mi primera aplicación en MetroUI
 author: eiximenis
 
 date: 2011-09-16T19:38:00+00:00

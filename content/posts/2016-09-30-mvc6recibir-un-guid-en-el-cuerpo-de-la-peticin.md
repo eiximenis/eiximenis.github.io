@@ -1,5 +1,6 @@
 ---
 title: MVC6–Recibir un GUID en el cuerpo de la petición
+description: MVC6–Recibir un GUID en el cuerpo de la petición
 author: eiximenis
 
 date: 2016-09-30T10:08:23+00:00

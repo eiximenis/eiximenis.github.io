@@ -1,5 +1,6 @@
 ---
 title: '[DllImport] y clases genéricas'
+description: '[DllImport] y clases genéricas'
 author: eiximenis
 
 date: 2009-02-23T09:52:00+00:00

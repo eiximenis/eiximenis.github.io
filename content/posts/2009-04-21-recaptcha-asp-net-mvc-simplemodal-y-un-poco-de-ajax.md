@@ -1,5 +1,6 @@
 ---
 title: Recaptcha, ASP.NET MVC, SimpleModal y un poco de Ajax…
+description: Recaptcha, ASP.NET MVC, SimpleModal y un poco de Ajax…
 author: eiximenis
 
 date: 2009-04-21T10:11:00+00:00

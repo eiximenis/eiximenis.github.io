@@ -1,5 +1,6 @@
 ---
 title: '[WPF] Databinding con un PasswordBox'
+description: '[WPF] Databinding con un PasswordBox'
 author: eiximenis
 
 date: 2009-01-16T13:32:00+00:00

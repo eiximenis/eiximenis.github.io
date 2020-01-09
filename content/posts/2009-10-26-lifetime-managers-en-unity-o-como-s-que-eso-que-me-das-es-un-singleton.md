@@ -1,5 +1,6 @@
 ---
 title: Lifetime Managers en Unity o ¿como sé que eso que me das es un singleton?
+description: Lifetime Managers en Unity o ¿como sé que eso que me das es un singleton?
 author: eiximenis
 
 date: 2009-10-26T17:31:51+00:00

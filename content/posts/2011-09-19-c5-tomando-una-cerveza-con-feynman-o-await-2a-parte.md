@@ -1,5 +1,6 @@
 ---
 title: 'C#5 Tomando una cerveza con Feynman (o await 2a parte)'
+description: 'C#5 Tomando una cerveza con Feynman (o await 2a parte)'
 author: eiximenis
 
 date: 2011-09-19T16:40:59+00:00

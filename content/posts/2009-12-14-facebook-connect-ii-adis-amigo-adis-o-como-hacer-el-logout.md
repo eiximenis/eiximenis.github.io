@@ -1,5 +1,6 @@
 ---
 title: 'Facebook Connect (ii): Adiós, amigo adiós (o como hacer el logout).'
+description: 'Facebook Connect (ii): Adiós, amigo adiós (o como hacer el logout).'
 author: eiximenis
 
 date: 2009-12-14T16:06:12+00:00

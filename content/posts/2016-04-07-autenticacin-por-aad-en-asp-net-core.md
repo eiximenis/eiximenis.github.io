@@ -1,5 +1,6 @@
 ---
 title: Autenticación por AAD en ASP.NET Core
+description: Autenticación por AAD en ASP.NET Core
 author: eiximenis
 
 date: 2016-04-07T16:33:41+00:00

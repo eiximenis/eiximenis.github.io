@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Create tus propias validaciones'
+description: 'ASP.NET MVC: Create tus propias validaciones'
 author: eiximenis
 
 date: 2010-06-16T12:02:00+00:00

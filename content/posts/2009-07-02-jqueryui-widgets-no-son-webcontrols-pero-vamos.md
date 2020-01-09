@@ -1,5 +1,6 @@
 ---
 title: jQueryUI widgets… no son webcontrols pero vamos…
+description: jQueryUI widgets… no son webcontrols pero vamos…
 author: eiximenis
 
 date: 2009-07-02T15:49:00+00:00

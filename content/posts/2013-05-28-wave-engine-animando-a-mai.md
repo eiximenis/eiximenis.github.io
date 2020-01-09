@@ -1,5 +1,6 @@
 ---
 title: '[Wave Engine] Animando a Mai'
+description: '[Wave Engine] Animando a Mai'
 author: eiximenis
 
 date: 2013-05-28T23:01:40+00:00

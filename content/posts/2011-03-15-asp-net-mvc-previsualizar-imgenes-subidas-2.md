@@ -1,5 +1,6 @@
 ---
 title: 'ASP.NET MVC: Previsualizar imágenes subidas (2)'
+description: 'ASP.NET MVC: Previsualizar imágenes subidas (2)'
 author: eiximenis
 
 date: 2011-03-15T14:54:10+00:00

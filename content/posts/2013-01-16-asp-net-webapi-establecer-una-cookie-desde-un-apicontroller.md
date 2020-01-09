@@ -1,5 +1,6 @@
 ---
 title: ASP.NET WebApi – Establecer una cookie desde un ApiController
+description: ASP.NET WebApi – Establecer una cookie desde un ApiController
 author: eiximenis
 
 date: 2013-01-16T16:47:06+00:00
