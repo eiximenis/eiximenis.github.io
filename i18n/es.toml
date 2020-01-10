@@ -1,0 +1,71 @@
+[search-placeholder]
+other = "Buscar"
+
+[summary-dateformat]
+other = "Jan 2, 2006"
+
+[reading-time]
+other = "min"
+
+[taxo-tags]
+other = "Tags"
+
+[taxo-categories]
+other = "Categorías"
+
+[taxo-series]
+other = "Series"
+
+[archive-dateformat]
+other = "Jan 2"
+
+[talks-dateformat]
+other = "Todas"
+
+[single-dateformat]
+other = "Jan 2, 2006"
+
+[single-related]
+other = "Relacionados"
+
+[single-writtenBy]
+other = "ESCRITO POR"
+
+[toc-label]
+other = "Qué hay aquí"
+
+[counter-site-pv]
+other = "Vistas"
+
+[counter-site-uv]
+other = "Visitantes"
+
+[counter-page-pv]
+other = "vistas"
+
+[donate-message]
+other = ""
+
+[contact-name]
+other = "Nombre"
+
+[contact-email]
+other = "Email"
+
+[contact-message]
+other = "Mensaje"
+
+[contact-send]
+other = "Enviar"
+
+[tooltip-home]
+other = "Incio"
+
+[tooltip-written]
+other = "Escrito en"
+
+[tooltip-modified]
+other = "Modificado en"
+
+[tooltip-reading-time]
+other = "Tiempo lectura"
