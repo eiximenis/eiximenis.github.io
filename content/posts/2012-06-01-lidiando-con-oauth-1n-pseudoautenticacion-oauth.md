@@ -1,6 +1,6 @@
 ---
 title: Lidiando con oAuth (1/n) – Pseudoautenticacion oAuth
-description: Lidiando con oAuth (1/n) – Pseudoautenticacion oAuth
+
 author: eiximenis
 
 date: 2012-06-01T11:04:46+00:00

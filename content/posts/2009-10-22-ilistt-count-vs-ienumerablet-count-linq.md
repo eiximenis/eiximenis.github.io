@@ -1,6 +1,6 @@
 ---
 title: 'IList<T>.Count vs IEnumerable<T>.Count() (LINQ)'
-description: 'IList<T>.Count vs IEnumerable<T>.Count() (LINQ)'
+
 author: eiximenis
 
 date: 2009-10-22T17:22:52+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Te has preguntado alguna vez la diferencia de rendimiento que pueda haber entre el método extensor Count() proporcionado por LINQ y la propiedad Count de la interfaz IList<T>.
+
+<!--more-->
 
 Es decir dado el siguiente código:
 

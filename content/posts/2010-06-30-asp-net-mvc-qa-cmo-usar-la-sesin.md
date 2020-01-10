@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: Cómo usar la sesión?'
-description: 'ASP.NET MVC Q&A: Cómo usar la sesión?'
+
 author: eiximenis
 
 date: 2010-06-30T18:54:52+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos! Este es el primer post de la serie que “nace” a raíz de las preguntas que se me realizaron durante el Webcast de ASP.NET MVC que realizé el pasado 28 de Junio.
 
 Una de las preguntas fue precisamente _si se podia usar la sesión_. La respuesta corta que di en el Webcast fue “_sí: la sesión funciona exactamente igual que en Webforms y en mi opinión el sitio donde usarla es en los controladores_”. Ahora viene la respuesta larga… 🙂
+
+<!--more-->
 
 Acceder a la sesión desde un controlador es trivial:
 

@@ -1,6 +1,6 @@
 ---
 title: 'C# Varianza en delegados'
-description: 'C# Varianza en delegados'
+
 author: eiximenis
 
 date: 2018-02-05T15:02:39+00:00

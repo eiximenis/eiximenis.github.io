@@ -1,6 +1,6 @@
 ---
 title: Trabajando con AKS Devspaces
-description: Trabajando con AKS Devspaces
+
 author: eiximenis
 
 date: 2019-02-13T17:34:10+00:00

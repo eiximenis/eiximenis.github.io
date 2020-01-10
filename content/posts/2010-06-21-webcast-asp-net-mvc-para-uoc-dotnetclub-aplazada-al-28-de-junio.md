@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC para UOC DotNetClub aplazada al 28 de Junio'
-description: '[WebCast] ASP.NET MVC para UOC DotNetClub aplazada al 28 de Junio'
+
 author: eiximenis
 
 date: 2010-06-21T12:31:44+00:00
@@ -16,6 +16,8 @@ categories:
 El WebCast sobre ASP.NET MVC que debía realizar hoy (21 junio) para el UOC DotNetClub se aplaza **una semana** hasta el 28 de junio.
 
 La razón principal es que no vamos a hacerle la competencia a La Roja que juega justo a la misma hora, y me consta que Casillas y Villa entre otros desean asistir al WebCast… 😛 😛 😛 Y tampoco vamos a olvidarnos de los hondureños, claro!!!
+
+<!--more-->
 
 Así que… nos vemos el 28!!!!
 

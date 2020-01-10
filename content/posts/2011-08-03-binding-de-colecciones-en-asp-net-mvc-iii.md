@@ -1,6 +1,6 @@
 ---
 title: Binding de colecciones en ASP.NET MVC (iii)
-description: Binding de colecciones en ASP.NET MVC (iii)
+
 author: eiximenis
 
 date: 2011-08-03T11:50:38+00:00
@@ -13,7 +13,11 @@ categories:
   - Uncategorized
 
 ---
-Bueno… vamos a seguir viendo el tema de binding de colecciones con ASP.NET MVC. En los dos posts anteriores hemos visto:
+Bueno… vamos a seguir viendo el tema de binding de colecciones con ASP.NET MVC. 
+
+<!--more-->
+
+En los dos posts anteriores hemos visto:
 
   * <a href="http://geeks.ms/blogs/etomas/archive/2011/07/09/binding-de-colecciones-en-asp-net-mvc.aspx" target="_blank" rel="noopener noreferrer">Como se enlazan las colecciones en ASP.NET MVC</a> 
   * <a href="http://geeks.ms/blogs/etomas/archive/2011/07/15/binding-de-colecciones-en-asp-net-mvc-ii.aspx" target="_blank" rel="noopener noreferrer">El uso del parámetro de request index</a> 

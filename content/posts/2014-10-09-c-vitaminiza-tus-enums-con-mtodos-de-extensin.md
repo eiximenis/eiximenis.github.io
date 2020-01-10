@@ -1,6 +1,6 @@
 ---
 title: 'C#- Vitaminiza tus enums con métodos de extensión'
-description: 'C#- Vitaminiza tus enums con métodos de extensión'
+
 author: eiximenis
 
 date: 2014-10-09T10:53:50+00:00

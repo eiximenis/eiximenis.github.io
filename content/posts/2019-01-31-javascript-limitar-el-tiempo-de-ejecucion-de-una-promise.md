@@ -1,6 +1,6 @@
 ---
 title: 'JavaScript: Limitar el tiempo de ejecución de una promise'
-description: 'JavaScript: Limitar el tiempo de ejecución de una promise'
+
 author: eiximenis
 
 date: 2019-01-31T15:45:13+00:00

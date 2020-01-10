@@ -1,6 +1,6 @@
 ---
 title: Cambiar el esquema con ASP.NET Identity
-description: Cambiar el esquema con ASP.NET Identity
+
 author: eiximenis
 
 date: 2013-12-23T21:52:54+00:00

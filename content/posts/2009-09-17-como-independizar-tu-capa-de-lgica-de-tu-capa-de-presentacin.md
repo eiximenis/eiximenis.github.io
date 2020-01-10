@@ -1,6 +1,6 @@
 ---
 title: Como independizar tu capa de lógica de tu capa de presentación…
-description: Como independizar tu capa de lógica de tu capa de presentación…
+
 author: eiximenis
 
 date: 2009-09-17T18:36:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 A raiz del [siguiente post][1] del excelente [blog de Oskar][2], [Julio Trujillo][3] comentó en un comentario (copio literalmente) &ldquo;_Sería interesante una explicación de como convertir Forms a WPF o al menos como poder diseñar una capa que permita conectar la capa de negocio a una de WPF o Forms indistintamente_&rdquo;. A este comentario respondí yo con unas cuantas ideas, pero luego Julio pidió a ver si podiamos exponer las &ldquo;buenas prácticas&rdquo; e incluso un ejemplo... Julio, no respondí a tu comentario, simplemente porque el tema es demasiado para un simple comentario, y se merece al menos un post... y estaba sacando tiempo 😉
+
+<!--more-->
 
 Creo que el comentario de Julio, encerraba dos preguntas en una: cómo se puede convertir _fácilmente_ nuestras aplicaciones winforms a wpf y por otro como reaprovechar el máximo código posible. Voy a exponer unas cuantas ideas que quizá os pueden ayudar pero que se resumen en dos: usad una arquitectura n-layer (por cierto que nosotros hablamos sólo de &ldquo;n-capas&rdquo; pero [no confundais n-layer con n-tier][4]), por un lado y el patrón [separated presentation][5] por el otro...
 

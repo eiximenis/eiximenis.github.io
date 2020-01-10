@@ -1,6 +1,6 @@
 ---
 title: Creando tu librería JavaScript con requirejs y gulp
-description: Creando tu librería JavaScript con requirejs y gulp
+
 author: eiximenis
 
 date: 2014-07-15T11:14:00+00:00

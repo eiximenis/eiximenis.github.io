@@ -1,6 +1,6 @@
 ---
 title: Código sin nulls
-description: Código sin nulls
+
 author: eiximenis
 
 date: 2014-09-19T10:29:18+00:00

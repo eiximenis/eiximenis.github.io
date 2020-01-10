@@ -1,6 +1,6 @@
 ---
 title: 'C# Básico: Covarianza en genéricos'
-description: 'C# Básico: Covarianza en genéricos'
+
 author: eiximenis
 
 date: 2010-11-18T14:49:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Hacía tiempo que no escribía nada de la [serie C# Básico][1]. En esta serie voy tratando temas (sin ningún orden en particular) que considero que son fundamentos más o menos elementales del lenguaje. No es un tutorial al uso, cada post es independiente del resto y como digo no están ordenados por nada en particular.
+
+<!--more-->
 
 El post de hoy nace a raíz de una pregunta que vi en los foros de msdn (<http://social.msdn.microsoft.com/Forums/es-ES/vcses/thread/daf808ed-a0aa-4e1e-88ed-64ee60cce918>), donde un usuario preguntaba porque el intentar convertir una List<LogVehiculos> a List<Log> le daba error teniendo en cuenta que LogVehiculos derivaba de Log.
 

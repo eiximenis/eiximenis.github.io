@@ -1,6 +1,6 @@
 ---
 title: 'IoC o el poder de ceder el control (ii): Dependency Injection'
-description: 'IoC o el poder de ceder el control (ii): Dependency Injection'
+
 author: eiximenis
 
 date: 2009-10-08T12:11:04+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hace ya algún tiempecillo publiqué por aquí un post sobre [IoC][1], titulado [IoC o el poder de ceder el control][2]. En el post mencionaba dos de los patrones clásicos asociados con IoC, el _service locator_ y la inyección de dependencias (_dependency injection_), pero luego sólo me centraba en Service Locator. Un par de comentarios en dicho post decían si era posible algo similar pero explicando la inyección de dependencias, así que a ello vamos 😉
+
+<!--more-->
 
 **Dependencias de una clase**
 

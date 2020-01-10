@@ -1,6 +1,6 @@
 ---
 title: 'Angular y React (1/n): Empezando'
-description: 'Angular y React (1/n): Empezando'
+
 author: eiximenis
 
 date: 2014-10-22T18:11:45+00:00

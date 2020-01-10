@@ -1,6 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (1/3): La intercepción'
-description: 'Objetos que notifican sus cambios de propiedades (1/3): La intercepción'
+
 author: eiximenis
 
 date: 2010-01-13T13:35:00+00:00
@@ -16,6 +16,8 @@ categories:
 **Nota:** Este post es el primer post de la <a target="_blank" href="/blogs/etomas/archive/2010/01/12/objetos-que-notifican-sus-cambios-de-propiedades-0-3-introducci-243-n.aspx" rel="noopener noreferrer">serie Objetos que notifican sus cambios de propiedades</a>__.
 
 En este post vamos a ver como configurar la intercepción de Unity, para poder inyectar nuestro código cada vez que se modifiquen las propiedades de un objeto.
+
+<!--more-->
 
 Los que desarrolléis en WPF sabréis que existe una interfaz llamada <a target="_blank" href="http://msdn.microsoft.com/es-es/library/system.componentmodel.inotifypropertychanged.aspx" rel="noopener noreferrer">INotifyPropertyChanged</a>, que se puede implementar para notificar a la interfaz de usuario de que las propiedades de un objeto (generalmente ligado a la interfaz) han modificado, y que por lo tanto la interfaz debe actualizar sus datos.
 

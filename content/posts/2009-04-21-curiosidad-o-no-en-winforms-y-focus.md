@@ -1,6 +1,6 @@
 ---
 title: Curiosidad (o no) en WinForms y focus…
-description: Curiosidad (o no) en WinForms y focus…
+
 author: eiximenis
 
 date: 2009-04-21T15:01:06+00:00
@@ -16,6 +16,8 @@ categories:
 Os cuento una curiosidad de la que me acabo de dar cuenta ahora mismo… Un funcionamiento, como mínimo _curioso_ en Winforms… siempre entendiendo como curioso que “yo no lo sabía y mi no encaja en mi (poco) sentido común”.
 
 El titular sensacionalista sería: **Control desactivado recibe el focus**.
+
+<!--more-->
 
 La realidad es que si en el evento “Leave” de un control, desactivamos el _siguiente_ control que debe recibir el foco, este control NO recibe el foco (como es de esperar) pero su evento “Enter” se ejecuta…
 

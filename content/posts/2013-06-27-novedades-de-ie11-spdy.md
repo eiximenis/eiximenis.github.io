@@ -1,6 +1,6 @@
 ---
 title: 'Novedades de IE11: SPDY'
-description: 'Novedades de IE11: SPDY'
+
 author: eiximenis
 
 date: 2013-06-27T14:16:50+00:00

@@ -1,6 +1,6 @@
 ---
 title: Mi primera aplicación en MetroUI
-description: Mi primera aplicación en MetroUI
+
 author: eiximenis
 
 date: 2011-09-16T19:38:00+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas! Como muchos otros he descargado el Windows 8 Developers Preview, y he empezado a jugar con la nueva API de WinRT para la creación de aplicaciones basadas en MetroUI.
 
 Vamos a ver como realizar una aplicación MetroUI usando C# que simplemente nos muestre las imágenes que tenemos en la carpeta de &ldquo;Mis Imágenes&rdquo;.
+
+<!--more-->
 
 Para ello, abrimos el Visual Studio 2011 Express que viene con el Windows 8 Developers Preview y seleccionamos el tipo de proyecto de tipo &ldquo;Windows Metro Style &ndash;> Application&rdquo;:
 

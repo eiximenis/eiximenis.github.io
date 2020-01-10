@@ -1,6 +1,6 @@
 ---
 title: Runtimes de contenedores
-description: Runtimes de contenedores
+
 author: eiximenis
 
 date: 2018-07-16T16:33:11+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'Facebook Connect (ii): Adiós, amigo adiós (o como hacer el logout).'
-description: 'Facebook Connect (ii): Adiós, amigo adiós (o como hacer el logout).'
+
 author: eiximenis
 
 date: 2009-12-14T16:06:12+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! Este es el segundo post de una serie que iré haciendo contando _mis_ experiencias con Facebook Connect. En el primer post vimos [como usar facebook connect para implementar un single sign on en nuestra web][1] (o sea que los usuarios puedan entrar en nuestra web usando el login y password de facebook).
+
+<!--more-->
 
 Ahora viene la segunda parte… da igual lo buena que sea tu web, llegará un momento en que el usuario querrá irse y no creo que le guste mucho que dejemos su sesión abierta :p. Tened presente que cuando usamos connect, cuando el usuario abre la sesión en _nuestra_ web, también la abre en facebook y viceversa: cuando cerramos la sesión en nuestra web también cerramos su sesión de facebook.
 

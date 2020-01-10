@@ -1,6 +1,6 @@
 ---
 title: Novedades de Unity 2.0
-description: Novedades de Unity 2.0
+
 author: eiximenis
 
 date: 2010-06-02T15:02:56+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 <a href="http://unity.codeplex.com/" target="_blank" rel="noopener noreferrer">Unity</a>, el <a href="http://martinfowler.com/articles/injection.html" target="_blank" rel="noopener noreferrer">contenedor IoC</a> de Microsoft, hace algunas semanas que tiene nueva versión: la 2.0. Y viene con algunas novedades interesantes respecto a la versión anterior, que os comento brevemente 🙂
+
+<!--more-->
 
 **Por fin… un único assembly!**
 

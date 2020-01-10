@@ -1,6 +1,6 @@
 ---
 title: '¿Qué hay de malo en este código? (C#)'
-description: '¿Qué hay de malo en este código? (C#)'
+
 author: eiximenis
 
 date: 2012-04-03T10:11:20+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas 🙂 
 
 Al estilo de muchos blogs que visito habitualmente y que proponen pequeños acertijos en base a un código que tiene un error (muchas veces no aparente, otras más evidente), os propongo hoy uno, que me he encontrado revisando código.
+
+<!--more-->
 
 Así que, amigos ¿qué hay de malo en este código?
 

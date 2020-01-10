@@ -1,6 +1,6 @@
 ---
 title: 'ObservableCollection<T>, INotifyPropertyChanged y WinRT'
-description: 'ObservableCollection<T>, INotifyPropertyChanged y WinRT'
+
 author: eiximenis
 
 date: 2011-10-16T12:35:00+00:00
@@ -16,6 +16,8 @@ categories:
 **<span style="text-decoration: underline;">NOTA: Este post está basado en la versión Developers Preview de Windows 8, que salió en Septiembre del 2011. Versiones posteriores pueden dejar (y con suerte dejarán) este artículo obsoleto.</span>**
 
 Un post cortito: Si desarrollas aplicaciones Metro para Windows 8 usando C# y XAML **no uses ObservableCollection<T>**. Simple y llanamente **no funciona**.
+
+<!--more-->
 
 En su lugar debe usarse <a target="_blank" href="http://msdn.microsoft.com/en-us/library/windows/apps/br226052(v=vs.85).aspx" rel="noopener noreferrer">IObservableVector<T></a> interfaz de la cual podéis encontrar una implementación aquí: <http://code.msdn.microsoft.com/Data-Binding-7b1d67b5/sourcecode?fileId=44725&pathId=1428387049>. Esa implementación proporciona además un método ToObservableVector para convertir una <a target="_blank" href="http://msdn.microsoft.com/en-us/library/system.collections.specialized.inotifycollectionchanged.aspx" rel="noopener noreferrer">INotifyCollectionChanged</a> (es decir una ObservableCollection<T>) en un IObservableVector<T>.
 

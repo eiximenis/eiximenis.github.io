@@ -1,6 +1,6 @@
 ---
 title: '[C# Básico] Interfaces'
-description: '[C# Básico] Interfaces'
+
 author: eiximenis
 
 date: 2010-07-07T12:45:26+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos! El otro día recibí un correo que decía lo siguiente:
 
 > _¿Podrías escribir algo sobre el uso de Interfaces? Yo por ahi he leido que es algo recomendado crear interfaces que es como un patrón.. Yo la verdad no las uso en mis proyectos pero me gustaría saber para qué sirven y porque se deberían usar y en qué casos._
+
+<!--more-->
 
 Reconozco que es un correo para reflexionar: muchas veces tendemos a escribir sobre lo _más_: lo más avanzado, lo más novedoso, lo más _cool_… y quizá nos olvidamos de que hay gente que lo que busca son artículos para iniciarse. Es cierto que [Tutoriales de C#][1] los hay a patadas en internet, pero una cosa es un tutorial planteado como un curso y otra un pequeño post sobre algún tema básico concreto.
 

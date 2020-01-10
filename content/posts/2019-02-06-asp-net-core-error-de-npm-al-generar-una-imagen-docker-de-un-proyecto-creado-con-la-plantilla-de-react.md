@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET Core: Error de npm al generar una imagen Docker de un proyecto creado con la plantilla de React'
-description: 'ASP.NET Core: Error de npm al generar una imagen Docker de un proyecto creado con la plantilla de React'
+
 author: eiximenis
 
 date: 2019-02-06T18:09:40+00:00

@@ -1,6 +1,6 @@
 ---
 title: Las herramientas de Docker de VS2017
-description: Las herramientas de Docker de VS2017
+
 author: eiximenis
 
 date: 2017-07-27T15:50:25+00:00

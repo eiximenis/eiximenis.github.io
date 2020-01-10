@@ -1,6 +1,6 @@
 ---
 title: '[jQuery tmpl] Pasar elemento de template como parámetro a una función del template'
-description: '[jQuery tmpl] Pasar elemento de template como parámetro a una función del template'
+
 author: eiximenis
 
 date: 2011-04-01T09:42:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Bueno... Vaya título me ha salido, eh? 😛 A ver, realmente este post es para evitar que alguien pierda el mismo tiempo que he pedido yo, para una chorrada...
+
+<!--more-->
 
 En fin, al tajo. No sé si conocéis [jQuery templates][1]. Para los que no, que sepáis que es un plugin de jQuery para convertir objetos json en html. No es la única manera de hacerlo, [hace tiempo escribí sobre PURE][2] ([http://beebole.com/pure/][3]) otra herramienta para hacer lo mismo, y que os animo a que al menos le echéis un vistazo. Poco después apareció la alfa de jquery-tmpl (y siguiendo con el autobombo escribí una [pequeña comparativa][4], que, todo debe reconocerse, hoy ha quedado un poco desfasada). Poco después se anunció que jQuery-tmpl pasaba a ser considerado plugin oficial de jQuery y se pasó a llamar &ldquo;_jQuery templates_&rdquo;. Actualmente está en beta, pero ya es extremadamente estable. Luis Ruiz Pavón escribió un [artículo introductorio a jQuery templates][5] que os recomiendo que le echéis un vistazo (aunque la sintaxis actual sea un poco diferente a la de ese artículo, es lo que tiene escribir sobre versiones alfa y demás).
 

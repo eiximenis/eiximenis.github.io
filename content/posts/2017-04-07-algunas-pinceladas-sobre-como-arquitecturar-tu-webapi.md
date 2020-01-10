@@ -1,6 +1,6 @@
 ---
 title: Algunas pinceladas sobre como arquitecturar tu WEB/API
-description: Algunas pinceladas sobre como arquitecturar tu WEB/API
+
 author: eiximenis
 
 date: 2017-04-07T17:36:32+00:00

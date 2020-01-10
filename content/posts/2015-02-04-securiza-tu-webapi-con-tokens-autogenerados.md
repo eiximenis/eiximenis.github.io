@@ -1,6 +1,6 @@
 ---
 title: Securiza tu WebApi con tokens autogenerados
-description: Securiza tu WebApi con tokens autogenerados
+
 author: eiximenis
 
 date: 2015-02-04T11:20:46+00:00

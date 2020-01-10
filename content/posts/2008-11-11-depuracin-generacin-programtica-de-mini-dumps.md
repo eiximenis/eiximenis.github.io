@@ -1,6 +1,6 @@
 ---
 title: '[Depuración] Generación programática de mini dumps'
-description: '[Depuración] Generación programática de mini dumps'
+
 author: eiximenis
 
 date: 2008-11-11T11:37:58+00:00
@@ -16,6 +16,8 @@ categories:
 Bueno… No voy a hablar sobre como fue el DevCamp de este pasado fin de semana en puesto que ya lo han hecho [Jordi Nuñez][1] y [José Manuel Alarcon][2]. Compartimos buenos momentos, buenos cubatas y buenas charlas. 
 
 De todas las charlas que se dieron, me interesa comentar especialmente la que dio [Pablo Alvarez][3], una charla **impresionante** bajo el título de [depurando hasta la saciedad][4]. Aunque contó con apenas 45 minutos destripó a base de bien WinDbg y comentó los distintos escenarios de depuración, especialmente la depuración post-mortem (esto es, cuando el proceso ya ha reventado). Leeros su post y el ppt porque es imprescindible. 
+
+<!--more-->
 
 ¿Y qué quiero comentar yo de la charla de Pablo? Pues bien, en la charla quedó claro que antes de meterse a depurar uno debe tener unos buenos… símbolos. Y no sólo eso sino que evidentemente es necesario tener el dump de la aplicación que ha reventado. Comentó distintas herramientas para generar este dump, pero a mí me interesa comentar un escenario que suele ser muy habitual cuando ponemos aplicaciones en producción: que sea la propia aplicación quien genere este dump cuando se produce un error. En un proyecto donde estoy trabajando tenemos nuestra aplicación desplegada en distintos clientes, y aunque simplemente con el log de excepciones managed cubrimos la mayoría de errores, en algunos casos necesitamos más información. Es ahí donde tener un dump de la aplicación nos es realmente útil. 
 

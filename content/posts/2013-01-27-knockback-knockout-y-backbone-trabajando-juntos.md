@@ -1,6 +1,6 @@
 ---
 title: 'Knockback: Knockout y Backbone trabajando juntos'
-description: 'Knockback: Knockout y Backbone trabajando juntos'
+
 author: eiximenis
 
 date: 2013-01-27T13:51:14+00:00

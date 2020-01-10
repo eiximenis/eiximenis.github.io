@@ -1,6 +1,6 @@
 ---
 title: PRISM y AvalonDock
-description: PRISM y AvalonDock
+
 author: eiximenis
 
 date: 2009-01-20T12:56:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos!
 
 Conocéis PRISM? Viene a ser, salvando las distancias, la CAB de WPF: es decir un conjunto de buenas prácticas para la creación de aplicaciones compuestas en WPF y una librería que implementa dichas buenas prácticas. Si desarrollais aplicaciones en WPF es obligatorio echarle un vistazo. Pasaos por la [página de PRISM en codeplex][1].
+
+<!--more-->
 
 Por otro lado, [AvalonDock][2] es una muy buena librería que proporciona soporte para interfaces _dockables_ usando WPF que simula al estilo de docking de Visual Studio. 
 

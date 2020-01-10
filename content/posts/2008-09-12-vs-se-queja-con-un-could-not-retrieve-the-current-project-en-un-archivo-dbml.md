@@ -1,6 +1,6 @@
 ---
 title: VS se queja con un "Could not retrieve the current project" en un archivo .dbml
-description: VS se queja con un "Could not retrieve the current project" en un archivo .dbml
+
 author: eiximenis
 
 date: 2008-09-12T08:19:00+00:00
@@ -15,9 +15,11 @@ categories:
 ---
 Síntoma: tienes una solución que ayer (o hace algunos días, da igual) funcionaba y compilaba bien. Hoy lo abres y aparece un error que dice:
 
-Build failed due to validation errors in `C:\edu\tmp\WofClientServer\WoFServer\WoFData.dbml`. Open the file and resolve the issues in the Error List, then try rebuilding the project.
+`Build failed due to validation errors in C:\edu\tmp\WofClientServer\WoFServer\WoFData.dbml. Open the file and resolve the issues in the Error List, then try rebuilding the project.`
 
-Recompilar la solución no sirve para nada. Entonces si intentas abrir el archivo .dmbl, VS se queja con el `Could not retrieve the current project`.
+Recompilar la solución no sirve para nada. Entonces si intentas abrir el archivo `.dmbl`, VS se queja con el `Could not retrieve the current project`.
+
+<!--more-->
 
 La solución? Invocar VS desde una línea de comandos con:
 

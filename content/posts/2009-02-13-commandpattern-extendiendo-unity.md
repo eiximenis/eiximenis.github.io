@@ -1,6 +1,6 @@
 ---
 title: CommandPattern extendiendo Unity
-description: CommandPattern extendiendo Unity
+
 author: eiximenis
 
 date: 2009-02-13T13:59:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! Hoy voy a hablar del poder que nos da el mecanismo de extensiones de Unity. Doy por supuesto que todos conoceis lo que es un contenedor IoC en general y Unity en particular. Si no, echad un vistazo a los posts "[IoC o el poder de ceder el control](https://geeks.ms/etomas/archive/2008/10/28/ioc-o-el-poder-de-ceder-el-control.aspx)" (para una explicación general de IoC) y "[Microsoft Unity: Inyección de dependencias .NET](https://geeks.ms/jdieguez/archive/2009/01/25/microsoft-unity-inyecci-243-n-de-dependencias-net.aspx)" (para una explicación general sobre Unity en concreto).
+
+<!--more-->
 
 Para ilustrar el poder que nos da extender Unity voy a poner una _posible_ implementación del patron [Command Pattern](https://en.wikipedia.org/wiki/Command_pattern). Este patrón es un clásico para la construcción de interfaces desacopladas, donde el elemento de la UI que genera una acción y el código que implementa esta acción no tienen porque estar relacionados. Esto aumenta la mantenibilidad y la reutilización del código.
 

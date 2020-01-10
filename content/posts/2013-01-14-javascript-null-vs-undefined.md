@@ -1,6 +1,6 @@
 ---
 title: '[Javascript] – null vs undefined'
-description: '[Javascript] – null vs undefined'
+
 author: eiximenis
 
 date: 2013-01-14T18:13:30+00:00

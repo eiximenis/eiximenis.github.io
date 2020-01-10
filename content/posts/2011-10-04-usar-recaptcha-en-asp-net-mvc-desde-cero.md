@@ -1,6 +1,6 @@
 ---
 title: Usar Recaptcha en ASP.NET MVC (desde cero)
-description: Usar Recaptcha en ASP.NET MVC (desde cero)
+
 author: eiximenis
 
 date: 2011-10-04T20:19:54+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! En este post vamos a ver como usar <a href="http://www.google.com/recaptcha" target="_blank" rel="noopener noreferrer">Recaptcha</a> en ASP.NET MVC. Pero, antes que nada permitidme una aclaración: Si estás buscando integrar rápidamente Recaptcha en tu proyecto que sepas que puedes usar <a href="http://mvcrecaptcha.codeplex.com/" target="_blank" rel="noopener noreferrer">MvcRecaptcha</a> o también el <a href="http://www.dotnetcurry.com/ShowArticle.aspx?ID=611" target="_blank" rel="noopener noreferrer">helper que viene en MVC3</a>. Pero vamos a ver como hacerlo desde cero. ¿Por que? Pues simplemente porque me parece un buen ejemplo didáctico. Pero insisto: ya hay soluciones hechas, eso es sólo para ver como _podríamos_ hacerlo desde cero
+
+<!--more-->
 
 Añadir el captcha en una vista es sumamente sencillo: basta con incluir un tag <script> y dejar que él haga todo. También se puede crear usando javascript (lo que es útil si se quiere crear el captcha sólo si se cumplen ciertas condiciones en tiempo de ejecución), pero no vamos a verlo aquí (todos los detalles están en <http://code.google.com/intl/ca/apis/recaptcha/docs/display.html> en el apartado de “Ajax API”).
 

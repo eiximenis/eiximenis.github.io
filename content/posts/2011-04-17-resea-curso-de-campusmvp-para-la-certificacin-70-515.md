@@ -1,6 +1,6 @@
 ---
 title: '[Reseña] Curso de CampusMVP para la certificación 70-515'
-description: '[Reseña] Curso de CampusMVP para la certificación 70-515'
+
 author: eiximenis
 
 date: 2011-04-17T21:35:22+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Los chicos de CampusMVP me han dado la ocasión de revisar uno de sus cursos, en concreto el que tienen para preparar la certificación 70-515 (desarrollo de aplicaciones web). Y el resultado es este post 😉 <a href="http://shop.campusmvp.com/Product-Preparaci%C3%B3n-de-la-certificaci%C3%B3n-70-515-TS-Web-Applications-Development-with-Microsoft%C2%AE-.NET-Framework-4_114.aspx" target="_blank" rel="noopener noreferrer"><img style="margin: 6px 0px 6px 4px; display: inline; float: right" align="right" src="http://shop.campusmvp.com/repository/product/asp-net-4-70-515.jpg" /></a>
+
+<!--more-->
 
 Antes que nada comentaros que yo ya tengo esta certificación, así que me ha sido muy fácil a posteriori ver si el curso cubría lo que entra en el exámen.
 

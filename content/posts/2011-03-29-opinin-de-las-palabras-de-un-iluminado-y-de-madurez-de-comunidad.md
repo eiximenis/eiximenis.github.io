@@ -1,6 +1,6 @@
 ---
 title: 'Opinión: De las palabras de un iluminado y de madurez de comunidad…'
-description: 'Opinión: De las palabras de un iluminado y de madurez de comunidad…'
+
 author: eiximenis
 
 date: 2011-03-29T09:54:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Este post surge a raíz de una interesante conversación que mantenido con <a target="_blank" href="http://twitter.com/j0rgeSerran0" rel="noopener noreferrer">Jorge Serrano</a>, <a target="_blank" href="http://twitter.com/eugenioestrada" rel="noopener noreferrer">Eugenio Estrada</a>,&nbsp; <a target="_blank" href="http://twitter.com/pablonete" rel="noopener noreferrer">Pablo Núñez</a> y <a target="_blank" href="http://twitter.com/zpektrum" rel="noopener noreferrer">Pablo Iglesias</a>.
+
+<!--more-->
 
 A ver empecemos... todo viene a raíz de las palabras de un iluminado que se pueden encontrar en <http://blog.expensify.com/2011/03/25/ceo-friday-why-we-dont-hire-net-programmers>. Resumiendo este tio viene a decir que no contrata nunca a desarrolladores en .NET porque en definitiva no los considera _buenos_. Según él los desarrolladores en .NET sólo saben arrastrar cajas y poca cosa más. Bueno, es su opinión (no la comparto pero la respeto).
 

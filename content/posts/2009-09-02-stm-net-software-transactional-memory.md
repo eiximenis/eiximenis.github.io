@@ -1,6 +1,6 @@
 ---
 title: 'STM.NET: Software Transactional Memory'
-description: 'STM.NET: Software Transactional Memory'
+
 author: eiximenis
 
 date: 2009-09-02T14:50:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Uno de los retos más importantes a los que se enfrenta en breve el desarrollo de aplicaciones tiene que ver con la programación paralela. Ahora que se empieza a vislumbrar el acercamiento del fin de la [Ley de Moore][1], si queremos seguir el espectacular aumento de potencia debemos irnos a entornos multi-procesador o multi-core. Hace unos años eran coto reservado a entornos de investigación, y ahora ya están encima de nuestra mesa...
+
+<!--more-->
 
 Hay varias visiones sobre como se debe atacar este problema, cual debe ser el rol del desarrollador, de los frameworks y del sistema operativo para asegurar una buena productividad y a la vez ser capaz de asegurar un óptimo consumo de los distintos recursos. Como dijo Rodrigo una vez... La [Broma ha terminado!][2]
 

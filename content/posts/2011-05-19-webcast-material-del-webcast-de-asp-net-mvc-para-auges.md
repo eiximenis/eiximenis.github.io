@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] Material del webcast de ASP.NET MVC para AUGES'
-description: '[WebCast] Material del webcast de ASP.NET MVC para AUGES'
+
 author: eiximenis
 
 date: 2011-05-19T22:19:59+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas!
 
 Recién realizado el WebCast para <a href="http://www.auges.org" target="_blank" rel="noopener noreferrer">AUGES</a>, os comento que he subido el material (el código del proyecto que hemos hecho) en mi skydrive.
+
+<!--more-->
 
 Al final diría que no ha estado mal, aunque ahora en retrospectiva se sacan algunas conclusiones… 
 

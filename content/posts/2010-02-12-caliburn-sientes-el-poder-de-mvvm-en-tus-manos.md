@@ -1,6 +1,6 @@
 ---
 title: Caliburn… ¿sientes el poder de MVVM en tus manos?
-description: Caliburn… ¿sientes el poder de MVVM en tus manos?
+
 author: eiximenis
 
 date: 2010-02-12T17:22:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Los más frikis de por aquí, sabréis que Caliburn (_<a target="_blank" href="http://la.wikipedia.org/wiki/Caliburnus" rel="noopener noreferrer">Caliburnus</a>_ para ser exactos) era el nombre de una poderosa espada que luego alguien decidió rebautizar como <a target="_blank" href="http://es.wikipedia.org/wiki/Excalibur" rel="noopener noreferrer"><em>Excalibur</em></a>... Como frikis hay en todas partes y en eso de la informática pues quizás más, <a target="_blank" href="http://caliburn.codeplex.com/" rel="noopener noreferrer">Caliburn</a> también resulta ser el nombre de un framework para aplicaciones Silverlight y WPF. Dicho así parece ser lo mismo que <a target="_blank" href="http://www.codeplex.com/CompositeWPF/" rel="noopener noreferrer">PRISM</a> y en cierta manera ambos frameworks tienen el mismo objetivo y comparten muchas características. Por ejemplo ambos frameworks se abstraen del contendor IoC a utilizar (es decir requieren uno, pero no se atan a ninguno), ambos dan soporte a vistas compuestas y ambos tienen el concepto de módulo... entonces ¿en que se diferencian? Pues en como se enfocan para llegar al objetivo. El objetivo de este post es **iniciar una serie de posts** (no se de cuantos :P) para hablar sobre Caliburn y compararlo con PRISM. Hoy, pero vamos a empezar por lo más básico... 🙂
+
+<!--more-->
 
 **1. Preparando el entorno**
 

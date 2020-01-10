@@ -1,6 +1,6 @@
 ---
 title: 'Terminales y millones de colores: una historia complicada'
-description: 'Terminales y millones de colores: una historia complicada'
+
 author: eiximenis
 
 date: 2019-04-05T17:28:27+00:00

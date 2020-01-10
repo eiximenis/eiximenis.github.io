@@ -1,6 +1,6 @@
 ---
 title: Binding de colecciones en ASP.NET MVC (ii)
-description: Binding de colecciones en ASP.NET MVC (ii)
+
 author: eiximenis
 
 date: 2011-07-15T17:00:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Bueno... En el <a target="_blank" href="/blogs/etomas/archive/2011/07/09/binding-de-colecciones-en-asp-net-mvc.aspx" rel="noopener noreferrer">post anterior</a> vimos como el DefaultModelBinder esperaba los nombres de los campos para poder realizar el enlace entre los datos de la request y un parámetro de tipo colección en el controlador.
+
+<!--more-->
 
 Pero vimos que había un pequeño detalle. Supongamos el siguiente método del controlador:
 

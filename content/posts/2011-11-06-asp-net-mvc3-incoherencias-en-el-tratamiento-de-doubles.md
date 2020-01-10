@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Incoherencias en el tratamiento de doubles'
-description: 'ASP.NET MVC3: Incoherencias en el tratamiento de doubles'
+
 author: eiximenis
 
 date: 2011-11-06T11:29:44+00:00
@@ -13,9 +13,11 @@ categories:
   - Uncategorized
 
 ---
-Muy, muy, muy molesto…&#160; ASP.NET MVC3 corriendo sobre un servidor web configurado en español (cultura es-ES).
+Muy, muy, muy molesto… ASP.NET MVC3 corriendo sobre un servidor web configurado en español (cultura `es-ES`).
 
-Con la tabla de rutas estándar, cuatro acciones como las siguientes
+Con la tabla de rutas estándar, cuatro acciones como las siguientes:
+
+<!--more-->
 
 <div style="border-bottom: #000080 1px solid; border-left: #000080 1px solid; font-family: &#39;Courier New&#39;, courier, monospace; color: #000; font-size: 10pt; border-top: #000080 1px solid; border-right: #000080 1px solid">
   <div style="background: #ddd; max-height: 300px; overflow: auto">

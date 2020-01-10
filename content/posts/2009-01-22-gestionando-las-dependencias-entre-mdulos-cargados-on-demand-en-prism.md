@@ -1,6 +1,6 @@
 ---
 title: Gestionando las dependencias entre módulos cargados on-demand en PRISM
-description: Gestionando las dependencias entre módulos cargados on-demand en PRISM
+
 author: eiximenis
 
 date: 2009-01-22T14:33:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Una aplicación PRISM se compone de varios módulos que colaboran entre ellos. Un módulo PRISM simplemente es un objeto que implementa la interfaz IModule. En un mismo assembly pueden haber tantos módulos PRISM como se desee.
+
+<!--more-->
 
 PRISM ofrece dos métodos para la carga de los módulos: O bien se cargan todos al principio de la aplicación, o bien se cargan on-demand (es decir, cuando se necesitan). La primera opción es la más simple, pero en algunos casos nos interesa ir cargando los módulos cuando se necesiten (bien porque hay muchos módulos posibles o bien porque la inicialización de estos módulos es un poco pesada).
 

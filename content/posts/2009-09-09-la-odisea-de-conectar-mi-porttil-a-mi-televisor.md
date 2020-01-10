@@ -1,6 +1,6 @@
 ---
 title: La odisea de conectar mi portátil a mi televisor…
-description: La odisea de conectar mi portátil a mi televisor…
+
 author: eiximenis
 
 date: 2009-09-09T09:17:01+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Esta es una historia de como el desconocimiento de unos (el mío) y de otros (los de la tienda) convierte en una odisea algo que debería ser mucho más sencillo… y que sin embargo tampoco es lo simple que debiera.
+
+<!--more-->
 
 Me explico: Llevo ya 3 viajes a la tienda de _cables_ (vamos a llamarla así) para encontrar un modo de conectar mi portátil (un latitude e6400) a mi televisor Philips de pantalla plana. Es decir&#160; ni el portátil ni el televisor son del año de la maría castaña (aunque el televisor no sea full hd, sólo hd ready). Soy (o mejor dicho _era_) un auténtico ignorante en materia de conexiones, cables, señales y demás. Jamás me había importado este tema hasta ahora… pero esto no debería ser un problema, uno supone que cuando va a comprar algo quien le vende el producto debe ser capaz de informarle… iluso.
 

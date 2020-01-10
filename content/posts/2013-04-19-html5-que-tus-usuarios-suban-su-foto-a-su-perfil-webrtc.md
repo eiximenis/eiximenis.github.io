@@ -1,6 +1,6 @@
 ---
 title: HTML5 – Que tus usuarios suban su foto a su perfil (WebRTC)
-description: HTML5 – Que tus usuarios suban su foto a su perfil (WebRTC)
+
 author: eiximenis
 
 date: 2013-04-19T10:31:41+00:00

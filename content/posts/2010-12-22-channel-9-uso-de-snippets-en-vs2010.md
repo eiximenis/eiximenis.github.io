@@ -1,6 +1,6 @@
 ---
 title: '[Channel 9] Uso de snippets en VS2010'
-description: '[Channel 9] Uso de snippets en VS2010'
+
 author: eiximenis
 
 date: 2010-12-22T08:48:00+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas!
 
 Post cortito, cortito sólo para decir que han publicado en <a target="_blank" href="http://channel9.msdn.com/Blogs/channel9spain" rel="noopener noreferrer">Channel 9 Spain</a> mi <a target="_blank" href="http://channel9.msdn.com/Blogs/channel9spain/Cmo-usar-Snippets-en-Visual-Studio" rel="noopener noreferrer">vídeo sobre cómo usar los snippets en VS2010</a>.
+
+<!--more-->
 
 Si no conoces lo que son, o bien los usas pero no sabes como definirte los tuyos propios, igual el vídeo te puede ayudar! Lo tenéis en:
 

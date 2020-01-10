@@ -1,6 +1,6 @@
 ---
 title: Rendering de vistas parciales en Razor y MVC3
-description: Rendering de vistas parciales en Razor y MVC3
+
 author: eiximenis
 
 date: 2011-02-25T08:53:57+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Una de las dudas que he visto que se van repitiendo por ahí tiene que ver con **como renderizar vistas parciales en MVC3 usando Razor**.
+
+<!--more-->
 
 En MVC2 y anteriores (o en MVC3 usando el ViewEngine de WebForms) la forma de renderizar una vista parcial era sencilla:
 

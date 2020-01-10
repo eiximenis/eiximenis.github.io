@@ -1,6 +1,6 @@
 ---
 title: Cifrado en WebApi
-description: Cifrado en WebApi
+
 author: eiximenis
 
 date: 2014-07-01T13:27:29+00:00

@@ -1,6 +1,6 @@
 ---
 title: Git para dummies (pero dummies, dummies eh?)
-description: Git para dummies (pero dummies, dummies eh?)
+
 author: eiximenis
 
 date: 2011-01-18T11:19:55+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 **Disclaimer:** Ese post ni es, ni lo pretende, ser un tutorial de Git. Es simplemente las impresiones de alguien (yo) que ayer empezó a usar, por primera vez, Git. Seguro que hay gente que lee ese blog y que sabe **mucho, pero mucho** más de Git que yo… Así que sus comentarios y correciones serán bienvenidas! 🙂
+
+<!--more-->
 
 Esos días (ayer, vamos :p) he empezado a usar Git. Para quien no lo conozca Git es un sistema de control de código fuente distribuído. A diferencia de TFS, VSS o SVN que son centralizados, en Git cada desarrollador tiene su propia copia entera del repositorio _en local_. Los cambios son propagados entre repositorios locales y pueden (o no) sincronizarse con un repositorio central.
 

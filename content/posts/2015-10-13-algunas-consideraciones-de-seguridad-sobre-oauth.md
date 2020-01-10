@@ -1,6 +1,6 @@
 ---
 title: Algunas consideraciones de seguridad sobre OAuth
-description: Algunas consideraciones de seguridad sobre OAuth
+
 author: eiximenis
 
 date: 2015-10-13T16:30:42+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC y Ajax: fácil no… facilísimo :)'
-description: 'ASP.NET MVC y Ajax: fácil no… facilísimo :)'
+
 author: eiximenis
 
 date: 2009-06-26T22:09:00+00:00
@@ -18,6 +18,8 @@ Hola a todos amigos! 😉
 El comentario de Gabriel en este post de mi blog ([http://geeks.ms/blogs/etomas/archive/2009/04/02/asp-net-mvc-controles-chart-y-ajax.aspx][1]) me ha motivado a escribir la siguiente entrada.
 
 &Eacute;l preguntaba sobre si los controles Ajax de ASP.NET, como p.ej. UpdatePanel se podían usar bajo el framework MVC. No conozco mucho los controles de la Ajax Library porque personalmente no me interesan demasiado, aunque apuesto que la mayoría usan viewstate así que me imagino que no deben poder usarse bajo MVC...
+
+<!--more-->
 
 ... por otro lado sobreentiendo que la duda de Gabriel, va un poco más allá y quiere saber _como_ usar Ajax con el framework MVC. Pues para verlo **muy someramente** aquí va esta entrada.
 

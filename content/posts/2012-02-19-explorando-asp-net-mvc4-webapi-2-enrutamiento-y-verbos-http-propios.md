@@ -1,6 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebAPI – 2: Enrutamiento y verbos HTTP propios'
-description: 'Explorando ASP.NET MVC4 WebAPI – 2: Enrutamiento y verbos HTTP propios'
+
 author: eiximenis
 
 date: 2012-02-19T10:46:31+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Este es el segundo post de la serie que trata sobre ASP.NET Web API una de las grandes novedades que vienen con ASP.NET MVC. El primer post de la serie fue la [introducción][1]. Lo que quiero comentar antes que nada es que esta serie la estoy escribiendo no como un tutorial de ASP.NET Web API desde el punto de vista de un experto (porque no lo soy) sino desde el punto de vista de alguien que conoce ASP.NET MVC y está empezando a explorar Web API. 
+
+<!--more-->
 
 Hoy vamos a tratar un poco más el tema del enrutamiento, y el uso de verbos HTTP propios.
 

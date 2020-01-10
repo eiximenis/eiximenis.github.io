@@ -1,6 +1,6 @@
 ---
 title: ALM Sessions’09 – Test Driven Development
-description: ALM Sessions’09 – Test Driven Development
+
 author: eiximenis
 
 date: 2009-11-17T18:00:19+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos!! Este año tengo el placer de realizar una presentación en las [ALM Sessions’09][1].
 
 En concreto hablaré sobre Test Driven Development: que és, como su uso junto con otras buenas prácticas de desarrollo puede ayudarnos a ganar en calidad y como podemos implantarlo en un equipo de desarrollo.
+
+<!--more-->
 
 También veremos que herramientas trae Visual Studio 2010 y como nos pueden ayudar a realizar de forma más sencilla TDD.
 

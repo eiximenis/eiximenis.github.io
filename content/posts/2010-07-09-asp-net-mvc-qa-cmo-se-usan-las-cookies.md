@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: ¿Cómo se usan las cookies?'
-description: 'ASP.NET MVC Q&A: ¿Cómo se usan las cookies?'
+
 author: eiximenis
 
 date: 2010-07-09T13:49:56+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenoooo… sigo esta serie que se inició a raíz de las preguntas que recibí en el webcast que realicé sobre ASP.NET MVC para la gente del [DotNetClub de la UOC][1]. Si queréis ver que otros posts de esta serie hay (o habrá) echad un vistazo al [post que sirve de índice][2].
+
+<!--more-->
 
 En este caso la pregunta fue “_Cómo y desde donde acceder a las cookies en una aplicación MVC_”. Este post está muy relacionado con el mismo que hablaba sobre el acceso a la sesión. En particular las normas sobre desde donde acceder serían las mismas:
 

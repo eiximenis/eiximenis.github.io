@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Validación remota'
-description: 'ASP.NET MVC3: Validación remota'
+
 author: eiximenis
 
 date: 2011-01-14T10:22:00+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas!
 
 Una de las novedades que nos trae ASP.NET MVC3, con respecto a MVC2 es poder usar _fácilmente_ la validación remota: eso es, desde _cliente_ llamar a un método del servidor que nos diga si un dato (entrado p.ej. en un campo de texto es válido o no). Y cuando digo _fácilmente_ me refiero a _fácilmente, muy fácilmente_.
+
+<!--more-->
 
 Vamos a ver un ejemplo: para ello vamos a modificar la aplicación de ejemplo que crea MVC3 para que al darnos de alta, consulte si el usuario ya existe y si es el caso no nos deje. Os recuerdo que esa validación es Ajax, eso significa: el campo de texto pierda el foco se realizará la petición (en background) al servidor que comprobará si el usuario entrado ya existe y si es así mostrará un error en el campo de texto asociado.
 

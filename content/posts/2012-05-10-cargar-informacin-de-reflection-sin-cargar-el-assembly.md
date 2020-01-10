@@ -1,6 +1,6 @@
 ---
 title: Cargar información de reflection sin cargar el assembly
-description: Cargar información de reflection sin cargar el assembly
+
 author: eiximenis
 
 date: 2012-05-10T17:27:46+00:00

@@ -1,6 +1,6 @@
 ---
 title: Lifetime Managers en Unity o ¿como sé que eso que me das es un singleton?
-description: Lifetime Managers en Unity o ¿como sé que eso que me das es un singleton?
+
 author: eiximenis
 
 date: 2009-10-26T17:31:51+00:00
@@ -16,6 +16,8 @@ categories:
 Los que leais habitualmente mi blog (¡muchas gracias!) habreis visto que tengo [varias entradas sobre unity][1] el contenedor IoC de la gente de patterns & practices. En ellas he ido comentando varios aspectos más o menos avanzados del contenedor y de los patrones IoC associados.
 
 En este post quiero hablaros un poco de los “lifetime managers”, objetos que le indican a Unity si cuando debe resolver un objeto debe crear uno nuevo o bien devolver uno existente.
+
+<!--more-->
 
 Resumiendo **mucho** podemos afirmar que:
 

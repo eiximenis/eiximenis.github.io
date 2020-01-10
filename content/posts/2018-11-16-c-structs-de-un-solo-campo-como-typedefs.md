@@ -1,6 +1,6 @@
 ---
 title: 'C#: Structs de un solo campo como typedefs'
-description: 'C#: Structs de un solo campo como typedefs'
+
 author: eiximenis
 
 date: 2018-11-16T09:21:26+00:00

@@ -1,6 +1,6 @@
 ---
 title: XmlSerializer, colecciones y auto-propiedades…
-description: XmlSerializer, colecciones y auto-propiedades…
+
 author: eiximenis
 
 date: 2009-06-03T09:06:30+00:00
@@ -16,6 +16,8 @@ categories:
 Que XmlSerializer es una clase _curiosa_ es evidente, hay multitud de maneras de controlar la serialización de un objeto y varios trucos más o menos _ocultos_ (os recomiendo el [blog de jmservera][https://iremote.blogspot.com] que tiene algunos posts interesantes)…
 
 … Lo que quiero comentaros ahora es un caso que me encontré el otro día (valeeee… ayer), en concreto con las auto-propiedades que se incorporaron en C# 3.0.
+
+<!--more-->
 
 En la msdn se dice que XmlSerializer es capaz de serializar propiedades `ICollection` o `IEnumerable` que sean read-only (de hecho la regla [CA2227 del análisis estático](https://msdn.microsoft.com/en-us/library/ms182327.aspx) se basa en esto). Pues bien, esto es cierto **si entendemos como read-only que no haya setter… ni tan siquiera privado**.
 

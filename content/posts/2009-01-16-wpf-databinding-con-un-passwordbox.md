@@ -1,6 +1,6 @@
 ---
 title: '[WPF] Databinding con un PasswordBox'
-description: '[WPF] Databinding con un PasswordBox'
+
 author: eiximenis
 
 date: 2009-01-16T13:32:00+00:00
@@ -18,6 +18,8 @@ Hola! ¿Que tal os sienta el 2009? Espero que lo mejor posible 🙂
 Hoy un post cortito para comentar un problemilla y su solución.
 
 El problemilla es que al intentar realizar DataBinding desde un PasswordBox no funciona, porque la propiedad Password, **no** es una DependencyProperty.
+
+<!--more-->
 
 Es decir, mientras que esto funciona y liga la propiedad Text a la propiedad Login del DataContext:
 

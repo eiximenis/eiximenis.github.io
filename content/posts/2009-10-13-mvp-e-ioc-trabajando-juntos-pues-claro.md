@@ -1,6 +1,6 @@
 ---
 title: ¿MVP e IoC trabajando juntos? ¡Pues claro!
-description: ¿MVP e IoC trabajando juntos? ¡Pues claro!
+
 author: eiximenis
 
 date: 2009-10-13T12:09:01+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Un comentario de Galcet en mi post “[Como independizar tu capa lógica de tu capa de presentación][1]” decía que el entendía por separado los conceptos de IoC y los de MVC pero que no veía como podían trabajar juntos… El motivo de este post es para comentar precisamente esto: no sólo cómo MVC e IoC pueden trabajar juntos sinó las ventajas que la combinación de ambos patrones nos aporta.
+
+<!--more-->
 
 Galcet no comentaba si se refería a aplicaciones desktop o web. En este post voy a tratar aplicaciones de escritorio (por lo que me centraré en el patrón MVP más que en el MVC dado que, en mi opinión, MVP aplica mejor que MVC en aplicaciones desktop). En aplicaciones web, si usamos ASP.NET MVC el tema se simplifica mucho, dado que ASP.NET MVC está “preparado” para que sea muy fácil crear nuestros controladores mediante cualquier contenedor IoC.
 

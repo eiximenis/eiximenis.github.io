@@ -1,6 +1,6 @@
 ---
 title: 'Opinión: Var o no var… esa es la cuestión.'
-description: 'Opinión: Var o no var… esa es la cuestión.'
+
 author: eiximenis
 
 date: 2010-12-21T14:57:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! Desde hace algunos días estoy usando <a target="_blank" href="http://www.jetbrains.com/resharper/" rel="noopener noreferrer">Resharper</a>. La verdad no era, como decirlo, muy proclive para instalármelo, ya que había tenido no muy buenas experiencas con <a target="_blank" href="http://www.devexpress.com/Products/Visual_Studio_Add-in/Coding_Assistance/" rel="noopener noreferrer"><em>CodeRush</em></a>_._ Seguramente no eran culpa de CodeRush sinó mías, pero bueno... Al final me lo instalé y debo decir que estoy gratamente sorprendido: Es una auténtica maravilla.
+
+<!--more-->
 
 Una cosa interesante de Resharper es que te hace _sugerencias_ (que puedes desactivar si quieres, por supuesto) sobre como _codificar mejor_. Y una de las sugerencias es usar var **siempre que se pueda**:
 

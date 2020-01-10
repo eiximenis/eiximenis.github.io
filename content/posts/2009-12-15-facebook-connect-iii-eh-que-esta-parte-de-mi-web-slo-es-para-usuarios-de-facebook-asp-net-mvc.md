@@ -1,6 +1,6 @@
 ---
 title: 'Facebook Connect (iii): Eh! Que esta parte de mi web sólo es para usuarios de facebook! (ASP.NET MVC)'
-description: 'Facebook Connect (iii): Eh! Que esta parte de mi web sólo es para usuarios de facebook! (ASP.NET MVC)'
+
 author: eiximenis
 
 date: 2009-12-15T17:34:38+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Este post va a ser cortito… En los dos primeros posts de esta serie hemos visto <a href="http://geeks.ms/blogs/etomas/archive/2009/12/10/facebook-connect-si-est-225-s-en-facebook-bienvenido-a-mi-web.aspx" target="_blank" rel="noopener noreferrer">como podemos autenticar (logon) a un usuario de facebook</a> en nuestra web y <a href="http://geeks.ms/blogs/etomas/archive/2009/12/14/facebook-connect-ii-adi-243-s-amigo-adi-243-s-o-como-hacer-el-logout.aspx" target="_blank" rel="noopener noreferrer">como podemos desautenticarlo (logoff)</a>.
+
+<!--more-->
 
 Yo uso ASP.NET MVC para mis desarrollos web, no voy a enumerar ahora las ventajas que en **mi opinión** tiene MVC sobre Webforms, sinó comentaros como podemos evitar el acceso de usuarios que no estén autenticados en facebook a ciertas regiones de nuestra web.
 

@@ -1,6 +1,6 @@
 ---
 title: 'C#9 – Type classes y extensiones'
-description: 'C#9 – Type classes y extensiones'
+
 author: eiximenis
 
 date: 2019-06-07T10:58:11+00:00

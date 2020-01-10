@@ -1,6 +1,6 @@
 ---
 title: 'C# 5: Async / Await'
-description: 'C# 5: Async / Await'
+
 author: eiximenis
 
 date: 2011-09-17T16:05:53+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Como dije en el post anterior estoy trasteando un poco con la Developers Preview de Windows 8 y la nueva API WinRT para crear aplicaciones Metro. El tema está en que esta nueva API está diseñada de forma muy asíncrona. Por suerte en C# 5 el uso de métodos asíncronos se ha simplificado mucho gracias a dos nuevas palabras clave: async y await. Y dado que, creedme, vais a tener que usarlas en cuanto os pongáis con WinRT me he decidido escribir este post para comentarlas un poco 🙂
+
+<!--more-->
 
 **async**
 

@@ -1,6 +1,6 @@
 ---
 title: Sobre NuGet y versiones…
-description: Sobre NuGet y versiones…
+
 author: eiximenis
 
 date: 2017-06-28T11:51:21+00:00

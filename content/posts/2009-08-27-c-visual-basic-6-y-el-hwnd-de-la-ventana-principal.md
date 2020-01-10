@@ -1,6 +1,6 @@
 ---
 title: 'C#, Visual Basic 6 y el HWND de la ventana principal…'
-description: 'C#, Visual Basic 6 y el HWND de la ventana principal…'
+
 author: eiximenis
 
 date: 2009-08-27T13:25:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola! ¿Como ha ido el verano? A todos los que hayais disfrutado de unas buenas vacaciones, espero que os hayan sido provechosas... 
 
 Pero como dicen, todo lo bueno se acaba, y toca volver al tajo. En el proyecto en el que estoy, nos hemos visto en la necesidad de comunicarnos con la ventana principal de _otro_ proceso, realizado en Visual Basic 6.
+
+<!--more-->
 
 **Sobre ventanas, HWNDs y demás...**
 

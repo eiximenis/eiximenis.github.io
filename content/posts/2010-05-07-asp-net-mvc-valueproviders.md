@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: ValueProviders'
-description: 'ASP.NET MVC: ValueProviders'
+
 author: eiximenis
 
 date: 2010-05-07T11:12:58+00:00
@@ -16,6 +16,8 @@ categories:
 Hola! Hoy quiero comentar un aspecto de ASP.NET MVC2 que no sé hasta que punto es conocido, y son los llamados _Value Providers_.
 
 > **Disclaimer:** Este post será largo y puede ser un poco denso y asumo conocimientos básicos de ASP.NET MVC. Tampoco tengas reparos en leerte este post en más de un dia si quieres… había pensado dividirlo en dos posts, pero al final he preferido meterlo todo en uno.
+
+<!--more-->
 
 Si habéis trabajado un poco con ASP.NET MVC, sabréis que si tenéis un controlador con esta acción:
 

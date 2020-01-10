@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Custom Model Binders vs ValueProviders y un ejemplo con JSON…'
-description: 'ASP.NET MVC: Custom Model Binders vs ValueProviders y un ejemplo con JSON…'
+
 author: eiximenis
 
 date: 2010-06-01T12:49:00+00:00
@@ -15,7 +15,11 @@ categories:
 ---
 Hola a todos!
 
-Este post es el cuarto sobre la serie que podríamos llamar &ldquo;_el interior de ASP.NET MCV&rdquo;_ y viene a ser un resumen de los tres anteriores. Los anteriores posts fueron:
+Este post es el cuarto sobre la serie que podríamos llamar &ldquo;_el interior de ASP.NET MCV&rdquo;_ y viene a ser un resumen de los tres anteriores. 
+
+<!--more-->
+
+Los anteriores posts fueron:
 
   * <a target="_blank" href="/blogs/etomas/archive/2010/05/07/asp-net-mvc-valueproviders.aspx" rel="noopener noreferrer">Value Providers</a>
   * <a target="_blank" href="/blogs/etomas/archive/2010/05/10/asp-net-mvc-el-defaultmodelbinder.aspx" rel="noopener noreferrer">El DefaultModelBinder</a>

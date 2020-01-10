@@ -1,6 +1,6 @@
 ---
 title: 'Facebook Connect: Si estás en facebook bienvenido a mi web…'
-description: 'Facebook Connect: Si estás en facebook bienvenido a mi web…'
+
 author: eiximenis
 
 date: 2009-12-10T09:52:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Antón Molleda comentaba en un post de su blog ([[WLMT] Socializándonos][1]), las ventajas que ofrece integrar nuestras aplicaciones an alguna de las redes sociales existentes. &Eacute;l comentará sus experiencias con el Windows Live Messenger Toolkit en [su blog][2], así que yo voy a comentaros cuatro cosillas sobre [Facebook Connect][3], el mecanismo de integración que nos ofrece Facebook.
+
+<!--more-->
 
 Con Facebook Connect lo que obtenemos es la posibilidad de que los usuarios registrados en Facebook puedan entrar con su login en nuestra web (o aplicación, aunque yo me cocentraré en web), y no sólo eso, sinó que (previa aceptación del usuario) nuestra aplicación pueda publicar contenido en facebook.
 

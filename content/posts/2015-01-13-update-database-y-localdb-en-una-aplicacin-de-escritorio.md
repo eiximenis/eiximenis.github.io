@@ -1,6 +1,6 @@
 ---
 title: update-database y LocalDb en una aplicación de escritorio
-description: update-database y LocalDb en una aplicación de escritorio
+
 author: eiximenis
 
 date: 2015-01-13T12:13:10+00:00

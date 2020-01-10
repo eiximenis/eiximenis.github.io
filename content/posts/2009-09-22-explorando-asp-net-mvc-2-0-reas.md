@@ -1,6 +1,6 @@
 ---
 title: Explorando ASP.NET MVC 2.0… áreas
-description: Explorando ASP.NET MVC 2.0… áreas
+
 author: eiximenis
 
 date: 2009-09-22T18:49:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 No hace mucho Jorge Dieguez comentaba [la salida de ASP.NET MVC 2.0 Preview 1][1]. He estado investigando un poco las novedades del framework, y hoy quiero hablaros de lo que se conoce como áreas.
+
+<!--more-->
 
 Cuando hablamos de áreas no nos referimos a zonas de la pantalla (tipo webparts) sinó que las áreas en ASP.NET MVC permiten construir una aplicación en base a _módulos_. Actualmente en la preview 1, el sistema consiste en:
 

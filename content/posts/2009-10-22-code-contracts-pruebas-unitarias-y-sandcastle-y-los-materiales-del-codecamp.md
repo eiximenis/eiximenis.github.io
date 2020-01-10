@@ -1,6 +1,6 @@
 ---
 title: Code Contracts, Pruebas Unitarias y SandCastle (y los materiales del CodeCamp)
-description: Code Contracts, Pruebas Unitarias y SandCastle (y los materiales del CodeCamp)
+
 author: eiximenis
 
 date: 2009-10-22T09:44:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Como prometí en el [post anterior sobre el CodeCamp][1], en mi charla sobre Code Contracts, quedaron por ver algunos temillas que aprovecho para comentar ahora.
+
+<!--more-->
 
 **Pruebas Unitarias**
 

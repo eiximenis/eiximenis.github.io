@@ -1,6 +1,6 @@
 ---
 title: Ficheros de configuración por entorno… ¿Sí, no o todo lo contrario?
-description: Ficheros de configuración por entorno… ¿Sí, no o todo lo contrario?
+
 author: eiximenis
 
 date: 2019-07-12T08:48:31+00:00

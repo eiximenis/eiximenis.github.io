@@ -1,6 +1,6 @@
 ---
 title: Depurar netcore ejecutándose en WSL con VS2017
-description: Depurar netcore ejecutándose en WSL con VS2017
+
 author: eiximenis
 
 date: 2018-11-15T09:27:24+00:00

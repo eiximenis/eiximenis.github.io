@@ -1,6 +1,6 @@
 ---
 title: 'C#5 Tomando una cerveza con Feynman (o await 2a parte)'
-description: 'C#5 Tomando una cerveza con Feynman (o await 2a parte)'
+
 author: eiximenis
 
 date: 2011-09-19T16:40:59+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 En el [post anterior][1] vimos como gracias a C# 5 y las nuevas palabras clave async y await el uso de métodos asíncronos era tan sencillo como ir al bar y tomarnos una cerveza. Como resumen del post vimos que async nos permitía indicar que un método quería realizar llamadas asíncronas y await nos permitía esperarnos al retorno de una llamada asíncrona. Si no has leído el post, antes de leer este échale un vistazo.
+
+<!--more-->
 
 En el post de ayer hice una simplificación, porque no quería liar las cosas más de la cuenta y total sólo iba a tomarme una cerveza. Hoy para mi desgracia, y para la vuestra, he quedado con [Richard Feynman][2] para tomarme esa misma cerveza… No interpretéis mal lo de “desgracia”, honestamente si pudiese elegir alguna personalidad de todos los tiempos con los que poder sentarme en una terraza y hablar de temas varios él estaría en uno de los primeros lugares de la lista. 
 

@@ -1,6 +1,6 @@
 ---
 title: ¿Webforms y ASP.NET MVC juntos? Pues claro!
-description: ¿Webforms y ASP.NET MVC juntos? Pues claro!
+
 author: eiximenis
 
 date: 2011-05-13T18:15:00+00:00
@@ -16,6 +16,8 @@ categories:
 En el grupo de <a target="_blank" href="http://www.linkedin.com/groups/AUGES-3889150" rel="noopener noreferrer">linkedin de AUGES</a>, <a target="_blank" href="http://www.linkedin.com/groups/Primer-debate-iniciar-AUGES-Es-3889150.S.52141354" rel="noopener noreferrer">en uno de los debates que tenemos abierto</a>, Javier Giners pregunta estrategias de migración de Webforms hacia ASP.NET MVC. Yo le responde que depende de como esté arquitecturada la aplicación pero que tenga presente que ASP.NET MVC y webforms pueden convivir juntos en **una misma aplicación web**. No se trata de que una aplicación web hecha en webforms se comunique fácilmente con otra hecha en ASP.NET MVC no. Se trata de que ambas tecnologías pueden combinarse para crear una sola aplicación web.
 
 Y ese es el objetivo de este post 😉
+
+<!--more-->
 
 **1. En el inicio sólo existía webforms**
 
@@ -246,7 +248,7 @@ Fijaos que la URL termina en .aspx (es un Webform) y también que hay usuario re
                                         </h4>
                                         
                                         <p>
-                                          <span style="background-color: #ffff00;"><b>Description: </b>An error occurred during the compilation of a resource required to service this request. Please review the following specific error details and modify your source code appropriately. <br /><b>Compiler Error Message: </b>CS0103: The name &#8216;model&#8217; does not exist in the current context <br /><b>Source Error:</b></span>
+                                          <span style="background-color: #ffff00;"><b>
                                         </p>
                                         
                                         <p>

@@ -1,6 +1,6 @@
 ---
 title: Diseccionando DevSpaces (i)
-description: Diseccionando DevSpaces (i)
+
 author: eiximenis
 
 date: 2018-07-30T06:44:22+00:00

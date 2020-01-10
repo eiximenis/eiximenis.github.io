@@ -1,6 +1,6 @@
 ---
 title: Evita las dependencias con tu contendor de IoC
-description: Evita las dependencias con tu contendor de IoC
+
 author: eiximenis
 
 date: 2009-12-01T16:16:21+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Usar un contenedor de IoC es una práctica más que recomendable, pero al hacerlo es muy fácil caer en el anti-patrón de _dependencia con el contenedor_. Ese patrón se manifesta de varias formas sútiles, y aunque hay algunos casos en que pueda ser aceptable, en la gran mayoría indica una mala práctica que debemos revisar.
+
+<!--more-->
 
 ¿Que tiene de malo este código?
 

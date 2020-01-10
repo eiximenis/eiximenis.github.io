@@ -1,6 +1,6 @@
 ---
 title: 'Opinión: De si Silverlight está muerto, agonizante o mejor que nunca'
-description: 'Opinión: De si Silverlight está muerto, agonizante o mejor que nunca'
+
 author: eiximenis
 
 date: 2010-11-03T10:50:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Andamos todos revolucionados estos dias, a raíz de unas declaraciones de [Bob Muglia][1] donde decía &ldquo;[Our strategy with Silverlight has shifted][2]&rdquo;. Eso unido al énfasis que se dio a HTML5 en el keynote del PDC y la no mención en absoluto de nada referente a Silverlight han disparado los rumores.
+
+<!--more-->
 
 Así pues... ¿está Silverlight muerto, agonizante o por el contrario está mejor que nunca? Primero un _disclaimer_: este es un post de opinión, todo lo que yo afirmo tajantemente en este post son cosas que _yo_ creo. No tengo ni el conocimiento ni la razón absoluta, y además en MS nunca se sabe, así que como suele decirse: al final el tiempo dará y quitará razones 🙂
 

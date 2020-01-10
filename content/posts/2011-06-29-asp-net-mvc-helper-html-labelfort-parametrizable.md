@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC – Helper Html.LabelFor<T> parametrizable'
-description: 'ASP.NET MVC – Helper Html.LabelFor<T> parametrizable'
+
 author: eiximenis
 
 date: 2011-06-29T23:27:00+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas! La verdad es que llevo algunos días sin actualizar mucho el blog... Ya se sabe trabajo y tal 🙂
 
 Hoy quiero comentaros algo rapidito y que se ha preguntado varias veces en los foros y que es como poder asignar un ID al <label /> generado por el helper Html.LabelFor<T>. En este caso vamos a hacer que se le puedan añadir todos los atributos que se quieran a la etiqueta <label />
+
+<!--more-->
 
 Aunque use este helper, la técnica aplicada debería serviros para ver como ampliar los helpers, en caso que lo necesitéis.
 

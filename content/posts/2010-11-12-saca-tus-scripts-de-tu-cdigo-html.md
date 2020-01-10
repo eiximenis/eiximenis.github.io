@@ -1,6 +1,6 @@
 ---
 title: Saca tus scripts de tu código HTML
-description: Saca tus scripts de tu código HTML
+
 author: eiximenis
 
 date: 2010-11-12T12:42:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! En el post anterior os comenté el soporte de [Unobtrusive Ajax en ASP.NET MVC3][1]. Hoy quiero mostraros que esa técnica **ni** es exclusiva de MVC3, **ni**&nbsp; requiere HTML5 para nada. En fin, que podéis empezar a usarla ya, con independencia de la tecnología que uséis. Lo que contaré en este artículo no es nada &ldquo;revolucionario&rdquo; ni una &ldquo;técnica nueva&rdquo;...
+
+<!--more-->
 
 De hecho, el ejemplo va a ser una página HTML, nada de ASP.NET 🙂
 

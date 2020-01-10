@@ -1,6 +1,6 @@
 ---
 title: '[Evento]–Hel10 Windows'
-description: '[Evento]–Hel10 Windows'
+
 author: eiximenis
 
 date: 2015-10-23T10:20:55+00:00

@@ -1,6 +1,6 @@
 ---
 title: El misterioso caso de la ListBox con un solo elemento
-description: El misterioso caso de la ListBox con un solo elemento
+
 author: eiximenis
 
 date: 2012-05-15T15:26:31+00:00

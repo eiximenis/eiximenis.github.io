@@ -1,6 +1,6 @@
 ---
 title: Mi (pequeño) homenaje al gran, genial e irrepetible Terry Pratchett
-description: Mi (pequeño) homenaje al gran, genial e irrepetible Terry Pratchett
+
 author: eiximenis
 
 date: 2015-03-20T11:55:21+00:00

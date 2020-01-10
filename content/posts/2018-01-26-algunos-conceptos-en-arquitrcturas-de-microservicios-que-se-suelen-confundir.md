@@ -1,6 +1,6 @@
 ---
 title: Algunos conceptos en arquitrcturas de (¿micro?)servicios que se suelen confundir
-description: Algunos conceptos en arquitrcturas de (¿micro?)servicios que se suelen confundir
+
 author: eiximenis
 
 date: 2018-01-26T09:01:21+00:00

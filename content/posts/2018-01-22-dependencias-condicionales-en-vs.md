@@ -1,6 +1,6 @@
 ---
 title: Dependencias condicionales en VS
-description: Dependencias condicionales en VS
+
 author: eiximenis
 
 date: 2018-01-22T16:28:19+00:00

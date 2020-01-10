@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC 3 – Preview 1
-description: ASP.NET MVC 3 – Preview 1
+
 author: eiximenis
 
 date: 2010-07-28T19:03:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Ayer saltaba la noticia en [el blog de scottgu][1]: la [preview 1 de ASP.NET MVC3 ya está disponible para descargar][2]. En fin, podríamos discutir largo y tendido sobre la política de actualizaciones a lo bestia de las APIs que está realizando microsoft desde hace algún tiempo, pero como cada uno tendría su opinión, mejor vamos a ver las novedades que trae esa _preview 1_. Antes que nada, podéis instalarla sin miedo: se instala side by side con MVC2 y además los proyectos que ya teníais no se ven afectados.
+
+<!--more-->
 
 Una vez instalado MVC3, aparecen tres nuevos tipos de proyectos en VS2010: _ASP.NET MVC 3 Web Application (ASPX)_, _ASP.NET MVC 3 Web Application (Razor)_ y _ASP.NET MVC 3 Emtpy Web Application_. No hay soporte para VS2008 puesto que MVC3 usa el .NET Framework 4. Vamos a ver las novedades que tiene esta preview1 de MVC3 🙂
 

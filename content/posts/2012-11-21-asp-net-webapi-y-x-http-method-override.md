@@ -1,6 +1,6 @@
 ---
 title: ASP.NET WebApi y X-HTTP-Method-Override
-description: ASP.NET WebApi y X-HTTP-Method-Override
+
 author: eiximenis
 
 date: 2012-11-21T18:13:16+00:00

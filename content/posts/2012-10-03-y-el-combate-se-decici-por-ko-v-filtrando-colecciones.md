@@ -1,6 +1,6 @@
 ---
 title: 'Y el combate se decició por KO (v): Filtrando colecciones'
-description: 'Y el combate se decició por KO (v): Filtrando colecciones'
+
 author: eiximenis
 
 date: 2012-10-03T15:12:00+00:00

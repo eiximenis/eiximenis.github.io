@@ -1,6 +1,6 @@
 ---
 title: Más sobre Code Contracts…
-description: Más sobre Code Contracts…
+
 author: eiximenis
 
 date: 2009-06-09T14:06:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos... después de que Jorge (en [http://geeks.ms/blogs/jorge/archive/2009/04/26/precondiciones-y-microsoft-code-contracts.aspx][1]) yo mismo (en [http://geeks.ms/blogs/etomas/archive/2009/05/04/pexcando-errores-en-nuestro-c-243-digo.aspx][2]) comentasemos algo de Code Contracts, voy a comentar algunas cosillas más que me he encontrado con Code Contracts usándolos en un proyecto real.
+
+<!--more-->
 
 Aunque están en fase &ldquo;beta&rdquo;, la tecnología está lo suficientemente madura para ser usada en proyectos &ldquo;reales&rdquo;, al menos teniendo en cuenta de que las builds donde suelen activarse todos los contratos son las builds de debug. En nuestro caso tenemos activados todos los contratos en debug y sólo las precondiciones en release.
 

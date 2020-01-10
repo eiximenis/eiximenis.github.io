@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC – Patrón PRG sin sesión
-description: ASP.NET MVC – Patrón PRG sin sesión
+
 author: eiximenis
 
 date: 2013-05-25T16:50:00+00:00

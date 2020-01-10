@@ -1,6 +1,6 @@
 ---
 title: ASP.NET vNext–Crea tus propios “comandos K”
-description: ASP.NET vNext–Crea tus propios “comandos K”
+
 author: eiximenis
 
 date: 2014-09-16T23:33:42+00:00

@@ -1,6 +1,6 @@
 ---
 title: '[Evento] Recordatorio: Este jueves… Hasta dónde podemos  llegar con ASP.NET MVC?'
-description: '[Evento] Recordatorio: Este jueves… Hasta dónde podemos  llegar con ASP.NET MVC?'
+
 author: eiximenis
 
 date: 2010-12-01T17:14:21+00:00
@@ -18,6 +18,8 @@ Hola!
 Este es un post para recordaros que **mañana jueves 2 de diciembre**, sobre las 19:00 (hora española) doy un WebCast de la mano de la gente del Lleida DotNetClub.
 
 Veremos paso a paso (como los [New Kids on the Block][1] ‘_step by step, uououoooo baby_’) la realización de **Porrazo**, el sistema de Porras on-line que ha hecho de _Porrazo Enterprise_ la empresa más cotizada de la bolsa…
+
+<!--more-->
 
 [<img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: ; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://geeks.ms/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/etomas/image_5F00_thumb_5F00_38C97227.png" width="244" height="208" />][2][<img style="background-image: none; border-bottom: 0px; border-left: 0px; margin: ; padding-left: 0px; padding-right: 0px; display: inline; border-top: 0px; border-right: 0px; padding-top: 0px" title="image" border="0" alt="image" src="http://geeks.ms/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/etomas/image_5F00_thumb_5F00_6B8952CE.png" width="244" height="173" />][3]
 

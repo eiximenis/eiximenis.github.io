@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC y Ajax: fácil no, facilísimo (ii)'
-description: 'ASP.NET MVC y Ajax: fácil no, facilísimo (ii)'
+
 author: eiximenis
 
 date: 2009-06-30T15:50:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! En este post (continuación del post anterior [ASP.NET MVC y Ajax][1]) voy a comentaros algunas cosillas más sobre ASP.NET MVC y ajax utilizando jQuery. En este caso vamos a ver como implementar un clásico de Ajax: las combos encadenadas.
+
+<!--more-->
 
 Vamos a hacer el manido ejemplo de continentes y paises: seleccionas un continente en la combo y via Ajax se rellena la combo de paises. Vereis que sencillo es crear combos encadenadas con ASP.NET MVC y jQuery.
 

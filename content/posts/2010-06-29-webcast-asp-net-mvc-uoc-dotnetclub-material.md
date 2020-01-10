@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC UoC DotNetClub – Material'
-description: '[WebCast] ASP.NET MVC UoC DotNetClub – Material'
+
 author: eiximenis
 
 date: 2010-06-29T18:17:05+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos!
 
 Ayer 28 de Junio a las 20:00 di un WebCast de introducción a ASP.NET MVC gracias a la gente del <a href="http://uoc.dotnetclubs.com/" target="_blank" rel="noopener noreferrer">UoC DotNetClub</a>. La verdad es que yo me lo pasé fenomenal, a pesar de no ser muy ducho con el LiveMeeting que digamos, pero bueno, jejejeee… 🙂
+
+<!--more-->
 
 Visto en retrospectiva, que siempre es fácil, intenté dar un vistazo (muy) rápido a todo ASP.NET MVC, explicando cual es la necesidad de un _nuevo_ framework para el desarrollo de aplicaciones web en ASP.NET y luego comentando cada uno de los aspectos propios. No puede entrar en tanto detalle en algunos puntos en los que quería hacer especial incapié (sobretodo la factoría de controladores) y me gustaría haber dado más ejemplos de ViewResults y ActionFilters pero la verdad es que iba mirando el reloj, porque había muchas cosas que contar… y muy poco tiempo. Honestamente ahora quizá un par de puntos que intenté dar no los hubiera mencionado porque creo que no pude explicarlos como se merecen.
 

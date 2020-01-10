@@ -1,6 +1,6 @@
 ---
 title: 'Curiosidad: Esos nombres de contenedores en Docker…'
-description: 'Curiosidad: Esos nombres de contenedores en Docker…'
+
 author: eiximenis
 
 date: 2019-03-05T15:51:11+00:00

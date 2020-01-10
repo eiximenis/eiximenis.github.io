@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Create tus propias validaciones'
-description: 'ASP.NET MVC: Create tus propias validaciones'
+
 author: eiximenis
 
 date: 2010-06-16T12:02:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Una de las noverdades de ASP.NET MVC 2 es que lleva integrado el uso de <a target="_blank" href="http://msdn.microsoft.com/en-us/library/dd901590(VS.95).aspx" rel="noopener noreferrer">Data Annotations</a> para permitirnos validar los modelos. <a target="_blank" href="http://www.asp.net/mvc/tutorials/validation-with-the-data-annotation-validators-cs" rel="noopener noreferrer">En ASP.NET MVC 1 también era posible</a> pero no era un proceso tan integrado como con la nueva versión.
+
+<!--more-->
 
 Mediante Data Annotations podemos indicar un conjunto de reglas que deben cumplir las propiedades de nuestros modelos. Así para indicar que el campo _Login_ es obligatorio basta con decorar la propiedad correspondiente:
 

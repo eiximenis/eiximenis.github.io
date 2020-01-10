@@ -1,6 +1,6 @@
 ---
 title: Bundles en ASP.NET MVC4
-description: Bundles en ASP.NET MVC4
+
 author: eiximenis
 
 date: 2012-07-30T17:08:11+00:00

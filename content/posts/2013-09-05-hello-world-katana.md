@@ -1,6 +1,6 @@
 ---
 title: ¡Hello World Katana!
-description: ¡Hello World Katana!
+
 author: eiximenis
 
 date: 2013-09-05T16:10:11+00:00

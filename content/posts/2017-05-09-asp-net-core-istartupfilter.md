@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Core – IStartupFilter
-description: ASP.NET Core – IStartupFilter
+
 author: eiximenis
 
 date: 2017-05-09T14:55:27+00:00

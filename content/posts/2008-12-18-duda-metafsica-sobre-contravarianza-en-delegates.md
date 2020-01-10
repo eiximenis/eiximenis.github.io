@@ -1,6 +1,6 @@
 ---
-title: Duda metafísica sobre “contravarianza” en delegates
-description: Duda metafísica sobre “contravarianza” en delegates
+title: Duda metafísica sobre contravarianza en delegates
+
 author: eiximenis
 
 date: 2008-12-18T13:14:02+00:00
@@ -16,6 +16,8 @@ categories:
 Hola… hoy voy a poner un post sobre una dudilla _metafísica_ que me ha surgido, concretamente relativa a los _delegates_. Y he pensado… que mejor sitio que ponerla que aquí??? 😉
 
 Los delegates en C# 2.0 son contravariantes, es decir un delegate a un método que espera un parámetro tipo X aceptará cualquier método que espere un parámetro de cualquier tipo base de X.
+
+<!--more-->
 
 Es decir, el siguiente código funciona bien:
 

@@ -1,6 +1,6 @@
 ---
 title: '[Code Contracts] ccrewrite – “Unresolved assembly reference not allowed”'
-description: '[Code Contracts] ccrewrite – “Unresolved assembly reference not allowed”'
+
 author: eiximenis
 
 date: 2009-06-11T17:22:43+00:00
@@ -13,13 +13,13 @@ categories:
   - Uncategorized
 
 ---
-Imaginaos que teneis una solución con varios proyectos, y que estos compilan en un directorio concreto, llamésmole Q:bin.
+Imaginaos que teneis una solución con varios proyectos, y que estos compilan en un directorio concreto, llamésmole `Q\:bin.`
 
 En otra solución teneis varios proyectos más, con referencias a los assemblies que estan en Q:bin (no son referencias de proyecto porque estan en distintas soluciones).
 
 Y ya puestos, imaginad también que estáis usando Code Contracts. Y cuando compilais los proyectos de la **segunda** solución visual studio se descuelga con un bonito error:
 
-_Unresolved assembly reference not allowed: assembly\_que\_esta\_en\_Q_bin.dll_ y el “fichero” que genera el error es ccrewrite.
+`Unresolved assembly reference not allowed: assembly_que_esta_en_Q_bin.dll_` y el “fichero” que genera el error es `ccrewrite`.
 
 La solución es ir al proyecto que no compila, abrir sus propiedades y en la pestaña Code Contracts añadir el directorio Q:bin a la entrada “Lib Paths”:
 

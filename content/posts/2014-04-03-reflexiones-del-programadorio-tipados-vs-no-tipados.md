@@ -1,6 +1,6 @@
 ---
 title: 'Reflexiones del #programadorIO: Tipados vs no tipados'
-description: 'Reflexiones del #programadorIO: Tipados vs no tipados'
+
 author: eiximenis
 
 date: 2014-04-03T23:39:39+00:00

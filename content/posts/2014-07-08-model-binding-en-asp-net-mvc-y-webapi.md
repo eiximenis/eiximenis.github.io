@@ -1,6 +1,6 @@
 ---
 title: Model binding en ASP.NET MVC y WebApi
-description: Model binding en ASP.NET MVC y WebApi
+
 author: eiximenis
 
 date: 2014-07-08T13:25:35+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Redirecciones permanentes'
-description: 'ASP.NET MVC: Redirecciones permanentes'
+
 author: eiximenis
 
 date: 2010-02-10T09:54:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Los que estéis al tanto de las novedades de ASP.NET 4, sabreis que una de ella es <a target="_blank" href="http://msdn.microsoft.com/en-us/library/system.web.httpresponse.redirectpermanent(VS.100).aspx" rel="noopener noreferrer">Response.RedirectPermanent</a> (de la cual Ibon habla <a target="_blank" href="/blogs/ilanda/archive/2010/01/26/m-233-todo-response-redirectpermanent.aspx" rel="noopener noreferrer">un poco en este post</a>). La diferencia con respecto a Response.Redirect es que esta emite un código <a target="_blank" href="http://en.wikipedia.org/wiki/HTTP_302" rel="noopener noreferrer">HTTP 302 (Found)</a> mientras que RedirectPermanent emite un código <a target="_blank" href="http://en.wikipedia.org/wiki/HTTP_301" rel="noopener noreferrer">HTTP 301 (Moved Permanently)</a>.
+
+<!--more-->
 
 A efectos del usuario final el resultado es exactamente el mismo: cuando el navegador recibe un HTTP 301 o bien un HTTP 302, realiza _otra_ petición a la URL especificada en el header &ldquo;Location&rdquo;, con lo cual se consigue el objetivo final: que el usuario sea redirigido a otra página.
 

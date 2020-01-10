@@ -1,6 +1,6 @@
 ---
 title: Crear imágenes Docker de proyectos netcore en varias versiones del framework
-description: Crear imágenes Docker de proyectos netcore en varias versiones del framework
+
 author: eiximenis
 
 date: 2018-11-29T14:33:33+00:00

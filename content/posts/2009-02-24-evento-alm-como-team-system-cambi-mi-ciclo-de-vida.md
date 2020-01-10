@@ -1,6 +1,6 @@
 ---
 title: 'Evento ALM: Como Team System cambió mi (ciclo de) vida'
-description: 'Evento ALM: Como Team System cambió mi (ciclo de) vida'
+
 author: eiximenis
 
 date: 2009-02-24T15:12:00+00:00
@@ -18,6 +18,8 @@ Hola a todos!
 Aprovecho la ocasión para comunicaros un evento que organizamos en **[raona][1]**, en colaboración con Microsoft, sobre ALM en general y Team System en particular.
 
 Lo hemos llamado &ldquo;_**[Como Team System cambió mi (ciclo de) vida][2]**_&rdquo;. Durante unas 4 horas y pico, [Magda][3], Enric y yo mismo (sí, nada es perfecto y yo voy a estar... pero no sufrais, ya dejaré hablar a los que saben :p) vamos a comentar distintos aspectos de Team System. Empezaremos con una introducción y luego iremos viendo aspectos concretos (personalización, distintos clientes de foundation server, team build,...).
+
+<!--more-->
 
 El evento será en Madrid el 18 de marzo y en Barcelona al dia siguiente (o sea el 19).
 

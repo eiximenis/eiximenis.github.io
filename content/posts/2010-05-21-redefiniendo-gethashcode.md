@@ -1,6 +1,6 @@
 ---
 title: Redefiniendo GetHashCode
-description: Redefiniendo GetHashCode
+
 author: eiximenis
 
 date: 2010-05-21T11:45:55+00:00
@@ -13,7 +13,9 @@ categories:
   - Uncategorized
 
 ---
-Hola a todos! Un post para comentar paranoias varias sobre algo que parece tan simple como redefinir GetHashCode()…
+Hola a todos! Un post para comentar paranoias varias sobre algo que parece tan simple como redefinir `GetHashCode()`…
+
+<!--more-->
 
 Primero las dos normas básicas que supongo que la mayoría ya conoceréis: 
 

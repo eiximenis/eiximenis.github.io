@@ -1,6 +1,6 @@
 ---
 title: Clases como ciudadanos de primer orden en JS
-description: Clases como ciudadanos de primer orden en JS
+
 author: eiximenis
 
 date: 2016-03-22T10:00:59+00:00

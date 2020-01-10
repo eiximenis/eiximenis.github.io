@@ -1,6 +1,6 @@
 ---
 title: Desacopla tus datos XML del formato…
-description: Desacopla tus datos XML del formato…
+
 author: eiximenis
 
 date: 2010-05-26T12:56:55+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Leyendo <a href="http://geeks.ms/blogs/gtorres/archive/2010/05/24/xmlserializer-y-xml-attributes.aspx" target="_blank" rel="noopener noreferrer">este post de Gisela sobre la serialización XML</a> me he decidido escribir este… es lo que tiene la realimentación en los blogs 🙂
+
+<!--more-->
 
 El uso de atributos que menciona Gis en su post es realmente genial. A mi me encanta: me permite definir mis clases en un momento y es muy útil cuando leemos datos xml de una fuente externa. Pero hay un detalle que _puede_ ser un problema: El esquema XML está totalmente acoplado de la clase que tiene los datos. Si estamos leyendo de dos fuentes externas que tienen esquemas XML distintos pero tienen los mismos datos, debemos duplicar las clases que serializan esos datos, ya que los atributos a usar serán distintos.
 

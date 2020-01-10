@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Binding de datos de sesión a controladores'
-description: 'ASP.NET MVC: Binding de datos de sesión a controladores'
+
 author: eiximenis
 
 date: 2011-01-03T11:08:00+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas! Que tal el fin de año? Empachados con turrones, polvorones y demás? En fin, vamos a inaugurar el 2011 y que mejor manera que hacerlo que con un post! 😉
 
 En realidad hubiese querido que este post fuese el último del año anterior, pero no puede publicarlo antes por problemas logísticos. La idea del post surge <a target="_blank" href="http://twitter.com/luisruizpavon/status/20062211649052672" rel="noopener noreferrer">de un tweet que publicó Luis Ruiz Pavón.</a> Su pregunta era que tal acceder a la sesión desde un Model Binder para poner datos a disposición de los controladores. <a target="_blank" href="http://twitter.com/eiximenis/status/20062646694846464" rel="noopener noreferrer">Mi respuesta fue que yo usaría un value provider</a>, y así llegamos a este post.
+
+<!--more-->
 
 Para conseguir binding de los datos de la sesión a los parámetros de un controlador no es necesario crear ningún Model Binder. En MVC2 se introdujo un concepto nuevo (del que ya he hablado varias veces por aquí) que se llama ValueProvider y que es el encargado de _acceder donde están los datos y ponerlos a disposición de los Model Binders_. Si ignoramos los value providers y hacemos un model binder que acceda a la sesión, entonces realmente nuestro model binder hace dos cosas:
 

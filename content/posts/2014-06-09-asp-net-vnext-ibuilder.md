@@ -1,6 +1,6 @@
 ---
 title: ASP.NET vNext – IBuilder
-description: ASP.NET vNext – IBuilder
+
 author: eiximenis
 
 date: 2014-06-09T17:08:02+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'How to: Obtener controles de un formulario con generics II (Linq al rescate).'
-description: 'How to: Obtener controles de un formulario con generics II (Linq al rescate).'
+
 author: eiximenis
 
 date: 2010-11-08T11:28:41+00:00
@@ -16,6 +16,8 @@ categories:
 Ayer Lluis escribía este gran post: _[How to: Obtener controles de un formulario con generics][1]_. Como bien dice es una pregunta… recurrente en todos los sitios 🙂
 
 Lo bueno de eso del desarrollo es que para todo hay varias soluciones, así que aquí os propongo otra, pero usando Linq. Personalmente me encanta Linq, supongo que es porqué siempre me han fascinado los lenguajes funcionales…
+
+<!--more-->
 
 Antes que nada tenemos que solucionar un temilla: Linq funciona sobre IEnumerable<T> pero la propiedad Controls de un Control devuelve un objeto de tipo ControlCollection (otra de esas n-mil clases que no tienen sentido alguno y que existen sólo porque no teníamos generics en la versión 1 del framework). Así que el primer paso es obtener un IEnumerable<Control> a partir de una ControlCollection. Con un método extensor eso es trivial:
 

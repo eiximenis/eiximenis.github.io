@@ -1,6 +1,6 @@
 ---
 title: Generar imágenes Docker de proyectos SPA de netcore
-description: Generar imágenes Docker de proyectos SPA de netcore
+
 author: eiximenis
 
 date: 2018-10-25T14:04:52+00:00

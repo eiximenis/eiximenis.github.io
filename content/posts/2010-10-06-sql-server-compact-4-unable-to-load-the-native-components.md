@@ -1,6 +1,6 @@
 ---
 title: 'SQL Server Compact 4: Unable to load the native components'
-description: 'SQL Server Compact 4: Unable to load the native components'
+
 author: eiximenis
 
 date: 2010-10-06T12:03:57+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas! Un post ligerito, ligerito 🙂
 
 Ando esos días probando cosillas con SQL Server Compact 4 (que os podéis descargar desde [su página de descargas][1] o bien usando [Web Platofrm Installer][2]).
+
+<!--more-->
 
 Habiendo probado código con [EF 4 Code First][3] que estaba funcionando bien, empecé otras pruebas usando el proveedor propio de ADO.NET. Así que agregué una referencia a la _System.Data.SqlServerCe.dll_ que viene con SQL Server Compact 4, y cree una conexión:
 

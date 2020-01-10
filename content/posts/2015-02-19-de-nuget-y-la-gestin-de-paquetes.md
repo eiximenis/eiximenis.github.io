@@ -1,6 +1,6 @@
 ---
 title: De NuGet y la gestión de paquetes
-description: De NuGet y la gestión de paquetes
+
 author: eiximenis
 
 date: 2015-02-19T09:11:40+00:00

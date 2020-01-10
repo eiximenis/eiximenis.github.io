@@ -1,6 +1,6 @@
 ---
 title: 'SF Mesh: Primeras impresiones'
-description: 'SF Mesh: Primeras impresiones'
+
 author: eiximenis
 
 date: 2018-07-18T14:39:20+00:00
@@ -321,7 +321,7 @@ También existe soporte para despliegue usando YAMLs pero **por ahora este sopo
   schemaVersion: 1.0.0-preview1
   name: MeshDemoNetwork
   properties:
-    description: MeshDemoNetwork description.
+    
     addressPrefix: 10.0.0.4/22
     ingressConfig:
       layer4:

@@ -1,6 +1,6 @@
 ---
 title: Nombres de algunos controladores distintos en ASP.NET MVC
-description: Nombres de algunos controladores distintos en ASP.NET MVC
+
 author: eiximenis
 
 date: 2010-02-19T11:07:01+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola! Un post para comentaros como he implementado una cosilla que necesitaba en ASP.NET MVC (v1). En concreto necesitaba mapear las URLs de tipo /api/{controller}/{action} al controlador especificado, pero con la salvedad de que el nombre del controlador empezaba por War. Es decir la URL /api/Foo/Index debía llamar a la acción del controlador WarFoo (en lugar del controlador Foo). 
+
+<!--more-->
 
 En resumen lo que quería era:
 

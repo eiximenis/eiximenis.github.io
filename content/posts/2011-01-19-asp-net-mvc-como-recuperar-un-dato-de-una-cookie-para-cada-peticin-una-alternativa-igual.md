@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición… Una alternativa ¿igual?'
-description: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición… Una alternativa ¿igual?'
+
 author: eiximenis
 
 date: 2011-01-19T11:04:53+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Hace algunos días escribí el post <a href="http://geeks.ms/blogs/etomas/archive/2011/01/14/asp-net-mvc-como-recuperar-un-dato-de-una-cookie-para-cada-petici-243-n.aspx" target="_blank" rel="noopener noreferrer">ASP.NET MVC: Como recuperar datos de una cookie en cada petición</a>, donde mostraba el uso de un _route handler_ propio para recuperar los datos de una cookie y colocarlos en el Route Data. En el ejemplo era una cookie de cultura de la aplicación, pero se puede aplicar a lo que queráis.
+
+<!--more-->
 
 Lo que más me gusta de ASP.NET MVC es que muy expandible, que muchas cosas pueden hacerse de más de una forma. Pues bien, una de las novedades más interesantes de MVC3 (al margen de Razor) son los action filters **globales**.
 

@@ -1,6 +1,6 @@
 ---
 title: Nombres de algunos controladores distintos en ASP.NET MVC (ii)
-description: Nombres de algunos controladores distintos en ASP.NET MVC (ii)
+
 author: eiximenis
 
 date: 2010-02-19T15:39:13+00:00
@@ -13,7 +13,9 @@ categories:
   - Uncategorized
 
 ---
-Bueno… Este post es la continuación / aclaración del <a href="http://geeks.ms/blogs/etomas/archive/2010/02/19/nombres-de-algunos-controladores-distintos-en-asp-net-mvc.aspx" target="_blank" rel="noopener noreferrer">post anterior</a>. En el post anterior configuramos la tabla de rutas junto con un RouteHandler propio y vimos que realmente las llamadas se enrutaban al controlador que tocaba: /api/Foo me enrutaba al controlador WarFoo y /Foo me enrutaba al controlador Foo.
+Bueno… Este post es la continuación / aclaración del <a href="http://geeks.ms/blogs/etomas/archive/2010/02/19/nombres-de-algunos-controladores-distintos-en-asp-net-mvc.aspx" target="_blank" rel="noopener noreferrer">post anterior</a>. En el post anterior configuramos la tabla de rutas junto con un RouteHandler propio y vimos que realmente las llamadas se enrutaban al controlador que tocaba: `/api/Foo` me enrutaba al controlador `WarFoo` y `/Foo` me enrutaba al controlador `Foo`.
+
+<!--more-->
 
 Lo que _no comenté_ es lo que _deja_ de funcionar… 🙂
 

@@ -1,6 +1,6 @@
 ---
 title: 'PRISM y Winforms: Mostrar vistas en nuevos formularios'
-description: 'PRISM y Winforms: Mostrar vistas en nuevos formularios'
+
 author: eiximenis
 
 date: 2009-03-11T08:58:00+00:00
@@ -16,6 +16,8 @@ categories:
 En un post anterior ([PRISM y Winforms][1]), comentaba como usar [PRISM][2] para realizar aplicaciones Winforms.
 
 Un comentario de Jose en esta entrada, me ha motivado a escribir el siguiente post, para mostrar como podríamos mostrar vistas en regiones que estén incrustadas no en un UserControl (típicamente un Panel) de la ventana principal, sino incrustadas en un nuevo formulario.
+
+<!--more-->
 
 Para poder usar regiones en Winforms era necesario definirnos un RegionAdapter para la clase &ldquo;Control&rdquo; que era básicamente el objetivo del post anterior. En el método Adapt() teníamos el código que &ldquo;incrustaba&rdquo; la vista dentro del control. Dicho método recibía (de PRISM) la región y el target, o control donde colocar dicha región.
 

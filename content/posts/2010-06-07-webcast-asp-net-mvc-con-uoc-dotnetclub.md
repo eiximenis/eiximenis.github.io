@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC con UOC DotNetClub'
-description: '[WebCast] ASP.NET MVC con UOC DotNetClub'
+
 author: eiximenis
 
 date: 2010-06-07T14:45:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola!
 
 <a target="_blank" href="/members/jbosch/default.aspx" rel="noopener noreferrer">Jesús Bosch</a> ha tenido a bien proponerme a que de un WebCast de introducción ASP.NET MVC para el <a target="_blank" href="http://uoc.dotnetclubs.com/" rel="noopener noreferrer">UOC DotNetClub</a>. 
+
+<!--more-->
 
 Así pues el **próximo lunes 21 de Junio a las 20:00** (hora de España) estáis todos invitados.
 

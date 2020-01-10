@@ -1,6 +1,6 @@
 ---
 title: Usando las herramientas para Git de VS2012
-description: Usando las herramientas para Git de VS2012
+
 author: eiximenis
 
 date: 2013-07-19T09:21:00+00:00

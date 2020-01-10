@@ -1,6 +1,6 @@
 ---
 title: Como depurar fácilmente el código de ASP.NET5
-description: Como depurar fácilmente el código de ASP.NET5
+
 author: eiximenis
 
 date: 2015-11-11T10:09:55+00:00

@@ -1,6 +1,6 @@
 ---
 title: Linq To SQL y Repository Pattern… sí, pero ojo!
-description: Linq To SQL y Repository Pattern… sí, pero ojo!
+
 author: eiximenis
 
 date: 2010-03-04T10:13:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! Hoy, por temas que no vienen al caso, estaba mirando el <a target="_blank" href="http://asp.net/mvc" rel="noopener noreferrer">tutorial de MVC que hay en asp.net</a>. Hay dos apartados dedicados a explicar como se pueden realizar modelos usando Linq to Sql y EF. Hasta ahí, ningún problema.
+
+<!--more-->
 
 El problema viene, cuando en el <a target="_blank" href="http://www.asp.net/learn/mvc/tutorial-10-cs.aspx" rel="noopener noreferrer">apartado dedicado a Linq to Sql</a>, una vez han dado un ejemplo de uso de las clases de Linq to Sql desde un controlador, dicen que esta solución, aunque correcta, implica que si en un futuro cambiamos el proveedor de acceso a datos vamos a tener que tocar todos nuestros controladores, ya que usamos las clases Linq to Sql desde ellos. También se menciona que el uso del patrón <a target="_blank" href="http://martinfowler.com/eaaCatalog/repository.html" rel="noopener noreferrer">Repositorio</a> (_repository pattern_) nos permite aislarnos de Linq to Sql de modo que si más adelante migramos, digamos a EF, no tengamos que modificar nuestros controladores.
 

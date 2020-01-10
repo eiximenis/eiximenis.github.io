@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC3 Beta: Mis impresiones'
-description: 'ASP.NET MVC3 Beta: Mis impresiones'
+
 author: eiximenis
 
 date: 2010-10-07T14:19:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenooo… ayer fue un día movidito en Microsoft: [anunciaron de golpe][1] la beta 2 de WebMatrix, la beta de MVC3 y un gestor de paquetes OSS para Visual Studio llamado NuPack. También he visto a través del [Web PI][2] que está la CTP2 de Compact SQL 4.
+
+<!--more-->
 
 MVC1 salió con 5 (creo) previews antes de la beta, con MVC2 juraria que hicieron un par o tres, y con MVC3 sólo un preview1 y luego ya la beta… a ese ritmo MVC4 cuando salga lo hará ya con el SP1 incorporado. 😛 Esos de Microsoft van cada vez más rápido.
 

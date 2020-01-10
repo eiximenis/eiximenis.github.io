@@ -1,6 +1,6 @@
 ---
 title: ¿Es Javascript orientado a objetos?
-description: ¿Es Javascript orientado a objetos?
+
 author: eiximenis
 
 date: 2013-10-25T12:40:41+00:00

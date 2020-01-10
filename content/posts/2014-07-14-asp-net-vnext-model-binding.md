@@ -1,6 +1,6 @@
 ---
 title: ASP.NET vNext–Model Binding
-description: ASP.NET vNext–Model Binding
+
 author: eiximenis
 
 date: 2014-07-14T14:02:20+00:00

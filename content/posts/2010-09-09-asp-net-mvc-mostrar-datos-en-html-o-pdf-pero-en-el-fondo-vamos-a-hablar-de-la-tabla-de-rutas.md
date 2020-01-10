@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Mostrar datos en HTML o PDF (pero en el fondo vamos a hablar de la tabla de rutas).'
-description: 'ASP.NET MVC: Mostrar datos en HTML o PDF (pero en el fondo vamos a hablar de la tabla de rutas).'
+
 author: eiximenis
 
 date: 2010-09-09T13:13:19+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 El otro día, [uno de los grandes de Webforms][1] (al que, aún que a veces despotrique un poco, MVC le está empezando a gustar :P), publico un [excelente artículo sobre como generar PDFs usando MVC][2]. En el artículo Marc mostraba como mostrar datos de un PDF físico en disco o bien usando una vista parcial para generar PDFs al vuelo.
+
+<!--more-->
 
 Su artículo me sirve de excusa perfecta para escribir un artículo sobre como podríamos aplicar su solución a un caso más general: vamos a ver como podemos mostrar **una misma vista** ya sea en formato HTML o bien en PDF. De nuevo, **antes que nada leeros el artículo de Marc**, ya que este está basado en aquel.
 

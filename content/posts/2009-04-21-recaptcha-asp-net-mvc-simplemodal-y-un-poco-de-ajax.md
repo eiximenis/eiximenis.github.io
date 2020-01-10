@@ -1,6 +1,6 @@
 ---
 title: Recaptcha, ASP.NET MVC, SimpleModal y un poco de Ajax…
-description: Recaptcha, ASP.NET MVC, SimpleModal y un poco de Ajax…
+
 author: eiximenis
 
 date: 2009-04-21T10:11:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola família!
 
 En los dos últimos posts ([http://geeks.ms/blogs/etomas/archive/2009/04/14/mostrar-un-formulario-modal-con-asp-net-mvc-y-ajax.aspx][1] y [http://geeks.ms/blogs/etomas/archive/2009/04/15/mostrar-un-formulario-modal-con-asp-net-mvc-y-ajax-ii.aspx][2]) comenté como he usado SimpleModal, junto con ASP.NET MVC para mostrar un formulario modal y comunicarlo via AJAX con nuestro controlador.
+
+<!--more-->
 
 En mi caso, este formulario era el formulario de registro... y para evitar los spammers (tal y como diría cierto ministro, _yo no digo que haya que prohibir el spam, pero yo lo prohibiría_ :p) decidí usar un captcha.
 

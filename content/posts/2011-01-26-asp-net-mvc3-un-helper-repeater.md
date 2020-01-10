@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Un helper Repeater'
-description: 'ASP.NET MVC3: Un helper Repeater'
+
 author: eiximenis
 
 date: 2011-01-26T09:35:23+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! En el post anterior comenté la característica de los <a href="http://geeks.ms/blogs/etomas/archive/2011/01/25/asp-net-mvc3-razor-templates.aspx" target="_blank" rel="noopener noreferrer">templates de Razor</a> y hoy vamos a ver como podríamos crear un _helper_ que emule un poco el <a href="http://msdn.microsoft.com/es-es/library/6weyd81h(VS.80).aspx" target="_blank" rel="noopener noreferrer">control Repeater</a> que hay en webforms (salvando las distancias, claro).
+
+<!--more-->
 
 Vamos a crear un _helper externo_, es decir que sea reutilizable en distintos proyectos: para ello nuestro helper va a residir en una clase (en mi ejemplo en el propio proyecto web, pero se podría situar en una librería de clases para ser reutilizable).
 

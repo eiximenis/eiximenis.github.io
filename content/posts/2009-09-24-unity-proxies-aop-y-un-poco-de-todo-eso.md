@@ -1,6 +1,6 @@
 ---
 title: Unity, Proxies, AOP y un poco de todo eso…
-description: Unity, Proxies, AOP y un poco de todo eso…
+
 author: eiximenis
 
 date: 2009-09-24T11:34:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 En mi opinión, usar un contenedor de IoC hoy en día, no es una opción sinó una _obligación_. Las ventajas que nos ofrecen son incotestables. Los patrones [Service Locator][1] y [Dependency Injection][2] nos permiten _desacoplar_ nuestro código, y son la base para poder trabajar de forma modular y poder generar unos tests unitarios de forma más sencilla. Pero hoy no quiero hablaros de ninguno de estos patrones, sinó de otra de las capacidades de los contenedores de IoC: la generación de proxies.
+
+<!--more-->
 
 Con esta técnica lo que podemos hacer es _inyectar_ nuestro propio código para que se ejecute antes o después del código que contenga la clase en particular. Esto, si lo combinamos con los atributos nos proporciona unas capacidades potentísimas para poder tener [programación orientada a aspectos][3].
 

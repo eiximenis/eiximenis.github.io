@@ -1,6 +1,6 @@
 ---
 title: Unobtrusive Ajax en MVC3
-description: Unobtrusive Ajax en MVC3
+
 author: eiximenis
 
 date: 2010-11-09T11:54:22+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas! Una de las novedades más interesantes de MVC3 es el soporte para eso que se llama _Unobtrusive_ Ajax. La verdad es que no encuentro una buena traducción para Unobtrusive (discreto no me convence).
 
 La idea del Unobtrusive Ajax es **evitar mezclar código script con código HTML**. De la misma manera que CSS nos permite separar completamente el código HTML de su representación, con Unobtrusive Ajax vamos a poder separar el código javascript del código HTML.
+
+<!--more-->
 
 Pero mejor, veamoslo con un ejemplo, ultra sencillo 🙂
 

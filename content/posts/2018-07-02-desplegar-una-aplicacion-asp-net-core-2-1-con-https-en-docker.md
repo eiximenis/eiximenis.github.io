@@ -1,6 +1,6 @@
 ---
 title: Desplegar una aplicación ASP.NET Core 2.1 con https en Docker
-description: Desplegar una aplicación ASP.NET Core 2.1 con https en Docker
+
 author: eiximenis
 
 date: 2018-07-02T15:49:12+00:00

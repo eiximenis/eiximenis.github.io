@@ -1,6 +1,6 @@
 ---
 title: Diseñar clases para ser heredadas…
-description: Diseñar clases para ser heredadas…
+
 author: eiximenis
 
 date: 2010-04-12T08:55:43+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Una de las ventajas de la programación orientada a objetos, es la herencia de clases y el polimorfismo: eso es la capacidad para crear clases _derivadas_ a partir de otras clases y poder usar las clases derivadas en cualquier lugar donde se espere la clase base.
+
+<!--more-->
 
 El comportamiento por _defecto_ de C# (y VB.NET) es que cuando creamos una clase, _esa se puede exteder_, es decir puede crearse una clase derivada. Debemos declarar explicitamente la clase como sellada (<a href="http://msdn.microsoft.com/es-es/library/88c54tsw(VS.80).aspx" target="_blank" rel="noopener noreferrer">sealed</a>) para impedir que alguien cree una clase derivada a partir de la nuestra. Es una buena práctica declarar tantas clases _sealed_ como sea posible (al menos las clases públicas, para las internas no son necesarias tantas precauciones ya que no serán visibles desde fuera de nuestro assembly). Si dejamos una clase sin sellar, debemos **ser conscientes** de que estamos dando la posibilidad a alguien de que derive de nuestra clase. Eso, obviamente, no tiene nada de malo… pero entonces debemos asegurarnos de que nuestra clase **está preparada** para que se derive de ella.
 

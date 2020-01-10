@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Edición de colecciones usando Ajax'
-description: 'ASP.NET MVC: Edición de colecciones usando Ajax'
+
 author: eiximenis
 
 date: 2012-07-01T17:55:01+00:00

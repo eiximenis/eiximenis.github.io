@@ -1,6 +1,6 @@
 ---
 title: Interfaces “Dockables” con AvalonDock
-description: Interfaces “Dockables” con AvalonDock
+
 author: eiximenis
 
 date: 2009-03-13T13:39:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hace algún tiempo [escribí como integrar AvalonDock con PRISM][1]. En el post daba por asumidos algunos conceptos de AvalonDock, pero algunos comentarios recibidos me han pedido si puedo profundizar un poco, así que voy a ello. Vamos a ver como crear paso a paso una aplicación AvalonDock y luego, en otro post ya veremos como podemos PRISMearla... 🙂
+
+<!--more-->
 
 [AvalonDock][2] es una librería para la creación de interfaces con ventanas flotantes (al estilo del propio Visual Studio). Según su creador soporta también winforms, aunque yo siempre la he usado con WPF, así que nada puedo deciros de su integración con winforms. 
 

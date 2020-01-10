@@ -1,6 +1,6 @@
 ---
 title: 'Facebook Connect (iv): Que todo el mundo sepa lo que has hecho!'
-description: 'Facebook Connect (iv): Que todo el mundo sepa lo que has hecho!'
+
 author: eiximenis
 
 date: 2010-02-02T12:27:00+00:00
@@ -16,6 +16,8 @@ categories:
 Se comenta que las redes sociales dan fama, mujeres y dinero aunque no necesariamente en este orden...
 
 En los tres primeros posts sobre facebook connect vimos como <a target="_blank" href="/blogs/etomas/archive/2009/12/10/facebook-connect-si-est-225-s-en-facebook-bienvenido-a-mi-web.aspx" rel="noopener noreferrer">permitir al usuario que hiciera login con su cuenta de facebook</a>, como <a target="_blank" href="/blogs/etomas/archive/2009/12/14/facebook-connect-ii-adi-243-s-amigo-adi-243-s-o-como-hacer-el-logout.aspx" rel="noopener noreferrer">implementar el logout</a> y como <a target="_blank" href="/blogs/etomas/archive/2009/12/15/facebook-connect-iii-eh-que-esta-parte-de-mi-web-s-243-lo-es-para-usuarios-de-facebook-asp-net-mvc.aspx" rel="noopener noreferrer">crear zonas &ldquo;privadas&rdquo; de nuestra web sólo para usuarios de facebook</a>.
+
+<!--more-->
 
 Hoy vamos a ir un paso más allá: vamos a ver como podemos publicar mensajes en el muro del usuario de facebook autenticado. De esta manera sus amigos verán los logros que nuestro usuario consigue en nuestra web y más importante aún: verán nuestra web! Si el mensaje es _sugerente_ podremos conseguir un buen puñado de visitas a nuestra web! Todos ganamos! El usuario consigue fama y mujeres, y nosotros... dinero. Lo que decía al principio 🙂
 
@@ -158,7 +160,7 @@ La acción Index es muy simple:
                             caption: El subtítulo del post
                           </li>
                           <li>
-                            description: El texto largo del post.
+                            
                           </li>
                         </ul>
                         

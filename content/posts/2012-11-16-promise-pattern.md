@@ -1,6 +1,6 @@
 ---
 title: Promise Pattern
-description: Promise Pattern
+
 author: eiximenis
 
 date: 2012-11-16T13:28:50+00:00

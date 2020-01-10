@@ -1,6 +1,6 @@
 ---
 title: Strings en .NET y el BOM
-description: Strings en .NET y el BOM
+
 author: eiximenis
 
 date: 2009-02-04T20:12:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 ¿Conoceis el BOM? Los que no, teneis suerte... los que sí, seguro que lo habeis sufrido... 🙂 Para los que no, contaros que el BOM, o Byte Order Mask que es lo que significan sus siglas, no es nada más que una marca (de entre 2 y 3 bytes) al principio de un archivo Unicode que indica el formato de los datos... si están en little endian o big endian p.ej.
+
+<!--more-->
 
 Quereis verlo en acción? Abrid el bloc de notas y teclead cualquier palabra, como p.ej. [Ag&uuml;ero][http://es.wikipedia.org/wiki/Sergio_Ag%C3%BCero] (algún fan del atleti por aqui???). Ahora haced un &ldquo;guardar como&rdquo; y marcad la opción &ldquo;Unicode big endian&rdquo; en codificación.
 

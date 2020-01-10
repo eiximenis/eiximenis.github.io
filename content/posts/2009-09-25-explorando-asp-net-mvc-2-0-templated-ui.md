@@ -1,6 +1,6 @@
 ---
 title: Explorando ASP.NET MVC 2.0… Templated UI
-description: Explorando ASP.NET MVC 2.0… Templated UI
+
 author: eiximenis
 
 date: 2009-09-25T09:59:09+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos!! Este post continua la _mini-serie_ de posts que [empecé con el que trataba sobre las áreas][1].
 
 En este caso he estado jugando un poco con lo que llaman _UI helper templating support_ y que me parece bastante interesante…
+
+<!--more-->
 
 En el HtmlHelper han aparecido básicamente dos métodos nuevos: EditorFor<TM, TV> y DisplayFor<TM, TV>, que sirven para _renderizar_ un editor o un visualizador para el tipo de datos TV del modelo cuyo tipo es TM.
 

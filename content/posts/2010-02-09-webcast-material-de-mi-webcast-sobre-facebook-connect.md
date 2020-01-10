@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] Material de mi webcast sobre Facebook Connect'
-description: '[WebCast] Material de mi webcast sobre Facebook Connect'
+
 author: eiximenis
 
 date: 2010-02-09T09:27:20+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Este pasado jueves (4 de febrero de 2010) di un WebCast sobre Facebook Connect. La verdad es que era la primera vez que daba un webcast, y fue una sensación extraña: acostumbrado a dar charlas presenciales, se me hizo raro no tener el feedback visual de la gente. La verdad es que me sentí un poco como cuando hablas con un contestador automático…
+
+<!--more-->
 
 Pero he de decir que la experiencia me gustó, así que espero poder repetirla algún dia de esos!
 

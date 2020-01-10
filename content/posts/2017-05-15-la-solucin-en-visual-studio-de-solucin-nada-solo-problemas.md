@@ -1,6 +1,6 @@
 ---
 title: 'La “solución” en Visual Studio: de solución nada, solo problemas'
-description: 'La “solución” en Visual Studio: de solución nada, solo problemas'
+
 author: eiximenis
 
 date: 2017-05-15T07:22:22+00:00

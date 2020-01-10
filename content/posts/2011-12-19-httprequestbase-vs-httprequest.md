@@ -1,6 +1,6 @@
 ---
 title: HttpRequestBase vs HttpRequest
-description: HttpRequestBase vs HttpRequest
+
 author: eiximenis
 
 date: 2011-12-19T15:03:50+00:00
@@ -20,6 +20,8 @@ Coged a alguien que no conozca mucho ASP.NET y preguntadle que relación tienen 
   1. HttpRequest 
   2. HttpRequestBase 
   3. HttpRequestWrapper 
+
+<!--more-->
 
 La respuesta más probable será que HttpRequestBase es la clase base, de la cual deriva HttpRequest y que HttpRequestWrapper es… bueno, por el nombre no queda muy claro: es un wrapper de algo pero de qué?
 

@@ -1,6 +1,6 @@
 ---
 title: Usa las interfaces… que para eso están!
-description: Usa las interfaces… que para eso están!
+
 author: eiximenis
 
 date: 2010-06-18T10:50:42+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Ole! Vaya título tan imperativo me ha salido, eh??? Un post cortito para comentar un problemilla que hemos tenido en casa de un cliente, y que al final era debido por no usar interfaces (en nuestro caso interfaces COM).
+
+<!--more-->
 
 **El problemilla…**
 

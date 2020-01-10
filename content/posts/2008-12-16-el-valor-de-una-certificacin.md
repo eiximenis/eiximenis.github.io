@@ -1,6 +1,6 @@
 ---
 title: El valor de una certificación.
-description: El valor de una certificación.
+
 author: eiximenis
 
 date: 2008-12-16T08:54:06+00:00
@@ -16,6 +16,8 @@ categories:
 Bueno, aviso: estoy cabreado... y este post será polémico. Quien avisa no es traidor.
 
 Estas últimas semanas me he sacado dos MCPs, en concreto el 70-529 y el 70-549, es decir el MCTS y el MCPD de aplicaciones distribuídas. No voy a hablar sobre si son fáciles o difíciles o si se ajustan a lo que realmente uno se encuentra en el _mundo real_, no… quiero exponer algo que ya hace tiempo me preocupa y me mosquea a partes iguales. Antes de nada he de decir que no tenía muy claro si escribir este post. Por hastío básicamente... lo digo porque lo que escribiré ahora es, lamentablemente, muy parecido a lo que escribí en mi antiguo blog en la casi-extinta [clearscreen][1] (un tick de silencio). Aquí dejo [el enlace al post][2] que escribí hará casi tres años, por si a alguien le apetece leerlo.
+
+<!--more-->
 
 Antes de hacer ambos exámenes, eché una ojeada a esos pdfs que tienen preguntas _parecidas_ a las del exámen, junto con sus respuestas (¿no hace falta poner nombres, verdad?). Lo que vi fue descorazonador... bueno, lo hubiese sido si no supiera de que va el tema, vamos... ahora ya empieza a resbalarme todo...
 

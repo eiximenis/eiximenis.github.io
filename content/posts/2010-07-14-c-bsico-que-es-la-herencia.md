@@ -1,6 +1,6 @@
 ---
 title: '[C# Básico] ¿Que es la herencia?'
-description: '[C# Básico] ¿Que es la herencia?'
+
 author: eiximenis
 
 date: 2010-07-14T08:58:31+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! Despues de la buena acogida que tuvo la [primera entrega de C# Básico (dedicada a las interfaces)][1], me gustaría abordar hoy una de las cuestiones que se pusieron en los comentarios: _¿Qué es la herencia?_ De nuevo os recuerdo que esta serie _es vuestra_: no tengáis reparos en pedir posts de algún tema en concreto o aclaraciones e intentaré contestaros dentro de mis conocimientos 🙂
+
+<!--more-->
 
 En la [wikipedia se define herencia][2] como: _<font color="#0000a0">En orientación a objetos la herencia es el mecanismo fundamental para implementar la reutilización y extensibilidad del software. A través de ella los diseñadores pueden construir nuevas clases partiendo de una jerarquía de clases ya existente (comprobadas y verificadas) evitando con ello el rediseño, la remodificación y verificación de la parte ya implementada. La herencia facilita la creación de objetos a partir de otros ya existentes, obteniendo características (métodos y atributos) similares a los ya existentes.</font>_
 

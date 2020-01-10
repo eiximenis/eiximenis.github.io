@@ -1,6 +1,6 @@
 ---
 title: '[WPF] ItemsControl y Canvas'
-description: '[WPF] ItemsControl y Canvas'
+
 author: eiximenis
 
 date: 2008-09-23T17:30:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Comentemos la jugada: Tenemos un ItemsControl (o un derivado de él como una ListBox) y queremos posicionar sus elementos dentro de un Canvas.
+
+<!--more-->
 
 La definición del ItemsControl puede ser algo parecido a:
 

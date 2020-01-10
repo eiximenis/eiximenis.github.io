@@ -1,6 +1,6 @@
 ---
 title: 'Atributos con comportamiento: un mal diseño'
-description: 'Atributos con comportamiento: un mal diseño'
+
 author: eiximenis
 
 date: 2016-07-01T10:17:29+00:00

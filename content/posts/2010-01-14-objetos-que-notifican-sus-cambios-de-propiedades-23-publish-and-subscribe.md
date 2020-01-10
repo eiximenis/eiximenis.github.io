@@ -1,6 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (2/3): Publish and subscribe'
-description: 'Objetos que notifican sus cambios de propiedades (2/3): Publish and subscribe'
+
 author: eiximenis
 
 date: 2010-01-14T10:04:00+00:00
@@ -16,6 +16,8 @@ categories:
 **Nota:** Este post es el segundo post de la <a target="_blank" href="/blogs/etomas/archive/2010/01/12/objetos-que-notifican-sus-cambios-de-propiedades-0-3-introducci-243-n.aspx" rel="noopener noreferrer">serie Objetos que notifican sus cambios de propiedades</a>__.
 
 En el post anterior vimos como configurar Unity para que no tener que añadir código adicional para implementar la interfaz <a target="_blank" href="http://msdn.microsoft.com/es-es/library/system.componentmodel.inotifypropertychanged.aspx" rel="noopener noreferrer">INotifyPropertyChanged</a>. En este post quiero hablaros de un patrón que se utiliza mucho cuando hablamos de aplicaciones _complejas_: el patrón del <a target="_blank" href="http://en.wikipedia.org/wiki/Publish/subscribe" rel="noopener noreferrer">publicador &ndash; suscriptor</a>. En este patrón tenemos básicamente dos conceptos:
+
+<!--more-->
 
   1. El publicador: Cuando un objeto quiere _notificar_ algo al respecto de su estado, se limita a publicar un mensaje con la información deseada.
   2. El suscriptor: Los subscriptores reciben todos aquellos mensajes a los que están suscritos, con _independencia_ de quien los haya publicado.

@@ -1,6 +1,6 @@
 ---
 title: 'C# Básico: Eventos'
-description: 'C# Básico: Eventos'
+
 author: eiximenis
 
 date: 2012-01-05T12:52:46+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Bueno… empieza el 2012: el último año de nuestra existencia si los maias no andaban errados (unos tíos que hacían pirámides hace miles de años no pueden equivocarse demasiado). Pero bueno… hasta que no llegue el apocalípsis, ahí estaremos! ¡Al pie del cañón!
+
+<!--more-->
 
 De todos modos, para empezar nada más que un post ligerito, sobre [C# Básico][1], ya sabéis esta serie de posts donde vamos explorando cosillas, sin ningún orden en particular, básicas del lenguaje. Sí, ya sé que el ritmo de posts de la serie es abrumador (sobre un post por año) pero bueno… como dicen los ingleses: _less give an stone_.
 

@@ -1,6 +1,6 @@
 ---
 title: '[ASP.NET MVC] Pasar parámetros a través del PathInfo'
-description: '[ASP.NET MVC] Pasar parámetros a través del PathInfo'
+
 author: eiximenis
 
 date: 2011-04-03T21:06:48+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 ¡Muy buenas! Bueno, el título del post no queda demasiado claro, pero a ver si consigo explicar un poco la idea. 😉
+
+<!--more-->
 
 Los que habéis usado ASP.NET MVC estáis muy acostumbradas a las URLs del estilo /controlador/accion/id, es decir algo como:
 

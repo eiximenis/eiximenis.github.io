@@ -1,6 +1,6 @@
 ---
 title: Surface en raona…
-description: Surface en raona…
+
 author: eiximenis
 
 date: 2009-05-14T18:14:35+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola! En [raona][1] tenemos desde hace algún tiempecillo la [Surface][2]... Lo que os quiero mostrar no es nada más que un pequeño vídeo de una aplicación que hemos desarrollado para ella: el Surface Shooter.
+
+<!--more-->
 
 ¿Y que es? Pues como bien se encarga de explicar mi compañero Juan Carlos Viñas permite navegar por los documentos de un portal de sharepoint usando la Surface.
 

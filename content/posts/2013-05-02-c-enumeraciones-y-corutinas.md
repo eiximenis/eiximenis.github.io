@@ -1,6 +1,6 @@
 ---
 title: '[C#]–Enumeraciones y corutinas'
-description: '[C#]–Enumeraciones y corutinas'
+
 author: eiximenis
 
 date: 2013-05-02T17:10:07+00:00

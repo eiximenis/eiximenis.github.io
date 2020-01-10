@@ -1,6 +1,6 @@
 ---
 title: 'Explorando ASP.NET vNext: Routing'
-description: 'Explorando ASP.NET vNext: Routing'
+
 author: eiximenis
 
 date: 2014-06-25T12:24:44+00:00

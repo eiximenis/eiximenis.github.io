@@ -1,6 +1,6 @@
 ---
 title: 'Docker: Imágenes Windows y Linux con un solo Dockerfile. Sí, pero…'
-description: 'Docker: Imágenes Windows y Linux con un solo Dockerfile. Sí, pero…'
+
 author: eiximenis
 
 date: 2018-06-12T15:28:11+00:00

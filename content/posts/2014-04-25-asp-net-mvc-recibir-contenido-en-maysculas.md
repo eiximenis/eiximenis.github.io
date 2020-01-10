@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC–Recibir contenido en mayúsculas
-description: ASP.NET MVC–Recibir contenido en mayúsculas
+
 author: eiximenis
 
 date: 2014-04-25T12:57:47+00:00

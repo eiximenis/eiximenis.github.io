@@ -1,6 +1,6 @@
 ---
 title: TxF – NTFS Transaccional
-description: TxF – NTFS Transaccional
+
 author: eiximenis
 
 date: 2009-11-25T17:14:25+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Una capacidad de la que no se habla mucho es de TxF, que apareció junto con Vista: es la capacidad de tener transacciones sobre ficheros NTFS. Esas transacciones pueden afectar a uno _o a varios_ ficheros… y no solo eso: gracias al poder de DTS podemos coordinar una transaccion TxF con otros tipos de transacciones como SQL Server o MSMQ!
+
+<!--more-->
 
 Como pasa con muchas de las características avanzadas de windows, sólo se puede usar en .NET a través de p/invoke (si obviamos C++/CLI claro)… vamos a ver un ejemplo!
 

@@ -1,6 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebAPI–3: Formatos de salida'
-description: 'Explorando ASP.NET MVC4 WebAPI–3: Formatos de salida'
+
 author: eiximenis
 
 date: 2012-02-19T23:19:19+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Bueno… seguimos esta serie explorando ASP.NET WebAPI. En este post vamos a hablar de los formatos de salida. Como ya hemos dicho, de serie ASP.NET WebAPI tiene soporte para XML y para JSON. Pero… como decide el framework si enviar la salida en XML o en JSON?
+
+<!--more-->
 
 **La cabecera accept**
 

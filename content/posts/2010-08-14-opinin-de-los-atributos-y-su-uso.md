@@ -1,6 +1,6 @@
 ---
 title: 'Opinión: De los atributos y su uso…'
-description: 'Opinión: De los atributos y su uso…'
+
 author: eiximenis
 
 date: 2010-08-14T20:22:16+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Sí, ya sé: estamos en Agosto y lo que más seduce ahora mismo es darse un bañito en la playa y salir de copas a rebentar los mojitos del bar, así que los que podáis hacedlo sin dudar… Total, este post tampoco se largará a ninguna parte luego… 🙂
+
+<!--more-->
 
 Los que no estéis de vacaciones o bien prefiráis leer geeks.ms en pleno Agosto (hay de todo en la viña del señor) a ver que os parece este post… es _mi_ opinión sobre el uso que se da a los atributos y los “problemas” que a mi parecer conlleva dicho uso. Dado que es un post de opinión vuestros comentarios sobre vuestras opiniones serán muy bien recibidos (de hecho siempre lo son, simplemente en este post lo serán más si cabe).
 

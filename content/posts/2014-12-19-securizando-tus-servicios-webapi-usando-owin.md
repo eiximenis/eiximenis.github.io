@@ -1,6 +1,6 @@
 ---
 title: Securizando tus servicios WebApi usando OWIN
-description: Securizando tus servicios WebApi usando OWIN
+
 author: eiximenis
 
 date: 2014-12-19T15:15:45+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'Novedades .NET Core 2.1: Generic host'
-description: 'Novedades .NET Core 2.1: Generic host'
+
 author: eiximenis
 
 date: 2018-06-07T11:04:55+00:00

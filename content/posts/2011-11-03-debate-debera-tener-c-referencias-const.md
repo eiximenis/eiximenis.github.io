@@ -1,6 +1,6 @@
 ---
 title: '[Debate] ¿Debería tener C# referencias const?'
-description: '[Debate] ¿Debería tener C# referencias const?'
+
 author: eiximenis
 
 date: 2011-11-03T12:46:29+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Para ser sinceros esta es una pregunta que me he hecho siempre y, creo yo, que se han hecho muchas personas que vienen de C++. ¿Debería tener C# referencias const? El hecho es que hasta ayer no había encontrado una explicación _razonada_ y de alguien de peso (quien mejor que [Eric Lippert][1], cuyo blog es lectura obligada) del porque C# no las incluye. Al final del post hay el enlace al post de stackoverflow en el que Eric explica _sus_ razones por las que C# no tiene referencias const.
+
+<!--more-->
 
 En este post voy a intentar explicar que son las referencias const (en C++) porque a Eric Lippert no le convencen (ojo que no queda claro con una sola lectura de lo que él dice, tuve que leérmelo un par o tres de veces junto con los comentarios, porque Eric es de los que cuando dice algo _cualquier_ palabra cuenta), además de algunas opciones que hay actualmente en C# para simularlas.
 

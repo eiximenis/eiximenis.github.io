@@ -1,6 +1,6 @@
 ---
 title: Mostrar un formulario modal con ASP.NET MVC y Ajax
-description: Mostrar un formulario modal con ASP.NET MVC y Ajax
+
 author: eiximenis
 
 date: 2009-04-14T14:11:28+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 ¿Os gusta ASP.NET MVC? A mi personalmente me encanta… aunque está un poco _verde_, en el sentido que comparándolo con webforms hay varias cosas que _debes hacerte tu mismo_, el modelo de programación es simple y elegante… Gran parte del mérito lo tiene (además del uso del [patrón MVC][1] evidentemente), [jQuery][2] genial librería de Javascript donde las haya.
+
+<!--more-->
 
 Hay mucha gente desarrollando en jQuery (al margen de que usen o no ASP.NET MVC) y dado lo bien que se entienden ASP.NET MVC y jQuery es muy fácil realizar tareas que antes eran un poco… complejas.
 

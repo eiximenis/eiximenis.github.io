@@ -1,6 +1,6 @@
 ---
 title: La sencillez de una interfaz compleja
-description: La sencillez de una interfaz compleja
+
 author: eiximenis
 
 date: 2009-03-12T11:11:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hace algún tiempecillo escribí un artículo para el e-zine de [raona][1], que enviamos a distintos clientes. En el artículo esbozaba los patrones básicos para diseñar interfaces de usuario compuestas. Posteriormente me surgió la idea de que una ampliación de dicho artículo, donde se mostrasen ejemplos en [PRISM][2] y WPF de estos conceptos podría ser interesante. Afortunadamente en [DotNetMania][3] pensaron lo mismo y es por ello que en la revista de este marzo hay un artículo con este mismo título.
+
+<!--more-->
 
 Lo que ahora sigue és el **<span style="text-decoration: underline;">artículo original</span>**, el que escribí para el e-zine. Aunque el de DotNetMania describe las mismas ideas, ambos artículos tienen poco a ver (tanto en contenido, como en enfoque como en extensión). Como creo que el artículo del e-zine tambiém tiene su interés, me he tomado la libertad de postearlo aquí 🙂
 

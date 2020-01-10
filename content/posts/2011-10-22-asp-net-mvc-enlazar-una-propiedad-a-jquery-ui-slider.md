@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Enlazar una propiedad a jQuery UI Slider'
-description: 'ASP.NET MVC: Enlazar una propiedad a jQuery UI Slider'
+
 author: eiximenis
 
 date: 2011-10-22T10:32:13+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 ¡Hola! Un compañero me ha preguntado si era posible enlazar una propiedad (de tipo int) a un control [slider de jQuery UI][1]. La verdad es que sí que es posible y vamos a ver en este post una posible solución que de hecho es extrapolable a otras situaciones parecidas que podáis tener.
+
+<!--more-->
 
 **Templated helpers al rescate**
 

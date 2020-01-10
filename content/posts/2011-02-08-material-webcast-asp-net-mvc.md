@@ -1,6 +1,6 @@
 ---
 title: '[Material] WebCast ASP.NET MVC'
-description: '[Material] WebCast ASP.NET MVC'
+
 author: eiximenis
 
 date: 2011-02-08T08:51:37+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas.
 
 Este post simplemente es para agradeceros a todos el interés que mostrasteis en el <a href="http://geeks.ms/blogs/etomas/archive/2011/02/02/webcast-191-te-quedaste-con-m-225-s-ganas-asp-net-mvc-ii.aspx" target="_blank" rel="noopener noreferrer">Webcast de ASP.NET MVC que tuve el placer de realizar</a> para la gente del <a href="http://lleida.dotnetclubs.com/" target="_blank" rel="noopener noreferrer">Lledia DotNetClub</a>.
+
+<!--more-->
 
 Antes que nada os dejo la página desde donde os podéis ver o descargaros el WebCast: [https://msevents.microsoft.com/CUI/WebCastEventDetails.aspx?culture=es-ES&EventID=1032476809&CountryCode=ES][1]. En esa página veréis un enlace que pone “_Regístrese sin cuenta de Windows Live ID_” que es el que os llevará a la página de descarga.
 

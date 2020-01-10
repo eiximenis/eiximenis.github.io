@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC3 – Filtros que no son atributos
-description: ASP.NET MVC3 – Filtros que no son atributos
+
 author: eiximenis
 
 date: 2010-07-29T12:03:39+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Antes que nada una nota: Este post está basado en la _preview 1_ de ASP.NET MVC3. Todo lo que comento puede cambiar en futuras previews de MVC3.
+
+<!--more-->
 
 En el post de ayer [comentaba las novedades de ASP.NET MVC3 preview1][1]__ y una de las mejoras más interesantes es el soporte de inyección de dependencias para los filtros. Eso se consigue con el uso de una nueva interfaz _IFilterProvider_ y esa interfaz nos trae de regalo, una posibilidad adicional: Tener filtros que no sean atributos.
 

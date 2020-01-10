@@ -1,6 +1,6 @@
 ---
 title: 'C# 7–Default method implementation?'
-description: 'C# 7–Default method implementation?'
+
 author: eiximenis
 
 date: 2016-12-21T11:28:52+00:00

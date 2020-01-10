@@ -1,6 +1,6 @@
 ---
 title: 'C#–Buenas prácticas en constructores'
-description: 'C#–Buenas prácticas en constructores'
+
 author: eiximenis
 
 date: 2016-07-21T07:14:31+00:00

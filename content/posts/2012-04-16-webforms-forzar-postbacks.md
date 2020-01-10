@@ -1,6 +1,6 @@
 ---
 title: 'Webforms: Forzar postbacks'
-description: 'Webforms: Forzar postbacks'
+
 author: eiximenis
 
 date: 2012-04-16T10:08:00+00:00
@@ -15,7 +15,11 @@ categories:
 ---
 Jejejee... Sí, aunque no lo parezca _a veces_ hago temillas con Webforms, y es que uno tiene que conocer al enemigo! 😛
 
-Lo que voy a comentar hoy, es como forzar un postback desde un control propio. Una búsqueda en google da varios resultados, pongo un par de ejemplo:
+Lo que voy a comentar hoy, es como forzar un postback desde un control propio. 
+
+<!--more-->
+
+Una búsqueda en google da varios resultados, pongo un par de ejemplo:
 
   1. [http://tratadooscuro.blogspot.com.es/2009/02/dopostback-ese-gran-desconocido.html][1] 
   2. [http://programacion.porexpertos.es/provocar-un-postback-desde-javascript-con-aspnet/][2] 

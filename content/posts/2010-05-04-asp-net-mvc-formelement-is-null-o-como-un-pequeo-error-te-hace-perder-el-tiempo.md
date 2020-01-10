@@ -1,6 +1,6 @@
 ---
 title: '[ASP.NET MVC] ‘formElement is null’ o como un pequeño error te hace perder el tiempo…'
-description: '[ASP.NET MVC] ‘formElement is null’ o como un pequeño error te hace perder el tiempo…'
+
 author: eiximenis
 
 date: 2010-05-04T12:17:37+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola! Esta es una breve historia de un _pequeño_ error que cometí y que quiero compartir con vosotros… por si acaso 🙂
+
+<!--more-->
 
 Tenía una aplicación ASP.NET MVC que usaba <a href="http://msdn.microsoft.com/es-es/library/system.componentmodel.dataannotations(VS.95).aspx" target="_blank" rel="noopener noreferrer">DataAnnotations</a> para la validación de los modelos. El uso de DataAnnotations para permitir la validación de modelos en ASP.NET MVC es muy simple. El primer paso es decorar la clase modelo con los atributos que indican las validaciones a realizar:
 

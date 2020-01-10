@@ -1,6 +1,6 @@
 ---
 title: WebApi–¿objeto o HttpResonseMessage?
-description: WebApi–¿objeto o HttpResonseMessage?
+
 author: eiximenis
 
 date: 2016-03-17T12:32:13+00:00

@@ -1,6 +1,6 @@
 ---
 title: Docker para el desarrollador asp.net (ii)
-description: Docker para el desarrollador asp.net (ii)
+
 author: eiximenis
 
 date: 2016-11-22T12:30:46+00:00

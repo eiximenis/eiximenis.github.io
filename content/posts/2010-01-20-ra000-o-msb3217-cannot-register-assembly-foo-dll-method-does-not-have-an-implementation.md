@@ -1,6 +1,6 @@
 ---
 title: 'RA000 (o MSB3217): Cannot Register assembly Foo.dll (Method does not have an implementation).'
-description: 'RA000 (o MSB3217): Cannot Register assembly Foo.dll (Method does not have an implementation).'
+
 author: eiximenis
 
 date: 2010-01-20T12:25:47+00:00
@@ -15,7 +15,12 @@ categories:
 ---
 Hola! Un post cortito, sobre un error que me he encotrado… Al compilar un proyecto, marcado para interoperabilidad COM VS.NET se me ha quejado con el siguiente error:
 
-<font face="Courier New">c:WINDOWSMicrosoft.NETFrameworkv3.5Microsoft.Common.targets(3019,9): error MSB3217: <u>Cannot register assembly</u> "C:TeamserverPhoenixRefactoringCoreDevelopmentCore-WI5825-SIO4binDebugPhoenixContainer.dll". Method &#8216;GetDefaultIWorkspace&#8217; in type &#8216;CaixaPenedes.Phoenix.Core.CompositeUI.ShellUserControl&#8217; from assembly &#8216;Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=77c76132715b70fa&#8217; <u>does not have an implementation</u>.</font>
+
+```
+c\:WINDOWS\Microsoft.NET\Framework\v3.5\Microsoft.Common.targets(3019,9): error MSB3217: Cannot register assembly "C\:Teamserver\PhoenixRefactoring\Core\DevelopmentCore-WI5825-SIO4\bin\Debug\PhoenixContainer.dll". Method ‘GetDefaultIWorkspace’ in type ‘CaixaPenedes.Phoenix.Core.CompositeUI.ShellUserControl’ from assembly ‘Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=77c76132715b70fa’ does not have an implementation.
+```
+
+<!--more-->
 
 Yendo al directorio bin/Debug y ejecutar regasm PhoenixContainer.dll daba el mismo error.
 

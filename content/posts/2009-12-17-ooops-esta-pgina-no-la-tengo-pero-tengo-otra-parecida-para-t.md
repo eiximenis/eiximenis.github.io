@@ -1,6 +1,6 @@
 ---
 title: Ooops.. esta página no la tengo, pero tengo otra parecida para tí…
-description: Ooops.. esta página no la tengo, pero tengo otra parecida para tí…
+
 author: eiximenis
 
 date: 2009-12-17T11:53:22+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Este genial post de José M. Aguilar <a href="http://geeks.ms/blogs/jmaguilar/archive/2009/12/16/procesar-peticiones-a-acciones-inexistentes-en-asp-net-mvc.aspx" target="_blank" rel="noopener noreferrer">sobre como procesar peticiones existentes en ASP.NET MVC</a>, me ha dado una idea que quiero compartir con vosotros… El tema consiste en que si el usuario se equivoca y entra una URL errónea como /Home/Jindex (en lugar de /Home/Index) le podemos sugerir que quizá quería ir a /Home/Index. Vamos a ver como podríamos hacerlo…
+
+<!--more-->
 
 La idea es que cuando recibamos una petición errónea en el _HandleUnknownAction_ miremos cuales son las acciones del controlador y miremos cual es la acción que más se aproxima a la acción que el usuario ha entrado.
 

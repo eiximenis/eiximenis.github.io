@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC, [Authorize] y jQuery.load'
-description: 'ASP.NET MVC, [Authorize] y jQuery.load'
+
 author: eiximenis
 
 date: 2014-02-25T17:45:46+00:00

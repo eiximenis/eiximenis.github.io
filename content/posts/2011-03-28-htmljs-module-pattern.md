@@ -1,6 +1,6 @@
 ---
 title: '[HTML/JS] Module pattern'
-description: '[HTML/JS] Module pattern'
+
 author: eiximenis
 
 date: 2011-03-28T17:31:53+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Cuando creas un sitio web, es normal que vayas añadiendo cada vez más código javascript en él. Al final, seguramente terminaréis desarollando una mini-api, propia que muchas veces reside en un archivo .js, lleno de funciones. Algo como:
+
+<!--more-->
 
 <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
   <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px" id="codeSnippet"><span style="color: #0000ff">function</span> HazAlgo(id, <span style="color: #0000ff">params</span>, callback)<br />{<br />}<br /><br /><span style="color: #0000ff">function</span> _HazAlgoHelper(domObj, <span style="color: #0000ff">params</span>)<br />{<br />}</pre>

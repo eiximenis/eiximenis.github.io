@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Custom Model Binders'
-description: 'ASP.NET MVC: Custom Model Binders'
+
 author: eiximenis
 
 date: 2010-05-12T15:13:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Seguimos esa serie donde intentamos _bucear_ un poco por algunas interioridades de ASP.NET MVC, intentando ver como funcionan por dentro algunas de las características de ese framework tan apasionante como és ASP.NET MVC. Si <a target="_blank" href="/blogs/etomas/archive/2010/05/07/asp-net-mvc-valueproviders.aspx" rel="noopener noreferrer">en el primer post de la serie vimos lo que eran los value providers</a>__ y <a target="_blank" href="/blogs/etomas/archive/2010/05/10/asp-net-mvc-el-defaultmodelbinder.aspx" rel="noopener noreferrer">en el segundo post vimos como funcionaba el DefaultModelBinder</a>__ en el post de hoy veremos como podemos crear Model Binders propios (lo que a su vez, nos ayudará a entender todavía más como funciona el <a target="_blank" href="http://msdn.microsoft.com/en-us/library/system.web.mvc.defaultmodelbinder.aspx" rel="noopener noreferrer">DefaultModelBinder</a>).
+
+<!--more-->
 
 Bueno, para empezar dejemos claro un punto fundamental:
 

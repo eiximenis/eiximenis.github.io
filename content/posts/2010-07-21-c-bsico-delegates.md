@@ -1,6 +1,6 @@
 ---
 title: '[C# Básico] Delegates'
-description: '[C# Básico] Delegates'
+
 author: eiximenis
 
 date: 2010-07-21T14:56:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos! Este es el tercer post de esa &ldquo;serie&rdquo; de C# Básico. En [el primero vimos las interfaces][1] y en [segundo intenté responder a la pregunta de que es la herencia][2].
 
 Hoy quiero hablaros de un tema sobre el que bastante gente tiene dificultades y sobre el que hay bastante confusión, pero que en el fondo es mucho más simple de lo que parece! Sí, me estoy refiriendo a los delegates (o delegados).
+
+<!--more-->
 
 **1. La necesidad de los delegates**
 

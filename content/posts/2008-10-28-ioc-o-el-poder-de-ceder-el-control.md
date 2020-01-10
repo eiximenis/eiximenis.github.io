@@ -1,6 +1,6 @@
 ---
 title: IoC o el poder de ceder el control
-description: IoC o el poder de ceder el control
+
 author: eiximenis
 
 date: 2008-10-28T11:09:00+00:00
@@ -13,7 +13,9 @@ categories:
   - patrones
 
 ---
-Hablando con colegas de profesión, me he dado cuenta de que muchos de ellos no terminan de comprender el patrón IoC o las ventajas que su uso comporta… Así que sin ánimo de sentar cátedra he decidido escribir este post, por si le sirve a alguien… <span style="font-family: Wingdings;">J</span> 
+Hablando con colegas de profesión, me he dado cuenta de que muchos de ellos no terminan de comprender el patrón IoC o las ventajas que su uso comporta… Así que sin ánimo de sentar cátedra he decidido escribir este post, por si le sirve a alguien…  xD
+
+<!--more-->
 
 IoC, que corresponde a las siglas de Inversion Of Control, agrupa a varios patrones que tienen en común que el flujo de ejecución del programa se invierte respecto a los métodos de programación tradicionales (<a href="http://es.wikipedia.org/wiki/Inversi%C3%B3n\_de\_Control" mce\_href="http://es.wikipedia.org/wiki/Inversi%C3%B3n\_de_Control">wikipedia dixit</a>). Generalmente el programador especifica las acciones (métodos) que se van llamando, pero en IoC lo que se especifican son las respuestas a determinados eventos o sucesos, dejando en manos de un elemento externo todas las acciones de control necesarias cuando lleguen estos sucesos. 
 

@@ -1,6 +1,6 @@
 ---
 title: ASP.NET Historia de una optimización. ¡Cuidado con la Sesión!
-description: ASP.NET Historia de una optimización. ¡Cuidado con la Sesión!
+
 author: eiximenis
 
 date: 2015-02-18T13:51:52+00:00

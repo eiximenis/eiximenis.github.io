@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición…'
-description: 'ASP.NET MVC: Como recuperar un dato de una cookie para cada petición…'
+
 author: eiximenis
 
 date: 2011-01-14T13:40:08+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 EEhhhmm… bueno, no se me ocurre un título mejor. Este post nace gracias a un tweet de <a href="http://twitter.com/lluisfranco" target="_blank" rel="noopener noreferrer">Lluis Franco</a>. En el tweet Lluís preguntaba <a href="http://twitter.com/lluisfranco/status/25846781329801216" target="_blank" rel="noopener noreferrer">dónde guardar la cultura de una aplicación MVC</a> si no se podía poner en la URL. Después de varios tweets comentando algunas cosillas yo he respondido diciendo que veía <a href="http://twitter.com/eiximenis/status/25849807952154624" target="_blank" rel="noopener noreferrer">dos opciones: o en una cookie o en la base de datos</a>. Una de las cosas que más me gustan de HTTP es que es simple: no hay muchas maneras de pasar estado entre cliente y servidor 😉
+
+<!--more-->
 
 En este post vamos a ver como podemos solucionar fácilmente el problema asumiendo que se guarda la cultura del usuario en una cookie.
 

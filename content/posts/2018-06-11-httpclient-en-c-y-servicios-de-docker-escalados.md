@@ -1,6 +1,6 @@
 ---
 title: 'HttpClient en C# y servicios de Docker escalados.'
-description: 'HttpClient en C# y servicios de Docker escalados.'
+
 author: eiximenis
 
 date: 2018-06-11T11:09:25+00:00

@@ -1,6 +1,6 @@
 ---
 title: Módulos en JavaScript… AMD, CommonJS
-description: Módulos en JavaScript… AMD, CommonJS
+
 author: eiximenis
 
 date: 2015-09-07T17:06:12+00:00

@@ -1,6 +1,6 @@
 ---
 title: Middlewares de autenticación en asp.net core
-description: Middlewares de autenticación en asp.net core
+
 author: eiximenis
 
 date: 2016-04-19T10:25:32+00:00

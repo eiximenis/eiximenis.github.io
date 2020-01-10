@@ -1,6 +1,6 @@
 ---
 title: 'Explorando ASP.NET MVC4 WebApis – 1: Introducción'
-description: 'Explorando ASP.NET MVC4 WebApis – 1: Introducción'
+
 author: eiximenis
 
 date: 2012-02-17T18:28:00+00:00
@@ -15,6 +15,8 @@ categories:
 ---
 > 
 Bueno... ayer se animó un poco el cotarro con la salida de la beta de ASP.NET MVC4. Y ayer mismo, el Maestro realizó un post fenómenal explicando un poco [todas las novedades del framework][1]. Echadle un vistazo al post, porque es realmente espectacular (para variar :p).
+
+<!--more-->
 
 De todas las novedades que aparecen en esta versión 4, yo quiero centrarme en la llamada ASP.NET Web API. A pesar de su nombre no se trata de una API nueva. En concreto se trata _de un conjunto de herramientas para permitirnos a nosotros, la creación de APIs basadas en REST_. Quizá os preguntaréis: Ah, ¿pero es que ahora **no** se podía?
 

@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC – Formato de salida según Content-Type
-description: ASP.NET MVC – Formato de salida según Content-Type
+
 author: eiximenis
 
 date: 2010-09-10T13:03:36+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 El otro día escribí un post donde vimos como [mostrar una vista en PDF o HTML en función de una URL del tipo /controlador/accion(formato)/parámetros][1]. El post estaba centrado básicamente en la tabla de rutas y cómo la URL clásica de ASP.NET MVC /Controlador/Accion/Parámetros no es una obligación sinó básicamente una convención.
+
+<!--more-->
 
 [Hadi Hariri][2] realizó un comentario, muy interesante a mi jucio. Venía a decir que antes que añadir en la ruta el parámetro formato es mejor usar el campo _Accept_ de la request. Copio literalmente: “_La tercera opcion, que lo hace más transparente al usuario y además está en acorde a ReST, es la de usar las el ContentType en la petición, que es lo que yo normalmente hago._”
 

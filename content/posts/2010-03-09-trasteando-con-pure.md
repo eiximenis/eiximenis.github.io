@@ -1,6 +1,6 @@
 ---
 title: Trasteando con PURE…
-description: Trasteando con PURE…
+
 author: eiximenis
 
 date: 2010-03-09T17:35:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Estos días he empezado a trastear con <a target="_blank" href="http://beebole.com/pure/demos/" rel="noopener noreferrer">PURE</a> (cuyas siglas significan PURE Unobstrusive Rendering Engine). El objetivo de PURE es proporcionar un mecanismo para transformar datos en <a target="_blank" href="http://es.wikipedia.org/wiki/JSON" rel="noopener noreferrer">JSON</a> a HTML. Cada vez más existen multitud de servicios que devuelven datos en formato JSON, y cada vez más es normal consumir estos servicios desde aplicaciones web, via javascript. Si el resultado final es mostrar los datos debemos realizar una conversión _a mano_ y generar usando javascript el HTML que deseemos. Esto es lento, tedioso y pesado.
+
+<!--more-->
 
 PURE viene a ayudarnos en este punto: básicamente coje datos en JSON y usando una plantilla HTML, genera código HTML que luego &ldquo;incrusta&rdquo; en alguna parte del documento final... Además se integra con jQuery (y otras librerías javascript). Lo poco que he visto de PURE me ha encantado, así que quiero compartirlo con vosotros 🙂
 

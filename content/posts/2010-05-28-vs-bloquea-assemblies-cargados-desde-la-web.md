@@ -1,6 +1,6 @@
 ---
 title: VS bloquea assemblies cargados desde la web
-description: VS bloquea assemblies cargados desde la web
+
 author: eiximenis
 
 date: 2010-05-28T15:03:00+00:00
@@ -17,7 +17,9 @@ categories:
 
 Situación explicada rápidament: Si te descargas un assembly directamente desde internet, y añades una referencia a dicho assembly, la referencia te aparecerá como añadida, pero VS no hará caso de ella. Cuando compiles te aparecerá un error parecido a:
 
-_Unable to load the metadata for assembly &#8216;AvalonDock&#8217;. This assembly may have been downloaded from the web.&nbsp; See_ [_http://go.microsoft.com/fwlink/?LinkId=179545_][1]_.&nbsp; The following error was encountered during load: Could not load file or assembly &#8216;AvalonDock, Version=1.2.2691.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4&#8217; or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)_
+`Unable to load the metadata for assembly 'AvalonDock'. This assembly may have been downloaded from the web. See http://go.microsoft.com/fwlink/?LinkId=179545; The following error was encountered during load: Could not load file or assembly 'AvalonDock, Version=1.2.2691.0, Culture=neutral, PublicKeyToken=85a1e0ada7ec13e4' or one of its dependencies. Operation is not supported. (Exception from HRESULT: 0x80131515)`
+
+<!--more-->
 
 En mi caso, efectivamente me descargué la última versión de <a target="_blank" href="http://avalondock.codeplex.com/" rel="noopener noreferrer">AvalonDock</a> (<a target="_blank" href="http://avalondock.codeplex.com/releases/view/35297" rel="noopener noreferrer">desde su página de descargas</a> puedes descargarte un msi que lo instala o simplemente el assembly que contiene la librería y que es lo que yo hice).
 

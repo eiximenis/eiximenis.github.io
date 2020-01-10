@@ -1,6 +1,6 @@
 ---
 title: '[C# Básico] Métodos con parámetros variables'
-description: '[C# Básico] Métodos con parámetros variables'
+
 author: eiximenis
 
 date: 2012-05-02T12:07:57+00:00

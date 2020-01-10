@@ -1,6 +1,6 @@
 ---
 title: XmlSerializer y propiedades ocultadas
-description: XmlSerializer y propiedades ocultadas
+
 author: eiximenis
 
 date: 2009-02-20T09:28:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola! Ayer un compañero de trabajo me comentó un problema con el que se encontró trabajando con propiedades ocultadas y el serializador xml.
+
+<!--more-->
 
 En concreto, quería serializar dos clases tales como las que siguen:
 

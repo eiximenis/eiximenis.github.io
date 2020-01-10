@@ -1,6 +1,6 @@
 ---
 title: 'Una dudilla sobre C#'
-description: 'Una dudilla sobre C#'
+
 author: eiximenis
 
 date: 2008-12-31T11:40:28+00:00
@@ -16,6 +16,8 @@ categories:
 Hola… a punto todos para comernos las uvas????
 
 Antes de que lo hagáis y os lanceis luego a brindar con cava por el nuevo año, y una cosa lleve a la otra y no esteis en condiciones, digamos de… pensar mucho, a ver si alguien me sabe responder una dudilla que me ha surgido hoy.
+
+<!--more-->
 
 ¿Porque este código no compila?
 

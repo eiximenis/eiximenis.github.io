@@ -1,6 +1,6 @@
 ---
 title: Acropolis, VS2008 SP1 y el diseñador de WPF parece que no se entienden
-description: Acropolis, VS2008 SP1 y el diseñador de WPF parece que no se entienden
+
 author: eiximenis
 
 date: 2008-09-10T12:26:00+00:00
@@ -17,6 +17,7 @@ categories:
 MMmm... pues eso 🙂
 
 Los síntomas eran los siguientes: En un proyecto WPF, al cargar un archivo xaml, el diseñador se quejaba con el mensaje: &#8220;Index was out of range: Must be non-negative&nbsp; and less than the size of the collection&#8221;. Luego daba un número de línea y posición que no decían nada en absoluto.
+<!--more-->
 
 El proyecto compilaba y se ejecutaba correctamente, simplemente el diseñador se negaba a mostrar la clase. He de decir que yo había cargado antes este proyecto, sin ningún problema! 
 

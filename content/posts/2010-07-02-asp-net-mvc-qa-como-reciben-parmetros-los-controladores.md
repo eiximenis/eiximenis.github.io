@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC Q&A: ¿Como reciben parámetros los controladores?'
-description: 'ASP.NET MVC Q&A: ¿Como reciben parámetros los controladores?'
+
 author: eiximenis
 
 date: 2010-07-02T12:04:06+00:00
@@ -16,6 +16,8 @@ categories:
 Este es el segundo post de la serie que nace a raíz de las preguntas que se me realizaron en el Webcast que di sobre ASP.NET MVC.
 
 Estaba explicando la tabla de rutas por “defecto” de ASP.NET MVC, indicando que el primer valor era el controlador, el segundo la acción y el tercero un parámetro llamado id:
+
+<!--more-->
 
 <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
   <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet">routes.MapRoute(<br />    <span style="color: #006080">"Default"</span>, <span style="color: #008000">// Nombre de la ruta</span><br />    <span style="color: #006080">"{controller}/{action}/{id}"</span>,  <span style="color: #008000">// Formato de url /Controlador/Accion/Id</span><br />    <span style="color: #0000ff">new</span> { controller = <span style="color: #006080">"Home"</span>, action = <span style="color: #006080">"Index"</span>, id = UrlParameter.Optional } <span style="color: #008000">// Valores x defecto</span><br />);</pre>

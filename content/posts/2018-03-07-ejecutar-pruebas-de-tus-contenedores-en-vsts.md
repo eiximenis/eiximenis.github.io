@@ -1,6 +1,6 @@
 ---
 title: Ejecutar pruebas de tus contenedores en VSTS
-description: Ejecutar pruebas de tus contenedores en VSTS
+
 author: eiximenis
 
 date: 2018-03-07T12:33:37+00:00

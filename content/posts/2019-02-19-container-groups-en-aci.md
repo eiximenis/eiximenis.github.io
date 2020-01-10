@@ -1,6 +1,6 @@
 ---
 title: Container Groups en ACI
-description: Container Groups en ACI
+
 author: eiximenis
 
 date: 2019-02-19T22:18:45+00:00

@@ -1,6 +1,6 @@
 ---
 title: Evento–Bilbostack 2015
-description: Evento–Bilbostack 2015
+
 author: eiximenis
 
 date: 2015-01-18T08:21:00+00:00

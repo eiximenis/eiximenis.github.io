@@ -1,6 +1,6 @@
 ---
 title: Aplicaciones "de una sola página” con HTML5 y ASP.NET MVC
-description: Aplicaciones "de una sola página” con HTML5 y ASP.NET MVC
+
 author: eiximenis
 
 date: 2011-10-08T11:29:00+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas!
 
 Cada vez más nos encontramos con aplicaciones web que funcionan &ldquo;en una sola página&rdquo;, es decir que se carga la página inicial y luego todas las nuevas peticiones son via AJAX. Esas aplicaciones funcionan perfectamente hasta que el usuario le daba a atr&agrave;s o a F5 para refrescar la página: en este momento se pierde el estado de la navegación.
+
+<!--more-->
 
 Hasta ahora no había una manera estándard y sencilla para lidiar con esto, pero HTML5 ya está aquí y incluye una nueva API de historial que nos va ayudar con estos casos. Aunque hay más, voy a centrarme en este post en dos elementos de dicha API:
 

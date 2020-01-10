@@ -1,6 +1,6 @@
 ---
 title: '[Evento] Hasta donde se puede llegar con ASP.NET MVC?'
-description: '[Evento] Hasta donde se puede llegar con ASP.NET MVC?'
+
 author: eiximenis
 
 date: 2010-11-19T12:19:49+00:00
@@ -18,6 +18,8 @@ Muy buenas!
 El jueves **2 de diciembre** voy a realizar un WebCast para la gente del [Lleida DotNetClub][1] sobre ASP.NET MVC.
 
 La idea es empezar desde cero a desarrollar una aplicación ASP.NET MVC y ver hasta donde llegamos. Iremos explorando el framework y viendo paso a paso sus características: controladores, vistas, modelos, vistas parciales, ajax, helpers, inyección de dependencias,…
+
+<!--more-->
 
 La idea es que sea 100% Visual Studio, nada de powerpoints que de esto ya se encuentra mucho en la web!
 

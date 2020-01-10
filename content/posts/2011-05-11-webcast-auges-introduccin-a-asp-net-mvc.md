@@ -1,6 +1,6 @@
 ---
 title: '[Webcast–AUGES] Introducción a ASP.NET MVC'
-description: '[Webcast–AUGES] Introducción a ASP.NET MVC'
+
 author: eiximenis
 
 date: 2011-05-11T22:26:04+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Seguramente la mayoría ya sabréis que gracias al empuje del maestro <a href="http://geeks.ms/blogs/lruiz/" target="_blank" rel="noopener noreferrer">Luis Ruiz Pavón</a> (que nos ha ido _convenciendo_ a varios), se ha creado <a href="http://www.auges.org/" target="_blank" rel="noopener noreferrer">AUGES</a>, el grupo de usuarios de ASP.NET de España.
+
+<!--more-->
 
 Para mi es un honor y un placer poder formar parte de este grupo, pero todavía es un placer más grande inaugurar la agenda de eventos del grupo. Y como no podía ser de otro modo el evento será un Webcast de ASP.NET MVC. 🙂 
 

@@ -1,6 +1,6 @@
 ---
 title: 'C# Básico: Objetos y referencias'
-description: 'C# Básico: Objetos y referencias'
+
 author: eiximenis
 
 date: 2011-08-10T18:22:57+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 La verdad es que ahora hacía bastantes meses que no publicaba nada de la serie “C# básico”. En esta serie pongo posts sobre temas básicos del lenguaje. No es un libro por fascículos, ni un tutorial al uso puesto que los posts no tienen orden en concreto y _nacen_ a partir de inquietudes que observo (mayoritariamente en los foros, pero también por correos que recibo). Todos <a href="http://geeks.ms/blogs/etomas/archive/tags/c_2300_+basico/default.aspx" target="_blank" rel="noopener noreferrer">los posts de esta serie los podéis ver aquí</a>.
+
+<!--more-->
 
 En el post de hoy quiero hablar de la diferencia entre objetos y referencias ya que observo que no siempre está clara. Gente que entiende los conceptos básicos de _<a href="http://geeks.ms/blogs/etomas/archive/2010/07/14/c-b-225-sico-191-que-es-la-herencia.aspx" target="_blank" rel="noopener noreferrer">herencia</a>_ parece liarse en este punto. Muchas veces es un tema pasado rápidamente en muchos libros y tutoriales. Y es que, la verdad, es un tema muy sencillo… 😉 
 

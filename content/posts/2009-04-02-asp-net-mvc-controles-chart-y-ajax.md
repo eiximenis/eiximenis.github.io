@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC, Controles Chart y Ajax…
-description: ASP.NET MVC, Controles Chart y Ajax…
+
 author: eiximenis
 
 date: 2009-04-02T14:34:00+00:00
@@ -15,7 +15,9 @@ categories:
 ---
 Supongo que la gran mayoría de vosotros, conoceréis los controles de gráficos de ASP.NET. José M. Aguilar hizo un excelente post sobre ellos [aquí (http://geeks.ms/blogs/jmaguilar/archive/2008/12/14/microsoft-chart-control-para-asp-net-3-5-sp1.aspx)][1].
 
-Utilizarlos es realmente simple... basta con que os los descargueis de la web de Microsoft y después de instalarlos agregueis las siguiente líneas en el web.config:
+<!--more-->
+
+Utilizarlos es realmente simple... basta con que os los descargueis de la web de Microsoft y después de instalarlos agregueis las siguiente líneas en el `web.config`:
 
 <pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">add </span><span style="color: red">path</span><span style="color: blue">=</span>"<span style="color: blue">ChartImg.axd</span>" <span style="color: red">verb</span><span style="color: blue">=</span>"<span style="color: blue">GET,HEAD</span>" <br /><span style="color: red">type</span><span style="color: blue">=</span>"<span style="color: blue">System.Web.UI.DataVisualization.Charting.ChartHttpHandler, <br />System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, <br />PublicKeyToken=31bf3856ad364e35</span>" <span style="color: red">validate</span><span style="color: blue">=</span>"<span style="color: blue">false</span>"<span style="color: blue">/&gt;</span></pre>
 

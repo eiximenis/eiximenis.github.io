@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Mandar un byte[]'
-description: 'ASP.NET MVC: Mandar un byte[]'
+
 author: eiximenis
 
 date: 2012-06-26T23:12:02+00:00

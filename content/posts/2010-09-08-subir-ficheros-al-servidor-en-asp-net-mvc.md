@@ -1,6 +1,6 @@
 ---
 title: Subir ficheros al servidor en ASP.NET MVC
-description: Subir ficheros al servidor en ASP.NET MVC
+
 author: eiximenis
 
 date: 2010-09-08T13:23:05+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Hoy voy a responder alguna pregunta que me he encontrado en alguna vez, y es como _subir ficheros_ al servidor usando MVC2. 
+
+<!--more-->
 
 La verdad es que con ASP.NET MVC2 subir ficheros al servidor **es extremadamente simple**. Vamos a empezar viendo el código de una vista que permite subir un fichero al servidor, junto con una descripción adicional. La vista básicamente contiene un&#160; <form> como el siguiente:
 

@@ -1,6 +1,6 @@
 ---
 title: Sirviendo ASP.NET vNext con Nowin
-description: Sirviendo ASP.NET vNext con Nowin
+
 author: eiximenis
 
 date: 2014-06-11T11:58:03+00:00

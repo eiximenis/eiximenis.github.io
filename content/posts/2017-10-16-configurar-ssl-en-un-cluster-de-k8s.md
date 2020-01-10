@@ -1,6 +1,6 @@
 ---
 title: Configurar SSL en un cluster de k8s
-description: Configurar SSL en un cluster de k8s
+
 author: eiximenis
 
 date: 2017-10-16T14:38:27+00:00

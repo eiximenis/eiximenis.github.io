@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Previsualizar imágenes subidas (1)'
-description: 'ASP.NET MVC: Previsualizar imágenes subidas (1)'
+
 author: eiximenis
 
 date: 2011-03-15T10:00:18+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Una pregunta que últimamente parece que se pregunta varias veces en los foros de ASP.NET MVC es como previsualizar una imagen que se quiere subir al servidor.
+
+<!--more-->
 
 Antes que nada aclarar que, técnicamente, la pregunta está mal hecha: **no es posible previsualizar la imagen <u>antes</u> de que sea subida**. Antiguamente en algunos navegadores, y con un poco de javascript, eso era posible, pero ahora por suerte eso ya no funciona 🙂
 

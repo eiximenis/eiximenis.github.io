@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: Previsualizar imágenes subidas (2)'
-description: 'ASP.NET MVC: Previsualizar imágenes subidas (2)'
+
 author: eiximenis
 
 date: 2011-03-15T14:54:10+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Donde dije digo, digo Diego… Sí, ya sé que dije que el segundo post sería como hacerlo con Ajax, pero bueno… la culpa es de twitter, concretamente de <a href="http://twitter.com/pablonete" target="_blank" rel="noopener noreferrer">@pablonete</a> con el que hemos empezado a hablar sobre si es posible evitar el guardar la imágen físicamente en el servidor. Hay un mecanismo obvio, que es usar la sesión (guardar el array de bytes que conforman la imágen en la sesión). Pero… hay otra? Pues sí: usar data urls!
+
+<!--more-->
 
 **Data urls**
 

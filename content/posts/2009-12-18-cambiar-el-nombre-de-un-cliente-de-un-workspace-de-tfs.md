@@ -1,6 +1,6 @@
 ---
 title: Cambiar el nombre de un cliente de un Workspace de TFS
-description: Cambiar el nombre de un cliente de un Workspace de TFS
+
 author: eiximenis
 
 date: 2009-12-18T09:02:00+00:00
@@ -16,6 +16,8 @@ categories:
 Saludos! Un post cortito, cortito, cortito 🙂
 
 Si renombramos una máquina cliente de TFS, vemos que perdemos los mappings ya que el workspace está asociado a un usuario + nombre de máquina.
+
+<!--more-->
 
 Aunque podemos crearnos un workspace nuevo y borrar el antiguo también podemos _modificar_ el workspace antiguo y cambiar el nombre de máquina, aunque para ello deberemos usar la herramienta de línea de comandos tf.exe:
 

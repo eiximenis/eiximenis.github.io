@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC–Descargar ficheros con soporte para continuación – ii
-description: ASP.NET MVC–Descargar ficheros con soporte para continuación – ii
+
 author: eiximenis
 
 date: 2014-04-10T11:11:31+00:00

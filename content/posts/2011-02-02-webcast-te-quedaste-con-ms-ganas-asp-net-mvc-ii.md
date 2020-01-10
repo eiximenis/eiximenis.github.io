@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] ¿Te quedaste con más ganas? ASP.NET MVC II'
-description: '[WebCast] ¿Te quedaste con más ganas? ASP.NET MVC II'
+
 author: eiximenis
 
 date: 2011-02-02T10:19:12+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas! Este jueves **03 de febrero** (o sea mañana) gracias a la gente del <a href="http://lleida.dotnetclubs.com/" target="_blank" rel="noopener noreferrer">Lleida dotnet club</a>, tengo el gusto de dar un WebCast sobre ASP.NET MVC 🙂
+
+<!--more-->
 
 La verdad es que el WebCast está pensado para ser la continuación del que <a href="http://geeks.ms/blogs/etomas/archive/2010/12/01/evento-recordatorio-este-jueves-hasta-d-243-nde-podemos-llegar-con-asp-net-mvc.aspx" target="_blank" rel="noopener noreferrer">dí el pasado 2 de</a> diciembre. En aquel webcast vimos:
 

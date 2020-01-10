@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC Custom Action Filters y IoC
-description: ASP.NET MVC Custom Action Filters y IoC
+
 author: eiximenis
 
 date: 2009-10-02T14:48:12+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Que es una buena práctica usar un contenedor IoC hoy en día es algo que está más que aceptado… la gente que montó ASP.NET MVC lo tiene muy claro y por eso ha creado un framework, que aunque no usa ningún contenedor IoC por defecto, se puede _extender_ para usar uno… P.ej. si quieres que tus controladores sean creados a través de un contenedor IoC (y _deberías querrerlo_) solo debes crearte una factoría de controladores e indicar a ASP.NET MVC que use esta factoría en lugar de la que viene por defecto.
+
+<!--more-->
 
 El siguiente código muestra una factoría de controladores que usa Unity:
 

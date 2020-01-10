@@ -1,6 +1,6 @@
 ---
 title: 'Combo para seleccionar colores (Winforms + C#)'
-description: 'Combo para seleccionar colores (Winforms + C#)'
+
 author: eiximenis
 
 date: 2009-06-18T18:24:00+00:00
@@ -16,6 +16,8 @@ categories:
 Hola... qué tal?
 
 Imagina que en algún proyecto que estés haciendo, quieres ofrecer una combo para seleccionar colores. De acuerdo, ya se que hay otros métodos para hacer que el usuario seleccione un color, como usar el [ColorDialog][1], pero a lo mejor te interesa que el usuario sólo pueda escoger colores de una lista predeterminada...
+
+<!--more-->
 
 Por suerte en .NET hacer que una combo dibuje sus elementos como nosotros queremos, es realmente simple... ¿quieres tener una combo como esta?
 

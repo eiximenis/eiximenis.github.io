@@ -1,6 +1,6 @@
 ---
 title: Mostrar un formulario modal con ASP.NET MVC y Ajax (ii)
-description: Mostrar un formulario modal con ASP.NET MVC y Ajax (ii)
+
 author: eiximenis
 
 date: 2009-04-15T09:52:00+00:00
@@ -16,6 +16,8 @@ categories:
 En el post anterior ([Mostrar un formulario modal con ASP.NET MVC y Ajax][1]) comenté como había usado [SimpleModal][2] en una aplicación ASP.NET MVC para mostrar un formulario modal al usuario.
 
 En este post voy a comentar como podemos comunicar nuestro formulario modal con nuestros controladores, para así poder validar (parcialmente o totalmente) el formulario desde servidor, sin necesidad de hacer un _submit_, usando Ajax.
+
+<!--more-->
 
 En mi caso p.ej. a medida que el usuario va entrando un posible nickname, se le indica si dicho nickname ya está ocupado o no (aunqué en la versión final probablemente sea un boton &ldquo;comprobar nick&rdquo;, ya que una llamada Ajax cada vez que se entre un carácter en un textbox quizá es demasiado... pero eso no afecta al sentido del post). Para realizar las llamadas Ajax cada vez que el usuario pulse una tecla en el campo &ldquo;nick&rdquo; del formulario modal vamos a usar jQuery.
 

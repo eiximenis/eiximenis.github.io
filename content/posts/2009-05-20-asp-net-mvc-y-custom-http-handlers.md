@@ -1,6 +1,6 @@
 ---
 title: ASP.NET MVC y Custom Http Handlers
-description: ASP.NET MVC y Custom Http Handlers
+
 author: eiximenis
 
 date: 2009-05-20T14:57:01+00:00
@@ -16,6 +16,8 @@ categories:
 Hola! ¿Como va todo?
 
 Un post rapidito… Imaginad que creais un Custom Handler para procesar determinadas peticiones en vuestra aplicación ASP.NET MVC:
+
+<!--more-->
 
 <pre><pre style="background-color: #fbfbfb; margin: 0em; width: 100%; font-family: consolas,&#39;Courier New&#39;,courier,monospace; font-size: 12px">    <span style="color: #0000ff">public</span> <span style="color: #0000ff">class</span> CardImagesHandler : IHttpHandler
 </pre>

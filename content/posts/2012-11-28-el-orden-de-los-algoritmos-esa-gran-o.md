@@ -1,6 +1,6 @@
 ---
 title: El orden de los algoritmos… esa gran O.
-description: El orden de los algoritmos… esa gran O.
+
 author: eiximenis
 
 date: 2012-11-28T17:30:58+00:00

@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC: El DefaultModelBinder'
-description: 'ASP.NET MVC: El DefaultModelBinder'
+
 author: eiximenis
 
 date: 2010-05-10T17:01:00+00:00
@@ -16,6 +16,8 @@ categories:
 En el <a target="_blank" href="/blogs/etomas/archive/2010/05/07/asp-net-mvc-valueproviders.aspx" rel="noopener noreferrer">post anterior vimos que eran los Value Providers</a> de ASP.NET MVC. En éste, lo que vamos a ver es el DefaultModelBinder y algunas de sus &ldquo;interioridades&rdquo;...
 
 > **Disclaimer**: Al igual que el post anterior, este asume conocimientos básicos de ASP.NET MVC, así como de http en general.
+
+<!--more-->
 
 Antes que nada el repaso rápido: Cuando un controlador recibe en una acción un objeto del modelo, ASP.NET MVC es capaz de realizar el binding entre los datos contenidos en la request y el objeto que espera el controlador. Por un lado los value providers se encargan de leer los datos de la request y guardarlos &ldquo;en una estructura común&rdquo; y por otro los model binders crean el objeto del modelo a partir de dicha estructura común.
 

@@ -1,6 +1,6 @@
 ---
 title: WebApi–Recibir en un controlador un IEnumerable desde URL
-description: WebApi–Recibir en un controlador un IEnumerable desde URL
+
 author: eiximenis
 
 date: 2013-03-05T18:04:48+00:00

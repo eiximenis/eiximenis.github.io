@@ -1,6 +1,6 @@
 ---
 title: Mi modesta comparativa entre PURE y jQuery-tmpl
-description: Mi modesta comparativa entre PURE y jQuery-tmpl
+
 author: eiximenis
 
 date: 2010-03-20T10:58:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola! En mis dos últimos posts he estado hablando un poco de <a target="_blank" href="http://beebole.com/pure/" rel="noopener noreferrer">PURE</a>, una herramienta para generar código HTML a partir de una plantilla y un objeto Json. Hace poco Microsoft ha presentado <a target="_blank" href="http://github.com/nje/jquery-tmpl" rel="noopener noreferrer">jquery-tmpl</a>, <a target="_blank" href="http://wiki.github.com/nje/jquery/jquery-templates-proposal" rel="noopener noreferrer">su propuesta (todavía abierta y en fase de discusión)</a> para realizar exactamente lo mismo: generar HTML a partir de plantillas y json. Más detalles los podeis encontrar en <a target="_blank" href="http://stephenwalther.com/blog/archive/2010/03/16/microsoft-jquery-and-templating.aspx?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+StephenWalther+(Stephen+Walther+on+ASP.NET+MVC)" rel="noopener noreferrer">este post de Stephen Walher</a>.
+
+<!--more-->
 
 Ni soy (ni me considero) un experto ni en PURE ni en javascript, pero me he permitido realizar una pequeña comparativa entre PURE y la propuesta de microsoft para templates, para ver en que se parecen y en que se diferencian. Esta es _mi_ comparativa, sin duda limitada por mi propia falta de conocimientos, pero que comparto con vosotros por si os parece de interés.
 

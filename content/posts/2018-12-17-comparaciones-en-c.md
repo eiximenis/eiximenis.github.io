@@ -1,6 +1,6 @@
 ---
 title: 'Comparaciones en C#'
-description: 'Comparaciones en C#'
+
 author: eiximenis
 
 date: 2018-12-17T07:00:28+00:00

@@ -1,6 +1,6 @@
 ---
 title: ¿Están tus servicios REST en otro servidor?
-description: ¿Están tus servicios REST en otro servidor?
+
 author: eiximenis
 
 date: 2013-01-22T13:08:59+00:00

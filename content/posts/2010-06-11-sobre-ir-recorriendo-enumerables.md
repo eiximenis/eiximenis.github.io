@@ -1,6 +1,6 @@
 ---
 title: Sobre ir recorriendo enumerables…
-description: Sobre ir recorriendo enumerables…
+
 author: eiximenis
 
 date: 2010-06-11T15:28:01+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 El otro día, Oren Eini (aka <a href="http://ayende.com" target="_blank" rel="noopener noreferrer">Ayende</a>) escribió en su blog un post, en respuesta a otro post escrito por Phil Haack (aka <a href="http://haacked.com" target="_blank" rel="noopener noreferrer">Haacked</a>). En su post Phil mostraba un método extensor para comprobar si un IEnumerable<T> era null o estaba vacío (y sí, Phil usa <a href="http://geeks.ms/blogs/jmaguilar/archive/2010/05/20/191-esa-enumeraci-243-n-est-225-vac-237-a.aspx" target="_blank" rel="noopener noreferrer">Any() en lugar de Count() para comprobar si la enumeración está vacía</a>):
+
+<!--more-->
 
 <div style="border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px" id="codeSnippetWrapper">
   <pre style="border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &#39;Courier New&#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px" id="codeSnippet"><span style="color: #0000ff">public</span> <span style="color: #0000ff">static</span> <span style="color: #0000ff">bool</span> IsNullOrEmpty&lt;T&gt;(<span style="color: #0000ff">this</span> IEnumerable&lt;T&gt; items) {<br />    <span style="color: #0000ff">return</span> items == <span style="color: #0000ff">null</span> || !items.Any();<br />}</pre>

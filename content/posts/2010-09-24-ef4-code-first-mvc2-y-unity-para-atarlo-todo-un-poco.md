@@ -1,6 +1,6 @@
 ---
 title: EF4 Code First, MVC2 y Unity para atarlo todo un poco…
-description: EF4 Code First, MVC2 y Unity para atarlo todo un poco…
+
 author: eiximenis
 
 date: 2010-09-24T12:57:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! No soy ni mucho menos un experto en EF (es más, me acabo de poner), como pueda serlo p.ej. [Unai][1], pero desde que [Scott Guthrie][2] publicó un [post sobre EF Code First][3] he empezado a mirar algunas cosillas.
+
+<!--more-->
 
 Resumiendo rápidamente EF Code First nos permite desarrollar nuestra capa de acceso a datos codificando _primero_ las clases, clases que son [POCO][4]. Eso nos permite conseguir lo que se conoce como _persistance ignorance_ (o que las clases que nos representan los datos sean agnósticas sobre cualquier tecnología de acceso a datos).
 

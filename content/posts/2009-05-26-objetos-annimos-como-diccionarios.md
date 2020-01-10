@@ -1,6 +1,6 @@
 ---
 title: Objetos anónimos como diccionarios
-description: Objetos anónimos como diccionarios
+description: Usar objetos anónimos como diccionarios
 author: eiximenis
 
 date: 2009-05-26T17:27:48+00:00
@@ -59,15 +59,11 @@ Si estáis vagos aquí tenéis un código que uso yo para esto:
     }
 }</pre>
 
-[][1][][1][][1]
 
 El método realiza conversiones básicas entre tipos de propiedades… Así podeis inicializar fácilmente vuestros diccionarios:
 
 <pre class="code"><span style="color: blue">var </span>d = <span style="color: blue">new </span><span style="color: #2b91af">Dictionary</span>&lt;<span style="color: blue">string</span>, <span style="color: blue">int</span>&gt;();
 d.FillFromObject(<span style="color: blue">new </span>{ col = <span style="color: #a31515">"10"</span>, row = 20.2 });</pre>
 
-[][1]
-
 Saludos!
 
- [1]: http://11011.net/software/vspaste

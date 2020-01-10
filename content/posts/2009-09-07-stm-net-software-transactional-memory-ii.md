@@ -1,6 +1,6 @@
 ---
 title: 'STM.NET: Software Transactional Memory (ii)'
-description: 'STM.NET: Software Transactional Memory (ii)'
+
 author: eiximenis
 
 date: 2009-09-07T11:26:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! En el [post anterior][1] os comenté algunas cosillas sobre STM.NET, un &ldquo;experimento&rdquo; de los DevLabs de Microsoft para introducir conceptos transaccionales dentro de .NET. En este segundo post quiero extenderme un poco más con algunos ejemplos un pelín más elaborados.
+
+<!--more-->
 
 **Ejemplo 3**
 

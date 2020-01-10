@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET MVC3: Razor Templates'
-description: 'ASP.NET MVC3: Razor Templates'
+
 author: eiximenis
 
 date: 2011-01-25T16:38:19+00:00
@@ -16,6 +16,8 @@ categories:
 Muy buenas!
 
 En este post quiero comentaros una característica de Razor que yo considero que es una **<u>auténtica pasada:</u>** los **templates**.
+
+<!--more-->
 
 Básicamente **el meollo de todo está en la posibilidad de guardar el resultado de un parseo de Razor en un Func<T, HelperResult>** siendo T el tipo del modelo que renderiza el template.
 

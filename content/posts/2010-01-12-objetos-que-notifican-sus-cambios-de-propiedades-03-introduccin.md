@@ -1,6 +1,6 @@
 ---
 title: 'Objetos que notifican sus cambios de propiedades (0/3): Introducción'
-description: 'Objetos que notifican sus cambios de propiedades (0/3): Introducción'
+
 author: eiximenis
 
 date: 2010-01-12T13:01:08+00:00
@@ -16,6 +16,8 @@ categories:
 Hola a todos!!! Como ha ido la despedida del 2009 y la bienvenida del 2010!!! Espero que os hayáis portado bien y que los reyes os hayan traído muuuuchos regalitos!
 
 En este post quiero dejar de lado la serie que estaba haciendo sobre facebook connect, para ver como, gracias a Unity, podemos crear objetos que nos notifiquen cuando cambian sus propiedades, sin que nosotros debamos añadir (casi) ningún código adicional!
+
+<!--more-->
 
 Pienso que es un muy buen ejemplo del poder de usar un contenedor IoC, además de resolver una situación que se da muchas veces: quiero enterarme de los cambios sobre las propiedades de un objeto, pero no quiero codificar dicho objeto de ninguna forma especial (es decir, no poner ningún tipo de código a la clase de cuyos cambios de propiedad deseo enterarme).
 

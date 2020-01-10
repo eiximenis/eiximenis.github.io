@@ -1,6 +1,5 @@
 ---
 title: PRISM y Winforms
-description: PRISM y Winforms
 author: eiximenis
 
 date: 2009-01-23T14:14:00+00:00
@@ -14,6 +13,8 @@ categories:
 
 ---
 Los que sigais mi blog ya habreis visto que últimamente comento algunas cosillas sobre [PRISM](http://www.codeplex.com/CompositeWPF), la librería para crear aplicaciones compuestas en WPF.
+
+<!--more-->
 
 En este post, pero no quiero hablar de PRISM y WPF, sino sobre si es posible aprovechar PRISM para la creación de aplicaciones compuestas usando Winforms. Recordad que en Winforms ya tenemos una solución completa para la creación de aplicaciones compuestas: [CAB](http://msdn.microsoft.com/en-us/library/aa480450.aspx) y [SCSF](http://msdn.microsoft.com/en-us/library/aa480482.aspx). [Ezequiel](https://geeks.ms/blogs/ejadib/) publicó hace tiempo un [post lleno de enlaces sobre CAB y SCSF](https://geeks.ms/blogs/ejadib/archive/2007/04/14/composite-ui-application-block-por-donde-empiezo.aspx). Echadle una ojeada si os interesa el tema.
 

@@ -1,6 +1,6 @@
 ---
 title: jQueryUI widgets… no son webcontrols pero vamos…
-description: jQueryUI widgets… no son webcontrols pero vamos…
+
 author: eiximenis
 
 date: 2009-07-02T15:49:00+00:00
@@ -16,6 +16,8 @@ categories:
 &iexcl;&iexcl;Hola a todos!! ¿Como vamos?
 
 Una de los argumentos que más usan aquellos a quienes no les gusta ASP.NET MVC és &ldquo;que hemos vuelto a los 90&rdquo;, refiriendose, entre otras cosas, a que en ASP.NET MVC no existe el concepto de &ldquo;controles&rdquo; y que continuamente estamos &ldquo;mezclando&rdquo; código de cliente y de servidor, lo que lleva a una [tag-soup][1] que _recuerda_ peligrosamente a la ASP clásica...
+
+<!--more-->
 
 No quiero discutir en este post si gusta más el modelo MVC que el clásico de webforms (para quien le interese esta discusión puede pasarse por [este post en el blog de jersson][2]), sinó decir que ambos argumentos en mi opinión no tienen validez.
 

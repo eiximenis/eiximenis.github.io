@@ -1,6 +1,6 @@
 ---
 title: WebApi 2–Leer datos desde los headers
-description: WebApi 2–Leer datos desde los headers
+
 author: eiximenis
 
 date: 2016-07-07T11:12:30+00:00

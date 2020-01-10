@@ -1,6 +1,6 @@
 ---
 title: 'Hoy he echado en falta poder definir macros en C#'
-description: 'Hoy he echado en falta poder definir macros en C#'
+
 author: eiximenis
 
 date: 2017-12-14T17:43:12+00:00

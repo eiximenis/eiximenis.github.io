@@ -1,6 +1,6 @@
 ---
 title: ASP.NET vNext–Configuración
-description: ASP.NET vNext–Configuración
+
 author: eiximenis
 
 date: 2014-06-29T23:29:18+00:00

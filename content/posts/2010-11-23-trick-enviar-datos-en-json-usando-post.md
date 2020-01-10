@@ -1,6 +1,6 @@
 ---
 title: 'Trick: Enviar datos en JSON usando POST'
-description: 'Trick: Enviar datos en JSON usando POST'
+
 author: eiximenis
 
 date: 2010-11-23T11:36:00+00:00
@@ -18,6 +18,8 @@ Muy buenas!
 Una de las preguntas que mucha gente se formula cuando empieza a hacer cosillas con ajax y jQuery es _¿Como enviar datos codificados en JSON usando POST_? 
 
 La verdad es que es muy sencillo, aunque jQuery no proporciona ninguna función _por defecto_ que haga esto. Vamos a ver tres aproximaciones, las dos primeras incorrectas pero que nos acercarán para llegar al final a <span style="text-decoration: line-through;">la</span> una forma correcta de hacerlo.
+
+<!--more-->
 
 **Aproximación 1: Usando $.post**
 

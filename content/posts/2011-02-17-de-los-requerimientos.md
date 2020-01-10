@@ -1,6 +1,6 @@
 ---
 title: De los requerimientos…
-description: De los requerimientos…
+
 author: eiximenis
 
 date: 2011-02-17T20:35:56+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Mi hermano y yo ambos somos arquitectos. Aunque en su caso él tiene un título universitario que lo acredita como tal y yo sólo una tarjeta de trabajo donde mi empresa ha decidido poner eso… y en inglés que se supone que queda mejor. Los dos nos dedicamos a _pensar y diseñar_ cosas: él piensa y diseña espacios habitables (o sea pisos y casas) y yo pienso y diseño soluciones informáticas (o sea programas).
+
+<!--more-->
 
 Ayer mi hermano (que no sólo es arquitecto, sinó que regenta una empresa de obras) me vino riéndose por una petición de presupuesto en broma que había recibido. El correo electrónico decía, más o menos, así…
 

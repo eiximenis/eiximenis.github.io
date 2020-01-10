@@ -1,6 +1,6 @@
 ---
 title: '[ALM 08] El efecto mariposa en el desarrollo del Software…'
-description: '[ALM 08] El efecto mariposa en el desarrollo del Software…'
+
 author: eiximenis
 
 date: 2008-10-21T12:03:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 ... o como la falta de comunicación es una de las principales causas del fracaso de muchos proyectos.
+
+<!--more-->
 
 Pero un momento, que me embalo. Esta es la charla que dieron en las <a href="http://www.microsoft.com/spanish/msdn/spain/eventos/alm/default.aspx" target="\_blank" rel="noopener noreferrer">ALM Sessions 08</a>, mis compañeros en <a href="http://www.raona.com" title="raona" target="\_blank" rel="noopener noreferrer">raona</a>, Jorge Ramo y Juan Carlos Viñas (bueno, el título "oficial" era: _Integración entre EPM y TFS_). En la charla comentaron las principales causas del fracaso de muchos proyectos haciendo especial incapié en la falta de comunicación. Luego analizaron distintos modelos de comunicación empresarial entre los distintos departamentos con responsabilidad en un proyecto (como dirección, marketing y técnico). Y para finalizar explicaron las herramientas que Microsoft ofrece para ayudar a mantener un mayor control y mejorar la comunicación en la gestión de proyectos. Así comentaron como <a href="http://www.microsoft.com/spain/partner/productos/office/Project-Portfolio-Server-2007.mspx" mce_href="http://www.microsoft.com/spain/partner/productos/office/Project-Portfolio-Server-2007.mspx">Project Portfolio Server</a>, <a href="http://office.microsoft.com/es-es/projectserver/FX100739843082.aspx" mce_href="http://office.microsoft.com/es-es/projectserver/FX100739843082.aspx">Project Server</a> y <a href="http://msdn.microsoft.com/es-es/library/ms181238%28VS.80%29.aspx" mce_href="http://msdn.microsoft.com/es-es/library/ms181238(VS.80).aspx">TFS</a> ayudan a mejorar la comunicación y el seguimiento del conjunto de proyectos de una empresa, permitiendo la toma de decisiones basandose en informaciones concretas y obtenidas en tiempo real.
 

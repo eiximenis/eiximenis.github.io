@@ -1,6 +1,6 @@
 ---
 title: 'C# y sobrecarga de métodos genéricos… un detallito'
-description: 'C# y sobrecarga de métodos genéricos… un detallito'
+
 author: eiximenis
 
 date: 2009-06-12T09:14:40+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 A veces hay aspectos de C# que no pensamos hasta que nos encontramos con ellos… A mi me pasó con un código parecido a este:
+
+<!--more-->
 
 <pre class="code"><span style="color: blue">class </span><span style="color: #2b91af">Program
 </span>{

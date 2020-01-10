@@ -1,6 +1,6 @@
 ---
 title: ¿Qué hace ‘new’ en JavaScript?
-description: ¿Qué hace ‘new’ en JavaScript?
+
 author: eiximenis
 
 date: 2015-10-15T13:09:01+00:00

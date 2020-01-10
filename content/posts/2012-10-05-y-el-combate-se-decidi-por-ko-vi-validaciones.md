@@ -1,6 +1,6 @@
 ---
 title: Y el combate se decidió por KO (vi)–Validaciones
-description: Y el combate se decidió por KO (vi)–Validaciones
+
 author: eiximenis
 
 date: 2012-10-05T12:06:25+00:00

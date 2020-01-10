@@ -1,6 +1,6 @@
 ---
 title: El operador ++ postfijo y el sentido común…
-description: El operador ++ postfijo y el sentido común…
+
 author: eiximenis
 
 date: 2009-07-02T18:08:00+00:00
@@ -17,10 +17,12 @@ Post cortito… 😉
 
 El otro día estaba revisando código y vi algo parecido a lo siguiente (C#):
 
-<pre class="code"><span style="color: blue">int </span>x = 1;
-<span style="color: blue">int </span>y = x++;</pre>
+```cs
+int x = 1;
+iny y = x++;
+```
 
-[][1]
+<!--more-->
 
 Si os pregunto los valores de x e y al final de este código… ¿cual seria vuestra respuesta? No lo preguntéis a Visual Studio… pensadlo.
 
@@ -43,9 +45,7 @@ PD: De la misma manera (y por la misma razón) en el siguiente código:
 <pre class="code"><span style="color: blue">int </span>x =1;
 x=x++;</pre>
 
-[][1]
-
-x tiene el valor 1 al finalizar.
+`x` tiene el valor 1 al finalizar.
 
 En C# este código es correcto (otra cosa es que sea útil), a diferencia de p.ej. C++ donde este código es _incorrecto_: compila pero su resultado **no está definido** por el estándard… en algunos compiladores x puede terminar valiendo 1 y en otros compiladores puede terminar valiendo 2 (el caso de VC++ 9 en debug).
 

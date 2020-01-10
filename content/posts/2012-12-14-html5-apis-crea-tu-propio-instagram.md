@@ -1,6 +1,6 @@
 ---
 title: HTML5 Apis – Crea tu propio Instagram
-description: HTML5 Apis – Crea tu propio Instagram
+
 author: eiximenis
 
 date: 2012-12-14T14:41:00+00:00

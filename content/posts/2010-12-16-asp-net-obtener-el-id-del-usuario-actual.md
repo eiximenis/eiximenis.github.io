@@ -1,6 +1,6 @@
 ---
 title: 'ASP.NET: Obtener el ID del usuario actual'
-description: 'ASP.NET: Obtener el ID del usuario actual'
+
 author: eiximenis
 
 date: 2010-12-16T13:24:20+00:00
@@ -16,6 +16,8 @@ categories:
 Buenas!
 
 No se vosotros, pero yo cuando desarrollo mis aplicaciones, si uso FKs de la otabla de usuarios, las hago en base al ID del usuario, nunca en base a su nombre. Así pues, saber el ID del usuario actualmente autenticado en mi aplicación es algo fundamental.
+
+<!--more-->
 
 Primero, para saber el **nombre** del usuario autenticado podemos usar:
 

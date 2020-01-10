@@ -1,6 +1,6 @@
 ---
 title: Mi carta a los reyes…
-description: Mi carta a los reyes…
+
 author: eiximenis
 
 date: 2008-12-24T13:56:35+00:00
@@ -16,6 +16,8 @@ categories:
 Aunque sería para unos reyes que pasaran más allá del 2010, pero bueno… por pedir que no quede 😛
 
 Estas son las cosas que me gustaría que algun dia se incorporasen a C#. Como son fiestas mágicas, pues aquí van para ver si los chicos de Redmond se animan y para algún milenio las tenemos…
+
+<!--more-->
 
 Pongo ideas al margen de si son posibles/factibles con el CLR actual… simplemente son cosas que me gustarían que estuviesen en el lenguaje. Solo pongo las ideas y un ejemplo de lo que me gustaría, sin desarrollarlas a fondo… 🙂
 

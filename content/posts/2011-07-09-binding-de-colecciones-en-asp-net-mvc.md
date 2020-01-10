@@ -1,6 +1,6 @@
 ---
 title: Binding de colecciones en ASP.NET MVC
-description: Binding de colecciones en ASP.NET MVC
+
 author: eiximenis
 
 date: 2011-07-09T12:32:13+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Buenas! Hoy voy a comentar un temilla que me comentó un colega el otro día y que puede dar _algunos_ quebraderos de cabeza: el binding de colecciones.
+
+<!--more-->
 
 Supongamos el siguiente viewmodel:
 

@@ -1,6 +1,6 @@
 ---
 title: '[WebCast] ASP.NET MVC para desarrolloweb'
-description: '[WebCast] ASP.NET MVC para desarrolloweb'
+
 author: eiximenis
 
 date: 2012-02-26T20:24:57+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Muy buenas!!! El 14 de Marzo voy a dejar de cambiar pañales durante un par de horas y voy a realizar un webcast para la gente de <a href="http://www.desarrolloweb.com" target="_blank" rel="noopener noreferrer">desarrolloweb</a> hablando sobre ASP.NET MVC 3 (no, no vamos a comentar nada sobre la Beta 4 ya que eso daría para otro webcast).
+
+<!--more-->
 
 La intención de este webcast es presentar ASP.NET MVC y está especialmente destinado a todos aquellos que no conozcan nada del framework, incluyendo a todos aquellos que desarrollan para web en tecnologías no microsoft (PHP, Java, Ruby on Rails, …). Vamos a ver el framework, las ideas que hay detrás de él y daremos un repaso rápido a sus capacidades. La duración del webcast será entre una hora – hora y pico y luego… preguntas 🙂
 

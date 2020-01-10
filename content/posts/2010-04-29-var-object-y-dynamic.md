@@ -1,6 +1,6 @@
 ---
 title: Var, object y dynamic
-description: Var, object y dynamic
+
 author: eiximenis
 
 date: 2010-04-29T08:59:15+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Hola a todos! El otro día me preguntaban sobre las diferencias entre usar var, object y dynamic, y por lo que he podido observar no todo el mundo tiene claro que diferencias hay en cada caso, de ahí que me haya decidido escribir este post.
+
+<!--more-->
 
 **1. Inferencia de tipos (var)**
 

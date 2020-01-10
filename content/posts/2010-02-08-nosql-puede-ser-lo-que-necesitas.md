@@ -1,6 +1,6 @@
 ---
 title: NoSQL… ¿puede ser lo que necesitas?
-description: NoSQL… ¿puede ser lo que necesitas?
+
 author: eiximenis
 
 date: 2010-02-08T12:36:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 Ultimamente se oye hablar cada vez más de BBDD no relacionales o tal y como se las conoce ahora &ldquo;NoSQL&rdquo;. En <a target="_blank" href="/controlpanel/blogs/posteditor.aspx/www.dosideas.com" rel="noopener noreferrer">dosideas</a> publicaron un <a target="_blank" href="http://www.dosideas.com/base-de-datos/657-nosql-el-movimiento-en-contra-de-las-bases-de-datos.html" rel="noopener noreferrer">interesante post al respecto de los sistemas NoSQL</a>. La idea es renunciar a algunos de los principios (y funcionalidades) de las bases de datos _tradicionales_ (relacionales) a cambio de obtener mayores velocidades en el acceso a datos.
+
+<!--more-->
 
 Cuando nos adentramos en este mundo, debemos dejar de _pensar en tablas_, ya que nuestros datos dejarán de estar guardados en formato relacional. Aunque existen varios _formatos_ en los cuales se guardan nuesteos datos parece ser que los más comunes son _(clave,valor)_ o usar _documentos_ que son en cierto modo una extensión de la (clave, valor). Si os pasáis por el <a target="_blank" href="http://en.wikipedia.org/wiki/NoSQL" rel="noopener noreferrer">artículo de la wikipedia sobre NoSQL</a> hay varios enlaces a distintos sistemas NoSQL. A mi me gustaría hablaros de uno con el que he hecho algunas pruebas: <a target="_blank" href="http://www.mongodb.org" rel="noopener noreferrer">MongoDB</a>.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Opinión: bool es sólo para true/false'
-description: 'Opinión: bool es sólo para true/false'
+
 author: eiximenis
 
 date: 2010-08-25T13:37:29+00:00
@@ -16,6 +16,8 @@ categories:
 Saludos a todos! Tanto a los que estéis trabajando, cómo aquellos que estando de vacaciones seais tan frikis que leais geeks.ms! 🙂
 
 Hoy quiero hablar un poco sobre _bool_. Puede parecer un tipo de datos aburridote: a fin de cuentas sólo puede tener dos valores, pero precisamente ahí radica su gracia y de eso os quería contar. La idea del post es muy simple: _bool es sólo para true/false_.
+
+<!--more-->
 
 Por ejemplo, en los arcanos tiempos en que un servidor usaba Visual C++ 6 para el desarrollo de aplicaciones windows, en las MFCs había un método muy divertido llamado [UpdateData][1] (que por lo que veo aún está). MFC tenía una cosa muy buena que era la posibilidad de realizar _bindings_ entre variables de la clase que representaba la ventana (usualmente una clase derivada de CWnd) y los controles que contenía dicha ventana. Eso, ahora, puede parecer una chorrada pero por aquel entonces era una auténtica pasada.
 

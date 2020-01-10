@@ -1,6 +1,6 @@
 ---
 title: Unity? Sí gracias, pero no me abraces demasiado…
-description: Unity? Sí gracias, pero no me abraces demasiado…
+
 author: eiximenis
 
 date: 2009-02-02T13:07:00+00:00
@@ -14,6 +14,8 @@ categories:
 
 ---
 No hace mucho, [Jorge Dieguez] escribió [un interesante post sobre Unity](https://geeks.ms/jdieguez/archive/2009/01/25/microsoft-unity-inyecci-243-n-de-dependencias-net.aspx) y el patrón de [Dependency Injection](https://en.wikipedia.org/wiki/Dependency_injection). Resumiendo mucho este patrón permite eliminar las dependencias de nuestro código, trasladandolas todas a un sólo elemento, que se conoce generalmente como &ldquo;contenedor de DI&rdquo;. Este contenedor es el responsable de devolvernos todas las referencias a clases que nostros precisemos.
+
+<!--more-->
 
 Las ventajas es que tenemos un código mucho menos acoplado, que por lo tanto es más fácil de probar y de mantener.
 

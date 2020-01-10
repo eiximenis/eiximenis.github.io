@@ -1,6 +1,6 @@
 ---
 title: Kubernetes (2) – Modelo de aplicación
-description: Kubernetes (2) – Modelo de aplicación
+
 author: eiximenis
 
 date: 2017-12-21T11:18:03+00:00

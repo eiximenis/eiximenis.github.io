@@ -1,6 +1,6 @@
 ---
 title: Catálogo en ASP.NET MVC3 sin usar BBDD
-description: Catálogo en ASP.NET MVC3 sin usar BBDD
+
 author: eiximenis
 
 date: 2012-04-14T00:38:57+00:00
@@ -16,6 +16,8 @@ categories:
 Bueno… este es un post por “encargo”… Hoy he recibido un <a href="http://twitter.com/#!/JanoRuiz/status/190777187899670528" target="_blank" rel="noopener noreferrer">tweet de @JanoRuiz</a> que decía lo siguiente: _Hola, Saludos, una Consulta, Como Hacer Un Catalogo En asp.net mvc3 Sin Usar BD, Hacer Altas, Bajas y Modificaciones_.
 
 Bueno, vamos a explorar algunas “formas de hacerlo”… 😀
+
+<!--more-->
 
 Vamos a utilizar el siguiente modelo para representar los productos:
 

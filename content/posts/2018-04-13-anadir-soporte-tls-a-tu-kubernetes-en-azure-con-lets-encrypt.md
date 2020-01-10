@@ -1,6 +1,6 @@
 ---
 title: "Añadir soporte TLS a tu Kubernetes en Azure con Let's Encrypt"
-description: "Añadir soporte TLS a tu Kubernetes en Azure con Let's Encrypt"
+
 author: eiximenis
 
 date: 2018-04-13T16:05:06+00:00
