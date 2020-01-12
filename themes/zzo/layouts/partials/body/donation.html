@@ -15,6 +15,11 @@
           {{ partial (print "svgs/donation/" $name ".svg") (dict "width" 22 "height" 22) }}
           {{ $name }}
         </a>
+      {{ else if in $name "buymecoffe" }}
+        <a href="{{ $path | safeURL }}" title="{{ $name }}" aria-label="{{ $name }}" class="donation__item">
+          {{ partial (print "svgs/donation/" $name ".svg") (dict "width" 22 "height" 22) }}
+          {{ $name }}
+        </a>        
       {{ else }}
         <div class="donation__item donation__dropup">
           {{ partial (print "svgs/donation/" $name ".svg") (dict "width" 22 "height" 22) }}

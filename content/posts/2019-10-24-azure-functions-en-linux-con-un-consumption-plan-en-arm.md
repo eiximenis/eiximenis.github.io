@@ -14,6 +14,8 @@ En mi caso quería una plantilla ARM que soportase la creación del service plan
 
 <!--more-->
 
+## Crear un service plan en Linux
+
 Crear un service plan en Linux no es muy complicado:
 
 ```json
@@ -36,6 +38,8 @@ Crear un service plan en Linux no es muy complicado:
 
 Aquí la clave es `"reserved": true`, Eso genera el service plan para Linux. Si no lo pones, se genera un service plan para Windows.
 
+## El problema al ser un ConsumptionPlan
+
 Los parámetros `funcAppSkuName` y `funcAppSkuTier` contienen el nombre (S1, P1, …) y el nivel (Standard, Premium,…) del tier a usar. Así si quieres crear un service plan S2, pues `funcAppSkuName` es S2 y `funcAppSkuTier` es Standard.
 
 Pero, si intentas desplegar este ARM con los valores `Y1` y `Dynamic` te encontrarás que te da un error indicando que Dynamic es un valor incorrecto para la SKU. El error es bastante claro, pero p. ej. si creas una function app con un consumption plan "a mano" desde el portal y luego analizas con resources.azure.com lo que se ha creado, verás como efectivamente esos son los valores del recurso:
@@ -43,6 +47,8 @@ Pero, si intentas desplegar este ARM con los valores `Y1` y `Dynamic` te encontr
 !(Código ARM que devuelve el portal)[https://geeks.ms/etomas/wp-content/uploads/sites/154/2019/10/linux-consumption-plan.png]
 
 Pero da igual, no los pongáis que no va. La razón es muy sencilla: no se puede crear explícitamente un consumption plan en Linux. El consumption plan se crea "automáticamente" cuando se crea una functionapp en Linux, que no tenga asociado un service plan (eso mismo ocurre en Windows, pero en Windows sí se pueden crear consumption plans explícitamente).
+
+## La solución
 
 Por lo tanto la solución pasa por crear el service plan solo si la functionapp se debe desplegar bajo un modelo de service plan (no de consumption). Yo, para soportar ambos escenarios he usado un ARM parecido al siguiente (muestro solo los recursos):
 

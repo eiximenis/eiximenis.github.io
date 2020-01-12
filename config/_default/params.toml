@@ -136,6 +136,7 @@ commento = false
   paypal = "https://paypal.me/eduardtomas" # Paypal URL
   patreon = "" # Patreon URL
   bitcoin = "/images/btc-wallet.png"
+  buymecoffe="https://www.buymeacoffee.com/eiximenis"
 
 [copyrightOptions]
   enableCopyrightLink = true
