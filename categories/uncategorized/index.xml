@@ -228,7 +228,7 @@ Yo voy a hablar sobre async y await, lo que en el fondo me va a dar una excusa p
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
 &lt;pre class="chroma">&lt;code class="language-cs" data-lang="cs">&lt;span class="kt">int&lt;/span> &lt;span class="n">x&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="m">1&lt;/span>&lt;span class="p">;&lt;/span>
-&lt;span class="n">iny&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="p">+&lt;/span>&lt;span class="p">+&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;span class="n">iny&lt;/span> &lt;span class="n">y&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="n">x&lt;/span>&lt;span class="p">++;&lt;/span>
 &lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>jQueryUI widgets… no son webcontrols pero vamos…</title><link>https://www.eiximenis.dev/posts/2009-07-02-jqueryui-widgets-no-son-webcontrols-pero-vamos/</link><pubDate>Thu, 02 Jul 2009 15:49:00 +0000</pubDate><guid>https://www.eiximenis.dev/posts/2009-07-02-jqueryui-widgets-no-son-webcontrols-pero-vamos/</guid><description>&lt;p>¡¡Hola a todos!! ¿Como vamos?&lt;/p>
