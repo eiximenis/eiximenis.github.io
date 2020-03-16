@@ -8,6 +8,11 @@
 클릭해 주셔서 감사합니다. Zzo theme은 많은 기능을 지원하고있고 있습니다. 기술 블로그를 운영하기에 최적화 되어있습니다!(적어도 제생각엔...)
 Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로 저와 소통할 수 있다는 점? 입니다. 
 
+## Documentation
+
+영문버전 도큐먼트
+[https://zzodocs.netlify.com/docs/](https://zzodocs.netlify.com/docs/)
+
 ## Table of contents
 
 * [기능](#features)
@@ -16,18 +21,20 @@ Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로
 * [업데이트](#updating)
 * [예제 사이트 돌리기](#run-example-site)
 * [설정](#configuration)
-* [레이아웃](#layout)
 * [갤러리](#gallery)
 * [컨택 페이지](#contact-page)
+* [토크 페이지](#talks-page)
+* [쇼케이스 페이지](#showcase-page)
 * [다국어](#multi-language)
 * [저자](#author)
+* [Favicon](#favicon)
 * [커스터마이징](#customizing)
 * [외부 라이브러리 사용](#external-library)
 * [Shortcodes](#shortcodes)
 
 ## Features
 
-* 다양한 스킨 지원(dark, light, solarized, hacker)
+* 다양한 스킨 지원(dark, light, solarized, ...)
 * 모바일 메뉴
 * 최신 HTML5, CSS 기술 이용
 * 심플한 블로그
@@ -38,6 +45,8 @@ Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로
 * 검색 (지원 예정)
 * 갤러리 지원
 * 코드 하이라이트
+* 토크 페이지
+* 쇼케이스 페이지
 
 ## Minimum Hugo version
 
@@ -218,15 +227,29 @@ You shoud make your own menu.
 
 ```bash
 logoText = "Zzo" # Logo text that appears in the site navigation bar.
+logoType = "short" # long, short -> short: squre shape includes logo text, long: rectangle shape not includes logo text
+logo = true # Logo that appears in the site navigation bar.
 description = "The Zzo theme for Hugo example site." # for SEO
 custom_css = [] # custom_css = ["scss/custom.scss"] and then make file at root/assets/scss/custom.scss
 custom_js = [] # custom_js = ["js/custom.js"] and then make file at root/assets/js/custom.js
+useFaviconGenerator = false # https://www.favicon-generator.org/
+languagedir = "ltr" # ltr / rtl
 
-themeOptions = ["dark", "light", "hacker", "solarized"] # select options for site color theme
-notAllowedTypesInHome = ["contact", "talks", "about"] # not allowed page types in home page. type can be set in front matter or default to folder name.
+themeOptions = ["dark", "light", "hacker", "solarized", "kimbie"] # select options for site color theme
+notAllowedTypesInHome = ["contact", "talks", "about", "showcase"] # not allowed page types in home page. type can be set in front matter or default to folder name.
+notAllowedTypesInHomeSidebar = ["about", "archive", "showcase"] # not allowed page types in home page sidebar(recent post titles).
+notAllowedTypesInArchive = ["about", "talks", "showcase"] # not allowed page types in archive page
+notAllowedTypesInHomeFeed = ["about", "archive", "contact", "talks", "showcase", "publication", "presentation", "resume", "gallery"]
+
+viewportSize = "normal" # widest, wider, wide, normal, narrow
+enableUiAnimation = true
+hideSingleContentsWhenJSDisabled = false
 
 # header
 homeHeaderType = "text" # text, img, slide
+
+# menu
+showMobileMenuTerms = ["tags", "categories", "series"]
 
 # navbar
 enableThemeChange = true # site color theme
@@ -248,21 +271,30 @@ talksGroupByDate = "2006" # "2006-01": group by month, "2006": group by year
 myname = "zzossig"
 email = "zzossig@gmail.com"
 whoami = "Web Developer"
-useGravatar = false
+bioImageUrl = "" # image url like "http//..." or "images/anyfoldername/mybioimage.jpg" If not set, we find a avatar image in root/static/images/whoami/avatar.(png|jpg|svg)
+useGravatar = false # we use this option highest priority
 location = "Seoul, Korea"
 organization = "Hugo"
 link = "https://github.com/zzossig/hugo-theme-zzo"
 
 # sidebar
-enableBio = true # home page sidebar
+enableBio = true # in home page sidebar
+enableBioImage = true # in home page sidebar
 enableSidebar = true # Set to false to create the full width of the content.
 enableSidebarTags = true # if you want to use tags.
 enableSidebarSeries = true
 enableSidebarCategories = true
+enableHomeSidebarTitles = true
+enableListSidebarTitles = true
 enableToc = true # single page table of contents, you can replace this param to toc(toc = true)
 hideToc = false # Hide or Show toc
+tocPosition = "inner" # inner, outer
+tocFolding = false
 enableTocSwitch = true # single page table of contents visibility switch
 itemsPerCategory = 5 # maximum number of posts shown in the sidebar.
+sidebarPosition = "right" # bio, profile component layout position
+tocLevels = ["h2", "h3", "h4"] # minimum h2, maximum h4 in your article
+enableSidebarPostsByOrder = false # another lists in the sidebar
 
 # footer
 showPoweredBy = true # show footer text: Powered by Hugo and Zzo theme
@@ -271,11 +303,17 @@ showSocialLinks = true # email, facebook, twitter ...
 enableLangChange = true # show button at bottom left of footer.
 
 # service
+googleTagManager = "" # GTM-XXXXXX
 baiduAnalytics = "" # alternative of google analytics
 enableBusuanzi = false # if set true, total page view, total unique visitors show up in the footer.
 busuanziSiteUV = true # unique visitors (total number of visitors)
 busuanziSitePV = true # site total page view count
 busuanziPagePV = true # post view count
+
+# rss
+updatePeriod = "" # Possible values: 'hourly', 'daily', 'weekly', 'monthly', or 'yearly'.
+updateFrequency = ""
+fullContents = false
 
 # comment
 enableComment = true
@@ -326,6 +364,7 @@ commento = false
 
 [socialOptions] # if set, social icons will show up.
   email = "mailto:your@email.com"
+  phone = ""
   facebook = "http://example.org/"
   twitter = "http://example.org/"
   github = "https://github.com/zzossig/hugo-theme-zzo"
@@ -343,65 +382,46 @@ commento = false
   weibo = ""
   douban = ""
   csdn = ""
-  zhihu = ""
   gitlab = ""
   mastodon = ""
   jianshu = ""
   zhihu = ""
+  signal = ""
+  whatsapp = ""
+  matrix = ""
+  xmpp = ""
+  dev-to = ""
+  gitea = ""
+  google-scholar = ""
+  twitch = ""
 
-[donationOptions] 
+[donationOptions]
   enable = false # if set, the donation button will show up on the single page.
   alipay = "" # Alipay QR Code image (example path: images/donation/alipay-qrcode.png) and put your file at root/static/images/donation/
   wechat = "" # Wechat pay QR Code image (example path: same as above)
   paypal = "" # Paypal URL
   patreon = "" # Patreon URL
+  bitcoin = "" # example path: images/donation/bitcoin-code-image.png
 
 [copyrightOptions]
   enableCopyrightLink = false # if set, you can add copyright link
   copyrightLink = ""
   copyrightLinkImage = ""
   copyrightLinkText = ""
-```
 
-## Layout
+# possible share name: "facebook","twitter", "reddit", "linkedin", "tumblr", "weibo", "douban", "line", "whatsapp", "telegram"
+[[share]]
+  name = "facebook"
+  username = ""
+[[share]]
+  name = "twitter"
 
-### CSS grid for layout
-
-이 프로젝트의 레이아웃은 css의 grid란 걸 사용해서 잡았습니다. 혹시나 커스터마이징 하실 때 알아야 할 수도 있을 것 같아서 알려드립니다.
-
-### grid structure
-
-|  left 	|  right 	|
-|---	|---	|
-|  1	|  2	|
-|  3 	|  4	|
-|  5 	|  6	|
-|  7 	|  8	|
-
-* left, right column width ratio => 5 : 2
-* 1 => .navbar-main
-* 2 => .navbar-side
-* 1 + 2 => .navbar
-* 3 => .header-main
-* 4 => .header-side
-* 3 + 4 => .header
-* 5 => .main-main
-* 6 => .main-side
-* 5 + 6 => .main
-* 7 => .footer-main
-* 8 => .footer-side
-* 7 + 8 => .footer
-
-### grid structure example applied in home page
-
-```html
-<div class="navbar"></div>
-<div class="header"></div>
-<div>
-  <div class="main-main"></div>
-  <div class="main-side"></div>
-</div>
-<div class="footer></div>
+[[footerLinks]]
+  name = ""
+  link = ""
+[[footerLinks]]
+  name = ""
+  link = ""
 ```
 
 ## Gallery
@@ -424,9 +444,9 @@ series:
 categories:
 -
 images: # when mode is one-by-one, images front-matter variable works
-  - image: image1.jpg
+  - image: image1.jpg # image path: static/gallery/anygalleryname/image1.jpg
     caption: caption1
-  - image: image2.jpg
+  - image: image2.jpg # image path: static/gallery/anygalleryname/image2.jpg
     caption: caption2
     ...
 ---
@@ -472,9 +492,9 @@ root
 
 ## Contact Page
 
-현재 이용 가능한 서비스: [formspree]. 다른 서비스를 이용하고 싶으시면 새 이슈를 만들어주세요.
+현재 이용 가능한 서비스: [formspree]. 다른 서비스를 이용하고 싶으시면 새 이슈를 만들어주세요. 서비스 파라미터를 빈값으로 설정하면 마크다운으로 해당 페이지를 채울 수 있습니다.
 
-1. 파일을 다음 경로에 만들어줍니다. root/contact/index.md
+1. 파일을 다음 경로에 만들어줍니다. root/content/contact/index.md
 
 ```yaml
 ---
@@ -511,10 +531,11 @@ Talks 페이지는 아카이브 페이지와 유사한 UI의 페이지입니다.
 title: "Talks"
 date: 2019-12-30T11:14:14+09:00
 description: Talks Page
+titleWrap: wrap # wrap, nowrap
 ---
 ```
 
-2. 또 다른 파일을 만들어 줍니다. 이곳에 링크 값을 넣을 겁니다. 
+2. 또 다른 파일을 만들어 줍니다. 이곳에 내용을 넣어주세요. 
 
 root/content/talks/myLinks.md
 
@@ -530,17 +551,8 @@ series:
 -
 categories:
 -
-links:
-  - link: "https://google.com"
-    title: "Video Link Title"
-    type: "video"
-  - link: "https://naver.com"
-    title: "PPT Link Title"
-    type: "ppt"
-  - link: "https://yahoo.com"
-    title: "Event Link Title"
-    type: "event"
 ---
+```
 
 3. 마지막으로 메뉴만 다음 과 같이 만들어 주면 됩니다. 
 
@@ -575,6 +587,62 @@ root/config/_default/menus.en.toml file
     ---
     ...
     ```
+
+## Showcase Page
+
+Showcase 페이지는 프로젝트를 전시하는 페이지 입니다. 페이지를 만드시려면 아래 단계를 진행해주세요.
+
+1. 다음 경로에 파일을 만듭니다. `root/content/showcase/_index.md`.
+
+```yaml
+---
+title: "Showcase overview" # For SEO
+date: 2020-01-19T15:43:38+09:00
+description: My portfolio, repos, works overview page # For SEO
+enableBio: true # Set to false if you want to hide the bio component.
+---
+```
+
+2. 다음 경로에 카테고리 폴더와 파일을 만듭니다. `root/content/showcase/hugo/_index.md` file. (저의 경우, hugo가 카테고리 폴더입니다.)
+
+```yaml
+---
+title: "Hugo" # section name
+date: 2020-01-19T21:04:11+09:00
+description: Hugo theme collection # For SEO
+category: theme # meta info appeared on a card bottom side. category in category
+enableBio: true
+---
+```
+
+3. 프로젝트당 한개의 md파일을 만들어 주세요.
+
+`root/content/showcase/hugo/my-awesome-project.md`
+
+```yaml
+---
+title: "My Awesome Project" # apperared on a card component
+date: 2020-01-19T21:13:42+09:00
+description: Hello world! This is my awesome project! # apperared on a card component
+weight: 1 # card ordering
+link: https://github.com/zzossig/hugo-theme-zzo
+repo: https://github.com/zzossig/hugo-theme-zzo
+pinned: true # appreared on a overview page.
+thumb: feature3/css3.png # relative path in static/images
+---
+```
+
+4. 마지막으로, 메뉴를 등록해주세요.
+
+`root/config/_default/menus.en.toml`
+
+```toml
+[[main]]
+  identifier = "showcase"
+  name = "Showcase"
+  url = "showcase"
+  weight = 7
+```
 
 ## Multi Language
 
@@ -626,7 +694,7 @@ other = "검색..."
 [summary-dateformat]
 other = "2006년 01월 02일"
 
-[taxo-tags]
+[tags]
 other = "태그"
 
 ...
@@ -739,7 +807,11 @@ header:
       - HUGO
     subtitle:
       - The world’s fastest framework for building websites
+    titleColor: # #123456, red
+    titleShadow: false
     titleFontSize: 44
+    subtitleColor: # #123456, red
+    subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
   
@@ -756,12 +828,24 @@ header:
       -
     subtitle:
       -
+    titleColor:
+    titleShadow: false
     titleFontSize: 44
+    subtitleColor:
+    subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
 
   - type: slide
     height: 235
+    options:
+        startSlide: 0
+        auto: 5000 # auto slide delay 5000ms(5sec)
+        draggable: true # slide draggable
+        autoRestart: true # restart after drag finished
+        continuous: true # last to first
+        disableScroll: true
+        stopPropagation: true
     slide:
       - paddingX: 50
         paddingY: 0
@@ -921,6 +1005,7 @@ title:
 author: # author name
 authorEmoji: 🤖 # emoji for subtitle, summary meta data
 authorImage: "/images/whoami/avatar.jpg" # image path in the static folder
+authorImageUrl: "" # your image url. We use `authorImageUrl` first. If not set, we use `authorImage`.
 authorDesc: # author description
 socialOptions: # override params.toml file socialOptions
   email: ""
@@ -928,6 +1013,19 @@ socialOptions: # override params.toml file socialOptions
   ...
 ---
 ```
+
+## Favicon
+
+`favicon.ico`라는 파일을 루트 디렉토리의 static 폴더에 넣어주세요. 파일 이름과 확장자가 정확히 `favicon.ico`여야 합니다.
+
+### Using favicon-genarator
+
+모바일 환경을 고려하신다면 [favicon-generator](https://www.favicon-generator.org/) 사이트에서 파비콘을 만들어주세요.
+
+- 위의 사이트에서 파비콘을 만들어주세요.
+- `root/static/favicon`경로에 폴더를 만들어주세요.
+- 해당 폴더에 파비콘을 풀어주세요.
+- params.toml 파일에 `useFaviconGenerator`의 값을 `true`로 바꿔주세요.
 
 ## External Library
 
@@ -954,34 +1052,33 @@ libraries:
 
 ## Shortcodes
 
-### warning
+### alert
 
 ```bash
-{{% alert theme="info" %}}**this** is a text{{% /alert %}}
-{{% alert theme="success" %}}**Yeahhh !** is a text{{% /alert %}}
-{{% alert theme="warning" %}}**Be carefull** is a text{{% /alert %}}
-{{% alert theme="danger" %}}**Beware !** is a text{{% /alert %}}
+{{< alert theme="warning" >}} # warning, success, info, danger
+**this** is a text
+{{< /alert >}}
 ```
 
 ### expand
 
 ```bash
-{{%expand "Expand me" %}}Good job{{% /expand%}}
+{{< expand "Expand me" >}}Some Markdown Contents{{< /expand >}}
 ```
 
 ### img
 
 ```bash
-// path: static/images/whoami/avatar.jpg, you can set width, height also
-{{< img src="/images/whoami/avatar.jpg" title="Image4" caption="Image description" alt="image alt" >}}
+// path: static/images/whoami/avatar.jpg
+{{< img src="/images/whoami/avatar.jpg" title="Image4" caption="Image description" alt="image alt" width="50px" height="50px">}}
 ```
 
 ### notice
 
 ```bash
-{{% notice note %}} # note, info, tip, warning
-A notice disclaimer
-{{% /notice %}}
+{{< notice success >}} # success, info, warning, error
+success
+{{< /notice >}}
 ```
 
 ### color
@@ -994,6 +1091,61 @@ A notice disclaimer
 
 ```bash
 {{< box >}}
-Some markdown contents
+Some contents
 {{< /box >}}
 ```
+
+### boxmd
+
+```bash
+{{< boxmd >}}
+Some markdown contents
+{{< /boxmd >}}
+```
+
+### code / codes => 코드를 여러 버전으로 제공할 때 쓰세요. 들여쓰기 잘못하면 이상하게 나와요.
+
+`````
+{{< codes java javascript >}}
+  {{< code >}}
+  ```java
+  System.out.println('Hello World!');
+  ```
+  {{< /code >}}
+  {{< code >}}
+  ```javascript
+  console.log('Hello World!');
+  ```
+  {{< /code >}}
+{{< /codes >}}
+`````
+
+### tab / tabs => 여러 버전의 뷰를 제공할 때 쓰세요
+
+탭을 만들 때, 각 탭마다 안의 내용에 따라 고유 아이디를 부여하기 때문에, Tab 안에 있는 내용이 서로 달라야합니다.
+
+`````
+{{< tabs Windows MacOS Ubuntu >}}
+  {{< tab >}}
+
+  ### Windows section
+
+  ```javascript
+  console.log('Hello World!');
+  ```
+
+  {{< /tab >}}
+  {{< tab >}}
+
+  ### MacOS section
+
+  Hello world!
+  {{< /tab >}}
+  {{< tab >}}
+
+  ### Ubuntu section
+
+  Great!
+  {{< /tab >}}
+{{< /tabs >}}
+`````

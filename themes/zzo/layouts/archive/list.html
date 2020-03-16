@@ -1,28 +1,38 @@
 {{ define "main" }}
-<header class="header">
+{{ $titleWrap := $.Param "titleWrap" }}
+
+<header class="header basicflex-column">
   <h3 class="h3 terms__title">
     {{ .Title }}
   </h3>
-  <div>
+  <div class="px py p2 single__contents">
     {{ .Content }}
   </div>
 </header>
-</span>
 <main class="main archive">
   <div class="archive__container">
-    {{ $pages := (where .Site.RegularPages "Section" "!=" "talks") }}
-    {{ $paginator := .Paginate ($pages.GroupByDate (.Site.Params.archiveGroupByDate | default "2006")) .Site.Params.archivePaginate }}
+    {{ $filteredPages := .Site.RegularPages }}
+    {{ range $.Param "notAllowedTypesInArchive" }}
+      {{ $filteredPages = (where $filteredPages "Type" "!=" (lower .)) }}
+    {{ end }}
+
+    {{ $paginator := .Paginate ($filteredPages.GroupByDate ($.Param "archiveGroupByDate" | default "2006")) ($.Param "archivePaginate") }}
     
     {{ range ($paginator).PageGroups }}
-    <span class="archive__key">{{ .Key }}</span>
-    <ul class="archive__ul">
+    <span class="archive__key" data-ani="{{ $.Site.Params.enableUiAnimation | default "true" }}">{{ .Key }}</span>
+    <ul class="archive__ul" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
       {{ range .Pages }}
-      <li class="archive__li">
-        <span class="archive__meta">
-          <span class="archive__type">{{ .Type }}</span>
-          <span class="archive__date">{{ .Date.Format (i18n "archive-dateformat") }}</span>
-        </span>        
-        <a href="{{ .Permalink }}" class="archive__title">{{ .Title }}</a>        
+      <li class="archive__li" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
+        <span class="archive__meta" data-ani="{{ $.Site.Params.enableUiAnimation | default "true" }}">
+          {{ if ne ($.Param "languagedir") "rtl" }}
+            <span class="archive__type">{{ .Type }}</span>
+            <span class="archive__date">{{ .Date.Format (i18n "archive-dateformat") }}</span>
+          {{ else }}
+            <span class="archive__date">{{ .Date.Format (i18n "archive-dateformat") }}</span>
+            <span class="archive__type">{{ .Type }}</span>
+          {{ end }}
+        </span>
+        <a href="{{ .Permalink }}" class="archive__title" data-title-wrap="{{ $titleWrap | default "wrap"}}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">{{ .Title }}</a>        
       </li>
       {{ end }}
     </ul>

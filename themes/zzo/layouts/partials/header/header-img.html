@@ -1,12 +1,12 @@
 {{ if $.Params.header }}  
   {{ range $.Params.header }}
     {{ if eq .type "img" }}
-    <div class="site-header site-header__align-{{ .align }}" style="background-image: url('{{ .imageSrc | relURL }}'); background-size: {{ .imageSize }};
+    <div class="site-header basicflex-column site-header__align-{{ .align }}" data-ani="{{ $.Site.Params.enableUiAnimation | default "true" }}" style="background-image: url('{{ .imageSrc | relURL }}'); background-size: {{ .imageSize }};
     background-repeat: {{ .imageRepeat }}; background-position: {{ .imagePosition }}; width: 100%; height: {{ .height }}px; padding: {{ .paddingY }}px {{ .paddingX }}px;">
       {{ $header := . }}
       {{ if .title }}
         {{ range .title }}
-        <div class="site-header__title" style="font-size: {{ $header.titleFontSize }}px;">
+        <div class="site-header__title {{ if $header.titleShadow }}site-header__title--shadow{{ end }}" style="font-size: {{ $header.titleFontSize }}px; {{ with $header.titleColor }}color:{{ . }}{{ end }};">
           {{ . }}
         </div>
         {{ end }}      
@@ -16,10 +16,10 @@
       {{ end }}
       {{ if .subtitle }}
         {{ range .subtitle }} 
-        <div class="site-header__subtitle" style="font-size: {{ $header.subtitleFontSize }}px;">
+        <div class="site-header__subtitle" style="font-size: {{ $header.subtitleFontSize }}px; {{ with $header.subtitleColor }}color:{{ . }}{{ end }}" data-cursive="{{ with $header.subtitleCursive }}{{ . }}{{ end }}">
           {{ . }}
         </div>
-        {{ end }}      
+        {{ end }}
       {{ end }}
     </div>
     {{ end }}

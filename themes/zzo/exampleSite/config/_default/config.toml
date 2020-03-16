@@ -30,12 +30,23 @@ googleAnalytics = ""
     lineNumbersInTable = true
     noClasses = false
   [markup.tableOfContents]
-    endLevel = 3
+    endLevel = 4
     ordered = false
     startLevel = 2
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "SearchIndex"]
+  home = ["HTML", "RSS", "SearchIndex"]
+  section = ["HTML", "RSS", "SearchIndex"]
+  taxonomyTerm = ["HTML", "RSS", "SearchIndex"]
+  taxonomy = ["HTML", "RSS", "SearchIndex"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
 
 [taxonomies]
   category = "categories"

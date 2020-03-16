@@ -1,18 +1,4 @@
 .talk {
-  &__li {
-    margin: 0.75rem 0 0.75rem 4rem;
-    z-index: 0;    
-
-    @include transition(margin-left, 0.1s, ease);
-    @include flexbox();
-    @include align-items(flex-start);
-
-    @media only screen and (max-width: 769px) {
-      margin-left: 0;
-      position: relative;
-    }
-  }
-
   &__date {
     border-radius: 0.25rem;
     min-width: 100px;
@@ -21,85 +7,85 @@
     height: 26px;
     line-height: 26px;
     text-align: center;
+    position: relative;
+
+    &[data-ani="true"] {
+      @include animation('slide-in-left .2s .5s 1 ease both');
+    }
     
-    @include animation('slide-in-left .2s .4s 1 ease both');
+    @include truncate(100px);
     @include themify($themes) {
       color: themed('archive-meta-color');
       background-color: themed('archive-type-background-color');
     }
+
+    &[data-dir="rtl"] {
+      margin-left: 1rem;
+    }
+
+    &[data-dir="ltr"] {
+      margin-right: 1rem;
+    }
   }
 
-  &__type {
-    border-radius: 0.25rem;
-    min-width: 100px;
-    max-width: 100px;
-    margin-top: 0.25rem;
-    font-size: 14px;
-    height: 20px;
-    line-height: 20px;
-    text-align: center;
-
-    @include animation('slide-in-left .2s .6s 1 ease both');
+  &__icons {
+    padding: 0 0.5rem;
+    margin: auto 0;
     @include flexbox();
-    @include align-items(center);
-    @include justify-content(center);
+
+    svg {
+      display: block;
+      margin: auto;
+    }
+  }
+
+  &__icon {
+    margin: auto 0.25rem;
+    
     @include themify($themes) {
-      color: themed('archive-type-color');
-      background-color: themed('archive-type-background-color');
+      color: themed('social-icon-color');
     }
   }
 
   &__title {
-    @include truncate2($grid-max-width);
+    margin-right: 0.5rem;
+    margin-left: 0.75rem;
 
-    &--margin {
-      margin-right: 0.5rem;  
-      margin-left: 0.75rem;
+    &[data-title-wrap^="no"] {
+      @include truncate($grid-max-width);
     }
 
-    @include on-event {
-      @media only screen and (min-width: 769px) {
+    @media only screen and (max-width: 600px) {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    &[data-dir="ltr"] {
+      @include on-event {
         &::before {
           content: '';
           position: absolute;
-          left: 3rem;                
+          left: 3rem;
           width: 0.25rem;
           height: 30px;
           
           @include themify($themes) {
             background-color: themed('archive-hover-line-color');
+            
+            @media only screen and (max-width:768px) {
+              top: 13px;
+              left: 0;
+              height: 24px;
+            }
           }
 
           @media only screen and (max-width: 769px) {
+            height: 24px;
             top: 50%;
             @include translateY(-50%);
           }
         }
       }
-    }
-  }
-
-  &__links {
-    @include flexbox();
-    @include flex-direction(column);
-
-    li {
-      padding-left: 0.5em;
-      margin: 0.25rem 0 0.25rem -3.75rem;
-
-      @include flexbox();
-      @include align-items(center);
-      @include truncate2(650px);
-      @media only screen and (max-width: 769px) {
-        margin-left: -6.8rem;
-        @include truncate2(350px);
-      }
-    }
-
-    &--item {
-      padding-left: 0.5rem;
-      margin: 0.25rem 0;
-      @include flexbox();
     }
   }
 }

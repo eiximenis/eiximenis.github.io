@@ -82,6 +82,10 @@ textarea {
   margin: 0;
 }
 
+button {
+  padding: 0;
+}
+
 // Media
 img,
 video {
@@ -109,9 +113,19 @@ th {
   }
 }
 
-figcaption {  
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+figcaption {
   font-style: italic;
   font-size: 0.9rem;
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
   @include themify($themes) {
     color: themed("figcaption-color");
@@ -119,6 +133,13 @@ figcaption {
       color: themed("figcaption-strong-color");
     }
   }
+}
+
+pre {
+  white-space: pre;
+  -webkit-hyphens: none;
+      -ms-hyphens: none;
+          hyphens: none;
 }
 
 ::-moz-selection {

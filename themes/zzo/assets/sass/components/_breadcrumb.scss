@@ -1,8 +1,10 @@
 .breadcrumb {
   margin: 1rem;
+  margin-bottom: 0;
   padding: 0.5rem;
   border-radius: 0.25rem;
   padding: auto;
+  font-family: $title-font;
 
   @include truncate($grid_max_width + $grid_max_unit);
   @include themify($themes) {
@@ -16,28 +18,23 @@
 
   li {
     display: inline;
-    font-size: 1rem;
+    font-size: 0.9rem;
     
     a {
-      font-size: 0.9rem;
-      
       @include themify($themes) {
         color: themed('breadcrumb-item-color');
         @include on-event {
           color: themed('link-hover');
         }
-      }      
-    }    
+      }
+    }
 
     &:last-child {
-      a {
-        @include themify($themes) {
-          color: themed('breadcrumb-item-active-color');
-        }
-        text-decoration: none;
-        cursor: default;
-      }      
-    }       
+      @include truncate($grid_max_width + $grid_max_unit);
+      @include themify($themes) {
+        color: themed('breadcrumb-item-active-color');
+      }
+    }
   }
 
   li+li:before {

@@ -38,6 +38,11 @@
     }
   }
 
+  &__link {
+    font-size: 0.8rem;
+    margin: 0.25rem 0.5rem 0;
+  }
+
   .dropdown {
     position: absolute;
     left: 0.5rem;
@@ -50,10 +55,10 @@
     @include align-items(center);
     @include justify-content(center);    
     @include themify($themes) {
-      color: themed('gtt-color'); 
+      color: themed('gtt-color');
       background-color: themed('gtt-background-color');
       @include on-event {
-        color: themed('gtt-hover-color');  
+        color: themed('gtt-hover-color');
         background-color: themed('gtt-hover-background-color');
       }
     }
@@ -65,8 +70,15 @@
       border: none;
       width: 100%;
       height: 100%;
-      color: inherit;
-      background-color: inherit;
+      
+      @include themify($themes) {
+        color: themed('gtt-color');
+        background-color: themed('gtt-background-color');
+        @include on-event {
+          color: themed('gtt-hover-color');
+          background-color: themed('gtt-hover-background-color');
+        }
+      }
     }
 
     &-content {

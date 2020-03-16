@@ -87,7 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  var singleContentsElem = document.querySelector('.single__contents');
+  var modal = document.getElementById('modal');
+  var galleryContainerElem = document.querySelector('.gallery__container');
   var swipeWrapElem = document.querySelector('.swipe-wrap');
   var mySwipeElem = document.getElementById('mySwipe');
   var arrowLeftElem = document.querySelector('.modal__arrow--left');
@@ -98,19 +99,30 @@ document.addEventListener('DOMContentLoaded', function () {
   var captionElem = document.querySelector('.modal__caption');
   var pagingElem = document.querySelector('.modal__paging');
   var itemsElem = document.querySelector('.modal__items');
-  var imgTotalNum = singleContentsElem.querySelectorAll('img').length;
+  var imgTotalNum = null;
   var myFadeTimeout = null;
   var mySwipe = null;
   var keydownFunction = function (e) {
     if (e.key === 'ArrowRight') {
-      mySwipe.next();
+      if (modal && modal.classList.contains('is-open')) {
+        mySwipe.next();
+      }
     } else if (e.key === 'ArrowLeft') {
-      mySwipe.prev();
+      if (modal && modal.classList.contains('is-open')) {
+        mySwipe.prev();
+      }
     }
   }
 
+  if (galleryContainerElem) {
+    imgTotalNum = galleryContainerElem.querySelectorAll('img').length;
+  } else {
+    galleryContainerElem = document.querySelector('.single__contents');
+    imgTotalNum = galleryContainerElem.querySelectorAll('img').length;
+  }
+
   MicroModal.init({
-    onClose: () => {
+    onClose: function () {
       if (mySwipe) {
         mySwipe.kill();
         mySwipe = null;
@@ -136,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  singleContentsElem.querySelectorAll('img').forEach(function (elem, idx) {
+  galleryContainerElem.querySelectorAll('img').forEach(function (elem, idx) {
     elem.style.cursor = 'pointer';
 
     var clonedElem = elem.cloneNode(true);
@@ -164,6 +176,9 @@ document.addEventListener('DOMContentLoaded', function () {
       myFadeTimeout = setTimeout(function () {
         fadeOut(itemsElem, 200);
       }, 2500);
+    }
+    wrapper.ontouchstart = function() {
+      fadeIn(itemsElem, 200);
     }
     wrapper.append(clonedElem);
     swipeWrapElem.append(wrapper);

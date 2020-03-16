@@ -1,6 +1,13 @@
 /**
  * Basic typography style for copy text
  */
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font: normal 125% / 1.4 $text-font-stack;
 }

@@ -11,7 +11,11 @@ header:
     subtitle:
       - header subtitle1
       - header subtitle2
+    titleColor: 
+    titleShadow: false
     titleFontSize: 44
+    subtitleColor:
+    subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
   
@@ -27,12 +31,24 @@ header:
     subtitle:
       - header subtitle1
       - header subtitle2
+    titleColor: 
+    titleShadow: false
     titleFontSize: 44
+    subtitleColor: 
+    subtitleCursive: false
     subtitleFontSize: 16
     spaceBetweenTitleSubtitle: 20
 
   - type: slide
     height: 235
+    options:
+        startSlide: 0
+        auto: 5000
+        draggable: true
+        autoRestart: true
+        continuous: true
+        disableScroll: true
+        stopPropagation: true
     slide:
       - paddingX: 50
         paddingY: 0

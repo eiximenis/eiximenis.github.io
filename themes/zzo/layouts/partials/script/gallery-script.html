@@ -1,11 +1,7 @@
-{{ $enquire := resources.Get "js/enquire.min.js" | resources.Fingerprint }}
-<script defer src="{{ $enquire.RelPermalink }}"></script>
 {{ $masonry := resources.Get "js/masonry.pkgd.min.js" | resources.Fingerprint }}
 <script defer src="{{ $masonry.RelPermalink }}"></script>
 {{ $imagesloaded := resources.Get "js/imagesloaded.pkgd.min.js" | resources.Fingerprint }}
 <script defer src="{{ $imagesloaded.RelPermalink }}"></script>
-{{ $lazysizes := resources.Get "js/lazysizes.min.js" | resources.Fingerprint }}
-<script defer src="{{ $lazysizes.RelPermalink }}"></script>
 
 <script>
   window.onload = function() {
@@ -23,12 +19,17 @@
     document.querySelectorAll('.grid-item').forEach(function(elem) {
       elem.addEventListener('mouseenter', function() {
         elem.querySelector('.grid-item__desc').style.display = 'block';
+        elem.querySelector('.grid-item__desc').style.opacity = 1;
+        elem.querySelector('.grid-item__desc--text').onclick = function (e) {
+          e.stopPropagation();
+          e.target.parentNode.previousElementSibling.click();
+        }
         elem.querySelector('.grid-item__desc').onclick = function(e) {
           e.target.previousElementSibling.click();
         }
       });
       elem.addEventListener('mouseleave', function () {
-        elem.querySelector('.grid-item__desc').style.display = 'none';
+        elem.querySelector('.grid-item__desc').style.opacity = 0;
       });
     });
 

@@ -21,8 +21,17 @@ $theme_hacker_chroma_background: {{ .Site.Data.skin.theme_hacker_chroma_backgrou
 $theme_solarized_chroma_background: {{ .Site.Data.skin.theme_solarized_chroma_background }};
 $theme_kimbie_chroma_background: {{ .Site.Data.skin.theme_kimbie_chroma_background }};
 
+$button_dark_primary_color: {{ .Site.Data.button.dark_primary_color }};
+$button_light_primary_color: {{ .Site.Data.button.light_primary_color }};
+$button_hacker_primary_color: {{ .Site.Data.button.hacker_primary_color }};
+$button_solarized_primary_color: {{ .Site.Data.button.solarized_primary_color }};
+$button_kimbie_primary_color: {{ .Site.Data.button.kimbie_primary_color }};
+
 $title-font: {{ .Site.Data.font.title_font }};
 $content-font: {{ .Site.Data.font.content_font }};
+$cursive-font: {{ .Site.Data.font.cursive_font }};
+
+$viewport_size: {{ .Site.Params.viewportSize | default "normal" }};
 
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
@@ -67,6 +76,11 @@ $content-font: {{ .Site.Data.font.content_font }};
 @import 'components/donation';
 @import 'components/box';
 @import 'components/modal';
+@import 'components/codetab';
+@import 'components/ie';
+@import 'components/tab';
+@import 'components/button';
+@import 'components/featuredImage';
 
 @import 'pages/404';
 @import 'pages/about';
@@ -77,3 +91,7 @@ $content-font: {{ .Site.Data.font.content_font }};
 @import 'pages/terms';
 @import 'pages/contact';
 @import 'pages/talk';
+@import 'pages/showcase';
+@import 'pages/wrapper';
+@import 'pages/publication';
+@import 'pages/resume';

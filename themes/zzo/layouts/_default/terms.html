@@ -1,7 +1,7 @@
 {{ define "main" }}
 {{ $title := .Title }}
-<header class="header">
-  <h3 class="h3 terms__title">{{ $title }}</h3>
+<header class="header basicflex-column">
+  <h3 class="terms__title capitalize h3">{{ $title }}</h3>
 </header>
 <main class="terms main">  
   <div class="terms__list">
@@ -12,7 +12,7 @@
           {{ $element.Page.Title }}
         </span>
         <span class="terms__len">({{ printf "%#v" (len $element) }})</span>
-      </a>  
+      </a>
     {{ end }}
     {{ end }}
   </div>

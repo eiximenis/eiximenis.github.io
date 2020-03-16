@@ -10,8 +10,10 @@
     @include flex-direction(column);
   }
 
-  &__contents {    
+  &__contents {
+    width: 100%;
     margin-top: 0.5rem;
+    padding: 0 1rem;
 
     @media only screen and (max-width: 769px) {
       @include flexbox();
@@ -42,10 +44,12 @@
   &__title {
     font-size: 1.5rem;
     font-weight: 700;
+    font-family: $title-font;
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
 
     @include themify($codeblock) {
+      color: themed('content-pre-color');
       text-decoration: underline double themed('content-pre-main-color');
     }
   }
@@ -56,6 +60,11 @@
 
     @media only screen and (max-width: 769px) {
       width: 75%;
+      text-align: center !important;
+    }
+
+    @include themify($codeblock) {
+      color: themed('content-pre-color');
     }
   }
 
@@ -79,7 +88,11 @@
 
   &__written-by {
     font-size: 0.9rem;
-    opacity: 0.65;
+    font-family: $title-font;
+    opacity: 0.75;
+    @include themify($codeblock) {
+      color: themed('content-pre-color');
+    }
   }
 
   &-hr {

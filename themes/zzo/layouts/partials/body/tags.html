@@ -1,14 +1,9 @@
-<div class="single__tags caption">
-{{ range $index, $value := .Params.Tags }}
-  {{ if and (eq $index 0) (ne (len $value) 0) }}
-    🏷️
+{{ $taxo := "tags" }}
+<ul class="single__tags caption">
+  {{ if .Params.tags }}
+  🏷️
   {{ end }}
-  {{ if $value }}
-  <li>
-    <a href="{{ "/tags/" | relLangURL }}{{ $value | urlize }}" class="single__tag" title="{{ $value }}">
-      #{{ $value }}
-    </a>
-  </li>
-  {{ end }}  
+{{ range (.GetTerms "tags") }}
+  <li><a href="{{ .Permalink }}" class="single__tag" title="{{ .LinkTitle }}">#{{ .LinkTitle }}</a></li>
 {{ end }}
-</div>
+</ul>

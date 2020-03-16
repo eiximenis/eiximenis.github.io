@@ -3,16 +3,24 @@
   @include justify-content(center);
   @include align-items(flex-start);
   @include flex-direction(column);
-  @include animation('slide-in-down .5s .2s 1 ease both');
+  @include themify($codeblock) {
+    color: themed('content-pre-color');
+  }
 
   width: 100%;
+  max-width: 928px;
   font-family: $title-font;
 
   &__photo {
     border-radius: 0.25rem;
     width: 100%;
+    max-width: 250px;
     height: auto;
     @include box-shadow(0, 2px, 4px, 0, rgba(0, 0, 0, 0.25));
+
+    &[data-ani="true"] {
+      @include animation('slide-in-down-little .2s .6s 1 ease-in both');
+    }
 
     &-wrapper {
       width: 90%;
@@ -44,19 +52,43 @@
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);
+  }
 
-    &--icon {
-      margin-right: 0.25rem;
-      @include flexbox();
-      @include align-items(center);
-      @include themify($themes) {
-        color: themed('social-icon-color');
-      }      
+  &[data-dir="ltr"] {
+    .bio__info {
+      &--icon {
+        margin-right: 0.25rem;
+
+        @include flexbox();
+        @include align-items(center);
+        @include themify($themes) {
+          color: themed('social-icon-color');
+        }
+      }
+
+      a {
+        padding-right: 1rem;
+        @include truncate($sidebar-width);
+      }
     }
+  }
 
-    a {
-      padding-right: 1rem;
-      @include truncate(calcSideWidth());
+  &[data-dir="rtl"] {
+    .bio__info {
+      &--icon {
+        margin-left: 0.25rem !important;
+        
+        @include flexbox();
+        @include align-items(center);
+        @include themify($themes) {
+          color: themed('social-icon-color');
+        }
+      }
+
+      a {
+        padding-left: 1rem;
+        @include truncate($sidebar-width);
+      }
     }
   }
 

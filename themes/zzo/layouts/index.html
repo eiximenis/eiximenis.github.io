@@ -1,65 +1,28 @@
 {{ define "title" }}{{ .Site.Title }}{{ end }}
 
 {{ define "main" }}
-
-{{ $enquire := resources.Get "js/enquire.min.js" | resources.Fingerprint }}
-<script src="{{ $enquire.RelPermalink }}"></script>
-
-<main class="{{ if $.Param "enableSidebar" }}main-main{{ else }}main{{ end }}">
-    <article class="{{ with .Section }}section-{{ . | urlize }} {{ end }}single-view">
-        <div class="content">
-            {{ .Content }}
+<main class="main inner" data-sidebar-position="{{ $.Param "sidebarPosition" }}">
+    <div class="list__main {{ if $.Param "enableSidebar" }}{{ if eq ($.Param "sidebarPosition") "left" }}mr{{ else }}lm{{ end }}{{ else }}lmr{{ end }}">
+        <div class="summary__container" data-display="block">
+            {{ $filteredPages := .Site.RegularPages }}
+            {{ range $.Param "notAllowedTypesInHome" }}
+                {{ $filteredPages = (where $filteredPages "Type" "!=" (lower .)) }}
+            {{ end }}
+            {{ $paginator := .Paginate $filteredPages }}
+            {{ range $paginator.Pages }}
+                {{ .Render "summary" }}
+            {{ end }}
+            {{ partial "pagination/pagination" . }}
         </div>
-    </article>
+        {{ partial "search/search-result-desktop" . }}
+    </div>
 
-    <div class="summary__container">
-        {{ $filteredPages := .Site.RegularPages }}
-        {{ range .Site.Params.notAllowedTypesInHome }}
-            {{ $filteredPages = (where $filteredPages "Type" "!=" (lower .)) }}
-        {{ end }}
-        {{ $paginator := .Paginate $filteredPages }}
-        {{ range $paginator.Pages }}
-            {{ .Render "summary" }}
-        {{ end }}
-    </div>    {{ partial "pagination/pagination" . }}
+    {{ if $.Param "enableSidebar" }}
+        <aside class="list__sidebar {{ if eq ($.Param "sidebarPosition") "left" }}l{{ else }}r{{ end }}" data-dir="{{ $.Param "languagedir" | default "ltr" }}">
+            {{ partial "sidebar/sidebar-home" . }}
+        </aside>
+    {{ end }}
 </main>
-
-{{ if $.Param "enableSidebar" }}
-    <aside class="main-side">
-        {{ partial "sidebar/sidebar-home" . }}
-    </aside>
-{{ end }}
-<script>
-    enquire.register("screen and (max-width: 769px)", { 
-        match: function () {
-            if (document.getElementsByTagName('main')[0]) {
-                document.getElementsByTagName('main')[0].className = "main";
-            }
-            if (document.getElementsByTagName('aside')[0]) {
-                document.getElementsByTagName('aside')[0].className = "hide";
-            }
-        },
-        unmatch: function () {
-            if (document.getElementsByTagName('main')[0]) {
-                document.getElementsByTagName('main')[0].className = "main-main";
-            }
-            if (document.getElementsByTagName('aside')[0]) {
-                document.getElementsByTagName('aside')[0].className = "main-side";
-            }
-            if (document.getElementsByClassName('navbar__burger')[0]) {
-                document.getElementsByClassName('navbar__burger')[0].classList.remove('is-active');
-            }
-            if (document.getElementsByClassName('navbar__menu')[0]) {
-                document.getElementsByClassName('navbar__menu')[0].classList.remove('is-active');
-            }
-            if (document.getElementsByClassName('mobile-search')[0]) {
-                document.getElementsByClassName('mobile-search')[0].classList.add('hide');
-            }
-        },
-        setup: function () { },
-        deferSetup: true,
-        destroy: function () { },
-    });
-</script>
+{{ partial "script/sidebar-script" . }}
 {{ partial "script/home-script" . }}
 {{ end }}

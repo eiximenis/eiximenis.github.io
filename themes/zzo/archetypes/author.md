@@ -11,9 +11,11 @@ categories:
 author:
 authorEmoji: 🤖
 authorImage: "/images/whoami/avatar.jpg"
+authorImageUrl: ""
 authorDesc: 
 socialOptions:
   email: ""
+  phone: ""
   facebook: ""
   twitter: ""
   github: ""
@@ -31,8 +33,16 @@ socialOptions:
   weibo: ""
   douban: ""
   csdn: ""
-  zhihu: ""
   gitlab: ""
   mastodon: ""
   jianshu: ""
+  zhihu: ""
+  signal: ""
+  whatsapp: ""
+  matrix: ""
+  xmpp: ""
+  dev-to: ""
+  gitea: ""
+  google-scholar: ""
+  twitch: ""
 ---

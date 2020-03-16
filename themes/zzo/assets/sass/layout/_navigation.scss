@@ -1,4 +1,4 @@
-.navbar {  
+.navbar {
   margin: auto;
   width: inherit;
   max-width: inherit;
@@ -8,7 +8,21 @@
   left: 0;
   right: 0;
   top: 0;
+
+  &[data-dir="rtl"] {
+    direction: rtl;
+  }
   
+  &[data-dir="ltr"] {
+    direction: ltr;
+  }
+
+  @media only screen and (max-width: 769px) {
+    &[data-dir="rtl"] {
+      direction: ltr;  
+    }
+  }
+
   @include transition(all, 0.2s, ease);  
   @include flexbox();
   @include justify-content(space-between);
@@ -26,13 +40,28 @@
   }
 
   &__slide-down {
-    @media only screen and (min-width: 769px) {
-      @for $i from 1 through 8 {
-        &:nth-child(#{$i}) {
-          @include animation('slide-in-down .25s #{$i * .1}s 1 ease both');
+    svg {
+      margin: auto;
+      display: block;
+    }
+
+    @include themify($themes) {
+      background-color: themed('navbar-background-color') !important;
+
+      @include on-event {
+        color: themed('navbar-title-hover-color');
+      }
+    }
+
+    &[data-ani="true"] {
+      @media only screen and (min-width: 769px) {
+        @for $i from 1 through 8 {
+          &:nth-child(#{$i}) {
+            @include animation('slide-in-down .25s #{$i * .1}s 1 ease both');
+          }
         }
       }
-    }   
+    }
   }
   
   &__brand {
@@ -43,26 +72,33 @@
     @include flex-shrink(0);  
   }
 
-  &__burger {        
+  &__burger {
     display: none;
-    position: relative;
 
-    @include animation('slide-in-down .5s .0s 1 ease both');
+    &[data-ani="true"] {
+      @include animation('slide-in-down .5s .0s 1 ease both');
+    }
+    
     @media only screen and (max-width: 769px) {
       cursor: pointer;
       margin-left: auto;
-      position: relative;
       height: $grid_navbar_height;    
       width: 35px;
+      position: absolute;
+      right: 0;
 
       @include flexbox();
       @include align-items(center);
       @include justify-content(flex-end);
+      @include themify($themes) {
+        background: themed('navbar-background-color');
+        border-bottom: 1px solid themed('navbar-border-bottom-color');
+      }
 
       span {
         @include themify($themes) {
           background-color: themed('burger-menu-color');
-        }        
+        }
         
         border-radius: 1rem;
         display: block;
@@ -73,6 +109,7 @@
         transition-duration: 86ms;
         transition-property: background-color, opacity, transform;
         transition-timing-function: ease-out;
+        z-index: z('navbar');
         width: 16px;
         &:nth-child(1) {
           top: calc(50% - 6px);
@@ -85,15 +122,14 @@
         }      
       }      
           
-      &:hover {
+      @include on-event {
         span {
           @include themify($themes) {
-            background-color: themed('link-hover');
+            background-color: themed('navbar-title-hover-color');
           }
         }        
       }
 
-      // Modifers
       &.is-active {
         display: block;
         span {
@@ -125,10 +161,22 @@
     }
   }
 
+  &__long {
+    &-link {
+      width: 100%;
+      height: 100%;
+      padding: 0.6rem 0.2rem;
+      margin: auto 0.25rem;
+      @include flex-shrink(0);
+      flex-shrink: 0;
+    }
+  }
+
   &__title {
     height: $grid_navbar_height;
     font-size: 1.5rem;
-    
+    font-family: $title-font;
+
     @include flexbox();
     @include align-items(center);        
     
@@ -148,6 +196,7 @@
     @include flexbox();
     @include align-items(center);
     @include justify-content(flex-end);
+
     height: $grid_navbar_height;
 
     @media only screen and (max-width: 769px) {
@@ -155,26 +204,29 @@
     }    
 
     &-item {
-      height: $grid_navbar_height;      
+      height: $grid_navbar_height;
       padding: 0.5rem;
       font-size: 1rem;
       font-family: $title-font;
       font-weight: 700;
-
+      
       @include flexbox();
       @include align-items(center);
       @include justify-content(center);
       @include no-select;
       @include themify($themes) {
-        color: themed('navbar-title-color');        
+        color: themed('navbar-title-color');
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid themed('navbar-border-bottom-color');
+        background-color: themed('navbar-background-color');
         @include on-event {
           color: themed('navbar-title-hover-color');
-          background-color: themed('navbar-menu-hover-background-color');
+          // background-color: themed('navbar-menu-hover-background-color');
           text-decoration: none;
           border-bottom: 1px solid themed('navbar-border-bottom-color');
-          @media only screen and (max-width: 769px) {
-            border-bottom: none;
-          }
+        }
+        @media only screen and (max-width: 769px) {
+          border-bottom: none;
         }
         &.active {
           color: themed('navbar-title-active-color') !important;
@@ -188,25 +240,23 @@
       }
     }
 
-    &-icon {
-      margin-top: 0.4rem;
-    }
+    // &.is-active {
+    //   position: absolute;
+    //   top: $grid_navbar_height;
+    //   left: 0;
+    //   width: 100%;
+    //   height: auto;
+    //   overflow: hidden;
 
-    &.is-active {
-      position: absolute;
-      @include flexbox();
-      @include flex-direction(column);
-      @include align-items(flex-start);
-      top: 100%;
-      width: 100%;
-      height: auto;      
-      overflow: hidden;
-      @include themify($themes) {        
-        border-top: 1px solid themed('navbar-border-bottom-color');
-        background-color: themed('navbar-mobile-background-color');
-        border-bottom: 1px solid themed('navbar-border-bottom-color');
-      }
-    }
+    //   @include flexbox();
+    //   @include flex-direction(column);
+    //   @include align-items(flex-start);
+    //   @include themify($themes) {        
+    //     border-top: 1px solid themed('navbar-border-bottom-color');
+    //     background-color: themed('navbar-mobile-background-color');
+    //     border-bottom: 1px solid themed('navbar-border-bottom-color');
+    //   }
+    // }
   }
 
   &__dropdown {
@@ -256,6 +306,7 @@
       @include truncate(150px);
       @include themify($themes) {
         color: themed("dropdown-item-color");
+        background-color: themed("navbar-background-color");
         @include on-event {
           color: themed("navbar-dropdown-item-hover-color");
           background-color: themed("navbar-menu-hover-background-color");
@@ -269,7 +320,7 @@
       }
 
       @media only screen and (max-width: 769px) {
-        padding-left: 2.5rem;
+        padding: 0 2.5rem;
         min-width: 100%;
         max-width: 100%;
       }
@@ -285,13 +336,19 @@
   @include flexbox();
   @include align-items(center);
   @include justify-content(flex-end);
-  @include animation('slide-in-down .5s .0s 1 ease both');  
+
+  &[data-ani="true"] {
+    @include animation('slide-in-down .5s .0s 1 ease both');
+  }
 
   @media only screen and (max-width: 769px) {
     display: none;
   }
 
-  .dropdown {    
+  .dropdown {
+    height: $grid_navbar_height !important;
+    position: relative;
+
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);    
@@ -299,19 +356,31 @@
       color: themed('burger-menu-color');  
       @include on-event {
         color: themed('navbar-title-hover-color');
-        background-color: themed('navbar-menu-hover-background-color');
-      }      
+        background-color: themed('navbar-background-color');
+      }
     }
 
-    &-trigger {      
+    &-trigger {
       padding: 0.5rem;
       cursor: pointer;
       border: none;
       outline: none;
       width: $grid_navbar_height;
       height: $grid_navbar_height - 2px;
-      color: inherit;
-      background-color: inherit;
+
+      @include themify($themes) {
+        color: themed('burger-menu-color');
+        @include on-event {
+          color: themed('navbar-title-hover-color');
+        }
+      }
+    }
+
+    @media only screen and (max-width: 769px) {
+      &-trigger {
+        padding: 0.25rem;
+        width: 35px;
+      }
     }
 
     &-content {
@@ -378,100 +447,106 @@
   right: 35px * 2;
   width: 35px;
   height: $grid_navbar_height;
-  padding: 0.25rem;
   cursor: pointer;
   z-index: z('modal');
 
-  @include animation('slide-in-down .5s .4s 1 ease both');
-  @include themify($themes) {
-    color: themed('burger-menu-color');  
-    @include on-event {
-      color: themed('link-hover');
-      background-color: inherit;
-      border-bottom: none;
-    }      
+  &[data-ani="true"] {
+    @include animation('slide-in-down .5s .4s 1 ease both');
   }
 
   @media only screen and (max-width: 769px) {
     @include flexbox();
-    @include align-items(center);
-    @include justify-content(flex-end);
-  }
-
-  .dropdown {
-    border-bottom: 2px solid transparent;
-    @include themify($themes) {
-      color: themed('burger-menu-color');  
-      @include on-event {
-        color: themed('link-hover');
-        background-color: themed('navbar-menu-hover-background-color');
-        border-bottom: 2px solid themed('navbar-border-bottom-color');
-      }      
-    }
-
-    &-trigger {
-      padding: 0.5rem;
-      cursor: pointer;
-      border: none;      
-      outline: none;
-      width: 35px;
-      height: $grid_navbar_height;
-      color: inherit;
-      background-color: inherit;
-    }
-
-    &-content {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      display: none;
-      height: auto;
-      z-index: z("dropdown");
-      border-top-left-radius: 0.15rem;
-      border-top-right-radius: 0.15rem;
-
-      a {
-        font-size: 0.9rem;
-      }
-
-      @include box-shadow(0, 1px, 3px, 0, rgba(0, 0, 0, 0.4));
-      @include themify($themes) {
-        border-top: 4px solid themed("dropdown-border-top-color");
-        background-color: themed("dropdown-content-background-color");
-      }
-
-      .is-active {
-        @include themify($themes) {
-          background-color: themed("dropdown-item-active-background-color");
-        }
-      }
-    }
-
-    &-item {
-      padding: 0.25rem 0.75rem;
-      height: 100%;
-      text-decoration: none;
-      display: block;
-      font-size: 1rem;
-
-      @include no-select;
-      @include themify($themes) {
-        color: themed("dropdown-item-color");
-        @include on-event {
-          color: themed("dropdown-item-hover-color");
-          background-color: themed("dropdown-item-hover-background-color");
-          text-decoration: none;
-
-          &:first-child {
-            border-top-left-radius: 0.15rem;
-            border-top-right-radius: 0.15rem;
-          }
-        }
-      }
-    }
   }
 
   .dropdown:hover .dropdown-content {
     display: block;
+  }
+}
+
+.navbarm {
+  padding: 0 0.75rem;
+  height: 100%;
+  position: relative;
+  
+  @include flexbox();
+  @include align-items(center);
+
+  &__menu {
+    height: 100%;
+    padding: 0 0.75rem;
+
+    @include flexbox();
+
+    &--term {
+      &[data-index="0"] {
+        @include themify($themes) {
+          border-top: 1px solid themed('search-border-outline-color');
+        }
+      }
+    }
+
+    &--item {
+      height: $grid-navbar-height;
+
+      & > a {
+        height: 100%;
+        font-family: $title-font;
+        font-size: 1rem;
+        font-weight: bold;
+        color: inherit;
+        text-decoration: none !important;
+        padding: 0 1rem;
+        
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(flex-start);
+      }
+
+      & svg {
+        margin: auto 0.25rem;
+      }
+
+      @include themify($themes) {
+        color: themed('body-color');
+        &.active {
+          font-weight: bold;
+          color: themed('navbar-title-active-color');
+        }
+        
+        @include on-event {
+          background-color: themed('navbar-menu-hover-background-color');
+        }
+      }
+    }
+
+    &--subitem {
+      height: 30px;
+      padding: 0 2.5rem;
+      
+      & > a {
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  &__collapse {
+    width: 100%;
+    position: absolute;
+    top: $grid-navbar-height;
+    left: 0;
+    max-height: 0;
+    overflow: hidden;
+
+    @include transition(all, 0.15s, ease-out);
+    @include themify($themes) {
+      background-color: themed('navbar-background-color');
+      
+      &[data-open="true"] {
+        border-bottom: 2px solid themed('navbar-border-bottom-color');
+      }
+      &[data-open="false"] {
+        border-bottom: none;
+      }
+    }
   }
 }

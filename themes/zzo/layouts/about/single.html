@@ -1,11 +1,11 @@
 {{ define "main" }}
-<header class="header">
+<header class="header basicflex-column">
   <h3 class="h3 terms__title">
     {{ .Title }}
   </h3>
 </header>
-<main class="main">
-  <article class="single__contents single__contents--about about">
+<main class="main about">
+  <article class="single__contents single__contents--about" data-dir="{{ if ne ($.Param "languagedir") "rtl" }}ltr{{ else }}rtl{{ end }}" data-ani="{{ $.Site.Params.enableUiAnimation | default "true" }}">
     {{ .Content }}
   </article>
 </main>

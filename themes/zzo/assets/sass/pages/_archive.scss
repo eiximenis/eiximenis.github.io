@@ -1,10 +1,15 @@
 .archive {
   position: relative;
-  padding: 2rem 2rem 0;
   width: 100%;
+  padding: 2rem 2rem 0;
+
   @include flexbox();
   @include flex-direction(column);
   @include justify-content(flex-start);
+
+  @media only screen and (max-width:768px) {
+    padding: 2rem 1rem 0;
+  }
 
   &__container {
     width: 100%;
@@ -12,21 +17,43 @@
 
   &__ul {
     position: relative;
-    &::before {
-      content: '';
-      position: absolute;
-      left: 3rem;
-      top: 0;
-      width: 0.25rem;
-      height: 100%;
-      @include themify($themes) {
-        background-color: themed('toc-vertical-line');
+
+    &[data-dir="rtl"] {
+      &::before {
+        content: '';
+        position: absolute;
+        right: 3rem;
+        top: 0;
+        width: 0.25rem;
+        height: 100%;
+        @include themify($themes) {
+          background-color: themed('toc-vertical-line');
+        }
+      }
+
+      @media only screen and (max-width: 769px) {
+        &::before {
+          content: none;
+        }
       }
     }
 
-    @media only screen and (max-width: 769px) {
+    &[data-dir="ltr"] {
       &::before {
-        content: none;
+        content: '';
+        position: absolute;
+        left: 3rem;
+        top: 0;
+        width: 0.25rem;
+        height: 100%;
+        @include themify($themes) {
+          background-color: themed('toc-vertical-line');
+        }
+      }
+      @media only screen and (max-width: 769px) {
+        &::before {
+          content: none;
+        }
       }
     }
 
@@ -34,17 +61,31 @@
 
   &__li {
     margin-bottom: 0.5rem;
-    margin-left: 4rem;
-    z-index: 0;    
+    z-index: 0;
+
+    &[data-dir="rtl"] {
+      margin-right: 4rem;
+      @media only screen and (max-width: 769px) {
+        margin-right: 0;
+        position: relative;
+      }
+    }
+
+    &[data-dir="ltr"] {
+      margin-left: 4rem;
+      @media only screen and (max-width: 769px) {
+        margin-left: 0;
+        position: relative;
+      }
+    }
 
     @include transition(margin-left, 0.1s, ease);
     @include flexbox();
-    @include align-items(center);
+    @include align-items(flex-start);
 
-    @media only screen and (max-width: 769px) {
-      margin-left: 0;
-      position: relative;
-    }   
+    @media only screen and (max-width: 600px) {
+      @include flex-direction(column);
+    }
   }
 
   &__key {
@@ -55,6 +96,8 @@
     padding: 0.125rem;
     font-size: 0.95rem;
     font-weight: 700;
+    font-family: $title-font;
+
     @include flexbox();
     @include align-items(center);
     @include justify-content(center);
@@ -62,7 +105,10 @@
       color: themed('archive-key-color');
       background-color: themed('archive-key-background-color');
     }
-    @include animation('slide-in-down .4s .2s 1 ease both');
+
+    &[data-ani="true"] {
+      @include animation('slide-in-down .4s .2s 1 ease both');
+    }
 
     &:not(:first-child) {
       margin: 4rem 0 1rem 0;
@@ -79,16 +125,20 @@
 
     @include flexbox();
     @include align-items(center);
-    @include animation('slide-in-left .2s .5s 1 ease both');
+
+    &[data-ani="true"] {
+      @include animation('slide-in-left .2s .5s 1 ease both');
+    }
   }
 
   &__type {
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
     font-size: 0.8rem;
+    font-family: $title-font;
     width: 50%;
-    height: 20px;
-    line-height: 20px;
+    height: 24px;
+    line-height: 24px;
     text-align: center;
 
     @include truncate(50px);
@@ -106,9 +156,10 @@
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     font-size: 0.8rem;
+    font-family: $title-font;
     width: 50%;
-    height: 20px;
-    line-height: 20px;
+    height: 24px;
+    line-height: 24px;
     text-align: center;        
 
     @include truncate(50px);
@@ -125,25 +176,80 @@
   &__title {
     margin-right: 0.5rem;    
     margin-left: 1rem;
+    font-family: $title-font;
 
-    @include truncate($grid-max-width);
+    &[data-title-wrap^="no"] {
+      @include truncate($grid-max-width);
+    }
+
+    @media only screen and (max-width: 600px) {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    
     @include on-event {
-      &::before {
-        content: '';
-        position: absolute;
-        left: 3rem;                
-        width: 0.25rem;
-        height: 20px;
-        
-        @include themify($themes) {
-          background-color: themed('archive-hover-line-color');
-        }
+      &[data-dir="ltr"] {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 3rem;                
+          width: 0.25rem;
+          height: 30px;
+          
+          @include themify($themes) {
+            background-color: themed('archive-hover-line-color');
+            
+            @media only screen and (max-width:768px) {
+              top: 13px;
+              height: 24px;
+            }
+          }
 
-        @media only screen and (max-width: 769px) {
-          top: 50%;
-          @include translateY(-50%);
+          @media only screen and (max-width: 769px) {
+            height: 24px;
+            top: 50%;
+            @include translateY(-50%);
+          }
         }
       }
+
+      &[data-dir="rtl"] {
+        &::before {
+          content: '';
+          position: absolute;
+          right: 3rem;                
+          width: 0.25rem;
+          height: 30px;
+          
+          @include themify($themes) {
+            background-color: themed('archive-hover-line-color');
+            
+            @media only screen and (max-width:768px) {
+              top: 13px;
+              height: 24px;
+            }
+          }
+
+          @media only screen and (max-width: 769px) {
+            height: 24px;
+            top: 50%;
+            @include translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-weight: bold;
+    font-family: $title-font;
+
+    @include themify($themes) {
+      color: themed('terms-title-color');
+    }
+    @media only screen and (max-width:600px) {
+      margin-bottom: 1rem;
     }
   }
 }
