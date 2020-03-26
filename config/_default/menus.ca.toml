@@ -1,0 +1,7 @@
+
+[[main]]
+  identifier = "posts"
+  name = "posts"
+  url = "posts"
+  weight = 1
+

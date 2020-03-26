@@ -1,4 +1,9 @@
 [es]
   title = "Lo Crestià"
-  languageName = "Spanish"
+  languageName = "Español"
   weight = 1
+
+[ca]
+  title = "Lo Crestià"
+  languageName = "Català"
+  weight = 2

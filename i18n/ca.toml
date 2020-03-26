@@ -1,0 +1,71 @@
+[search-placeholder]
+other = "Cercar"
+
+[summary-dateformat]
+other = "Jan 2, 2006"
+
+[reading-time]
+other = "min"
+
+[taxo-tags]
+other = "Tags"
+
+[taxo-categories]
+other = "Categoríes"
+
+[taxo-series]
+other = "Sèries"
+
+[archive-dateformat]
+other = "Jan 2"
+
+[talks-dateformat]
+other = "Totes"
+
+[single-dateformat]
+other = "Jan 2, 2006"
+
+[single-related]
+other = "Relacionats"
+
+[single-writtenBy]
+other = "ESCRIT PER"
+
+[toc-label]
+other = "Qué hi ha aquí"
+
+[counter-site-pv]
+other = "Visites"
+
+[counter-site-uv]
+other = "Visitants"
+
+[counter-page-pv]
+other = "visites"
+
+[donate-message]
+other = "Si vols... em pots invitar a un cafè xD"
+
+[contact-name]
+other = "Nom"
+
+[contact-email]
+other = "Email"
+
+[contact-message]
+other = "Missatge"
+
+[contact-send]
+other = "Enviar"
+
+[tooltip-home]
+other = "Inci"
+
+[tooltip-written]
+other = "Escrit el"
+
+[tooltip-modified]
+other = "Modificat el"
+
+[tooltip-reading-time]
+other = "Temps lectura"

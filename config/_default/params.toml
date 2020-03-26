@@ -48,7 +48,7 @@ itemsPerCategory = 5 # maximum number of posts shown in the sidebar.
 showPoweredBy = false # show footer text: Powered by Hugo and Zzo theme
 showFeedLinks = true # RSS Feed 
 showSocialLinks = true # email, facebook, twitter ...
-enableLangChange = false  # show button at bottom left of footer.
+enableLangChange = true  # show button at bottom left of footer.
 
 # service
 baiduAnalytics = "" # alternative of google analytics
