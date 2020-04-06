@@ -3,6 +3,7 @@ title: "Introducción a KEDA"
 author: eiximenis
 description: Para ejecutar workloads serverless en Kubernetes, se necesita poder escalarlos adecuadamente. Kubernetes viene con todas las herramientas necesarias para ello, pero deben configurarse y no es nada sencillo. KEDA viene a rellenar ese hueco.
 date: 2020-03-04T18:00
+draft: true
 categories:
   - k8s
   - serverless
