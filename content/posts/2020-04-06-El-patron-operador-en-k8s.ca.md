@@ -17,7 +17,7 @@ Un **operador és una forma de desplegar i mantenir aplicacions _per a_ Kubernet
 El concepte d'operador fou introduit per la gent de [CoreOS](https://coreos.com/) y es fonamenta en dos altres conceptes claus de Kubernetes, que hem d'entendre per poder comprendre com funcionen els operadors:
 
 * Recursos: Un _recurs_ en Kubernetes és un objecte que defineix un estat desitjat. Així, el recurs `ReplicaSet` permet definir el nombre de instàncies d'un determinat _pod_ que es vol tenir sempre en execució.
-* Controladors: Un _controlador_ per la seva banda s'encarrega de monitoritzar un _recurs_ i assegurar-se que l'estat real del clúster és compatible amb l'estat actual. En cas que això no sigui així, ha de prendre les accions necessàries per reconciliar els dos estats. Per exemple, el controlador de `ReplicaSet` s'encarrega de garantir que el nombre de _pods_ reals en execució és sempre el nombre definir en el recurs `ReplicaSet` associat, creant i destruint _pods_ sempre que calgui.
+* Controladors: Un _controlador_ per la seva banda s'encarrega de monitoritzar un _recurs_ i assegurar-se que l'estat real del clúster és compatible amb l'estat desitjat. En cas que això no sigui així, ha de prendre les accions necessàries per reconciliar els dos estats. Per exemple, el controlador de `ReplicaSet` s'encarrega de garantir que el nombre de _pods_ reals en execució és sempre el nombre definir en el recurs `ReplicaSet` associat, creant i destruint _pods_ sempre que calgui.
 
 ## Controladors a Kubernetes
 
