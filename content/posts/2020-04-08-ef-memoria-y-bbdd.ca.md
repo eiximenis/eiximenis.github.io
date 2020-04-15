@@ -2,7 +2,7 @@
 title: "EF memòria i BBDD"
 author: eiximenis
 description: Anem a repassar conceptes bàsics, però que et poden fer ballar el cap com no vigilis. Concretament, com assegurar-te de que totes les teves consultes LINQ amb EF s'executen realment a la BBBDD. Som-hi!
-date: 2020-04-15T18:00
+date: 2020-04-15T18:00:00
 language: ca
 categories:
   - ef
