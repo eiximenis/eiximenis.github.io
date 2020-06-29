@@ -3,7 +3,7 @@ title: "Span<T> y P/Invoke"
 author: eiximenis
 description: "Span<T> es una ref struct que habilita de forma fácil escenarios nuevos permitiendo usar la pila donde antes solo podíamos usar el heap. Eso redunda en menos reservas del heap y por lo tanto menos presión sobre el GC."
 date: 2020-06-29T12:00:00
-draft: true
+draft: false
 categories:
   - netcore
 ---
