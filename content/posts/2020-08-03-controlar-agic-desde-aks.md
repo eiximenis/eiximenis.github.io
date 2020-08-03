@@ -290,7 +290,7 @@ Y con esto me despido, ha sido todo un placer poder compartir agic con todos vos
 [helm-values]:https://github.com/Azure/application-gateway-kubernetes-ingress/blob/master/docs/helm-values-documenation.md
 [agic-annotations]:https://github.com/Azure/application-gateway-kubernetes-ingress/blob/master/docs/annotations.md
 
-[layout1]:/images/posts/2020-08-03-agw-nginx.png"
+[layout1]:/images/posts/2020-08-03-agw-nginx.png
 [layout2]:/images/posts/2020-08-03-agw-agic.png
 [infra]:/images/posts/2020-08-03-infra.png
 [result]:/images/posts/2020-08-03-result.png
