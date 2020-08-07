@@ -2,8 +2,8 @@
 title: "C# funcional con Arrow Sharp"
 author: eiximenis
 description: "A pesar de que C# no es un lenguaje funcional, cada vez más incluye características propias de los lenguajes funcionales. En este post te presento ArrowSharp una librería que incluye pequeñas construcciones para ayudarte a implementar la programación funcional usando C#"
-date: 2020-08-04
-draft: true
+date: 2020-08-07
+draft: false
 categories:
   - general
 ---
