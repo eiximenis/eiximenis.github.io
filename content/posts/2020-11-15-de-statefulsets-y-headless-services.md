@@ -2,7 +2,7 @@
 title: "De StatefulSets y headless services"
 author: eiximenis
 description: "Qué relación hay entre los statefulsets y los headless services y algunos temas al respecto del DNS"
-date: 2020-11-04
+date: 2020-11-15
 draft: false
 categories:
   - kubernetes
