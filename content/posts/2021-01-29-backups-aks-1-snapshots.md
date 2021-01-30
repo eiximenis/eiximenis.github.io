@@ -230,52 +230,11 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 mypv                                       8Gi        RWO            Delete           Bound    default/restoredpvc   managed-premium            109s
 ``` 
 
-Ahora, ya podemos usar **el mismo yaml que teníamos originalmente**, solo tenemos que modificar el nombre del PVC para que sea  `restoredpvc` en lugar de `test-pvc `. Bueno, recuerda que debes **forzar que el pod se ejecute en la misma zona de afinidad que el PV que va a enlazar, ya que NO se pueden enlazar discos entre zonas de afinidad**: 
+Ahora, ya podemos usar **el mismo yaml que teníamos originalmente**, solo tenemos que modificar el nombre del PVC para que sea  `restoredpvc` en lugar de `test-pvc ` al definir el volumen en el pod.
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
-    app: nginx
-  name: nginx
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: nginx
-  template:
-    metadata:
-      labels:
-        app: nginx
-    spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: failure-domain.beta.kubernetes.io/region
-                operator: In
-                values:
-                - westeurope
-              - key: failure-domain.beta.kubernetes.io/zone
-                operator: In
-                values:
-                - westeurope-1    
-      volumes:
-        - name: storage
-          persistentVolumeClaim:
-            claimName: restoredpvc    
-      containers:
-      - image: nginx
-        name: nginx
-        volumeMounts:
-          - mountPath: "/usr/share/nginx/html"
-            name: storage
+> **Editado el 30/01/2001**: En un caso yo tuve que **forzar que el pod se ejecute en la misma zona de afinidad que el PV que va a enlazar**, ya que se me quedó _pending_ todo el rato. Es cierto **que el pod debe ejecutarse en la misma zona de afinidad donde está el disco**, ya que si no no se puede enlazar el disco al nodo. Pero, según tengo entendido, Kubernetes se encarga de eso, y **en todos los ejemplos posteriores que hice, no tuve que usar `nodeAffinity` en el pod**: al usar el pod un PV que estaba en la zona 1 (el PV si debe tener definida la afinidad), el _scheduler_ garantiza que el pod se ejecuta en un nodo que esté en la misma zona de afinidad. Pero, como digo, en un caso no me funcionó (no tengo claro el porqué todavía), así que si tenéis ese problema, que sepáis que podéis solucionarlo usando `nodeAffinity`.
 
-```
-
-Observa que básicamente es la misma definición de `nodeAffinity` que usa el volúmen persistente. Bien, si ahora creas el deployment de nuevo, el pod se enlazará al disco restaurado vía el PVC `restoredpvc` que usa el PV `mypv` que tiene el disco resaturado.
+Bien, si ahora creas el deployment de nuevo, el pod se enlazará al disco restaurado vía el PVC `restoredpvc` que usa el PV `mypv` que tiene el disco resaturado.
 
 El estado final del AKS ahora es más similar a como estaba antes, ya que seguimos teniendo un PV y un PVC, la diferencia es que antes el PV era autoaprovisionado (se creaba a partir del PVC) y ahora el PV es estático. Pero al margen de eso no hay más diferencia.
 
