@@ -16,4 +16,4 @@ No voy a poner muchas cosas sobre mí ahora (ya estarán en mi perfil), y sólo 
 
 Un saludo a todos!
 
-Nos leemos 😉&nbsp;
+Nos leemos 😉

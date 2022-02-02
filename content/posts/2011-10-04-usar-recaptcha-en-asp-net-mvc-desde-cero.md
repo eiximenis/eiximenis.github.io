@@ -17,7 +17,7 @@ Buenas! En este post vamos a ver como usar <a href="http://www.google.com/recapt
 
 <!--more-->
 
-Añadir el captcha en una vista es sumamente sencillo: basta con incluir un tag <script> y dejar que él haga todo. También se puede crear usando javascript (lo que es útil si se quiere crear el captcha sólo si se cumplen ciertas condiciones en tiempo de ejecución), pero no vamos a verlo aquí (todos los detalles están en <http://code.google.com/intl/ca/apis/recaptcha/docs/display.html> en el apartado de “Ajax API”).
+Añadir el captcha en una vista es sumamente sencillo: basta con incluir un tag `<script>` y dejar que él haga todo. También se puede crear usando javascript (lo que es útil si se quiere crear el captcha sólo si se cumplen ciertas condiciones en tiempo de ejecución), pero no vamos a verlo aquí (todos los detalles están en <http://code.google.com/intl/ca/apis/recaptcha/docs/display.html> en el apartado de “Ajax API”).
 
 Para añadir recaptcha en nuestra página basta simplemente con añadir el siguiente código script:
 

@@ -35,7 +35,7 @@ Eso lo podemos conseguir fácilmente, ya con jQuery:
   <pre id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">&lt;html xmlns=<span style="color: #006080;">"http://www.w3.org/1999/xhtml"</span>&gt;<br />&lt;head&gt;<br />    &lt;title&gt;Demo Unobtrusive Javascript&lt;/title&gt;<br />    &lt;script src=<span style="color: #006080;">"jquery-1.4.1.js"</span> type=<span style="color: #006080;">"text/javascript"</span>&gt;&lt;/script&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />    &lt;script type=<span style="color: #006080;">"text/javascript"</span>&gt;<br />        $(document).ready(<span style="color: #0000ff;">function</span> () {<br />            $(<span style="color: #006080;">'input:text'</span>).keypress(<span style="color: #0000ff;">function</span> (<span style="color: #0000ff;">event</span>) {<br />                <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">event</span>.keyCode &lt; 47 || <span style="color: #0000ff;">event</span>.keyCode &gt; 58) {<br />                    <span style="color: #0000ff;">event</span>.preventDefault();<br />                }<br />            });<br />        });<br />    &lt;/script&gt;<br /><br />    Introduce sólo números: &lt;br /&gt;<br />    &lt;input type=<span style="color: #006080;">"text"</span> /&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</pre>
 </div>
 
-Incluso, si no queréis que haya el tag <script> con todo el código, podemos moverlo a un .js separado y usarlo desde nuestra página HTML que entonces quedaría como:
+Incluso, si no queréis que haya el tag `<script>` con todo el código, podemos moverlo a un .js separado y usarlo desde nuestra página HTML que entonces quedaría como:
 
 <div id="codeSnippetWrapper" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; width: 97.5%; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; cursor: text; border: silver 1px solid; padding: 4px;">
   <pre id="codeSnippet" style="text-align: left; line-height: 12pt; background-color: #f4f4f4; margin: 0em; width: 100%; font-family: 'Courier New', courier, monospace; direction: ltr; color: black; font-size: 8pt; overflow: visible; border-style: none; padding: 0px;">&lt;html xmlns=<span style="color: #006080;">"http://www.w3.org/1999/xhtml"</span>&gt;<br />&lt;head&gt;<br />    &lt;title&gt;Demo Unobtrusive Javascript&lt;/title&gt;<br />    &lt;script src=<span style="color: #006080;">"jquery-1.4.1.js"</span> type=<span style="color: #006080;">"text/javascript"</span>&gt;&lt;/script&gt;<br />    &lt;script src=<span style="color: #006080;">"myscript.js"</span> type=<span style="color: #006080;">"text/javascript"</span>&gt;&lt;/script&gt;<br />&lt;/head&gt;<br />&lt;body&gt;<br />    Introduce sólo números: &lt;br /&gt;<br />    &lt;input type=<span style="color: #006080;">"text"</span> /&gt;<br />&lt;/body&gt;<br />&lt;/html&gt;</pre>
@@ -43,7 +43,7 @@ Incluso, si no queréis que haya el tag <script> con todo el código, podemos mo
 
 Por lo tanto vemos que con jQuery es muy fácil asignar comportamiento a objetos DOM, sin necesidad de andar con los handlers onXXXX.
 
-Ahora bien, el código jQuery selecciona **todos** los <input type=&rdquo;text&rdquo;>, que passa si sólo quiero seleccionar _algunos?_ Como le indico a mi código jQuery que sólo algunos textboxes son numéricos?
+Ahora bien, el código jQuery selecciona **todos** los `<input type="text";>`, que passa si sólo quiero seleccionar _algunos?_ Como le indico a mi código jQuery que sólo algunos textboxes son numéricos?
 
 Una solución es _invertarnos_ un atributo que indique que elementos queremos como numéricos. De esta manera p.ej. la página HTML queda como:
 
@@ -61,7 +61,7 @@ Y el código de myscript.js queda como:
 
 Y listos, simplemente incluyendo &ldquo;myscript.js&rdquo; en cualquier página ya podemos declarar que un textbox es numérico _simplemente_ poniendo el atributo datatype=&rdquo;numeric&rdquo;.
 
-Ahora, si alguien hace otra librería javascript para textboxes numéricos **si también usa este atributo para indicarlos** (ahí está el quid de la cuestión) simplemente cambiando el <script> para que en lugar de ir a myscript.js vaya a la nueva librería, ya tengo todo el cambio hecho... es decir, me he independizado del framework javascript que use.
+Ahora, si alguien hace otra librería javascript para textboxes numéricos **si también usa este atributo para indicarlos** (ahí está el quid de la cuestión) simplemente cambiando el `<script>` para que en lugar de ir a myscript.js vaya a la nueva librería, ya tengo todo el cambio hecho... es decir, me he independizado del framework javascript que use.
 
 **Y por ahí por donde entra HTML5?** Pues bien, como eso de crearnos nuestros propios atributos está bien pero genera HTML que podríamos llamar _inválido_ (en el sentido de que estos atributos no forman parte de HTML), para HTML5 han decidido simplemente que todos estos atributos &ldquo;inventados&rdquo; empiecen por _data-_.
 

@@ -48,7 +48,7 @@ Creamos una nueva aplicación ASP.NET MVC. Ello nos creará la aplicación inici
 
 Lo primero a hacer es incluir la carga de jQuery en nuestra vista. En mi caso modifico la vista master, para que jQuery esté incluida &ldquo;de serie&rdquo; en **todas** mis vistas... yo la uso a mansalva, y creedme: vais a terminar haciendo lo mismo 🙂
 
-La vista master está en Views/Shared/Site.Master. Si la abrís vereis que tiene un poco de código. Podeis obviarlo, simplemente añadid una etiqueta <script> dentro del <head>:
+La vista master está en Views/Shared/Site.Master. Si la abrís vereis que tiene un poco de código. Podeis obviarlo, simplemente añadid una etiqueta `<script>` dentro del `<head>`:
 
 <pre class="code"><span style="color: blue">&lt;</span><span style="color: maroon">head </span><span style="color: red">runat</span><span style="color: blue">="server"&gt;
     &lt;</span><span style="color: maroon">title</span><span style="color: blue">&gt;&lt;</span><span style="color: maroon">asp</span><span style="color: blue">:</span><span style="color: maroon">ContentPlaceHolder </span><span style="color: red">ID</span><span style="color: blue">="TitleContent" </span><span style="color: red">runat</span><span style="color: blue">="server" /&gt;<br />    &lt;/</span><span style="color: maroon">title</span><span style="color: blue">&gt;
@@ -63,7 +63,7 @@ La vista master está en Views/Shared/Site.Master. Si la abrís vereis que tiene
 
 **2. Modificación de la vista inicial**
 
-Como comenté en el punto anterior vamos a trabajar modificando directamente la vista inicial (Views/Home/Index.aspx). Para ello vamos a añadir simplemente dos botones y un <div> vacío que será nuestro contenedor ajax:
+Como comenté en el punto anterior vamos a trabajar modificando directamente la vista inicial (Views/Home/Index.aspx). Para ello vamos a añadir simplemente dos botones y un `<div>` vacío que será nuestro contenedor ajax:
 
 <pre class="code"><span style="background: yellow">&lt;%</span><span style="color: blue">@ </span><span style="color: maroon">Page </span><span style="color: red">Language</span><span style="color: blue">="C#" </span><span style="color: red">MasterPageFile</span><span style="color: blue">="~/Views/Shared/Site.Master" <br /></span><span style="color: red">Inherits</span><span style="color: blue">="System.Web.Mvc.ViewPage" </span><span style="background: yellow">%&gt;
 </span><span style="color: blue">&lt;</span><span style="color: maroon">asp</span><span style="color: blue">:</span><span style="color: maroon">Content </span><span style="color: red">ID</span><span style="color: blue">="indexTitle" </span><span style="color: red">ContentPlaceHolderID</span><span style="color: blue">="TitleContent" <br /></span><span style="color: red">runat</span><span style="color: blue">="server"&gt;

@@ -37,7 +37,7 @@ Entiendendo que estamos en una vista tipada cuyo tipo de modelo es IRecaptchaMod
 
 **Paso 2: El formulario modal...**
 
-Y este post se habría terminado ya, si en mi caso yo no estuviese mostrando el captcha en un formulario modal via SimpleModa. A ver, a grandes rasgos el problema es que la llamada a Html.Recaptcha, genera un tag <script>. Si mostramos un formulario usando Ajax, lo que hacermos _básicamente_ es rellenar un <div> via javascript con cierto contenido html. En este caso, los tags <script> son ignorados, por lo que el captcha no se ve... 
+Y este post se habría terminado ya, si en mi caso yo no estuviese mostrando el captcha en un formulario modal via SimpleModa. A ver, a grandes rasgos el problema es que la llamada a Html.Recaptcha, genera un tag `<script>`. Si mostramos un formulario usando Ajax, lo que hacermos _básicamente_ es rellenar un `<div>` via javascript con cierto contenido html. En este caso, los tags `<script>` son ignorados, por lo que el captcha no se ve... 
 
 La solución? Una vez esté cargado el formulario modal, llamar via Ajax a recaptcha y mostrar entonces el captcha. Por suerte esto es posible porque la gente de recaptcha ofrecen una API Ajax, porque si no... buf! En la [página de la API cliente de recaptcha][9] se describe como funciona la API de recaptcha si queremos usar Ajax. Hay también un ejemplo y la verdad es que es bastante sencillo... De hecho son dos pasos muy sencillos:
 
@@ -46,7 +46,7 @@ La solución? Una vez esté cargado el formulario modal, llamar via Ajax a recap
 
 Por lo tanto, lo que he hecho ha sido:
 
-En la vista principal (la que muestra el popup cuando se pulsa un enlace), que en mi caso se llama Home/Index.aspx, he añadido el tag <script>:
+En la vista principal (la que muestra el popup cuando se pulsa un enlace), que en mi caso se llama Home/Index.aspx, he añadido el tag `<script>`:
 
 <pre class="code"><span style="color: blue">&lt;</span><span style="color: #a31515">script </span><span style="color: red">type</span><span style="color: blue">="text/javascript" </span><span style="color: red">src</span><span style="color: blue">="http://api.recaptcha.net/js/recaptcha_ajax.js"&gt;&lt;/</span><span style="color: #a31515">script</span><span style="color: blue">&gt;</span></pre>
 

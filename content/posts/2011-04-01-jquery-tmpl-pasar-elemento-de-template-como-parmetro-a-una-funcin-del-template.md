@@ -21,7 +21,7 @@ En fin, al tajo. No sé si conocéis [jQuery templates][1]. Para los que no, que
 
 En jQuery templates se usan básicamente &ldquo;tres&#8221; cosas:
 
-  1. Una definición de template, que se suele incorporar dentro de un tag <script> con un type inválido para que el navegador lo ignore (no lo incorpore al DOM).
+  1. Una definición de template, que se suele incorporar dentro de un tag `<script>` con un type inválido para que el navegador lo ignore (no lo incorpore al DOM).
   2. Un contenedor donde se incrustará el DOM generado.
   3. Un objeto json inicio de los datos.
 

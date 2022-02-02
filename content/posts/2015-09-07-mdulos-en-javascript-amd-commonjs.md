@@ -13,11 +13,11 @@ categories:
   - Uncategorized
 
 ---
-Con las aplicaciones web cada vez con mayor carga de cliente, y el uso cada vez mayor de sistemas de _build_ en cliente como grunt o gulp, usar módulos para desarrollar en JavaScript es cada vez más habitual. Si todavía te descargas las librerías de sus páginas web y las incluyes una a una en tags <script/> es probable que este post te interese.
+Con las aplicaciones web cada vez con mayor carga de cliente, y el uso cada vez mayor de sistemas de _build_ en cliente como grunt o gulp, usar módulos para desarrollar en JavaScript es cada vez más habitual. Si todavía te descargas las librerías de sus páginas web y las incluyes una a una en tags `<script/>` es probable que este post te interese.
 
 **¿Qué es un módulo?**
 
-Llamamos módulo JavaScript a un código que de alguna manera es “auto contenido” y que expone una interfaz pública para ser usada. Esto no es realmente nuevo, el [patrón de módulo][1] ya hace bastantes años que se utiliza y no requiere más que algunos conocimientos de JavaScript para aplicarlo. El problema con los módulos en JavaScript no ha sido nunca el crearlos si no el de **cargarlos**. Puede parecer simple… de hecho, ¿no se trata solo de poner un tag <script />? Pues la realidad es que no, porque cargar un módulo implica que _antes_ deben estar cargadas sus **dependencias** y por lo tanto debemos tener un mecanismo para definir esas dependencias y otro mecaniso para cargarlas al tiempo que cargamos el módulo deseado.
+Llamamos módulo JavaScript a un código que de alguna manera es “auto contenido” y que expone una interfaz pública para ser usada. Esto no es realmente nuevo, el [patrón de módulo][1] ya hace bastantes años que se utiliza y no requiere más que algunos conocimientos de JavaScript para aplicarlo. El problema con los módulos en JavaScript no ha sido nunca el crearlos si no el de **cargarlos**. Puede parecer simple… de hecho, ¿no se trata solo de poner un tag `<script />`? Pues la realidad es que no, porque cargar un módulo implica que _antes_ deben estar cargadas sus **dependencias** y por lo tanto debemos tener un mecanismo para definir esas dependencias y otro mecaniso para cargarlas al tiempo que cargamos el módulo deseado.
 
 Es ahí donde entran en juego los distintos estándares de módulos que tenemos. Nos permiten crear módulos JavaScript, declarar las dependencias (es decir indicar de qué módulos depende nuestro módulo e incorporar la funcionalidad del módulo del cual dependemos) y cargar determinados módulos. Hay dos estándares usados hoy en día: **CommonJS** y **AMD**.
 

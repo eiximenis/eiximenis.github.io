@@ -167,7 +167,7 @@ El objetivo final es conseguir llamar al servicio REST que tenemos y recuperar l
 
 La técnica de jsonp es muy simple, pero requiere eso sí que los servicios REST devuelvan json (no sirve si devuelven algún otro tipo de datos como XML). 
 
-Consiste básicamente en sustuir la llamada AJAX por un tag <script>. El tag <script> permite sin ningún problema incluir scripts de otros orígenes (si no, no podríamos usar CDNs p. ej.). Asi en nuestro caso vamos a añadir un tag <script> como el siguiente:
+Consiste básicamente en sustuir la llamada AJAX por un tag `<script>`. El tag `<script>` permite sin ningún problema incluir scripts de otros orígenes (si no, no podríamos usar CDNs p. ej.). Asi en nuestro caso vamos a añadir un tag `<script>` como el siguiente:
 
 <div style="font-size: 10pt; font-family: consolas; background: #1e1e1e; color: #dcdcdc">
   <p style="margin: 0px">
@@ -369,7 +369,7 @@ Para registrar este MediaTypeFormatter debemos añadir la siguiente línea en el
   </p></p>
 </div>
 
-Ahora nuestro JsonpMediaFormatter actuará si la petición tiene un parámetro querystring llamado jsonp y cuyo valor sea true. Además admite otro parámetro llamado callback con el valor de la función callback. Por lo tanto modificamos ahora el tag <script> para que pase esos dos parámetros y también definimos antes la función show_beer:
+Ahora nuestro JsonpMediaFormatter actuará si la petición tiene un parámetro querystring llamado jsonp y cuyo valor sea true. Además admite otro parámetro llamado callback con el valor de la función callback. Por lo tanto modificamos ahora el tag `<script>` para que pase esos dos parámetros y también definimos antes la función show_beer:
 
 <div style="font-size: 10pt; font-family: consolas; background: #1e1e1e; color: #dcdcdc">
   <p style="margin: 0px">
@@ -405,7 +405,7 @@ Ahora nuestro JsonpMediaFormatter actuará si la petición tiene un parámetro q
 
 [<img title="image" style="border-left-width: 0px; border-right-width: 0px; background-image: none; border-bottom-width: 0px; padding-top: 0px; padding-left: 0px; margin: 0px; display: inline; padding-right: 0px; border-top-width: 0px" border="0" alt="image" src="http://geeks.ms/cfs-file.ashx/__key/CommunityServer.Blogs.Components.WeblogFiles/etomas/image_5F00_thumb_5F00_3AD96B1E.png" width="244" height="131" />][5]
 
-¿Por qué digo que JSONP es una brecha en lugar de un agujero en la seguridad? Muy simple… porque está basado en el tag <script> lo que implica que tan solo funciona para el verbo http GET.
+¿Por qué digo que JSONP es una brecha en lugar de un agujero en la seguridad? Muy simple… porque está basado en el tag `<script>` lo que implica que tan solo funciona para el verbo http GET.
 
 Así, aunque JSONP es un parche que nos puede sacar de muchos apuros, era evidente que necesitábamos una manera **segura** de poder llamar a servicios REST que estuviesen en otro dominio… y la W3C se puso manos a la obra y definió CORS.
 
