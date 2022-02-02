@@ -2,7 +2,7 @@
 title: "De runas y grafemas en Unicode y NET6"
 author: eiximenis
 description: "Un carácter en Unicode es algo complejo de definir. Veamos como está la situación en NET6"
-date: 2021-01-31
+date: 2022-02-02
 draft: false
 categories:
   - dotnet
