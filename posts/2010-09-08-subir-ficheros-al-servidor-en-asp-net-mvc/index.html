@@ -199,51 +199,57 @@ sobre<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1532">versión original aquí</a></strong> </p>
 <p>Buenas! Hoy voy a responder alguna pregunta que me he encontrado en alguna vez, y es como <em>subir ficheros</em> al servidor usando MVC2.</p>
 <p>La verdad es que con ASP.NET MVC2 subir ficheros al servidor <strong>es extremadamente simple</strong>. Vamos a empezar viendo el código de una vista que permite subir un fichero al servidor, junto con una descripción adicional. La vista básicamente contiene un  <code>&lt;form></code> como el siguiente:</p>
-<div style="border-bottom:silver 1px solid;text-align:left;border-left:silver 1px solid;padding-bottom:4px;line-height:12pt;background-color:#f4f4f4;margin:20px 0 10px;padding-left:4px;width:97.5%;padding-right:4px;font-family:courier new,courier,monospace;direction:ltr;max-height:200px;font-size:8pt;overflow:auto;border-top:silver 1px solid;cursor:text;border-right:silver 1px solid;padding-top:4px" id=codeSnippetWrapper>
-<pre style="border-bottom-style:none;text-align:left;padding-bottom:0;line-height:12pt;border-right-style:none;background-color:#f4f4f4;margin:0;padding-left:0;width:100%;padding-right:0;font-family:courier new,courier,monospace;direction:ltr;border-top-style:none;color:#000;font-size:8pt;border-left-style:none;overflow:visible;padding-top:0" id=codeSnippet><span style=color:#00f>&lt;</span><span style=color:maroon>form</span> <span style=color:red>action</span><span style=color:#00f>="&lt;%: Url.Action("</span><span style=color:red>Upload</span><span style=color:#00f>") %&gt;"</span> <span style=color:red>enctype</span><span style=color:#00f>="multipart/form-data"</span> <span style=color:red>method</span><span style=color:#00f>="post"</span><span style=color:#00f>&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>label</span> <span style=color:red>for</span><span style=color:#00f>="descripcion"</span><span style=color:#00f>&gt;</span>Descripción del fichero:<span style=color:#00f>&lt;/</span><span style=color:maroon>label</span><span style=color:#00f>&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>input</span> <span style=color:red>type</span><span style=color:#00f>="text"</span> <span style=color:red>id</span><span style=color:#00f>="descripcion"</span> <span style=color:red>name</span><span style=color:#00f>="descripcion"</span> <span style=color:#00f>/&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>br</span> <span style=color:#00f>/&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>label</span> <span style=color:red>for</span><span style=color:#00f>="fichero"</span><span style=color:#00f>&gt;</span>Fichero:<span style=color:#00f>&lt;/</span><span style=color:maroon>label</span><span style=color:#00f>&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>input</span> <span style=color:red>type</span><span style=color:#00f>="file"</span> <span style=color:red>name</span><span style=color:#00f>="fichero"</span> <span style=color:red>size</span><span style=color:#00f>="40"</span><span style=color:#00f>&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>br</span> <span style=color:#00f>/&gt;</span><br>    <span style=color:#00f>&lt;</span><span style=color:maroon>input</span> <span style=color:red>type</span><span style=color:#00f>="submit"</span> <span style=color:red>value</span><span style=color:#00f>="Enviar"</span> <span style=color:#00f>/&gt;</span><br><span style=color:#00f>&lt;/</span><span style=color:maroon>form</span><span style=color:#00f>&gt;</span></pre>
-<p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>form</span> <span class=na>action</span><span class=o>=</span><span class=s>&#34;&lt;%: Url.Action(&#34;</span><span class=na>Upload</span><span class=err>&#34;)</span> <span class=err>%</span><span class=p>&gt;</span>&#34; enctype=&#34;multipart/form-data&#34; method=&#34;post&#34;&gt;
+    <span class=p>&lt;</span><span class=nt>label</span> <span class=na>for</span><span class=o>=</span><span class=s>&#34;descripcion&#34;</span><span class=p>&gt;</span>Descripción del fichero:<span class=p>&lt;/</span><span class=nt>label</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;descripcion&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;descripcion&#34;</span> <span class=p>/&gt;</span>
+    <span class=p>&lt;</span><span class=nt>br</span> <span class=p>/&gt;</span>
+    <span class=p>&lt;</span><span class=nt>label</span> <span class=na>for</span><span class=o>=</span><span class=s>&#34;fichero&#34;</span><span class=p>&gt;</span>Fichero:<span class=p>&lt;/</span><span class=nt>label</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;file&#34;</span> <span class=na>name</span><span class=o>=</span><span class=s>&#34;fichero&#34;</span> <span class=na>size</span><span class=o>=</span><span class=s>&#34;40&#34;</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>br</span> <span class=p>/&gt;</span>
+    <span class=p>&lt;</span><span class=nt>input</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;submit&#34;</span> <span class=na>value</span><span class=o>=</span><span class=s>&#34;Enviar&#34;</span> <span class=p>/&gt;</span>
+<span class=p>&lt;/</span><span class=nt>form</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
 </div>
-<pre><code>&lt;p&gt;
-  Fijaos que es HTML puro y duro, aunque el tag &lt;form&gt; lo podeis generar con Html.BeginForm() si queréis. La clave es añadir el atributo &lt;strong&gt;enctype&lt;/strong&gt; con el valor &lt;em&gt;multipart/form-data.&lt;/em&gt; Como se menciona en la &lt;a href=&quot;http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2&quot;&gt;especificación sobre formularios del W3C&lt;/a&gt;, el valor de multipart/form-data es el que debe usarse cuando se quieran enviar al servidor datos binarios.
-&lt;/p&gt;
-
-&lt;p&gt;
-  El &lt;input type=”file”&gt; es el control HTML que nos permite seleccionar un fichero para enviar.
-&lt;/p&gt;
-
-&lt;p&gt;
-  Y desde el controlador? Pues sencillo, en este caso mi formulario tiene dos parámetros (&lt;em&gt;descripcion &lt;/em&gt;y &lt;em&gt;fichero&lt;/em&gt;), por lo que necesitaré que la acción del controlador tenga esos dos parámetros. El parámetro &lt;em&gt;descripcion&lt;/em&gt; es un string, pero el parámetro fichero… que és?
-&lt;/p&gt;
-
-&lt;p&gt;
-  Pues bien ASP.NET MVC es capaz de ver que el parámetro &lt;em&gt;fichero&lt;/em&gt; es un fichero que se ha subido al servidor y sabe &lt;em&gt;mapearlo&lt;/em&gt; a un objeto de la clase &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/system.web.httppostedfilebase.aspx&quot;&gt;HttpPostedFileBase&lt;/a&gt;. Esta clase nos da acceso no sólo al contenido del fichero subido, sinó a más información (su content-type, su tamaño, el path completo desde donde se ha subido,…).
-&lt;/p&gt;
-
-&lt;p&gt;
-  El método del controlador queda pues, así de sencillo:
-&lt;/p&gt;
-
-&lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; border-right-style: none; background-color: #f4f4f4; margin: 0em; padding-left: 0px; width: 100%; padding-right: 0px; font-family: &amp;#39;Courier New&amp;#39;, courier, monospace; direction: ltr; border-top-style: none; color: black; font-size: 8pt; border-left-style: none; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;[HttpPost]&lt;br /&gt;public ActionResult Upload(string descripcion, HttpPostedFileBase fichero)&lt;br /&gt;{&lt;br /&gt;    fichero.SaveAs(Path.Combine(@&quot;d:temp&quot;, Path.GetFileName(fichero.FileName)));&lt;br /&gt;    return View();&lt;br /&gt;}&lt;/pre&gt;
-  
-  &lt;p&gt;
-    &lt;/div&gt; 
-    
-    &lt;p&gt;
-      Fijaos en los dos parámetros string y HttpPostedFileBase. El método simplemente se guarda una copia del fichero subido en d:temp, pero obviamente aquí podéis hacer lo que queráis.
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      Y listos! No hay que hacer nada más… qué, sencillo, no??? 🙂
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      Un saludo
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      PD: Esta técnica &lt;strong&gt;no es ajax&lt;/strong&gt;, eso significa que mientras se está subiendo el fichero al servidor, la aplicación web no responde (el browser está haciendo la petición). Existe un mecanismo para realizar subidas de ficheros en background, aunque no es directo debido a que con XMLHttpRequest (el objeto del naveagador que hace posible ajax) no se pueden subir ficheros. Si estáis interesados en el siguiente &lt;a href=&quot;http://aspzone.com/tech/jquery-file-upload-in-asp-net-mvc-without-using-flash/&quot;&gt;post de John Rudolf se muestra como realizar un upload de fichero en ajax usando jQuery y el form plugin&lt;/a&gt;!
-    &lt;/p&gt;</code></pre>
+</div><p>Fijaos que es HTML puro y duro, aunque el tag <form> lo podeis generar con Html.BeginForm() si queréis. La clave es añadir el atributo <strong>enctype</strong> con el valor <em>multipart/form-data.</em> Como se menciona en la <a href=http://www.w3.org/TR/html401/interact/forms.html#h-17.13.4.2>especificación sobre formularios del W3C</a>, el valor de multipart/form-data es el que debe usarse cuando se quieran enviar al servidor datos binarios.</p>
+<p>El <code>&lt;input type=”file”></code> es el control HTML que nos permite seleccionar un fichero para enviar.</p>
+<p>Y desde el controlador? Pues sencillo, en este caso mi formulario tiene dos parámetros (<em>descripcion </em>y <em>fichero</em>), por lo que necesitaré que la acción del controlador tenga esos dos parámetros. El parámetro <em>descripcion</em> es un string, pero el parámetro fichero… que és?</p>
+<p>Pues bien ASP.NET MVC es capaz de ver que el parámetro <em>fichero</em> es un fichero que se ha subido al servidor y sabe <em>mapearlo</em> a un objeto de la clase <a href=http://msdn.microsoft.com/en-us/library/system.web.httppostedfilebase.aspx>HttpPostedFileBase</a>. Esta clase nos da acceso no sólo al contenido del fichero subido, sinó a más información (su content-type, su tamaño, el path completo desde donde se ha subido,…).</p>
+<p>El método del controlador queda pues, así de sencillo:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=na>[HttpPost]</span>
+<span class=k>public</span> <span class=n>ActionResult</span> <span class=n>Upload</span><span class=p>(</span><span class=kt>string</span> <span class=n>descripcion</span><span class=p>,</span> <span class=n>HttpPostedFileBase</span> <span class=n>fichero</span><span class=p>)</span>
+<span class=p>{</span>
+    <span class=n>fichero</span><span class=p>.</span><span class=n>SaveAs</span><span class=p>(</span><span class=n>Path</span><span class=p>.</span><span class=n>Combine</span><span class=p>(</span><span class=s>@&#34;d:temp&#34;</span><span class=p>,</span> <span class=n>Path</span><span class=p>.</span><span class=n>GetFileName</span><span class=p>(</span><span class=n>fichero</span><span class=p>.</span><span class=n>FileName</span><span class=p>)));</span>
+    <span class=k>return</span> <span class=n>View</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Fijaos en los dos parámetros string y HttpPostedFileBase. El método simplemente se guarda una copia del fichero subido en d:temp, pero obviamente aquí podéis hacer lo que queráis.</p>
+<p>Y listos! No hay que hacer nada más… qué, sencillo, no??? 🙂</p>
+<p>Un saludo</p>
+<p>PD: Esta técnica <strong>no es ajax</strong>, eso significa que mientras se está subiendo el fichero al servidor, la aplicación web no responde (el browser está haciendo la petición). Existe un mecanismo para realizar subidas de ficheros en background, aunque no es directo debido a que con XMLHttpRequest (el objeto del naveagador que hace posible ajax) no se pueden subir ficheros. Si estáis interesados en el siguiente <a href=http://aspzone.com/tech/jquery-file-upload-in-asp-net-mvc-without-using-flash/>post de John Rudolf se muestra como realizar un upload de fichero en ajax usando jQuery y el form plugin</a>!</p>
 </article>
 <script>'use strict';function wrap(a,b){a.parentNode.insertBefore(b,a),b.appendChild(a)}(function(){var a=document.querySelector('.single__contents');a?a.querySelectorAll('pre > code').forEach(function(b){var a=b.getAttribute('data-lang'),c=document.createElement('div'),e=null,d=null;a&&a.includes(':')?(e=a.split(':')[0],d=a.split(':')[1],c.className='language-'+e,c.setAttribute('data-lang',d),b.className='language-'+e,b.setAttribute('data-lang',d),b.setAttribute('id',d)):a||(c.setAttribute('data-lang','Code'),c.className='language-code'),(!a||d)&&wrap(b.parentNode,c)}):null})();var langCodeElem=document.querySelectorAll('.language-code');langCodeElem?langCodeElem.forEach(function(b){var a=document.createElement('span');a.className='copy-to-clipboard',a.setAttribute('title','Copy to clipboard'),b.append(a)}):null</script>
 <div class=donation>

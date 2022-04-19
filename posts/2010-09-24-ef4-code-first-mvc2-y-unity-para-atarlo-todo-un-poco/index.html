@@ -186,7 +186,7 @@ sobre<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <div class=single__meta>
 <div class=single__infos>
 <time class=single__info title="Escrito en">📅&nbsp;Sep 24, 2010 </time>
-&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;16&nbsp;min </span>
+&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;9&nbsp;min </span>
 &nbsp;&#183;&nbsp; <span class=single__info title="ESCRITO POR">✍️&nbsp;eiximenis</span>
 <span class=single__info>
 </span>
@@ -201,263 +201,386 @@ En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1535">
 <p>Resumiendo rápidamente EF Code First nos permite desarrollar nuestra capa de acceso a datos codificando <em>primero</em> las clases, clases que son <a href=http://en.wikipedia.org/wiki/Plain_Old_CLR_Object>POCO</a>. Eso nos permite conseguir lo que se conoce como <em>persistance ignorance</em> (o que las clases que nos representan los datos sean agnósticas sobre cualquier tecnología de acceso a datos).</p>
 <p>Que quede claro que Code First <strong>no</strong> es la única manera de usar objetos POCO en EF: Unai y Alberto hablan del tema <a href=http://geeks.ms/blogs/unai/archive/2010/01/19/ef-4-0-poco-y-proxies-din-225-micos.aspx>aquí</a> y <a href=http://geeks.ms/blogs/adiazmartin/archive/2010/01/17/poco-en-entity-framework-4-0.aspx>aquí</a>. Y dad por seguro que ellos conocen EF mucho más que yo 🙂</p>
 <p>Lo que os quiero comentar es como se puede montar EF Code First en una aplicación MVC2 para poder usar el patrón Repository y Unit Of Work, de forma que los controladores no deban saber nada del mecanismo subyacente de acceso a datos (es decir, los controladores ignoran completamente que están usando EF).</p>
-<p><strong>1. Rápida, rapidísima introducción a EF Code First</strong></p>
+<h2 id=rápida-rapidísima-introducción-a-ef-code-first>Rápida, rapidísima introducción a EF Code First</h2>
 <p>Usar EF Code First es muy sencillo. En el post de Scott Guthrie está todo explicado paso a paso, pero resumiendo podríamos decir que me puedo crear una clase tal que:</p>
-<div style="border-bottom:silver 1px solid;text-align:left;border-left:silver 1px solid;padding-bottom:4px;line-height:12pt;background-color:#f4f4f4;margin:20px 0 10px;padding-left:4px;width:97.5%;padding-right:4px;font-family:courier new,courier,monospace;direction:ltr;max-height:200px;font-size:8pt;overflow:auto;border-top:silver 1px solid;cursor:text;border-right:silver 1px solid;padding-top:4px" id=codeSnippetWrapper>
-<pre style="border-bottom-style:none;text-align:left;padding-bottom:0;line-height:12pt;background-color:#f4f4f4;margin:0;border-left-style:none;padding-left:0;width:100%;padding-right:0;font-family:courier new,courier,monospace;direction:ltr;border-top-style:none;color:#000;border-right-style:none;font-size:8pt;overflow:visible;padding-top:0" id=codeSnippet><span style=color:#00f>public</span> <span style=color:#00f>class</span> Persona<br>{<br>   <span style=color:#00f>public</span> <span style=color:#00f>int</span> PersonaId {get; set;}<br>   <span style=color:#00f>public</span> <span style=color:#00f>string</span> Nombre {get; set;}<br>}</pre>
-<p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>Persona</span>
+<span class=p>{</span>
+   <span class=k>public</span> <span class=kt>int</span> <span class=n>PersonaId</span> <span class=p>{</span><span class=k>get</span><span class=p>;</span> <span class=k>set</span><span class=p>;}</span>
+   <span class=k>public</span> <span class=kt>string</span> <span class=n>Nombre</span> <span class=p>{</span><span class=k>get</span><span class=p>;</span> <span class=k>set</span><span class=p>;}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
 </div>
-<pre><code>&lt;p&gt;
-  Esta clase nos permitiría acceder a datos almacenados en una tabla con los campos PersonaId y Nombre (EF Code First es capaz de crear la BBDD a partir del modelo de objetos). Para acceder a la bbdd creamos un objeto derivado de DbContext:
-&lt;/p&gt;
+</div><p>Esta clase nos permitiría acceder a datos almacenados en una tabla con los campos PersonaId y Nombre (EF Code First es capaz de crear la BBDD a partir del modelo de objetos). Para acceder a la bbdd creamos un objeto derivado de DbContext:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>MyDatabase</span> <span class=p>:</span> <span class=n>DbContext</span>
+<span class=p>{</span>
+   <span class=k>public</span> <span class=n>DbSet</span><span class=p>&lt;</span><span class=n>Persona</span><span class=p>&gt;</span> <span class=n>Personas</span> <span class=p>{</span><span class=k>get</span><span class=p>;</span> <span class=k>set</span><span class=p>;}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Y a partir de aquí instanciamos un objeto MyDatabase y lanzamos consultas linq contra la propiedad Personas… 🙂</p>
+<h2 id=patrón-repositorio-y-unit-of-workstrong>Patrón repositorio y Unit of work</strong></h2>
+<p>Esos patrones están explicados por activa y por pasiva en muchos sitios. P.ej. aquí está el <a href=http://martinfowler.com/eaaCatalog/repository.html>patrón repositorio</a> y aquí el <a href=http://martinfowler.com/eaaCatalog/unitOfWork.html>Unit of Work</a> (UoW). Básicamente entendemos que el repositorio es una colección de objetos en memoria y que el patrón UoW sincroniza todos los cambios hechos en memoria hacia la base de datos.</p>
+<p>Supongamos estos dos interfaces para definir ambos patrones:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>interface</span> <span class=n>IRepository</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TEntity</span> <span class=p>:</span> <span class=k>class</span>
+<span class=p>{</span>
+    <span class=n>IQueryable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>AsQueryable</span><span class=p>();</span>    
+    <span class=n>IEnumerable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>GetAll</span><span class=p>();</span>
+    <span class=n>IEnumerable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>Find</span><span class=p>(</span><span class=n>Expression</span><span class=p>&lt;</span><span class=n>Func</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>,</span> <span class=kt>bool</span><span class=p>&gt;&gt;</span> <span class=k>where</span><span class=p>);</span>
+<span class=p>}</span>
 
-&lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; MyDatabase : DbContext&lt;br /&gt;{&lt;br /&gt;   &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; DbSet&amp;lt;Persona&amp;gt; Personas {get; set;}&lt;br /&gt;}&lt;/pre&gt;
-  
-  &lt;p&gt;
-    &lt;/div&gt; 
+<span class=k>public</span> <span class=k>interface</span> <span class=n>IUnitOfWork</span>
+<span class=p>{</span>
+    <span class=k>void</span> <span class=n>Commit</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Mi repositorio es de sólo lectura (no hay métodos Add ni Remove ni nada, pero todo es añadirlos) y el Unit of Work lo único que tiene es el método Commit() para sincronizar los cambios hechos en los repositorios y mandarlos todos a la base de datos.</p>
+<p>EF Code First, implementa de <em>per se</em> el patrón Unit Of Work (a través de DbContext) y también el patrón repositorio a través de DbSet&lt;>, pero recordad que yo quiero “agnostizarme” al respecto de EF, por eso creo las interfaces y ahora debo crear implementaciones de ellas <em>para EF</em>:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>Repository</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=p>:</span> <span class=n>IRepository</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=k>where</span> <span class=n>TEntity</span> <span class=p>:</span> <span class=k>class</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=n>IDbSet</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=m>_d</span><span class=n>bSet</span><span class=p>;</span>
+
+    <span class=k>public</span> <span class=n>Repository</span><span class=p>(</span><span class=n>IDbContext</span> <span class=n>objectContext</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=m>_d</span><span class=n>bSet</span> <span class=p>=</span> <span class=n>objectContext</span><span class=p>.</span><span class=n>Set</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;();</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=n>IQueryable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>AsQueryable</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=k>return</span> <span class=m>_d</span><span class=n>bSet</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=n>IEnumerable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>GetAll</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=k>return</span> <span class=m>_d</span><span class=n>bSet</span><span class=p>.</span><span class=n>ToList</span><span class=p>();</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=n>IEnumerable</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>&gt;</span> <span class=n>Find</span><span class=p>(</span><span class=n>Expression</span><span class=p>&lt;</span><span class=n>Func</span><span class=p>&lt;</span><span class=n>TEntity</span><span class=p>,</span> <span class=kt>bool</span><span class=p>&gt;&gt;</span> <span class=k>where</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=k>return</span> <span class=m>_d</span><span class=n>bSet</span><span class=p>.</span><span class=n>Where</span><span class=p>(</span><span class=k>where</span><span class=p>);</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=k>public</span> <span class=k>class</span> <span class=nc>UnitOfWork</span> <span class=p>:</span> <span class=n>IUnitOfWork</span><span class=p>,</span> <span class=n>IDisposable</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=k>readonly</span> <span class=n>IDbContext</span> <span class=m>_</span><span class=n>objectContext</span><span class=p>;</span>
     
-    &lt;p&gt;
-      Y a partir de aquí instanciamos un objeto MyDatabase y lanzamos consultas linq contra la propiedad Personas… 🙂
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      &lt;strong&gt;2. Patrón repositorio y Unit of work&lt;/strong&gt;
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      Esos patrones están explicados por activa y por pasiva en muchos sitios. P.ej. aquí está el &lt;a href=&quot;http://martinfowler.com/eaaCatalog/repository.html&quot;&gt;patrón repositorio&lt;/a&gt; y aquí el &lt;a href=&quot;http://martinfowler.com/eaaCatalog/unitOfWork.html&quot;&gt;Unit of Work&lt;/a&gt; (UoW). Básicamente entendemos que el repositorio es una colección de objetos en memoria y que el patrón UoW sincroniza todos los cambios hechos en memoria hacia la base de datos.
-    &lt;/p&gt;
-    
-    &lt;p&gt;
-      Supongamos estos dos interfaces para definir ambos patrones:
-    &lt;/p&gt;
-    
-    &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-      &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;interface&lt;/span&gt; IRepository&amp;lt;TEntity&amp;gt; &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt; TEntity : &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt;&lt;br /&gt;{&lt;br /&gt;    IQueryable&amp;lt;TEntity&amp;gt; AsQueryable();    &lt;br /&gt;    IEnumerable&amp;lt;TEntity&amp;gt; GetAll();&lt;br /&gt;    IEnumerable&amp;lt;TEntity&amp;gt; Find(Expression&amp;lt;Func&amp;lt;TEntity, &lt;span style=&quot;color: #0000ff&quot;&gt;bool&lt;/span&gt;&amp;gt;&amp;gt; &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt;);&lt;br /&gt;}&lt;/pre&gt;
-      
-      &lt;p&gt;
-        &lt;/div&gt; 
-        
-        &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-          &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;interface&lt;/span&gt; IUnitOfWork&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;void&lt;/span&gt; Commit();&lt;br /&gt;}&lt;/pre&gt;
-          
-          &lt;p&gt;
-            &lt;/div&gt; 
-            
-            &lt;p&gt;
-              Mi repositorio es de sólo lectura (no hay métodos Add ni Remove ni nada, pero todo es añadirlos) y el Unit of Work lo único que tiene es el método Commit() para sincronizar los cambios hechos en los repositorios y mandarlos todos a la base de datos.
-            &lt;/p&gt;
-            
-            &lt;p&gt;
-              EF Code First, implementa de &lt;em&gt;per se&lt;/em&gt; el patrón Unit Of Work (a través de DbContext) y también el patrón repositorio a través de DbSet&lt;&gt;, pero recordad que yo quiero “agnostizarme” al respecto de EF, por eso creo las interfaces y ahora debo crear implementaciones de ellas &lt;em&gt;para EF&lt;/em&gt;:
-            &lt;/p&gt;
-            
-            &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-              &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; Repository&amp;lt;TEntity&amp;gt; : IRepository&amp;lt;TEntity&amp;gt; &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt; TEntity : &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt;&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; IDbSet&amp;lt;TEntity&amp;gt; _dbSet;&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; Repository(IDbContext objectContext)&lt;br /&gt;    {&lt;br /&gt;        _dbSet = objectContext.Set&amp;lt;TEntity&amp;gt;();&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; IQueryable&amp;lt;TEntity&amp;gt; AsQueryable()&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _dbSet;&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; IEnumerable&amp;lt;TEntity&amp;gt; GetAll()&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _dbSet.ToList();&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; IEnumerable&amp;lt;TEntity&amp;gt; Find(Expression&amp;lt;Func&amp;lt;TEntity, &lt;span style=&quot;color: #0000ff&quot;&gt;bool&lt;/span&gt;&amp;gt;&amp;gt; &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt;)&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _dbSet.Where(&lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt;);&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-              
-              &lt;p&gt;
-                &lt;/div&gt; 
-                
-                &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; UnitOfWork : IUnitOfWork, IDisposable&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;readonly&lt;/span&gt; IDbContext _objectContext;&lt;br /&gt;    &lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; UnitOfWork(IDbContext objectContext)&lt;br /&gt;    {&lt;br /&gt;        _objectContext = objectContext;&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;void&lt;/span&gt; Dispose()&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;if&lt;/span&gt; (_objectContext != &lt;span style=&quot;color: #0000ff&quot;&gt;null&lt;/span&gt;)&lt;br /&gt;        {&lt;br /&gt;            _objectContext.Dispose();&lt;br /&gt;        }&lt;br /&gt;        GC.SuppressFinalize(&lt;span style=&quot;color: #0000ff&quot;&gt;this&lt;/span&gt;);&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;void&lt;/span&gt; Commit()&lt;br /&gt;    {&lt;br /&gt;        _objectContext.SaveChanges();&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-                  
-                  &lt;p&gt;
-                    &lt;/div&gt; 
-                    
-                    &lt;p&gt;
-                      La única “complicación” es en la implementación de &lt;em&gt;UnitOfWork&lt;/em&gt;, que en el constructor uso un objeto de tipo &lt;em&gt;IDbContext&lt;/em&gt;, pero esta interfaz &lt;strong&gt;no existe&lt;/strong&gt; en EF: me la he inventado yo, para poder realizar DI luego cuando use Unity. La interfaz IDbContext es muy simple:
-                    &lt;/p&gt;
-                    
-                    &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                      &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;interface&lt;/span&gt; IDbContext : IDisposable&lt;br /&gt;{&lt;br /&gt;    IDbSet&amp;lt;T&amp;gt; Set&amp;lt;T&amp;gt;() &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt; T : &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt;;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;int&lt;/span&gt; SaveChanges();&lt;br /&gt;}&lt;/pre&gt;
-                      
-                      &lt;p&gt;
-                        &lt;/div&gt; 
-                        
-                        &lt;p&gt;
-                          Me permite obtener un &lt;em&gt;IDbSet&lt;/em&gt; de entidades de tipo T y el método &lt;em&gt;SaveChanges&lt;/em&gt; para persistir los cambios realizados en este contexto hacia la BBDD.
-                        &lt;/p&gt;
-                        
-                        &lt;p&gt;
-                          &lt;strong&gt;3. Uso de todo esto…&lt;/strong&gt;
-                        &lt;/p&gt;
-                        
-                        &lt;p&gt;
-                          Para usar directamente un repositorio me basta con instanciarlo, pasándole como parámetro el IDbContext. Pero recordad que la clase DbContext de EF Code First &lt;strong&gt;no&lt;/strong&gt; implementa IDbContext (que me lo he inventado yo), así que uso el patrón&lt;em&gt; &lt;a href=&quot;http://en.wikipedia.org/wiki/Adapter_pattern&quot;&gt;Adapter&lt;/a&gt;&lt;/em&gt; para &lt;em&gt;traducir &lt;/em&gt;los objetos DbContext a IDbContext:
-                        &lt;/p&gt;
-                        
-                        &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                          &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; DbContextAdapter : IDbContext&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;readonly&lt;/span&gt; DbContext _context;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; DbContextAdapter(DbContext context)&lt;br /&gt;    {&lt;br /&gt;        _context = context;&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;void&lt;/span&gt; Dispose()&lt;br /&gt;    {&lt;br /&gt;        _context.Dispose();&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; IDbSet&amp;lt;T&amp;gt; Set&amp;lt;T&amp;gt;() &lt;span style=&quot;color: #0000ff&quot;&gt;where&lt;/span&gt; T : &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt;&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _context.Set&amp;lt;T&amp;gt;();&lt;br /&gt;    }&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;int&lt;/span&gt; SaveChanges()&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _context.SaveChanges();&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-                          
-                          &lt;p&gt;
-                            &lt;/div&gt; 
-                            
-                            &lt;p&gt;
-                              Ahora sí que ya puedo crear un repositorio:
-                            &lt;/p&gt;
-                            
-                            &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                              &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;IDbContext ctx = &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; DbContextAdapter(MyDatabase);  &lt;span style=&quot;color: #008000&quot;&gt;// MyDatabase deriva de DbContext&lt;/span&gt;&lt;br /&gt;var rep = &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; Repository&amp;lt;Persona&amp;gt;(ctx);&lt;br /&gt;var personas = rep.FindAll();&lt;/pre&gt;
-                              
-                              &lt;p&gt;
-                                &lt;/div&gt; 
-                                
-                                &lt;p&gt;
-                                  Para usar el Unit of Work vinculado a un contexto haríamos lo mismo.
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  &lt;strong&gt;4. Añadiendo IoC a todo esto…&lt;/strong&gt;
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Ahora que ya vemos como podemos usar nuestro repositorio, vamos a ver como Unity nos ayuda a tener IoC y independizarnos realmente de EF.
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Primero podríamos registrar las implementaciones concretas de IRepository y IUnitOfWork:
-                                &lt;/p&gt;
-                                
-                                &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #008000&quot;&gt;// Container es el IUnityContainer&lt;/span&gt;&lt;br /&gt;Container.RegisterType(&lt;span style=&quot;color: #0000ff&quot;&gt;typeof&lt;/span&gt;(IRepository&amp;lt;&amp;gt;), &lt;span style=&quot;color: #0000ff&quot;&gt;typeof&lt;/span&gt;(Repository&amp;lt;&amp;gt;));&lt;br /&gt;Container.RegisterType&amp;lt;IUnitOfWork, UnitOfWork&amp;gt;();&lt;/pre&gt;
-                                  
-                                  &lt;p&gt;
-                                    &lt;/div&gt; 
-                                    
-                                    &lt;p&gt;
-                                      Ahora debemos mapear IDbContext a DbContextAdapter (porque para instanciar tanto IRepository como IUnitOfWork les debemos pasar un IDbContext. Podríamos usar lo siguiente:
-                                    &lt;/p&gt;
-                                    
-                                    &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                      &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;Container.RegisterType&amp;lt;IDbContext, DbContextAdapter&amp;gt;();&lt;/pre&gt;
-                                      
-                                      &lt;p&gt;
-                                        &lt;/div&gt; 
-                                        
-                                        &lt;p&gt;
-                                          Este RegisterType está bien, pero el problema nos viene cuando vemos que el constructor de DbContextAdapter tiene un objeto &lt;em&gt;DbContext&lt;/em&gt;. Eso significaría que Unity nos crearía un objeto de la clase &lt;strong&gt;DbContext&lt;/strong&gt; y no de la clase derivada MyDatabase, para instanciar los objetos DbContextAdapter. &lt;strong&gt;Nota:&lt;/strong&gt; Una solución sería que la clase DbContextAdapter tuviese en su constructor un objeto que no fuera DbContext sinó MyDatabase pero eso entonces limita la reutilización de todo lo que estamos haciendo!
-                                        &lt;/p&gt;
-                                        
-                                        &lt;p&gt;
-                                          Por suerte no estamos perdidos! Unity incorpora un mecanismo mediante el cual le podemos decir &lt;em&gt;como crear&lt;/em&gt; un objeto de una determinada clase. &lt;a href=&quot;http://geeks.ms/blogs/etomas/archive/2010/06/02/novedades-de-unity-2-0.aspx&quot;&gt;En mi post sobre Unity 2.0&lt;/a&gt;, hablé de las Injection Factories. La idea es decirle a Unity que cuando necesite un objeto de la clase indicada, en lugar de crearlo tal cual use una factoría nuestra.
-                                        &lt;/p&gt;
-                                        
-                                        &lt;p&gt;
-                                          Es decir podemos hacer una factoría para crear DbContext que en lugar de un DbContext devuelva un MyDatabase, y Unity usará dicha factoría cada vez que deba crear un DbContext:
-                                        &lt;/p&gt;
-                                        
-                                        &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                          &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;Container.RegisterType&amp;lt;DbContext&amp;gt;(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; InjectionFactory(x =&amp;gt; &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; MyDatabase()));&lt;/pre&gt;
-                                          
-                                          &lt;p&gt;
-                                            &lt;/div&gt; 
-                                            
-                                            &lt;p&gt;
-                                              Listos! Con esto cuando Unity deba pasar a DbContextAdapter un objeto DbContext (como indica el constructor) creará realmente un objeto MyDatabase.
-                                            &lt;/p&gt;
-                                            
-                                            &lt;p&gt;
-                                              Ahora si que ya puedo hacer:
-                                            &lt;/p&gt;
-                                            
-                                            &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                              &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;var rep = Container.Resolve&amp;lt;IRepository&amp;lt;Persona&amp;gt;&amp;gt;();&lt;/pre&gt;
-                                              
-                                              &lt;p&gt;
-                                                &lt;/div&gt;
-                                              &lt;/p&gt;
-                                              
-                                              &lt;p&gt;
-                                                &lt;strong&gt;5. Y finalmente… MVC2&lt;/strong&gt;
-                                              &lt;/p&gt;
-                                              
-                                              &lt;p&gt;
-                                                Para integrar esto dentro de MVC2 es muy sencillo: como siempre que queramos inyectar IoC en los controladores lo que debemos tocar es… la factoría de controladores:
-                                              &lt;/p&gt;
-                                              
-                                              &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                                &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; UnityControllerFactory : DefaultControllerFactory&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;readonly&lt;/span&gt; IUnityContainer _sl;&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; UnityControllerFactory(IUnityContainer sl) &lt;br /&gt;    {&lt;br /&gt;        _sl = sl;&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;protected&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;override&lt;/span&gt; IController GetControllerInstance(RequestContext requestContext, Type controllerType)&lt;br /&gt;    {&lt;br /&gt;        IController controller = _sl.Resolve(controllerType);&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; controller;&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-                                                
-                                                &lt;p&gt;
-                                                  &lt;/div&gt; 
-                                                  
-                                                  &lt;p&gt;
-                                                    Y como siempre establecerla en el Global.asax:
-                                                  &lt;/p&gt;
-                                                  
-                                                  &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                                    &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;UnityControllerFactory slcf = &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityControllerFactory(container);&lt;br /&gt;ControllerBuilder.Current.SetControllerFactory(slcf);&lt;/pre&gt;
-                                                    
-                                                    &lt;p&gt;
-                                                      &lt;/div&gt; 
-                                                      
-                                                      &lt;p&gt;
-                                                        Y listos! Ahora si que hemos llegado al punto &lt;strong&gt;final&lt;/strong&gt;. Por fin podemos declarar un controlador tal que:
-                                                      &lt;/p&gt;
-                                                      
-                                                      &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                                                        &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; PersonasController : Controller&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; IRepository&amp;lt;Persona&amp;gt; _rep;&lt;br /&gt; &lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; HandController(IRepository&amp;lt;Persona&amp;gt; rep)&lt;br /&gt;    {&lt;br /&gt;        _rep = rep;&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-                                                        
-                                                        &lt;p&gt;
-                                                          &lt;/div&gt; 
-                                                          
-                                                          &lt;p&gt;
-                                                            Y empezar a trabajar usando el repositorio! 🙂
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            Fijaos que en este punto (el controlador) no tenemos nada que nos ate a EF: el repositorio es una interfaz y las clases que usa el repositorio son objetos POCO.
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            &lt;strong&gt;6. Y para terminar (pero NO lo menos importante)…&lt;/strong&gt;
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            Cuando trabajamos con aplicaciones web, es recomendable que los contextos de base de datos tengan una duración (lifetime) de request (se les llama objetos per-request): es decir si durante una misma petición se necesitan dos repostorios, estos dos repositorios deben de compartir del contexto de base de datos. Con lo que tenemos ahora &lt;em&gt;no&lt;/em&gt; sucede esto, ya que cada vez que Unity deba crear un Repository&lt;&gt; creará su DbContextAdapter asociado que a su vez creará un DbContext (MyDatabase) &lt;strong&gt;nuevo&lt;/strong&gt;. Ese comportamiento no es el desado.
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            Por suerte Unity tiene un mecanismo muy bueno para poder establecer &lt;em&gt;cada cuando&lt;/em&gt; debe el contenedor crear un objeto de un tipo determinado: &lt;a href=&quot;http://geeks.ms/blogs/etomas/archive/2009/10/26/lifetime-managers-en-unity-o-191-como-s-233-que-eso-que-me-das-es-un-singleton.aspx&quot;&gt;los lifetime managers&lt;/a&gt;. Una solución es crearse un HttpRequestLifetimeManager, de forma que los objetos sólo persistirán durante la misma petición y usar este lifetime manager cuando hagamos el RegisterType de DbContext.
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            En &lt;a title=&quot;http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588&quot; href=&quot;http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588&quot;&gt;http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588&lt;/a&gt; tenéis una implementación de un &lt;strong&gt;HttpRequestLifetimeManager&lt;/strong&gt;, junto con una interesante aportación sobre el uso (en su lugar) de contenedores hijos que mueran a cada request, que tengan los objetos registrados como singletons y eliminar el contenedor hijo (con Dispose()) al final de cada request. Esto tiene la ventaja de que se llamaría a Dispose() de los objetos contenidos (en esta segunda aproximación es el contendor hijo el que tiene un ciclo de vida per-request).
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            &lt;strong&gt;7. Referencias&lt;/strong&gt;
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            Los siguientes posts contienen más información al respecto:
-                                                          &lt;/p&gt;
-                                                          
-                                                          &lt;ol&gt;
-                                                            &lt;li&gt;
-                                                              &lt;a href=&quot;http://elegantcode.com/2009/12/15/entity-framework-ef4-generic-repository-and-unit-of-work-prototype/&quot;&gt;Entity Framework POCO (EF4): Generic Repository and Unit of Work Prototype&lt;/a&gt;. Este es el post que me ha servido de inspiración y de ayuda. Tiene una continuación (&lt;a href=&quot;http://elegantcode.com/2009/12/15/building-a-unity-extension-for-entity-framework-poco-configuration-repository-and-unit-of-work/&quot;&gt;Unity Extension for Entity Framework POCO Configuration, Repository and Unit of Work&lt;/a&gt;) donde comenta el uso de Unity. Estos dos posts son &lt;strong&gt;de lectura imprescindible, &lt;/strong&gt;aunque por un lado haya tenido que modificar algunas cosillas para que funcione con la CTP4 de EF Code first y por otro en el tercer post utilize una StaticFactoryExtension en lugar de una Injection Factory (supongo que usa Unity 1.2 que no soporta Injection Factories). Este tercer post utiliza una aproximación &lt;strong&gt;genial&lt;/strong&gt; que es el uso de una extensión de Unity para configurar todos los mappings para los objetos de EF. Repito: lectura imprescindible.
-                                                            &lt;/li&gt;
-                                                            &lt;li&gt;
-                                                              Los posts de Scott Guthrie sobre EF Code First:
-                                                            &lt;/li&gt;
-                                                            &lt;ol&gt;
-                                                              &lt;li&gt;
-                                                                &lt;a title=&quot;http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx&quot; href=&quot;http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx&quot;&gt;http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx&lt;/a&gt;
-                                                              &lt;/li&gt;
-                                                              &lt;li&gt;
-                                                                &lt;a title=&quot;http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx&quot; href=&quot;http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx&quot;&gt;http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx&lt;/a&gt;
-                                                              &lt;/li&gt;
-                                                              &lt;li&gt;
-                                                                &lt;a title=&quot;http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx&quot; href=&quot;http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx&quot;&gt;http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx&lt;/a&gt;
-                                                              &lt;/li&gt;
-                                                            &lt;/ol&gt;
-                                                          &lt;/ol&gt;
-                                                          
-                                                          &lt;p&gt;
-                                                            Un saludo!!! 🙂
-                                                          &lt;/p&gt;
-</code></pre>
+    <span class=k>public</span> <span class=n>UnitOfWork</span><span class=p>(</span><span class=n>IDbContext</span> <span class=n>objectContext</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>objectContext</span> <span class=p>=</span> <span class=n>objectContext</span><span class=p>;</span>
+    <span class=p>}</span>
+
+    <span class=k>public</span> <span class=k>void</span> <span class=n>Dispose</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=k>if</span> <span class=p>(</span><span class=m>_</span><span class=n>objectContext</span> <span class=p>!=</span> <span class=k>null</span><span class=p>)</span>
+        <span class=p>{</span>
+            <span class=m>_</span><span class=n>objectContext</span><span class=p>.</span><span class=n>Dispose</span><span class=p>();</span>
+        <span class=p>}</span>
+        <span class=n>GC</span><span class=p>.</span><span class=n>SuppressFinalize</span><span class=p>(</span><span class=k>this</span><span class=p>);</span>
+    <span class=p>}</span>
+
+    <span class=k>public</span> <span class=k>void</span> <span class=n>Commit</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>objectContext</span><span class=p>.</span><span class=n>SaveChanges</span><span class=p>();</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>La única “complicación” es en la implementación de <em>UnitOfWork</em>, que en el constructor uso un objeto de tipo <em>IDbContext</em>, pero esta interfaz <strong>no existe</strong> en EF: me la he inventado yo, para poder realizar DI luego cuando use Unity. La interfaz IDbContext es muy simple:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>interface</span> <span class=n>IDbContext</span> <span class=p>:</span> <span class=n>IDisposable</span>
+<span class=p>{</span>
+    <span class=n>IDbSet</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>Set</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;()</span> <span class=k>where</span> <span class=n>T</span> <span class=p>:</span> <span class=n>class</span><span class=p>;</span>
+    <span class=kt>int</span> <span class=n>SaveChanges</span><span class=p>();</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Me permite obtener un <em>IDbSet</em> de entidades de tipo T y el método <em>SaveChanges</em> para persistir los cambios realizados en este contexto hacia la BBDD.</p>
+<h2 id=uso-de-todo-esto>Uso de todo esto…</h2>
+<p>Para usar directamente un repositorio me basta con instanciarlo, pasándole como parámetro el IDbContext. Pero recordad que la clase DbContext de EF Code First <strong>no</strong> implementa IDbContext (que me lo he inventado yo), así que uso el patrón<em> <a href=http://en.wikipedia.org/wiki/Adapter_pattern>Adapter</a></em> para <em>traducir </em>los objetos DbContext a IDbContext:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>DbContextAdapter</span> <span class=p>:</span> <span class=n>IDbContext</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=k>readonly</span> <span class=n>DbContext</span> <span class=m>_</span><span class=n>context</span><span class=p>;</span>
+    <span class=k>public</span> <span class=n>DbContextAdapter</span><span class=p>(</span><span class=n>DbContext</span> <span class=n>context</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>context</span> <span class=p>=</span> <span class=n>context</span><span class=p>;</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=k>void</span> <span class=n>Dispose</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>context</span><span class=p>.</span><span class=n>Dispose</span><span class=p>();</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=n>IDbSet</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;</span> <span class=n>Set</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;()</span> <span class=k>where</span> <span class=n>T</span> <span class=p>:</span> <span class=k>class</span>
+    <span class=p>{</span>
+        <span class=k>return</span> <span class=m>_</span><span class=n>context</span><span class=p>.</span><span class=n>Set</span><span class=p>&lt;</span><span class=n>T</span><span class=p>&gt;();</span>
+    <span class=p>}</span>
+    <span class=k>public</span> <span class=kt>int</span> <span class=n>SaveChanges</span><span class=p>()</span>
+    <span class=p>{</span>
+        <span class=k>return</span> <span class=m>_</span><span class=n>context</span><span class=p>.</span><span class=n>SaveChanges</span><span class=p>();</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Ahora sí que ya puedo crear un repositorio:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>IDbContext</span> <span class=n>ctx</span> <span class=p>=</span> <span class=k>new</span> <span class=n>DbContextAdapter</span><span class=p>(</span><span class=n>MyDatabase</span><span class=p>);</span>  <span class=c1>// MyDatabase deriva de DbContext
+</span><span class=c1></span><span class=kt>var</span> <span class=n>rep</span> <span class=p>=</span> <span class=k>new</span> <span class=n>Repository</span><span class=p>&lt;</span><span class=n>Persona</span><span class=p>&gt;(</span><span class=n>ctx</span><span class=p>);</span>
+<span class=kt>var</span> <span class=n>personas</span> <span class=p>=</span> <span class=n>rep</span><span class=p>.</span><span class=n>FindAll</span><span class=p>();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Para usar el Unit of Work vinculado a un contexto haríamos lo mismo.</p>
+<h2 id=añadiendo-ioc-a-todo-estostrong>Añadiendo IoC a todo esto…</strong></h2>
+<p>Ahora que ya vemos como podemos usar nuestro repositorio, vamos a ver como Unity nos ayuda a tener IoC y independizarnos realmente de EF.</p>
+<p>Primero podríamos registrar las implementaciones concretas de <code>IRepository</code> y <code>IUnitOfWork</code>:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=c1>// Container es el IUnityContainer
+</span><span class=c1></span><span class=n>Container</span><span class=p>.</span><span class=n>RegisterType</span><span class=p>(</span><span class=k>typeof</span><span class=p>(</span><span class=n>IRepository</span><span class=p>&lt;&gt;),</span> <span class=k>typeof</span><span class=p>(</span><span class=n>Repository</span><span class=p>&lt;&gt;));</span>
+<span class=n>Container</span><span class=p>.</span><span class=n>RegisterType</span><span class=p>&lt;</span><span class=n>IUnitOfWork</span><span class=p>,</span> <span class=n>UnitOfWork</span><span class=p>&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Ahora debemos mapear IDbContext a DbContextAdapter (porque para instanciar tanto IRepository como IUnitOfWork les debemos pasar un IDbContext. Podríamos usar lo siguiente:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>Container</span><span class=p>.</span><span class=n>RegisterType</span><span class=p>&lt;</span><span class=n>IDbContext</span><span class=p>,</span> <span class=n>DbContextAdapter</span><span class=p>&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Este RegisterType está bien, pero el problema nos viene cuando vemos que el constructor de DbContextAdapter tiene un objeto <code>DbContext</code>. Eso significaría que Unity nos crearía un objeto de la clase <code>DbContext</code>y no de la clase derivada MyDatabase, para instanciar los objetos DbContextAdapter. <strong>Nota:</strong> Una solución sería que la clase DbContextAdapter tuviese en su constructor un objeto que no fuera DbContext sinó MyDatabase pero eso entonces limita la reutilización de todo lo que estamos haciendo!</p>
+<p>Por suerte no estamos perdidos! Unity incorpora un mecanismo mediante el cual le podemos decir <em>como crear</em> un objeto de una determinada clase. <a href=http://geeks.ms/blogs/etomas/archive/2010/06/02/novedades-de-unity-2-0.aspx>En mi post sobre Unity 2.0</a>, hablé de las Injection Factories. La idea es decirle a Unity que cuando necesite un objeto de la clase indicada, en lugar de crearlo tal cual use una factoría nuestra.</p>
+<p>Es decir podemos hacer una factoría para crear DbContext que en lugar de un DbContext devuelva un MyDatabase, y Unity usará dicha factoría cada vez que deba crear un DbContext:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>Container</span><span class=p>.</span><span class=n>RegisterType</span><span class=p>&lt;</span><span class=n>DbContext</span><span class=p>&gt;(</span><span class=k>new</span> <span class=n>InjectionFactory</span><span class=p>(</span><span class=n>x</span> <span class=p>=&gt;</span> <span class=k>new</span> <span class=n>MyDatabase</span><span class=p>()));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Listos! Con esto cuando Unity deba pasar a DbContextAdapter un objeto DbContext (como indica el constructor) creará realmente un objeto MyDatabase.</p>
+<p>Ahora si que ya puedo hacer:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=kt>var</span> <span class=n>rep</span> <span class=p>=</span> <span class=n>Container</span><span class=p>.</span><span class=n>Resolve</span><span class=p>&lt;</span><span class=n>IRepository</span><span class=p>&lt;</span><span class=n>Persona</span><span class=p>&gt;&gt;();</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=y-finalmente-mvc2strong>Y finalmente… MVC2</strong></h2>
+<p>Para integrar esto dentro de MVC2 es muy sencillo: como siempre que queramos inyectar IoC en los controladores lo que debemos tocar es… la factoría de controladores:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>UnityControllerFactory</span> <span class=p>:</span> <span class=n>DefaultControllerFactory</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=k>readonly</span> <span class=n>IUnityContainer</span> <span class=m>_</span><span class=n>sl</span><span class=p>;</span>
+
+    <span class=k>public</span> <span class=n>UnityControllerFactory</span><span class=p>(</span><span class=n>IUnityContainer</span> <span class=n>sl</span><span class=p>)</span> 
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>sl</span> <span class=p>=</span> <span class=n>sl</span><span class=p>;</span>
+    <span class=p>}</span>
+
+    <span class=k>protected</span> <span class=k>override</span> <span class=n>IController</span> <span class=n>GetControllerInstance</span><span class=p>(</span><span class=n>RequestContext</span> <span class=n>requestContext</span><span class=p>,</span> <span class=n>Type</span> <span class=n>controllerType</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=n>IController</span> <span class=n>controller</span> <span class=p>=</span> <span class=m>_</span><span class=n>sl</span><span class=p>.</span><span class=n>Resolve</span><span class=p>(</span><span class=n>controllerType</span><span class=p>);</span>
+        <span class=k>return</span> <span class=n>controller</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Y como siempre establecerla en el <code>Global.asax</code>:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>UnityControllerFactory</span> <span class=n>slcf</span> <span class=p>=</span> <span class=k>new</span> <span class=n>UnityControllerFactory</span><span class=p>(</span><span class=n>container</span><span class=p>);</span>
+<span class=n>ControllerBuilder</span><span class=p>.</span><span class=n>Current</span><span class=p>.</span><span class=n>SetControllerFactory</span><span class=p>(</span><span class=n>slcf</span><span class=p>);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Y listos! Ahora si que hemos llegado al punto <strong>final</strong>. Por fin podemos declarar un controlador tal que:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>PersonasController</span> <span class=p>:</span> <span class=n>Controller</span>
+<span class=p>{</span>
+    <span class=k>private</span> <span class=n>IRepository</span><span class=p>&lt;</span><span class=n>Persona</span><span class=p>&gt;</span> <span class=m>_</span><span class=n>rep</span><span class=p>;</span>
+ 
+    <span class=k>public</span> <span class=n>HandController</span><span class=p>(</span><span class=n>IRepository</span><span class=p>&lt;</span><span class=n>Persona</span><span class=p>&gt;</span> <span class=n>rep</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=m>_</span><span class=n>rep</span> <span class=p>=</span> <span class=n>rep</span><span class=p>;</span>
+    <span class=p>}</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Y empezar a trabajar usando el repositorio! 🙂</p>
+<p>Fijaos que en este punto (el controlador) no tenemos nada que nos ate a EF: el repositorio es una interfaz y las clases que usa el repositorio son objetos POCO.</p>
+<h2 id=y-para-terminar-pero-no-lo-menos-importante>Y para terminar (pero NO lo menos importante)&mldr;</h2>
+<p>Cuando trabajamos con aplicaciones web, es recomendable que los contextos de base de datos tengan una duración (lifetime) de request (se les llama objetos per-request): es decir si durante una misma petición se necesitan dos repostorios, estos dos repositorios deben de compartir del contexto de base de datos. Con lo que tenemos ahora <em>no</em> sucede esto, ya que cada vez que Unity deba crear un Repository&lt;> creará su DbContextAdapter asociado que a su vez creará un DbContext (MyDatabase) <strong>nuevo</strong>. Ese comportamiento no es el desado.</p>
+<p>Por suerte Unity tiene un mecanismo muy bueno para poder establecer <em>cada cuando</em> debe el contenedor crear un objeto de un tipo determinado: <a href=http://geeks.ms/blogs/etomas/archive/2009/10/26/lifetime-managers-en-unity-o-191-como-s-233-que-eso-que-me-das-es-un-singleton.aspx>los lifetime managers</a>. Una solución es crearse un HttpRequestLifetimeManager, de forma que los objetos sólo persistirán durante la misma petición y usar este lifetime manager cuando hagamos el RegisterType de DbContext.</p>
+<p>En <a title="http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588" href="http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588"><a href="http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588">http://unity.codeplex.com/Thread/View.aspx?ThreadId=38588</a></a> tenéis una implementación de un <strong>HttpRequestLifetimeManager</strong>, junto con una interesante aportación sobre el uso (en su lugar) de contenedores hijos que mueran a cada request, que tengan los objetos registrados como singletons y eliminar el contenedor hijo (con Dispose()) al final de cada request. Esto tiene la ventaja de que se llamaría a Dispose() de los objetos contenidos (en esta segunda aproximación es el contendor hijo el que tiene un ciclo de vida per-request).</p>
+<h2 id=referencias>Referencias</h2>
+<p>Los siguientes posts contienen más información al respecto:</p>
+<ul>
+<li><a href=http://elegantcode.com/2009/12/15/entity-framework-ef4-generic-repository-and-unit-of-work-prototype/>Entity Framework POCO (EF4): Generic Repository and Unit of Work Prototype</a>. Este es el post que me ha servido de inspiración y de ayuda. Tiene una continuación (<a href=http://elegantcode.com/2009/12/15/building-a-unity-extension-for-entity-framework-poco-configuration-repository-and-unit-of-work/>Unity Extension for Entity Framework POCO Configuration, Repository and Unit of Work</a>) donde comenta el uso de Unity. Estos dos posts son <strong>de lectura imprescindible, </strong>aunque por un lado haya tenido que modificar algunas cosillas para que funcione con la CTP4 de EF Code first y por otro en el tercer post utilize una StaticFactoryExtension en lugar de una Injection Factory (supongo que usa Unity 1.2 que no soporta Injection Factories). Este tercer post utiliza una aproximación <strong>genial</strong> que es el uso de una extensión de Unity para configurar todos los mappings para los objetos de EF. Repito: lectura imprescindible.</li>
+<li>Los posts de Scott Guthrie sobre EF Code First:
+<ul>
+<li><a title=http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx href=http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx><a href=http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx>http://weblogs.asp.net/scottgu/archive/2010/07/16/code-first-development-with-entity-framework-4.aspx</a></a></li>
+<li><a title=http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx href=http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx><a href=http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx>http://weblogs.asp.net/scottgu/archive/2010/07/23/entity-framework-4-code-first-custom-database-schema-mapping.aspx</a></a></li>
+<li><a title=http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx href=http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx><a href=http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx>http://weblogs.asp.net/scottgu/archive/2010/08/03/using-ef-code-first-with-an-existing-database.aspx</a></a></li>
+</ul>
+</li>
+</ul>
 </article>
 <script>'use strict';function wrap(a,b){a.parentNode.insertBefore(b,a),b.appendChild(a)}(function(){var a=document.querySelector('.single__contents');a?a.querySelectorAll('pre > code').forEach(function(b){var a=b.getAttribute('data-lang'),c=document.createElement('div'),e=null,d=null;a&&a.includes(':')?(e=a.split(':')[0],d=a.split(':')[1],c.className='language-'+e,c.setAttribute('data-lang',d),b.className='language-'+e,b.setAttribute('data-lang',d),b.setAttribute('id',d)):a||(c.setAttribute('data-lang','Code'),c.className='language-code'),(!a||d)&&wrap(b.parentNode,c)}):null})();var langCodeElem=document.querySelectorAll('.language-code');langCodeElem?langCodeElem.forEach(function(b){var a=document.createElement('span');a.className='copy-to-clipboard',a.setAttribute('title','Copy to clipboard'),b.append(a)}):null</script>
 <div class=donation>
@@ -581,7 +704,17 @@ Compulsive Developer
 </label>
 </div>
 <div class=toc data-dir=ltr data-folding=false data-ani=true>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#rápida-rapidísima-introducción-a-ef-code-first>Rápida, rapidísima introducción a EF Code First</a></li>
+<li><a href=#patrón-repositorio-y-unit-of-workstrong>Patrón repositorio y Unit of work</strong></a></li>
+<li><a href=#uso-de-todo-esto>Uso de todo esto…</a></li>
+<li><a href=#añadiendo-ioc-a-todo-estostrong>Añadiendo IoC a todo esto…</strong></a></li>
+<li><a href=#y-finalmente-mvc2strong>Y finalmente… MVC2</strong></a></li>
+<li><a href=#y-para-terminar-pero-no-lo-menos-importante>Y para terminar (pero NO lo menos importante)&mldr;</a></li>
+<li><a href=#referencias>Referencias</a></li>
+</ul>
+</nav>
 </div>
 </section>
 </aside>

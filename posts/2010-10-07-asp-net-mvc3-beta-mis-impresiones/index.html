@@ -186,7 +186,7 @@ sobre<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <div class=single__meta>
 <div class=single__infos>
 <time class=single__info title="Escrito en">📅&nbsp;Oct 7, 2010 </time>
-&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;12&nbsp;min </span>
+&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;7&nbsp;min </span>
 &nbsp;&#183;&nbsp; <span class=single__info title="ESCRITO POR">✍️&nbsp;eiximenis</span>
 <span class=single__info>
 </span>
@@ -201,198 +201,201 @@ En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1537">
 <p>MVC1 salió con 5 (creo) previews antes de la beta, con MVC2 juraria que hicieron un par o tres, y con MVC3 sólo un preview1 y luego ya la beta… a ese ritmo MVC4 cuando salga lo hará ya con el SP1 incorporado. 😛 Esos de Microsoft van cada vez más rápido.</p>
 <p>Bueno, aquí van un poco mis impresiones sobre la Beta 3 de MVC 🙂</p>
 <p>Me centraré básicamente en lo que ha cambiado desde la preview1 hasta la Beta.</p>
-<p><strong>1. Creación de aplicaciones</strong></p>
+<h2 id=creación-de-aplicaciones>Creación de aplicaciones</h2>
 <p>Cuando le damos a nuevo proyecto en el Visual Studio, nos sale <em>una sola</em> opción de MVC3:  ASP.NET MVC 3 Web Application y una vez la seleccionamos es cuando nos deja elegir si queremos una aplicación vacía o la estándard (con los controladores Account y Home) y que View Engine queremos usar. Son las mismas opciones que teníamos en MVC2 (excepto lo del view engine) pero mejor organizadas.</p>
 <p>Pero vamos… nada nuevo bajo el sol 😀</p>
-<p><strong>2. Donde está IServiceLocator?</strong></p>
+<h2 id=donde-está-iservicelocator>Donde está IServiceLocator</h2>
 <p>En <a href=http://geeks.ms/blogs/etomas/archive/2010/07/28/asp-net-mvc-3-preview-1.aspx>mi post sobre la preview1</a> comentaba que el soporte para IoC se basaba en la interfaz <a href=http://commonservicelocator.codeplex.com/>IServiceLocator</a>, un proyecto de codeplex para proporcionar una interfaz común a distintos contenedores IoC y así permitir independizarnos de ellos. Decía también que la Preview1 contenía una implementación propia de IServiceLocator en lugar de usar la del assembly que está en codeplex, pero que se esperaba que en la versión final eso no fuera así.</p>
 <p>Pues bien… al final eso ha cambiado un poco: Ahora, a través de la clase <em>DependencyResolver</em> podemos indicar a MVC3 que debe usar para resolver sus dependencias. Y tenemos tres posibilidades:</p>
-<ol>
+<ul>
 <li>Pasarle un objeto que implemente una interfaz nueva llamada <em>IDependencyResolver</em> (propia de MVC3). Dicha interfaz está definida:</li>
-</ol>
-<div style="border-bottom:silver 1px solid;text-align:left;border-left:silver 1px solid;padding-bottom:4px;line-height:12pt;background-color:#f4f4f4;margin:20px 0 10px;padding-left:4px;width:97.5%;padding-right:4px;font-family:courier new,courier,monospace;direction:ltr;max-height:200px;font-size:8pt;overflow:auto;border-top:silver 1px solid;cursor:text;border-right:silver 1px solid;padding-top:4px" id=codeSnippetWrapper>
-<pre style="border-bottom-style:none;text-align:left;padding-bottom:0;line-height:12pt;background-color:#f4f4f4;margin:0;border-left-style:none;padding-left:0;width:100%;padding-right:0;font-family:courier new,courier,monospace;direction:ltr;border-top-style:none;color:#000;border-right-style:none;font-size:8pt;overflow:visible;padding-top:0" id=codeSnippet><span style=color:#00f>public</span> <span style=color:#00f>interface</span> IDependencyResolver<br>{<br>    <span style=color:#00f>object</span> GetService(Type serviceType);<br>    IEnumerable&lt;<span style=color:#00f>object</span>&gt; GetServices(Type serviceType);<br>}</pre>
-<p>
+</ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp>  <span class=k>public</span> <span class=k>interface</span> <span class=n>IDependencyResolver</span>
+<span class=p>{</span>
+    <span class=kt>object</span> <span class=n>GetService</span><span class=p>(</span><span class=n>Type</span> <span class=n>serviceType</span><span class=p>);</span>
+    <span class=n>IEnumerable</span><span class=p>&lt;</span><span class=kt>object</span><span class=p>&gt;</span> <span class=n>GetServices</span><span class=p>(</span><span class=n>Type</span> <span class=n>serviceType</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
 </div>
-<pre><code>&lt;li&gt;
-  Pasarle dos delegates, el primero del cual se corresponde al método GetService y el segundo al método GetServices
-&lt;/li&gt;
-&lt;li&gt;
-  Pasarle un object. En este caso el object &lt;em&gt;debe&lt;/em&gt; implementar la interfaz IServiceLocator. Pero (imagino que) ASP.NET MVC3 invocará los métodos via reflection, por lo que &lt;em&gt;cualquier&lt;/em&gt; IServiceLocator vale, no es necesario usar el assembly de codeplex. Supongo que es para evitar tener una dependencia de MVC3 hacia un assembly “externo”.
-&lt;/li&gt;&lt;/ol&gt; 
+</div><ul>
+<li>Pasarle dos delegates, el primero del cual se corresponde al método GetService y el segundo al método GetServices</li>
+<li>Pasarle un object. En este caso el object <em>debe</em> implementar la interfaz IServiceLocator. Pero (imagino que) ASP.NET MVC3 invocará los métodos via reflection, por lo que <em>cualquier</em> IServiceLocator vale, no es necesario usar el assembly de codeplex. Supongo que es para evitar tener una dependencia de MVC3 hacia un assembly “externo”.</li>
+</ul>
+<p>Veamos un ejemplo:</p>
+<p>P.ej. si usásemos Unity podríamos crear un <code>IDependencyResolver</code> propio:</p>
+<pre tabindex=0><code class=language-cshap data-lang=cshap>public class UnityDependencyResolver : IDependencyResolver
+{
+    private IUnityContainer _ctr;
 
-&lt;p&gt;
-  Veamos un ejemplo:
-&lt;/p&gt;
+    public UnityDependencyResolver(IUnityContainer ctr)
+    {
+        _ctr = ctr;
+    }
 
-&lt;p&gt;
-  P.ej. si usásemos Unity podríamos crear un IDependencyResolver propio:
-&lt;/p&gt;
+    public object GetService(Type serviceType)
+    {
+        return _ctr.Resolve(serviceType);
+    }
 
-&lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; UnityDependencyResolver : IDependencyResolver&lt;br /&gt;{&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; IUnityContainer _ctr;&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; UnityDependencyResolver(IUnityContainer ctr)&lt;br /&gt;    {&lt;br /&gt;        _ctr = ctr;&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;object&lt;/span&gt; GetService(Type serviceType)&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _ctr.Resolve(serviceType);&lt;br /&gt;    }&lt;br /&gt;&lt;br /&gt;    &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; IEnumerable&amp;lt;&lt;span style=&quot;color: #0000ff&quot;&gt;object&lt;/span&gt;&amp;gt; GetServices(Type serviceType)&lt;br /&gt;    {&lt;br /&gt;        &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; _ctr.ResolveAll(serviceType);&lt;br /&gt;    }&lt;br /&gt;}&lt;/pre&gt;
-  
-  &lt;p&gt;
-    &lt;/div&gt; 
-    
-    &lt;p&gt;
-      Y registrarlo en el global.asax:
-    &lt;/p&gt;
-    
-    &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-      &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;UnityContainer ctr = &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityContainer();&lt;br /&gt;DependencyResolver.SetResolver(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityDependencyResolver(ctr));&lt;/pre&gt;
-      
-      &lt;p&gt;
-        &lt;/div&gt; 
-        
-        &lt;p&gt;
-          Guay! Pero también podríamos usar la versión que admite un object y pasarle una implementación de IServiceLocator. La versió 2.0 de Unity ya viene con el assembly del service locator incorporado y un adaptador creado (si usais versiones anteriores de Unity os podéis &lt;a href=&quot;http://commonservicelocator.codeplex.com/&quot;&gt;descargar tanto la implementación de IServiceLocator como el adaptador para Unity desde codeplex&lt;/a&gt;).
-        &lt;/p&gt;
-        
-        &lt;p&gt;
-          En nuestro caso nos basta con agregar una referencia al ensamblado &lt;em&gt;Microsoft.Practices.ServiceLocation.dll&lt;/em&gt; (que viene con Unity o os habéis descargado de codeplex) y usar:
-        &lt;/p&gt;
-        
-        &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-          &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;UnityContainer ctr = &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityContainer();&lt;br /&gt;DependencyResolver.SetResolver(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityServiceLocator(ctr));&lt;/pre&gt;
-          
-          &lt;p&gt;
-            &lt;/div&gt; 
-            
-            &lt;p&gt;
-              (Si usáis una versión de Unity anterior a la 2.0 necesitaréis también una referencia a &lt;em&gt;Microsoft.Practices.Unity.ServiceLocatorAdapter.dll&lt;/em&gt; que también os habréis descargado de codeplex).
-            &lt;/p&gt;
-            
-            &lt;p&gt;
-              Listos! Con esto MVC3 ya usará nuestro DependencyResolver para crear los controladores, así que ya podremos inyectarles dependencias (fijaos que no ha sido necesario crear una factoría propia como hacíamos en MVC2).
-            &lt;/p&gt;
-            
-            &lt;p&gt;
-              &lt;strong&gt;3. IControllerActivator&lt;/strong&gt;
-            &lt;/p&gt;
-            
-            &lt;p&gt;
-              IControllerActivator es una interfaz nueva de MVC3 cuya responsabilidad es devolver una instancia de un controlador de un determinado tipo. Antes esa responsabilidad era &lt;em&gt;una más&lt;/em&gt; de las responsabilidades de la factoría de controladores: cuando en MVC2 queríamos usar DI generalmente implementábamos una factoría propia &lt;em&gt;derivada&lt;/em&gt; de &lt;em&gt;DefaultControllerFactory &lt;/em&gt;y refefiniamos el método GetControllerInstance:
-            &lt;/p&gt;
-            
-            &lt;p&gt;
-              P.ej. esa sería una factoría de controladores para usar IServiceLocator en MVC2:
-            &lt;/p&gt;
-            
-            &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-              &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;class&lt;/span&gt; ServiceLocatorControllerFactory : DefaultControllerFactory&lt;br /&gt; {&lt;br /&gt;     &lt;span style=&quot;color: #0000ff&quot;&gt;private&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;readonly&lt;/span&gt; IServiceLocator _sl;&lt;br /&gt;     &lt;span style=&quot;color: #0000ff&quot;&gt;public&lt;/span&gt; ServiceLocatorControllerFactory(IServiceLocator sl) &lt;br /&gt;     {&lt;br /&gt;         _sl = sl;&lt;br /&gt;     }&lt;br /&gt;     &lt;span style=&quot;color: #0000ff&quot;&gt;protected&lt;/span&gt; &lt;span style=&quot;color: #0000ff&quot;&gt;override&lt;/span&gt; IController GetControllerInstance(RequestContext requestContext, Type controllerType)&lt;br /&gt;     {&lt;br /&gt;         IController controller = &lt;span style=&quot;color: #0000ff&quot;&gt;null&lt;/span&gt;;&lt;br /&gt;         controller = _sl != &lt;span style=&quot;color: #0000ff&quot;&gt;null&lt;/span&gt; ?  _sl.GetInstance(controllerType) &lt;span style=&quot;color: #0000ff&quot;&gt;as&lt;/span&gt; IController : &lt;br /&gt;             &lt;span style=&quot;color: #0000ff&quot;&gt;base&lt;/span&gt;.GetControllerInstance(requestContext, controllerType);&lt;br /&gt;         &lt;span style=&quot;color: #0000ff&quot;&gt;return&lt;/span&gt; controller;&lt;br /&gt;     }&lt;br /&gt; }&lt;/pre&gt;
-              
-              &lt;p&gt;
-                &lt;/div&gt; 
-                
-                &lt;p&gt;
-                  En MVC3 han separado los dos comportamientos: Por un lado el decidir &lt;em&gt;que&lt;/em&gt; tipo de controlador instanciar se queda en la factoría de controladores y por otro lado &lt;em&gt;instanciar&lt;/em&gt; el controlador es responsabilidad de &lt;em&gt;IControllerActivator&lt;/em&gt;.
-                &lt;/p&gt;
-                
-                &lt;p&gt;
-                  El uso de IControllerActivator nos permite definir &lt;em&gt;como&lt;/em&gt; se crean nuestros controladores. Si no hay ningún IControllerActivator MVC3 usará el DependencyResolver (así que &lt;strong&gt;no&lt;/strong&gt; es necesario implementar IControllerActivator sólo para DI). Si no hay DependencyResolver pues supongo que usará Reflection.
-                &lt;/p&gt;
-                
-                &lt;p&gt;
-                  Como MVC3 busca las cosas en varios sitios podemos pasarle el IControllerActivator a la DefaultControllerFactory (tiene un parámetro que acepta un IControllerActivator) &lt;strong&gt;o bien&lt;/strong&gt;, registrarlo en el DependencyResolver. O sea podemos usar esto:
-                &lt;/p&gt;
-                
-                &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #008000&quot;&gt;// Registramos un singleton con nuestro IControllerActivator&lt;/span&gt;&lt;br /&gt;ctr.RegisterInstance&amp;lt;IControllerActivator&amp;gt;(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; CustomControllerActivator());&lt;br /&gt;DependencyResolver.SetResolver(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityServiceLocator(ctr));&lt;br /&gt;&lt;span style=&quot;color: #008000&quot;&gt;// No registramos IControllerFactory por lo que se usará la DefaultControllerFactory&lt;/span&gt;&lt;br /&gt;&lt;/pre&gt;
-                &lt;/div&gt;
-                
-                &lt;p&gt;
-                  O bien esto:
-                &lt;/p&gt;
-                
-                &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                  &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #008000&quot;&gt;// Registramos la DefaultControllerFactory como la factoría a usar&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #008000&quot;&gt;// pasándole el IControllerActivator deseado&lt;/span&gt;&lt;br /&gt;ctr.RegisterInstance&amp;lt;IControllerFactory&amp;gt;&lt;br /&gt;    (&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; DefaultControllerFactory(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; CustomControllerActivator()));&lt;br /&gt;DependencyResolver.SetResolver(&lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; UnityServiceLocator(ctr));&lt;/pre&gt;
-                  
-                  &lt;p&gt;
-                    &lt;/div&gt; 
-                    
-                    &lt;p&gt;
-                      Pero &lt;strong&gt;ambas&lt;/strong&gt; cosas a la vez no (os dará error).
-                    &lt;/p&gt;
-                    
-                    &lt;p&gt;
-                      &lt;strong&gt;4. Nuevos Helpers&lt;/strong&gt;
-                    &lt;/p&gt;
-                    
-                    &lt;p&gt;
-                      Bueno, ahora tenemos un conjunto de &lt;em&gt;Helpers&lt;/em&gt; nuevos (bueno, nuevos para MVC, porque ya estaban en WebMatrix). Para usar esos helpers basta con agregar una referencia a System.Web.Helpers (viene ya por defecto):
-                    &lt;/p&gt;
-                    
-                    &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                      &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&amp;lt;div&amp;gt;&lt;br /&gt;    El Hash de eiximenis es: @Crypto.Hash(&lt;span style=&quot;color: #006080&quot;&gt;&quot;eiximenis&quot;&lt;/span&gt;)&lt;br /&gt;&amp;lt;/div&amp;gt;&lt;/pre&gt;
-                      
-                      &lt;p&gt;
-                        &lt;/div&gt; 
-                        
-                        &lt;p&gt;
-                          Diria que &lt;strong&gt;no&lt;/strong&gt; están disponibles todos los helpers que hay en WebMatrix… Espero que en la versión final sí estén todos, porque hay algunos que son una pasada!
-                        &lt;/p&gt;
-                        
-                        &lt;p&gt;
-                          &lt;strong&gt;5. Ajax no “obtrusivo” (unobtrusive)&lt;/strong&gt;
-                        &lt;/p&gt;
-                        
-                        &lt;p&gt;
-                          El helper Ajax de MVC3 puede generar código Ajax que &lt;strong&gt;no&lt;/strong&gt; está mezclado con el código HTML, aprovechando jQuery y una de las nuevas capacidades de HTML5… P.ej. el siguiente código en una vista:
-                        &lt;/p&gt;
-                        
-                        &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                          &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;@Ajax.ActionLink(&lt;span style=&quot;color: #006080&quot;&gt;&quot;Pulsa aquí para modif el DIV&quot;&lt;/span&gt;, &lt;span style=&quot;color: #006080&quot;&gt;&quot;AjaxAction&quot;&lt;/span&gt;, &lt;span style=&quot;color: #0000ff&quot;&gt;new&lt;/span&gt; AjaxOptions() { UpdateTargetId=&lt;span style=&quot;color: #006080&quot;&gt;&quot;mydiv&quot;&lt;/span&gt;})&lt;br /&gt;&amp;lt;div id=&lt;span style=&quot;color: #006080&quot;&gt;&quot;mydiv&quot;&lt;/span&gt;&amp;gt;Div a modificar&amp;lt;/div&amp;gt;&lt;br /&gt;&lt;/pre&gt;
-                          
-                          &lt;p&gt;
-                            &lt;/div&gt; 
-                            
-                            &lt;p&gt;
-                              Nos genera el código HTML:
-                            &lt;/p&gt;
-                            
-                            &lt;div style=&quot;border-bottom: silver 1px solid; text-align: left; border-left: silver 1px solid; padding-bottom: 4px; line-height: 12pt; background-color: #f4f4f4; margin: 20px 0px 10px; padding-left: 4px; width: 97.5%; padding-right: 4px; font-family: 'Courier New', courier, monospace; direction: ltr; max-height: 200px; font-size: 8pt; overflow: auto; border-top: silver 1px solid; cursor: text; border-right: silver 1px solid; padding-top: 4px&quot; id=&quot;codeSnippetWrapper&quot;&gt;
-                              &lt;pre style=&quot;border-bottom-style: none; text-align: left; padding-bottom: 0px; line-height: 12pt; background-color: #f4f4f4; margin: 0em; border-left-style: none; padding-left: 0px; width: 100%; padding-right: 0px; font-family: 'Courier New', courier, monospace; direction: ltr; border-top-style: none; color: black; border-right-style: none; font-size: 8pt; overflow: visible; padding-top: 0px&quot; id=&quot;codeSnippet&quot;&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #800000&quot;&gt;a&lt;/span&gt; &lt;span style=&quot;color: #ff0000&quot;&gt;data-ajax&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;=&quot;true&quot;&lt;/span&gt; &lt;span style=&quot;color: #ff0000&quot;&gt;data-ajax-mode&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;=&quot;replace&quot;&lt;/span&gt; &lt;span style=&quot;color: #ff0000&quot;&gt;data-ajax-update&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;=&quot;#mydiv&quot;&lt;/span&gt; &lt;span style=&quot;color: #ff0000&quot;&gt;href&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;=&quot;/Home/AjaxAction&quot;&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;gt;&lt;/span&gt;Pulsa aqu&amp;#237; para modif el DIV&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #800000&quot;&gt;a&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&quot;color: #800000&quot;&gt;div&lt;/span&gt; &lt;span style=&quot;color: #ff0000&quot;&gt;id&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;=&quot;mydiv&quot;&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;gt;&lt;/span&gt;Div a modificar&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span style=&quot;color: #800000&quot;&gt;div&lt;/span&gt;&lt;span style=&quot;color: #0000ff&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/pre&gt;
-                              
-                              &lt;p&gt;
-                                &lt;/div&gt; 
-                                
-                                &lt;p&gt;
-                                  Fijaos que hay atributos “&lt;em&gt;data-ajax-*“ &lt;/em&gt;que son interpretados por jQuery para realizar las acciones: de esa manera no hay ninguna llamada a ningún script mezclado con el código. Los atributos que empiezan por “data-“ son considerados especiales en HTML5 (&lt;a href=&quot;http://www.javascriptkit.com/dhtmltutors/customattributes.shtml&quot;&gt;custom HTML5 attributes&lt;/a&gt;): HTML5 no admite que pongamos nuestros propios atributos a no ser que empiecen por data-. Esto permite separar el comportamiento (definiendolo en estos atributos especiales) del código.
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  &lt;strong&gt;6. Soporte para Razor&lt;/strong&gt;
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Pues… sigue bajo mínimos… Es decir, Razor está totalmente soportado en run-time (y ahora con sintaxis VB.NET también!) pero para VS2010 Razor sigue sin existir. Las vistas .cshtml (o .vbhtml) no tienen ni sintaxis coloreada ni tampoco intellisense. Pero es que ni tan siquiera las reconoce como HTML (o sea ni tenemos intellisense de HTML tampoco).
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Al margen de esto hay algunas novedades menores para Razor como el soporte de @model para definir el modelo, pero vamos… nada excepcionalmente nuevo.
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  &lt;strong&gt;7. Conclusiones&lt;/strong&gt;
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Las dos grandes novedades de esta Beta, respecto a la preview1, son algunas mejoras más en la inyección de dependencias (DependencyResolver, IControllerActivator) y el soporte para ajax no “obtrusivo”. El resto son mejoras menores (aunque interesantes).
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Sigo pensando que, del mismo modo que se llama MVC3 se podría llamar MVC2.5, porque no hay cambios espectacularmente grandes (excepto Razor, pero es &lt;em&gt;simplemente&lt;/em&gt; otro ViewEngine, como muchos más que ya existían). Eso no es necesariamente malo: el framework ya está alcanzando cierto grado de madurez.
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Para finalizar, leeros las &lt;a href=&quot;http://www.asp.net/learn/whitepapers/mvc3-release-notes&quot;&gt;release notes de la beta de MVC3&lt;/a&gt; donde se enumeran las novedades!
-                                &lt;/p&gt;
-                                
-                                &lt;p&gt;
-                                  Un saludo!
-                                &lt;/p&gt;
-</code></pre>
+    public IEnumerable&lt;object&gt; GetServices(Type serviceType)
+    {
+        return _ctr.ResolveAll(serviceType);
+    }
+}
+</code></pre><p>Y registrarlo en el global.asax:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>UnityContainer</span> <span class=n>ctr</span> <span class=p>=</span> <span class=k>new</span> <span class=n>UnityContainer</span><span class=p>();</span>
+<span class=n>DependencyResolver</span><span class=p>.</span><span class=n>SetResolver</span><span class=p>(</span><span class=k>new</span> <span class=n>UnityDependencyResolver</span><span class=p>(</span><span class=n>ctr</span><span class=p>));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Guay! Pero también podríamos usar la versión que admite un object y pasarle una implementación de IServiceLocator. La versió 2.0 de Unity ya viene con el assembly del service locator incorporado y un adaptador creado (si usais versiones anteriores de Unity os podéis <a href=http://commonservicelocator.codeplex.com/>descargar tanto la implementación de IServiceLocator como el adaptador para Unity desde codeplex</a>).</p>
+<p>En nuestro caso nos basta con agregar una referencia al ensamblado <em>Microsoft.Practices.ServiceLocation.dll</em> (que viene con Unity o os habéis descargado de codeplex) y usar:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=n>UnityContainer</span> <span class=n>ctr</span> <span class=p>=</span> <span class=k>new</span> <span class=n>UnityContainer</span><span class=p>();</span>
+<span class=n>DependencyResolver</span><span class=p>.</span><span class=n>SetResolver</span><span class=p>(</span><span class=k>new</span> <span class=n>UnityServiceLocator</span><span class=p>(</span><span class=n>ctr</span><span class=p>));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>(Si usáis una versión de Unity anterior a la 2.0 necesitaréis también una referencia a <em>Microsoft.Practices.Unity.ServiceLocatorAdapter.dll</em> que también os habréis descargado de codeplex).</p>
+<p>Listos! Con esto MVC3 ya usará nuestro DependencyResolver para crear los controladores, así que ya podremos inyectarles dependencias (fijaos que no ha sido necesario crear una factoría propia como hacíamos en MVC2).</p>
+<h2 id=icontrolleractivator>IControllerActivator</h2>
+<p>IControllerActivator es una interfaz nueva de MVC3 cuya responsabilidad es devolver una instancia de un controlador de un determinado tipo. Antes esa responsabilidad era <em>una más</em> de las responsabilidades de la factoría de controladores: cuando en MVC2 queríamos usar DI generalmente implementábamos una factoría propia <em>derivada</em> de <em>DefaultControllerFactory </em>y refefiniamos el método GetControllerInstance:</p>
+<p>P.ej. esa sería una factoría de controladores para usar IServiceLocator en MVC2:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=k>class</span> <span class=nc>ServiceLocatorControllerFactory</span> <span class=p>:</span> <span class=n>DefaultControllerFactory</span>
+ <span class=p>{</span>
+     <span class=k>private</span> <span class=k>readonly</span> <span class=n>IServiceLocator</span> <span class=m>_</span><span class=n>sl</span><span class=p>;</span>
+     <span class=k>public</span> <span class=n>ServiceLocatorControllerFactory</span><span class=p>(</span><span class=n>IServiceLocator</span> <span class=n>sl</span><span class=p>)</span> 
+     <span class=p>{</span>
+         <span class=m>_</span><span class=n>sl</span> <span class=p>=</span> <span class=n>sl</span><span class=p>;</span>
+     <span class=p>}</span>
+     <span class=k>protected</span> <span class=k>override</span> <span class=n>IController</span> <span class=n>GetControllerInstance</span><span class=p>(</span><span class=n>RequestContext</span> <span class=n>requestContext</span><span class=p>,</span> <span class=n>Type</span> <span class=n>controllerType</span><span class=p>)</span>
+     <span class=p>{</span>
+         <span class=n>IController</span> <span class=n>controller</span> <span class=p>=</span> <span class=k>null</span><span class=p>;</span>
+         <span class=n>controller</span> <span class=p>=</span> <span class=m>_</span><span class=n>sl</span> <span class=p>!=</span> <span class=k>null</span> <span class=p>?</span>  <span class=m>_</span><span class=n>sl</span><span class=p>.</span><span class=n>GetInstance</span><span class=p>(</span><span class=n>controllerType</span><span class=p>)</span> <span class=k>as</span> <span class=n>IController</span> <span class=p>:</span> 
+             <span class=k>base</span><span class=p>.</span><span class=n>GetControllerInstance</span><span class=p>(</span><span class=n>requestContext</span><span class=p>,</span> <span class=n>controllerType</span><span class=p>);</span>
+         <span class=k>return</span> <span class=n>controller</span><span class=p>;</span>
+     <span class=p>}</span>
+ <span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>En MVC3 han separado los dos comportamientos: Por un lado el decidir qué tipo de controlador instanciar se queda en la factoría de controladores y por otro lado instanciar el controlador es responsabilidad de <code>IControllerActivator</code>.</p>
+<p>El uso de IControllerActivator nos permite definir como se crean nuestros controladores. Si no hay ningún <code>IControllerActivator</code> MVC3 usará el <code>DependencyResolver</code> (así que <strong>no</strong> es necesario implementar <code>IControllerActivator</code> sólo para DI). Si no hay <code>DependencyResolver</code> pues supongo que usará Reflection.</p>
+<p>Como MVC3 busca las cosas en varios sitios podemos pasarle el <code>IControllerActivator</code> a la DefaultControllerFactory (tiene un parámetro que acepta un <code>IControllerActivator</code>) <strong>o bien</strong>, registrarlo en el <code>DependencyResolver</code>. O sea podemos usar esto:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=c1>// Registramos un singleton con nuestro IControllerActivator
+</span><span class=c1></span><span class=n>ctr</span><span class=p>.</span><span class=n>RegisterInstance</span><span class=p>&lt;</span><span class=n>IControllerActivator</span><span class=p>&gt;(</span><span class=k>new</span> <span class=n>CustomControllerActivator</span><span class=p>());</span>
+<span class=n>DependencyResolver</span><span class=p>.</span><span class=n>SetResolver</span><span class=p>(</span><span class=k>new</span> <span class=n>UnityServiceLocator</span><span class=p>(</span><span class=n>ctr</span><span class=p>));</span>
+<span class=c1>// No registramos IControllerFactory por lo que se usará la DefaultControllerFactory
+</span></code></pre></td></tr></table>
+</div>
+</div><p>O bien esto:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=c1>// Registramos la DefaultControllerFactory como la factoría a usar
+</span><span class=c1>// pasándole el IControllerActivator deseado
+</span><span class=c1></span><span class=n>ctr</span><span class=p>.</span><span class=n>RegisterInstance</span><span class=p>&lt;</span><span class=n>IControllerFactory</span><span class=p>&gt;(</span><span class=k>new</span> <span class=n>DefaultControllerFactory</span><span class=p>(</span><span class=k>new</span> <span class=n>CustomControllerActivator</span><span class=p>()));</span>
+<span class=n>DependencyResolver</span><span class=p>.</span><span class=n>SetResolver</span><span class=p>(</span><span class=k>new</span> <span class=n>UnityServiceLocator</span><span class=p>(</span><span class=n>ctr</span><span class=p>));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Pero <strong>ambas</strong> cosas a la vez no (os dará error).</p>
+<h2 id=nuevos-helpers>Nuevos Helpers</h2>
+<p>Bueno, ahora tenemos un conjunto de <em>Helpers</em> nuevos (bueno, nuevos para MVC, porque ya estaban en WebMatrix). Para usar esos helpers basta con agregar una referencia a <code>System.Web.Helpers</code> (viene ya por defecto):</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
+    El Hash de eiximenis es: @Crypto.Hash(&#34;eiximenis&#34;)
+<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Diria que <strong>no</strong> están disponibles todos los helpers que hay en WebMatrix… Espero que en<br>
+la versión final sí estén todos, porque hay algunos que son una pasada!</p>
+<h2 id=ajax-no-obtrusivo-unobtrusive>Ajax no “obtrusivo” (unobtrusive)</h2>
+<p>El helper Ajax de MVC3 puede generar código Ajax que <strong>no</strong> está mezclado con el código HTML, aprovechando jQuery y una de las nuevas capacidades de HTML5… P.ej. el siguiente código en una vista:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>@Ajax.ActionLink(&#34;Pulsa aquí para modif el DIV&#34;, &#34;AjaxAction&#34;, new AjaxOptions() { UpdateTargetId=&#34;mydiv&#34;})
+<span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;mydiv&#34;</span><span class=p>&gt;</span>Div a modificar<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Nos genera el código HTML:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>a</span> <span class=na>data-ajax</span><span class=o>=</span><span class=s>&#34;true&#34;</span> <span class=na>data-ajax-mode</span><span class=o>=</span><span class=s>&#34;replace&#34;</span> <span class=na>data-ajax-update</span><span class=o>=</span><span class=s>&#34;#mydiv&#34;</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;/Home/AjaxAction&#34;</span><span class=p>&gt;</span>Pulsa aquí para modif el DIV<span class=p>&lt;/</span><span class=nt>a</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;mydiv&#34;</span><span class=p>&gt;</span>Div a modificar<span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Fijaos que hay atributos <code>data-ajax-*</code> que son interpretados por jQuery para realizar las acciones: de esa manera no hay ninguna llamada a ningún script mezclado con el código. Los atributos que empiezan por “data-“ son considerados especiales en HTML5 (<a href=http://www.javascriptkit.com/dhtmltutors/customattributes.shtml>custom HTML5 attributes</a>): HTML5 no admite que pongamos nuestros propios atributos a no ser que empiecen por data-. Esto permite separar el comportamiento (definiendolo en estos atributos especiales) del código.</p>
+<h2 id=soporte-para-razor>Soporte para Razor</h2>
+<p>Pues… sigue bajo mínimos… Es decir, Razor está totalmente soportado en run-time (y ahora con sintaxis VB.NET también!) pero para VS2010 Razor sigue sin existir. Las vistas .cshtml (o .vbhtml) no tienen ni sintaxis coloreada ni tampoco intellisense. Pero es que ni tan siquiera las reconoce como HTML (o sea ni tenemos intellisense de HTML tampoco).</p>
+<p>Al margen de esto hay algunas novedades menores para Razor como el soporte de @model para definir el modelo, pero vamos… nada excepcionalmente nuevo.</p>
+<h2 id=conclusiones>Conclusiones</h2>
+<p>Las dos grandes novedades de esta Beta, respecto a la preview1, son algunas mejoras más en la inyección de dependencias (DependencyResolver, IControllerActivator) y el soporte para ajax no “obtrusivo”. El resto son mejoras menores (aunque interesantes).</p>
+<p>Sigo pensando que, del mismo modo que se llama MVC3 se podría llamar MVC2.5, porque no hay cambios espectacularmente grandes (excepto Razor, pero es <em>simplemente</em> otro ViewEngine, como muchos más que ya existían). Eso no es necesariamente malo: el framework ya está alcanzando cierto grado de madurez.</p>
+<p>Para finalizar, leeros las <a href=http://www.asp.net/learn/whitepapers/mvc3-release-notes>release notes de la beta de MVC3</a> donde se enumeran las novedades!</p>
+<p>Un saludo!</p>
 </article>
 <script>'use strict';function wrap(a,b){a.parentNode.insertBefore(b,a),b.appendChild(a)}(function(){var a=document.querySelector('.single__contents');a?a.querySelectorAll('pre > code').forEach(function(b){var a=b.getAttribute('data-lang'),c=document.createElement('div'),e=null,d=null;a&&a.includes(':')?(e=a.split(':')[0],d=a.split(':')[1],c.className='language-'+e,c.setAttribute('data-lang',d),b.className='language-'+e,b.setAttribute('data-lang',d),b.setAttribute('id',d)):a||(c.setAttribute('data-lang','Code'),c.className='language-code'),(!a||d)&&wrap(b.parentNode,c)}):null})();var langCodeElem=document.querySelectorAll('.language-code');langCodeElem?langCodeElem.forEach(function(b){var a=document.createElement('span');a.className='copy-to-clipboard',a.setAttribute('title','Copy to clipboard'),b.append(a)}):null</script>
 <div class=donation>
@@ -516,7 +519,17 @@ Compulsive Developer
 </label>
 </div>
 <div class=toc data-dir=ltr data-folding=false data-ani=true>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li><a href=#creación-de-aplicaciones>Creación de aplicaciones</a></li>
+<li><a href=#donde-está-iservicelocator>Donde está IServiceLocator</a></li>
+<li><a href=#icontrolleractivator>IControllerActivator</a></li>
+<li><a href=#nuevos-helpers>Nuevos Helpers</a></li>
+<li><a href=#ajax-no-obtrusivo-unobtrusive>Ajax no “obtrusivo” (unobtrusive)</a></li>
+<li><a href=#soporte-para-razor>Soporte para Razor</a></li>
+<li><a href=#conclusiones>Conclusiones</a></li>
+</ul>
+</nav>
 </div>
 </section>
 </aside>

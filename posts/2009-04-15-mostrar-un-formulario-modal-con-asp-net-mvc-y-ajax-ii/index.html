@@ -201,68 +201,152 @@ En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1446">
 <p>En este post voy a comentar como podemos comunicar nuestro formulario modal con nuestros controladores, para así poder validar (parcialmente o totalmente) el formulario desde servidor, sin necesidad de hacer un <em>submit</em>, usando Ajax.</p>
 <p>En mi caso p.ej. a medida que el usuario va entrando un posible nickname, se le indica si dicho nickname ya está ocupado o no (aunqué en la versión final probablemente sea un boton “comprobar nick”, ya que una llamada Ajax cada vez que se entre un carácter en un textbox quizá es demasiado&mldr; pero eso no afecta al sentido del post). Para realizar las llamadas Ajax cada vez que el usuario pulse una tecla en el campo “nick” del formulario modal vamos a usar jQuery.</p>
 <p>Lo primero que debemos cambiar respecto al post anterior es la forma en como abrimos el formulario modal: el método <em>modal</em> de SimpleModal, admite varios parámetros, uno de los cuales es una función de <em>callback</em> que SimpleModal llamará. A través de esta función vamos a registrar una función gestora del evento <em>KeyPress</em> usando jQuery. Recordáis la función show_popup() que teníamos en la vista Index.aspx? Su código ahora queda así:</p>
-<pre class=code><span style=color:blue>function </span>show_popup() {
-    $(<span style=color:#a31515>"#popup"</span>).modal( { onOpen: popup_open});
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Hemos añadido el parámetro onOpen con el nombre de una función javascript que SimpleModal nos llamará cuando deba abrir el formulario modal.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>show_popup</span><span class=p>()</span> <span class=p>{</span>
+    <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#popup&#34;</span><span class=p>).</span><span class=nx>modal</span><span class=p>(</span> <span class=p>{</span> <span class=nx>onOpen</span><span class=o>:</span> <span class=nx>popup_open</span><span class=p>});</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Hemos añadido el parámetro onOpen con el nombre de una función javascript que SimpleModal nos llamará cuando deba abrir el formulario modal.</p>
 <p>Una particularidad de SimpleModal es que si usamos la función de callback onOpen, debemos encargarnos nosotros de abrir el formulario modal. Así el código de la función popup_open queda así:</p>
-<pre class=code><span style=color:blue>function </span>popup_open(dialog) {
-    dialog.overlay.show(1);
-    dialog.container.show(1);
-    dialog.data.show(1);
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a><a href=http://11011.net/software/vspaste></a></p>
-<p>Debemos llamar al método <a href=http://docs.jquery.com/Effects/show>show</a> (un método estándar definido en jQuery) con los tres elementos que componen el formulario modal de SimpleModal: Overlay (que lo que hace es inhabilitar el resto de la pantalla), Container (que muestra el borde del formulario) y Data (que muestra el contenido del formulario).</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>popup_open</span><span class=p>(</span><span class=nx>dialog</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>overlay</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>container</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Debemos llamar al método <a href=http://docs.jquery.com/Effects/show>show</a> (un método estándar definido en jQuery) con los tres elementos que componen el formulario modal de SimpleModal: Overlay (que lo que hace es inhabilitar el resto de la pantalla), Container (que muestra el borde del formulario) y Data (que muestra el contenido del formulario).</p>
 <p>Otra forma “más jQuery” de realizar lo mismo es encadenar las llamadas: Generalmente todos los métodos jQuery aceptan un parámetro <em>callback</em> con código a realizar cuando se termine el método. Así también podríamos escribir la función popup_open como:</p>
-<pre class=code><span style=color:blue>function </span>popup_open(dialog) {
-    dialog.overlay.show(1,<span style=color:blue>function</span>() {
-        dialog.container.show(1,<span style=color:blue>function</span>() {
-            dialog.data.show(1);
-        });
-    });
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>El siguiente paso es añadir el código para suscribirnos al evento onKeyPress del textbox cuyo id era “nick”. jQuery unifica todos los eventos de los distintos browsers en un conjunto de eventos propio, lo que permite más fácilmente desarrollar aplicaciones cross-browser. El método keypress de un <em>objeto jQuery</em> permite suscribir un <em>callback</em> al evento de pulsación de una tecla. Un <em>objeto jQuery</em> es un objeto javascript que se obtiene generalmente usando la función selector (comúnmente llamada $) de jQuery. Así la llamada:</p>
-<pre class=code>$(<span style=color:#a31515>"#popup"</span>)</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Me devuelve el <em>objeto jQuery</em> asociado al elemento DOM cuyo ID sea “popup”. Esto <strong>no</strong> es equivalente a document.getElementById(“popup”) que me devuelve el objeto DOM directamente&mldr; es mucho mejor, ya que sobre el objeto jQuery puedo usar todas las propiedades de jQuery (como el método show() que hemos visto antes o el método modal() que define SimpleModal)!</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>popup_open</span><span class=p>(</span><span class=nx>dialog</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>overlay</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>dialog</span><span class=p>.</span><span class=nx>container</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span><span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>dialog</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>);</span>
+        <span class=p>});</span>
+    <span class=p>});</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>El siguiente paso es añadir el código para suscribirnos al evento onKeyPress del textbox cuyo id era “nick”. jQuery unifica todos los eventos de los distintos browsers en un conjunto de eventos propio, lo que permite más fácilmente desarrollar aplicaciones cross-browser. El método keypress de un <em>objeto jQuery</em> permite suscribir un <em>callback</em> al evento de pulsación de una tecla. Un <em>objeto jQuery</em> es un objeto javascript que se obtiene generalmente usando la función selector (comúnmente llamada $) de jQuery. Así la llamada:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#popup&#34;</span><span class=p>)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Me devuelve el <em>objeto jQuery</em> asociado al elemento DOM cuyo ID sea “popup”. Esto <strong>no</strong> es equivalente a document.getElementById(“popup”) que me devuelve el objeto DOM directamente&mldr; es mucho mejor, ya que sobre el objeto jQuery puedo usar todas las propiedades de jQuery (como el método show() que hemos visto antes o el método modal() que define SimpleModal)!</p>
 <p>Así pues, para suscribirnos al keypress del textbox cuyo ID es “nick” usando jQuery, el código de popup_open queda:</p>
-<pre class=code><span style=color:blue>function </span>popup_open(dialog) {
-    dialog.overlay.show(1, <span style=color:blue>function</span>() {
-        dialog.container.show(1, <span style=color:blue>function</span>() {
-            dialog.data.show(1, <span style=color:blue>function</span>() {
-                $(<span style=color:#a31515>"#nick"</span>).keypress(<span style=color:blue>function</span>(e) { });
-            });
-        });
-    });
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Ahora sólo nos rellenar la función anónima que pasamos como parámetro a la llamada a keypress con el código que realice una petición Ajax a un controlador para que compruebe si el nick que se ha entrado está libre o no. Para ello vamos a usar la función <a href=http://docs.jquery.com/Ajax/jQuery.getJSON>getJSON de jQuery</a>, que lo que hace es realizar una petición Ajax a la URL especificada, esperar la respuesta en <a href=http://www.json.org/>formato JSON</a>, deserializar la respuesta en un objeto Javascript y ejecutar el método de <em>callback</em> que nosotros le indiquemos.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>popup_open</span><span class=p>(</span><span class=nx>dialog</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>overlay</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>dialog</span><span class=p>.</span><span class=nx>container</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>dialog</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+                <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#nick&#34;</span><span class=p>).</span><span class=nx>keypress</span><span class=p>(</span><span class=kd>function</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span> <span class=p>});</span>
+            <span class=p>});</span>
+        <span class=p>});</span>
+    <span class=p>});</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Ahora sólo nos rellenar la función anónima que pasamos como parámetro a la llamada a keypress con el código que realice una petición Ajax a un controlador para que compruebe si el nick que se ha entrado está libre o no. Para ello vamos a usar la función <a href=http://docs.jquery.com/Ajax/jQuery.getJSON>getJSON de jQuery</a>, que lo que hace es realizar una petición Ajax a la URL especificada, esperar la respuesta en <a href=http://www.json.org/>formato JSON</a>, deserializar la respuesta en un objeto Javascript y ejecutar el método de <em>callback</em> que nosotros le indiquemos.</p>
 <p>Así, pues usando getJSON el código de popup_open queda así:</p>
-<pre class=code><span style=color:blue>function </span>popup_open(dialog) {
-    dialog.overlay.show(1, <span style=color:blue>function</span>() {
-        dialog.container.show(1, <span style=color:blue>function</span>() {
-            dialog.data.show(1, <span style=color:blue>function</span>() {
-                $(<span style=color:#a31515>"#nick"</span>).keypress(<span style=color:blue>function</span>(e) {
-                    <span style=color:blue>if </span>(e.which != 13 && e.which != 8 <br>                        && e.which != 0) {
-                        <span style=color:blue>var </span>str = <span style=color:blue>this</span>.value + <br>                            String.fromCharCode(e.which);
-                        <span style=color:blue>var </span>url = <span style=color:#a31515>"/Account/Check"</span>;
-                        $.getJSON(url, { nick: escape(str) }, <br>                        <span style=color:blue>function</span>(data) {
-                            <span style=color:blue>if </span>(data.existeix) {
-                                $(<span style=color:#a31515>"#invalid_nick"</span>).show();
-                            }
-                            <span style=color:blue>else </span>{
-                                $(<span style=color:#a31515>"#invalid_nick"</span>).hide();
-                            }
-                        });
-                    }
-                });
-            });
-        });
-    });
-}</pre>
-<p>Dentro de la función gestora del evento keypress:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>popup_open</span><span class=p>(</span><span class=nx>dialog</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>overlay</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>dialog</span><span class=p>.</span><span class=nx>container</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>dialog</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>show</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+                <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#nick&#34;</span><span class=p>).</span><span class=nx>keypress</span><span class=p>(</span><span class=kd>function</span><span class=p>(</span><span class=nx>e</span><span class=p>)</span> <span class=p>{</span>
+                    <span class=k>if</span> <span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>which</span> <span class=o>!=</span> <span class=mi>13</span> <span class=o>&amp;&amp;</span> <span class=nx>e</span><span class=p>.</span><span class=nx>which</span> <span class=o>!=</span> <span class=mi>8</span> 
+                        <span class=o>&amp;&amp;</span> <span class=nx>e</span><span class=p>.</span><span class=nx>which</span> <span class=o>!=</span> <span class=mi>0</span><span class=p>)</span> <span class=p>{</span>
+                        <span class=kd>var</span> <span class=nx>str</span> <span class=o>=</span> <span class=k>this</span><span class=p>.</span><span class=nx>value</span> <span class=o>+</span> 
+                            <span class=nb>String</span><span class=p>.</span><span class=nx>fromCharCode</span><span class=p>(</span><span class=nx>e</span><span class=p>.</span><span class=nx>which</span><span class=p>);</span>
+                        <span class=kd>var</span> <span class=nx>url</span> <span class=o>=</span> <span class=s2>&#34;/Account/Check&#34;</span><span class=p>;</span>
+                        <span class=nx>$</span><span class=p>.</span><span class=nx>getJSON</span><span class=p>(</span><span class=nx>url</span><span class=p>,</span> <span class=p>{</span> <span class=nx>nick</span><span class=o>:</span> <span class=nx>escape</span><span class=p>(</span><span class=nx>str</span><span class=p>)</span> <span class=p>},</span> 
+                        <span class=kd>function</span><span class=p>(</span><span class=nx>data</span><span class=p>)</span> <span class=p>{</span>
+                            <span class=k>if</span> <span class=p>(</span><span class=nx>data</span><span class=p>.</span><span class=nx>existeix</span><span class=p>)</span> <span class=p>{</span>
+                                <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#invalid_nick&#34;</span><span class=p>).</span><span class=nx>show</span><span class=p>();</span>
+                            <span class=p>}</span>
+                            <span class=k>else</span> <span class=p>{</span>
+                                <span class=nx>$</span><span class=p>(</span><span class=s2>&#34;#invalid_nick&#34;</span><span class=p>).</span><span class=nx>hide</span><span class=p>();</span>
+                            <span class=p>}</span>
+                        <span class=p>});</span>
+                    <span class=p>}</span>
+                <span class=p>});</span>
+            <span class=p>});</span>
+        <span class=p>});</span>
+    <span class=p>});</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Dentro de la función gestora del evento <code>keypress</code>:</p>
 <ol>
 <li>Miramos que la tecla pulsada NO sea enter, backspace o tabulador</li>
 <li>Llamamos a getJSON con la URL /Account/Check (parámetro 1), con el valor del textbox codificado como parámetro (parámetro 2) y la función de callback que queremos ejecutar cuando recibamos la respuesta del servidor (parámetro 3 que es un método anónimo).
@@ -271,21 +355,40 @@ En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1446">
 </ol>
 </li>
 </ol>
-<p>¿Que nos queda por hacer? Pues por un lado modificar la vista parcial que es el formulario modal (en mi caso era SignupPopup.ascx), para añadir un <div> con un id “invalid_nick” con un mensaje que ponga “NICK INCORRECTO” (o algo así). P.ej:</p>
-<pre class=code><span style=color:blue>&lt;</span><span style=color:#a31515>div </span><span style=color:red>id</span><span style=color:blue>="invalid_nick" </span><span style=color:red>style</span><span style=color:blue>="</span><span style=color:red>display</span>:<span style=color:blue>none"&gt;
-    </span>NICK IS INVALID
-<span style=color:blue>&lt;/</span><span style=color:#a31515>div</span><span style=color:blue>&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Inicialmente lo tenemos oculto (evidentemente usaríamos CSS y alguna imágen para hacerlo más “bonito”), puesto que lo mostramos via jQuery.</p>
+<p>¿Que nos queda por hacer? Pues por un lado modificar la vista parcial que es el formulario modal (en mi caso era SignupPopup.ascx), para añadir un <code>&lt;div></code> con un id “invalid_nick” con un mensaje que ponga “NICK INCORRECTO” (o algo así). P.ej:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=o>&lt;</span><span class=nx>div</span> <span class=nx>id</span><span class=o>=</span><span class=s2>&#34;invalid_nick&#34;</span> <span class=nx>style</span><span class=o>=</span><span class=s2>&#34;display:none&#34;</span><span class=o>&gt;</span>
+    <span class=nx>NICK</span> <span class=nx>IS</span> <span class=nx>INVALID</span>
+<span class=o>&lt;</span><span class=err>/div&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Inicialmente lo tenemos oculto (evidentemente usaríamos CSS y alguna imágen para hacerlo más “bonito”), puesto que lo mostramos via jQuery.</p>
 <p>Por último lo que nos queda es hacer la función correspondiente en el controlador. En mi caso el controlador es AccountController y la acción es “Check” (como se puede deducir de la URL /Account/Check):</p>
-<pre class=code><span style=color:blue>public </span><span style=color:#2b91af>ActionResult </span>Check(<span style=color:blue>string </span>nick)
-{
-    <span style=color:blue>return new </span><span style=color:#2b91af>JsonResult</span>() {
-        Data = <span style=color:blue>new </span>{existeix = nick.Length % 2 == 0 }
-    };
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Esta acción en lugar de devolver una vista, devuelve un objeto serializado en JSON, usando JsonResult. Básicamente cuando queráis devolver un objeto codificado en JSON usando ASP.NET MVC:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-csharp data-lang=csharp><span class=k>public</span> <span class=n>ActionResult</span> <span class=n>Check</span><span class=p>(</span><span class=kt>string</span> <span class=n>nick</span><span class=p>)</span>
+<span class=p>{</span>
+    <span class=k>return</span> <span class=k>new</span> <span class=n>JsonResult</span><span class=p>()</span> <span class=p>{</span>
+        <span class=n>Data</span> <span class=p>=</span> <span class=k>new</span> <span class=p>{</span><span class=n>existeix</span> <span class=p>=</span> <span class=n>nick</span><span class=p>.</span><span class=n>Length</span> <span class=p>%</span> <span class=m>2</span> <span class=p>==</span> <span class=m>0</span> <span class=p>}</span>
+    <span class=p>};</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Esta acción en lugar de devolver una vista, devuelve un objeto serializado en JSON, usando JsonResult. Básicamente cuando queráis devolver un objeto codificado en JSON usando ASP.NET MVC:</p>
 <ol>
 <li>Creais un JsonResult.</li>
 <li>A la propiedad Data la asignais el objeto a serializar.</li>
@@ -295,17 +398,31 @@ En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1446">
 <p>¿Fácil, verdad?</p>
 <p>Saludos!</p>
 <p>PD: Recordais lo que os dije, que cuando usabamos el callback onOpen de SimpleModal debíamos “abrir” manualmente el overlay, el container y la data y que eso nos daba capacidades interesantes? Este “interesantes” viene por la API de <a href=http://docs.jquery.com/Effects>animación de jQuery</a>. P.ej. si podríamos cambiar los show() por llamadas a fadeIn para que la aparición del formulario sea más espectacular:</p>
-<pre class=code><span style=color:blue>function </span>popup_open(dialog) {
-    dialog.overlay.fadeIn(<span style=color:#a31515>'slow'</span>, <span style=color:blue>function</span>() {
-        dialog.container.fadeIn(<span style=color:#a31515>'slow'</span>, <span style=color:blue>function</span>() {
-            dialog.data.fadeIn(<span style=color:#a31515>'slow'</span>, <span style=color:blue>function</span>() {
-                <span style=color:green>// A partir de aquí todo igual...
-           </span>});
-        });
-    });
-}            </pre>
-<p><a href=http://11011.net/software/vspaste></a><a href=http://11011.net/software/vspaste></a></p>
-<p>¡Y observad como se despliega suavemente el formulario! 😉</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=kd>function</span> <span class=nx>popup_open</span><span class=p>(</span><span class=nx>dialog</span><span class=p>)</span> <span class=p>{</span>
+    <span class=nx>dialog</span><span class=p>.</span><span class=nx>overlay</span><span class=p>.</span><span class=nx>fadeIn</span><span class=p>(</span><span class=s1>&#39;slow&#39;</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+        <span class=nx>dialog</span><span class=p>.</span><span class=nx>container</span><span class=p>.</span><span class=nx>fadeIn</span><span class=p>(</span><span class=s1>&#39;slow&#39;</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+            <span class=nx>dialog</span><span class=p>.</span><span class=nx>data</span><span class=p>.</span><span class=nx>fadeIn</span><span class=p>(</span><span class=s1>&#39;slow&#39;</span><span class=p>,</span> <span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+                <span class=c1>// A partir de aquí todo igual...
+</span><span class=c1></span>           <span class=p>});</span>
+        <span class=p>});</span>
+    <span class=p>});</span>
+<span class=p>}</span>  
+</code></pre></td></tr></table>
+</div>
+</div><p>¡Y observad como se despliega suavemente el formulario! 😉</p>
 </article>
 <script>'use strict';function wrap(a,b){a.parentNode.insertBefore(b,a),b.appendChild(a)}(function(){var a=document.querySelector('.single__contents');a?a.querySelectorAll('pre > code').forEach(function(b){var a=b.getAttribute('data-lang'),c=document.createElement('div'),e=null,d=null;a&&a.includes(':')?(e=a.split(':')[0],d=a.split(':')[1],c.className='language-'+e,c.setAttribute('data-lang',d),b.className='language-'+e,b.setAttribute('data-lang',d),b.setAttribute('id',d)):a||(c.setAttribute('data-lang','Code'),c.className='language-code'),(!a||d)&&wrap(b.parentNode,c)}):null})();var langCodeElem=document.querySelectorAll('.language-code');langCodeElem?langCodeElem.forEach(function(b){var a=document.createElement('span');a.className='copy-to-clipboard',a.setAttribute('title','Copy to clipboard'),b.append(a)}):null</script>
 <div class=donation>

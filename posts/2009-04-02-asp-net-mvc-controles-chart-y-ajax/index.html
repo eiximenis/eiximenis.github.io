@@ -186,7 +186,7 @@ sobre<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <div class=single__meta>
 <div class=single__infos>
 <time class=single__info title="Escrito en">📅&nbsp;Apr 2, 2009 </time>
-&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;2&nbsp;min </span>
+&nbsp;&#183;&nbsp; <span class=single__info title="Tiempo lectura"> ☕&nbsp;3&nbsp;min </span>
 &nbsp;&#183;&nbsp; <span class=single__info title="ESCRITO POR">✍️&nbsp;eiximenis</span>
 <span class=single__info>
 </span>
@@ -199,56 +199,147 @@ sobre<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 En cualquier caso puedes acceder a la <a href="https://geeks.ms/etomas/?p=1444">versión original aquí</a></strong> </p>
 <p>Supongo que la gran mayoría de vosotros, conoceréis los controles de gráficos de ASP.NET. José M. Aguilar hizo un excelente post sobre ellos <a href=/blogs/jmaguilar/archive/2008/12/14/microsoft-chart-control-para-asp-net-3-5-sp1.aspx>aquí (http://geeks.ms/blogs/jmaguilar/archive/2008/12/14/microsoft-chart-control-para-asp-net-3-5-sp1.aspx)</a>.</p>
 <p>Utilizarlos es realmente simple&mldr; basta con que os los descargueis de la web de Microsoft y después de instalarlos agregueis las siguiente líneas en el <code>web.config</code>:</p>
-<pre class=code><span style=color:blue>&lt;</span><span style=color:#a31515>add </span><span style=color:red>path</span><span style=color:blue>=</span>"<span style=color:blue>ChartImg.axd</span>" <span style=color:red>verb</span><span style=color:blue>=</span>"<span style=color:blue>GET,HEAD</span>" <br><span style=color:red>type</span><span style=color:blue>=</span>"<span style=color:blue>System.Web.UI.DataVisualization.Charting.ChartHttpHandler, <br>System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, <br>PublicKeyToken=31bf3856ad364e35</span>" <span style=color:red>validate</span><span style=color:blue>=</span>"<span style=color:blue>false</span>"<span style=color:blue>/&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>En la sección <httphandlers> y la siguiente:</p>
-<pre class=code><span style=color:blue>&lt;</span><span style=color:#a31515>add </span><span style=color:red>tagPrefix</span><span style=color:blue>=</span>"<span style=color:blue>asp</span>" <br><span style=color:red>namespace</span><span style=color:blue>=</span>"<span style=color:blue>System.Web.UI.DataVisualization.Charting</span>" <br><span style=color:red>assembly</span><span style=color:blue>=</span>"<span style=color:blue>System.Web.DataVisualization, Version=3.5.0.0, <br>Culture=neutral, PublicKeyToken=31bf3856ad364e35</span>"<span style=color:blue>/&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>En la sección <controls>.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;add</span> <span class=na>path=</span><span class=s>&#34;ChartImg.axd&#34;</span> <span class=na>verb=</span><span class=s>&#34;GET,HEAD&#34;</span> 
+<span class=na>type=</span><span class=s>&#34;System.Web.UI.DataVisualization.Charting.ChartHttpHandler, 
+</span><span class=s>System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, 
+</span><span class=s>PublicKeyToken=31bf3856ad364e35&#34;</span> <span class=na>validate=</span><span class=s>&#34;false&#34;</span><span class=nt>/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>En la sección <code>&lt;httpHandlers></code> y la siguiente:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;add</span> <span class=na>tagPrefix=</span><span class=s>&#34;asp&#34;</span> 
+<span class=na>namespace=</span><span class=s>&#34;System.Web.UI.DataVisualization.Charting&#34;</span> 
+<span class=na>assembly=</span><span class=s>&#34;System.Web.DataVisualization, Version=3.5.0.0, 
+</span><span class=s>Culture=neutral, PublicKeyToken=31bf3856ad364e35&#34;</span><span class=nt>/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>En la sección <code>&lt;controls></code>.</p>
 <p>Despues ya podeis arrastrar un Chart control desde la toolbox a vuestra página ASP.NET y empezar a trabajar con él.</p>
 <p>Si, como yo, os encanta ASP.NET MVC sabed que podeis usar este control sin ningún problema (<a href=http://code-inside.de/blog-in/2008/11/27/howto-use-the-new-aspnet-chart-controls-with-aspnet-mvc/ title=http://code-inside.de/blog-in/2008/11/27/howto-use-the-new-aspnet-chart-controls-with-aspnet-mvc/>http://code-inside.de/blog-in/2008/11/27/howto-use-the-new-aspnet-chart-controls-with-aspnet-mvc/</a>).</p>
 <p>El único temilla a tener en cuenta es si se quiere actualizar sólo el gráfico mediante Ajax (usando ASP.NET MVC).</p>
 <p>Suponed una vista parcial (Chart.ascx) con el siguiente código que muestra un gráfico con contenido <em>random</em>:</p>
-<pre class=code><span style=background:#ffee62>&lt;%</span><span style=color:blue>@ </span><span style=color:#a31515>Control </span><span style=color:red>Language</span><span style=color:blue>="C#" </span><span style=color:red>Inherits</span><span style=color:blue>="System.Web.Mvc.ViewUserControl" </span><span style=background:#ffee62>%&gt;
-</span><span style=color:blue>&lt;</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>Chart </span><span style=color:red>ID</span><span style=color:blue>="chart" </span><span style=color:red>runat</span><span style=color:blue>="server" </span><span style=color:red>Palette</span><span style=color:blue>="Fire" &gt;
-    &lt;</span><span style=color:#a31515>Series</span><span style=color:blue>&gt;
-        &lt;</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>Series </span><span style=color:red>Name</span><span style=color:blue>="D1" </span><span style=color:red>ChartType</span><span style=color:blue>="StackedColumn" /&gt;
-</span><span style=color:blue>        &lt;</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>Series </span><span style=color:red>Name</span><span style=color:blue>="D2" </span><span style=color:red>ChartType</span><span style=color:blue>="StackedColumn" /&gt;
-</span><span style=color:blue>    &lt;/</span><span style=color:#a31515>Series</span><span style=color:blue>&gt;
-    &lt;</span><span style=color:#a31515>ChartAreas</span><span style=color:blue>&gt;
-        &lt;</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>ChartArea </span><span style=color:red>Name</span><span style=color:blue>="ChartArea1"&gt;
-        &lt;/</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>ChartArea</span><span style=color:blue>&gt;
-    &lt;/</span><span style=color:#a31515>ChartAreas</span><span style=color:blue>&gt;
-&lt;/</span><span style=color:#a31515>asp</span><span style=color:blue>:</span><span style=color:#a31515>Chart</span><span style=color:blue>&gt;
-&lt;</span><span style=color:#a31515>script </span><span style=color:red>runat</span><span style=color:blue>="server"&gt;
-    protected void </span>Page_Load(<span style=color:blue>object </span>sender, <span style=color:#2b91af>EventArgs </span>e)
-    {
-        <span style=color:#2b91af>Random </span>r = <span style=color:blue>new </span><span style=color:#2b91af>Random</span>();
-        <span style=color:blue>this</span>.chart.Series[<span style=color:#a31515>"D1"</span>].Points.Add(r.Next(100));
-        <span style=color:blue>this</span>.chart.Series[<span style=color:#a31515>"D2"</span>].Points.Add(r.Next(100));
-    }
-<span style=color:blue>&lt;/</span><span style=color:#a31515>script</span><span style=color:blue>&gt;</span></pre>
-<p>Y otra vista (Victories.aspx) que contiene el siguiente código (entre otro):</p>
-<pre class=code><span style=background:#ffee62>&lt;%</span><span style=color:blue>=</span>Ajax.ActionLink(<span style=color:#a31515>"Actualizar"</span>, <span style=color:#a31515>"Victories"</span>, <br><span style=color:blue>new </span><span style=color:#2b91af>RouteValueDictionary</span>(<span style=color:blue>new </span>{ Days = 7, Interval = 1 }), <br><span style=color:blue>new </span><span style=color:#2b91af>AjaxOptions</span>() { UpdateTargetId = <span style=color:#a31515>"chart" </span>}) <span style=background:#ffee62>%&gt;
-</span>    <span style=color:blue>&lt;</span><span style=color:#a31515>div </span><span style=color:red>id</span><span style=color:blue>="chart" /&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>El enlace “Actualizar” envia una petición Ajax al controlador actual para que invoque la acción “Victories” y con el resultado actualice el div “chart”.</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=err>&lt;</span>%@ Control Language=&#34;C#&#34; Inherits=&#34;System.Web.Mvc.ViewUserControl&#34; %&gt;
+<span class=p>&lt;</span><span class=nt>asp:Chart</span> <span class=na>ID</span><span class=o>=</span><span class=s>&#34;chart&#34;</span> <span class=na>runat</span><span class=o>=</span><span class=s>&#34;server&#34;</span> <span class=na>Palette</span><span class=o>=</span><span class=s>&#34;Fire&#34;</span> <span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>Series</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>asp:Series</span> <span class=na>Name</span><span class=o>=</span><span class=s>&#34;D1&#34;</span> <span class=na>ChartType</span><span class=o>=</span><span class=s>&#34;StackedColumn&#34;</span> <span class=p>/&gt;</span>
+        <span class=p>&lt;</span><span class=nt>asp:Series</span> <span class=na>Name</span><span class=o>=</span><span class=s>&#34;D2&#34;</span> <span class=na>ChartType</span><span class=o>=</span><span class=s>&#34;StackedColumn&#34;</span> <span class=p>/&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>Series</span><span class=p>&gt;</span>
+    <span class=p>&lt;</span><span class=nt>ChartAreas</span><span class=p>&gt;</span>
+        <span class=p>&lt;</span><span class=nt>asp:ChartArea</span> <span class=na>Name</span><span class=o>=</span><span class=s>&#34;ChartArea1&#34;</span><span class=p>&gt;</span>
+        <span class=p>&lt;/</span><span class=nt>asp:ChartArea</span><span class=p>&gt;</span>
+    <span class=p>&lt;/</span><span class=nt>ChartAreas</span><span class=p>&gt;</span>
+<span class=p>&lt;/</span><span class=nt>asp:Chart</span><span class=p>&gt;</span>
+<span class=p>&lt;</span><span class=nt>script</span> <span class=na>runat</span><span class=o>=</span><span class=s>&#34;server&#34;</span><span class=p>&gt;</span>
+    <span class=kr>protected</span> <span class=k>void</span> <span class=nx>Page_Load</span><span class=p>(</span><span class=nx>object</span> <span class=nx>sender</span><span class=p>,</span> <span class=nx>EventArgs</span> <span class=nx>e</span><span class=p>)</span>
+    <span class=p>{</span>
+        <span class=nx>Random</span> <span class=nx>r</span> <span class=o>=</span> <span class=k>new</span> <span class=nx>Random</span><span class=p>();</span>
+        <span class=k>this</span><span class=p>.</span><span class=nx>chart</span><span class=p>.</span><span class=nx>Series</span><span class=p>[</span><span class=s2>&#34;D1&#34;</span><span class=p>].</span><span class=nx>Points</span><span class=p>.</span><span class=nx>Add</span><span class=p>(</span><span class=nx>r</span><span class=p>.</span><span class=nx>Next</span><span class=p>(</span><span class=mi>100</span><span class=p>));</span>
+        <span class=k>this</span><span class=p>.</span><span class=nx>chart</span><span class=p>.</span><span class=nx>Series</span><span class=p>[</span><span class=s2>&#34;D2&#34;</span><span class=p>].</span><span class=nx>Points</span><span class=p>.</span><span class=nx>Add</span><span class=p>(</span><span class=nx>r</span><span class=p>.</span><span class=nx>Next</span><span class=p>(</span><span class=mi>100</span><span class=p>));</span>
+    <span class=p>}</span>
+<span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Y otra vista (Victories.aspx) que contiene el siguiente código (entre otro):</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=err>&lt;</span>%=Ajax.ActionLink(&#34;Actualizar&#34;, &#34;Victories&#34;, 
+new RouteValueDictionary(new { Days = 7, Interval = 1 }), 
+new AjaxOptions() { UpdateTargetId = &#34;chart&#34; }) %&gt;
+    <span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;chart&#34;</span> <span class=p>/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>El enlace “Actualizar” envia una petición Ajax al controlador actual para que invoque la acción “Victories” y con el resultado actualice el div “chart”.</p>
 <p>La acción “Victories” está implementada en el controlador tal como sigue:</p>
-<pre class=code><span style=color:blue>public </span><span style=color:#2b91af>ActionResult </span>Victories(<span style=color:blue>int</span>? days, <span style=color:blue>int</span>? interval)
-{
-<span style=color:blue>    </span><span style=color:blue>return </span>PartialView(<span style=color:#a31515>"Chart"</span>);
-}</pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>De este modo a cada click del enlace se genera un nuevo gráfico aleatorio y se actualiza via Ajax la página&mldr;</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-cs data-lang=cs><span class=k>public</span> <span class=n>ActionResult</span> <span class=n>Victories</span><span class=p>(</span><span class=kt>int?</span> <span class=n>days</span><span class=p>,</span> <span class=kt>int?</span> <span class=n>interval</span><span class=p>)</span>
+<span class=p>{</span>
+    <span class=k>return</span> <span class=n>PartialView</span><span class=p>(</span><span class=s>&#34;Chart&#34;</span><span class=p>);</span>
+<span class=p>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>De este modo a cada click del enlace se genera un nuevo gráfico aleatorio y se actualiza via Ajax la página&mldr;</p>
 <p>&mldr; en teoria, porque en la práctica no se ve nada. Analizando con <a href=https://addons.mozilla.org/es-ES/firefox/addon/1843>firebug</a> lo que ha sucedido se puede observar que se lanza una excepción:</p>
-<pre>[HttpException (0x80004005): Error executing child request for ChartImg.axd.]</pre>
-<p>La solución? Caer en la cuenta de que las peticiones Ajax usan POST por defecto, así que o bien cambiamos la línea que añadimos en el web.config para que soporte POST:</p>
-<pre class=code><span style=color:blue>&lt;</span><span style=color:#a31515>add </span><span style=color:red>path</span><span style=color:blue>=</span>"<span style=color:blue>ChartImg.axd</span>" <span style=color:red>verb</span><span style=color:blue>=</span>"<span style=color:blue>GET,HEAD, <strong><span style=text-decoration:underline>POST</span></strong></span>" <br><span style=color:red>type</span><span style=color:blue>=</span>"<span style=color:blue>System.Web.UI.DataVisualization.Charting.ChartHttpHandler, <br>System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, <br>PublicKeyToken=31bf3856ad364e35</span>" <span style=color:red>validate</span><span style=color:blue>=</span>"<span style=color:blue>false</span>"<span style=color:blue>/&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>o bien le indicamos  a la petición Ajax que sea usando “GET”:</p>
-<pre class=code><span style=background:#ffee62>&lt;%</span><span style=color:blue>=</span>Ajax.ActionLink(<span style=color:#a31515>"Last Week"</span>, <span style=color:#a31515>"Victories"</span>, <br><span style=color:blue>new </span><span style=color:#2b91af>RouteValueDictionary</span>(<span style=color:blue>new </span>{ Days = 7, Interval = 1 }), <br><span style=color:blue>new </span><span style=color:#2b91af>AjaxOptions</span>() { <strong><span style=text-decoration:underline>HttpMethod=<span style=color:#a31515>"GET"</span></span></strong>, UpdateTargetId = <span style=color:#a31515>"chart" </span>}) <span style=background:#ffee62>%&gt;</span></pre>
-<p><a href=http://11011.net/software/vspaste></a></p>
-<p>Saludos!</p>
+<pre tabindex=0><code>[HttpException (0x80004005): Error executing child request for ChartImg.axd.]
+</code></pre><p>La solución? Caer en la cuenta de que las peticiones Ajax usan POST por defecto, así que o bien cambiamos la línea que añadimos en el web.config para que soporte POST:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-xml data-lang=xml><span class=nt>&lt;add</span> <span class=na>path=</span><span class=s>&#34;ChartImg.axd&#34;</span> <span class=na>verb=</span><span class=s>&#34;GET,HEAD, POST&#34;</span> 
+<span class=na>type=</span><span class=s>&#34;System.Web.UI.DataVisualization.Charting.ChartHttpHandler, 
+</span><span class=s>System.Web.DataVisualization, Version=3.5.0.0, Culture=neutral, 
+</span><span class=s>PublicKeyToken=31bf3856ad364e35&#34;</span> <span class=na>validate=</span><span class=s>&#34;false&#34;</span><span class=nt>/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>o bien le indicamos  a la petición Ajax que sea usando “GET”:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=err>&lt;</span>%=Ajax.ActionLink(&#34;Last Week&#34;, &#34;Victories&#34;, 
+new RouteValueDictionary(new { Days = 7, Interval = 1 }), 
+new AjaxOptions() { HttpMethod=&#34;GET&#34;, UpdateTargetId = &#34;chart&#34; }) %&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>Saludos!</p>
 </article>
 <script>'use strict';function wrap(a,b){a.parentNode.insertBefore(b,a),b.appendChild(a)}(function(){var a=document.querySelector('.single__contents');a?a.querySelectorAll('pre > code').forEach(function(b){var a=b.getAttribute('data-lang'),c=document.createElement('div'),e=null,d=null;a&&a.includes(':')?(e=a.split(':')[0],d=a.split(':')[1],c.className='language-'+e,c.setAttribute('data-lang',d),b.className='language-'+e,b.setAttribute('data-lang',d),b.setAttribute('id',d)):a||(c.setAttribute('data-lang','Code'),c.className='language-code'),(!a||d)&&wrap(b.parentNode,c)}):null})();var langCodeElem=document.querySelectorAll('.language-code');langCodeElem?langCodeElem.forEach(function(b){var a=document.createElement('span');a.className='copy-to-clipboard',a.setAttribute('title','Copy to clipboard'),b.append(a)}):null</script>
 <div class=donation>
