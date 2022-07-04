@@ -16,9 +16,9 @@
 <link rel=alternate type=application/rss+xml title=RSS href=https://www.eiximenis.dev/index.xml>
 <link rel=alternate type=application/json title=JSON href=https://www.eiximenis.dev/index.json>
 <meta name=description content="Mi blog sobre desarrollo.">
-<meta name=created content="2022-04-19T00:00:00+0000">
-<meta name=modified content="2022-04-19T00:00:00+0000">
-<meta property="article:published_time" content="2022-04-19T00:00:00+0000">
+<meta name=created content="2022-07-04T00:00:00+0000">
+<meta name=modified content="2022-07-04T00:00:00+0000">
+<meta property="article:published_time" content="2022-07-04T00:00:00+0000">
 <meta name=author content="eiximenis">
 <meta property="og:site_name" content="Lo Crestià">
 <meta property="og:title" content>
@@ -179,6 +179,29 @@ Mi blog de desarrollo... :)
 <main class="main inner" data-sidebar-position>
 <div class="list__main lm">
 <div class=summary__container data-display=block>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://www.eiximenis.dev/posts/2012-05-15-el-misterioso-caso-de-la-listbox-con-un-solo-elemento/> El misterioso caso de la ListBox con un solo elemento</a> </h5>
+<h6 class="subtitle caption">
+<time title="Escrito en" dir=ltr>📅&nbsp;May 15, 2012 </time>
+<span title="Tiempo lectura" dir=ltr> &#183; ☕&nbsp;2&nbsp;min </span>
+&#183; <span title="ESCRITO POR" dir=ltr>✍️&nbsp;eiximenis</span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+Un post rapidito, para comentar algo que sucedió ayer…
+Ayer por la tarde puse el siguiente tweet: http://twitter.com/#!/eiximenis/status/202060274260389888. Básicamente mostraba una ListBox en la cual tras añadirle un único elemento soltaba una OutOfMemoryException indicando que había demasiados elementos en la dicha lista:
+ Vale que winforms tiene sus limitaciones, pero eso parece un poco excesivo, ¿no?
+Mirando el valor de lstComandos.Count puedo ver que el elemento se ha añadido (antes de hacer el Add la lista estaba vacía) pero que después me lanza la excepción.
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
 <article class=summary-classic data-ani=true>
 <div class=summary-classic__flex-box>
 <div class=summary-classic__content>
@@ -362,26 +385,6 @@ Yo voy a hablar sobre async y await, lo que en el fondo me va a dar una excusa p
 <div>
 <div class="summary-classic__text p2">
 <p>Bueno… seguimos esta serie explorando ASP.NET WebAPI. En este post vamos a hablar de los formatos de salida. Como ya hemos dicho, de serie ASP.NET WebAPI tiene soporte para XML y para JSON. Pero… como decide el framework si enviar la salida en XML o en JSON?</p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</article>
-<article class=summary-classic data-ani=true>
-<div class=summary-classic__flex-box>
-<div class=summary-classic__content>
-<header>
-<h5 class="title h5"><a href=https://www.eiximenis.dev/posts/2012-02-19-explorando-asp-net-mvc4-webapi-2-enrutamiento-y-verbos-http-propios/> Explorando ASP.NET MVC4 WebAPI – 2: Enrutamiento y verbos HTTP propios</a> </h5>
-<h6 class="subtitle caption">
-<time title="Escrito en" dir=ltr>📅&nbsp;Feb 19, 2012 </time>
-<span title="Tiempo lectura" dir=ltr> &#183; ☕&nbsp;7&nbsp;min </span>
-&#183; <span title="ESCRITO POR" dir=ltr>✍️&nbsp;eiximenis</span>
-</h6>
-</header>
-<div>
-<div class="summary-classic__text p2">
-<p>Buenas! Este es el segundo post de la serie que trata sobre ASP.NET Web API una de las grandes novedades que vienen con ASP.NET MVC. El primer post de la serie fue la <a href=http://geeks.ms/blogs/etomas/archive/2012/02/17/explorando-asp-net-mvc4-webapis-1-introducci-243-n.aspx>introducción</a>. Lo que quiero comentar antes que nada es que esta serie la estoy escribiendo no como un tutorial de ASP.NET Web API desde el punto de vista de un experto (porque no lo soy) sino desde el punto de vista de alguien que conoce ASP.NET MVC y está empezando a explorar Web API.</p>
 </div>
 </div>
 </div>
@@ -620,7 +623,7 @@ cloud
 csharp
 </span>
 <span class=taxo__num dir=auto>
-1
+2
 </span>
 </a>
 </span>
@@ -969,7 +972,7 @@ docker
 dotnet
 </span>
 <span class=taxo__num dir=auto>
-2
+3
 </span>
 </a>
 </span>

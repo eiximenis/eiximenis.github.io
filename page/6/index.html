@@ -16,9 +16,9 @@
 <link rel=alternate type=application/rss+xml title=RSS href=https://www.eiximenis.dev/index.xml>
 <link rel=alternate type=application/json title=JSON href=https://www.eiximenis.dev/index.json>
 <meta name=description content="Mi blog sobre desarrollo.">
-<meta name=created content="2022-04-19T00:00:00+0000">
-<meta name=modified content="2022-04-19T00:00:00+0000">
-<meta property="article:published_time" content="2022-04-19T00:00:00+0000">
+<meta name=created content="2022-07-04T00:00:00+0000">
+<meta name=modified content="2022-07-04T00:00:00+0000">
+<meta property="article:published_time" content="2022-07-04T00:00:00+0000">
 <meta name=author content="eiximenis">
 <meta property="og:site_name" content="Lo Crestià">
 <meta property="og:title" content>
@@ -179,6 +179,27 @@ Mi blog de desarrollo... :)
 <main class="main inner" data-sidebar-position>
 <div class="list__main lm">
 <div class=summary__container data-display=block>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://www.eiximenis.dev/posts/2019-02-01-aci-azure-container-instances-serverless-containers/> ACI (Azure Container Instances): Serverless containers</a> </h5>
+<h6 class="subtitle caption">
+<time title="Escrito en" dir=ltr>📅&nbsp;Feb 1, 2019 </time>
+<span title="Tiempo lectura" dir=ltr> &#183; ☕&nbsp;4&nbsp;min </span>
+&#183; <span title="ESCRITO POR" dir=ltr>✍️&nbsp;eiximenis</span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>Cuando hablamos de <em>serverless</em> todo el mundo lo asociamos a las soluciones tipo FaaS como Azure Functions o Amazon Lambda, pero hay otros productos que se engloban dentro de ese paradigma y en Azure uno de los más interesantes es <strong>Azure Container Instances</strong>. Del mismo modo que con una Azure Function me limito a poner código en “ejecución” y esto se ejecuta en algún sitio, usando ACI lo que hago es “poner un contenedor” que se ejecutará en&mldr; bueno, donde sea. Eso es <em>serverless</em> señores.</p>
+<p>Con este post quiero iniciar una pequeña serie dedicada a ACI, como ACI se compara con su <a href="https://www.youtube.com/watch?v=B90D3Eq7KjU">primo Zumosol</a> (AKS) y como AKS y ACI habilitan interesantes escenarios (altísima escalabilidad y workloads mixtos de contenedores).</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
 <article class=summary-classic data-ani=true>
 <div class=summary-classic__flex-box>
 <div class=summary-classic__content>
@@ -363,28 +384,6 @@ A nivel de memoria sospechaba que no: una struct ocupa lo mismo que la suma de t
 <p>Cuando creas un proyecto SPA de netcore, ya sea mediante VS o bien usando <em>dotnet new</em> y alguna plantilla SPA como react (<em>dotnet new react</em>), se genera una estructura parecida a la siguiente:</p>
 <p><a href=https://geeks.ms/etomas/wp-content/uploads/sites/154/2018/10/spa-estructura.png><img class="alignnone size-full wp-image-2195" src=https://geeks.ms/etomas/wp-content/uploads/sites/154/2018/10/spa-estructura.png alt="Estructura ficheros proyecto SPA" width=249 height=293></a></p>
 <p>La carpeta “ClientApp” contiene todo el código de cliente (javascript, CSS y demás) mientras que el resto es el código netcore que se limita a “lanzar” la SPA.</p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</article>
-<article class=summary-classic data-ani=true>
-<div class=summary-classic__flex-box>
-<div class=summary-classic__content>
-<header>
-<h5 class="title h5"><a href=https://www.eiximenis.dev/posts/2018-10-01-unicode-y-encodings/> Unicode y encodings</a> </h5>
-<h6 class="subtitle caption">
-<time title="Escrito en" dir=ltr>📅&nbsp;Oct 1, 2018 </time>
-<span title="Tiempo lectura" dir=ltr> &#183; ☕&nbsp;13&nbsp;min </span>
-&#183; <span title="ESCRITO POR" dir=ltr>✍️&nbsp;eiximenis</span>
-</h6>
-</header>
-<div>
-<div class="summary-classic__text p2">
-<p>Uno de los conceptos que hoy en día siguen causando más confusión es el de Unicode y sus distintos tipos de codificación. Pero&mldr; ¿qué es realmente Unicode? Para ello, déjame que remonte unos cuantos años atrás&mldr;</p>
-<p><strong>El inicio: ASCII</strong></p>
-<p>Los ordenadores los inventaron los americanos y como suele ocurrir se preocuparon de lo suyo: que un ordenador pudiese presentar textos en su idioma. Tampoco hay tantos caracteres en el inglés: las veinte y poco letras (en mayúsculas y minúsculas), los símbolos de puntuación, paréntesis, operaciones matemáticas y poco más. En total eran menos de 128 carácteres. Genial, porque esos espacios que sobraban se podían aprovechar para colocar otros caracteres que no tienen representación gráfica pero que eran (y son) necesarios para controlar el teletipo: retornos de carro, saltos de línea y similares. Había nacido el <a href=https://en.wikipedia.org/wiki/ASCII>código ASCII</a>.</p>
 </div>
 </div>
 </div>
@@ -623,7 +622,7 @@ cloud
 csharp
 </span>
 <span class=taxo__num dir=auto>
-1
+2
 </span>
 </a>
 </span>
@@ -972,7 +971,7 @@ docker
 dotnet
 </span>
 <span class=taxo__num dir=auto>
-2
+3
 </span>
 </a>
 </span>
